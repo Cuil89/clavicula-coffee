@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Maison Brew: Terre & Crème ☕
 
-## Getting Started
+![Maison Brew](public/assets/hero-sunlit-hearth.jpeg)
 
-First, run the development server:
+**Maison Brew** is a production-ready, Awwwards-caliber web experience for a Luxury Specialty Coffee Roastery, Artisanal Viennoiserie & Architectural Sanctuary located in the Kala Ghoda Arts Precinct, Mumbai.
 
+Built with a "Warm Organic Modernism" design DNA (Chestnut, Espresso, Vanilla Oat Foam, Buttermilk Crema), the application features complex micro-interactions, GSAP scroll animations, and global state management for an immersive user journey.
+
+🌍 **Live Demo:** [maison-brew-app.vercel.app](https://maison-brew-app.vercel.app/)
+
+---
+
+## 🛠 Tech Stack
+
+- **Framework**: Next.js 14 (App Router)
+- **Library**: React 18
+- **Styling**: Tailwind CSS
+- **Animations**: GSAP (GreenSock) & ScrollTrigger
+- **Smooth Scrolling**: Lenis (@studio-freight/lenis)
+- **Icons**: Lucide React
+- **Deployment**: Vercel
+
+## ✨ Key Features
+
+The application spans a 5-page Next.js architecture with rich, interconnected user flows:
+
+- **The Flagship Monograph (`/`)**: Hero section, Craft Pillars, Roastery Collection, Interactive Cupping Dial, Atelier Preview, and immersive Footer.
+- **The Complete Atelier Menu (`/menu`)**: A filtered culinary and specialty coffee menu featuring Viennoiserie, Sourdough Breads, Savory Hearth, Pour-Overs, and Signature Drinks.
+- **The Origin Registry (`/terroir`)**: Deep-dive into Indian micro-lots from Chikmagalur and Araku Valley, complete with 1968 Probat flame roaster telemetry.
+- **Architecture & Sanctuary (`/space`)**: A visual monograph of the Kala Ghoda pavilion, acoustic lime plaster, reclaimed teak, and courtyard garden.
+- **Dedicated Booking Concierge (`/reserve`)**: A full-page, elevated reservation experience.
+
+### 🔄 Interactive User Flows
+
+1. **Table Reservation Ticket**: An end-to-end table booking form that generates a unique reservation code (e.g., `MB-2026-XXXX`) presented as an animated digital ticket.
+2. **Shopping Cart Drawer**: A slide-over e-commerce drawer managing state for coffee pouch orders, subtotal calculations, and mock checkout.
+3. **Sensory Dial Bridge**: An interactive coffee preference selector that bridges cross-component data directly to the reservation form as a "Special Request".
+4. **Sanctuary Map Modal**: An immersive modal providing transit, valet, and geographic details for the Kala Ghoda location.
+5. **Toast Notifications**: Animated confirmation popups for newsletter signups and cart additions.
+
+---
+
+## 🚀 Getting Started Locally
+
+To run this project on your local machine:
+
+**1. Clone the repository:**
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/Jayant-1/maison-brew.git
+cd maison-brew
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**2. Install dependencies:**
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**3. Run the development server:**
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**4. View the app:**
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🎨 Design DNA & Assets
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Typography**: `Inter Tight` (Primary Sans-Serif) & `Instrument Serif` (Italic Accents).
+- **Color Palette**: Chestnut (`#864C31`), Espresso (`#222222`), Vanilla Oat Foam (`#FEF8DD`), Buttermilk Crema (`#F7EEC8`), Warm Linen Ivory (`#FAF7F2`), Golden Caramel (`#D4A055`).
+- **Assets**: All imagery and videos are strictly referenced from `/public/assets` to maintain the highest quality visual fidelity.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+*Designed and engineered with impeccable frontend taste by Google Antigravity.*
