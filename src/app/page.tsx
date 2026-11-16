@@ -311,7 +311,7 @@ export default function Home() {
                 copy: "Dua suasana istimewa: Ruang kerja kreatif ber-AC & taman di Slawi, serta hawa dingin pegunungan berkabut di Clavicula Hills Guci.",
                 cta: "Jelajahi 2 Outlet",
                 link: "/space",
-                img: "/assets/cafe-twilight-pavilion.jpeg",
+                img: "/assets/clavicula-hills-guci.jpg",
               },
             ].map((pillar, i) => (
               <Link

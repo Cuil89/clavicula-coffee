@@ -27,7 +27,7 @@ export default function MapModal() {
       mapsUrl: "https://maps.google.com/?q=Clavicula+Coffee+%26+Idea+Slawi",
       instagram: "@clavicula_coffee",
       igUrl: "https://www.instagram.com/clavicula_coffee/",
-      image: "/assets/sanctuary-interior-arches.jpeg",
+      image: "/assets/clavicula-slawi-interior.jpg",
     },
     guci: {
       title: "Clavicula Hills (Guci, Tuwel)",
@@ -38,7 +38,7 @@ export default function MapModal() {
       mapsUrl: "https://maps.google.com/?q=Clavicula+Hills+Guci+Tuwel",
       instagram: "@clavicula_hills",
       igUrl: "https://www.instagram.com/clavicula_hills/",
-      image: "/assets/cafe-twilight-pavilion.jpeg",
+      image: "/assets/clavicula-hills-guci.jpg",
     },
   };
 
