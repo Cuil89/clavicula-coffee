@@ -216,22 +216,22 @@ export default function Home() {
           </div>
 
           {/* Right Column (Hero Visual & Emblem) */}
-          <div className="lg:col-span-5 relative h-[560px] lg:h-[720px] w-full mt-6 lg:mt-0 group">
-            <div className="absolute inset-0 rounded-t-[220px] rounded-b-[24px] overflow-hidden shadow-2xl border border-chestnut/20 bg-espresso">
+          <div className="lg:col-span-5 relative h-[540px] lg:h-[660px] w-full mt-6 lg:mt-0 group">
+            <div className="absolute inset-0 rounded-t-[200px] rounded-b-[24px] overflow-hidden shadow-2xl border border-chestnut/25 bg-[#FAF6F0]">
               <div className="relative w-full h-full hero-image-container overflow-hidden">
                 <Image
-                  src="/assets/clavicula/places/clavicula-facade-identity.jpg"
+                  src="/assets/clavicula/places/clavicula-facade-warm-perfect.jpg"
                   alt="Clavicula Coffee & Idea Identity Facade - Slawi & Guci Hills"
                   fill
-                  className="object-cover object-center hero-image opacity-95 transition-transform duration-700 group-hover:scale-105"
+                  className="object-cover object-bottom hero-image transition-transform duration-700 group-hover:scale-105"
                   priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-espresso/80 via-transparent to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-espresso/50 via-espresso/5 to-transparent"></div>
               </div>
             </div>
 
             {/* Floating Badges */}
-            <div className="absolute -left-6 top-20 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-full border border-chestnut/20 shadow-lg hidden sm:flex items-center gap-2 z-20">
+            <div className="absolute -left-6 top-16 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-full border border-chestnut/20 shadow-lg hidden sm:flex items-center gap-2 z-20">
               <div className="w-6 h-6 rounded-full bg-espresso flex items-center justify-center p-0.5 shrink-0">
                 <Image src="/assets/clavicula-logo.png" alt="Logo" width={20} height={20} />
               </div>
@@ -240,7 +240,7 @@ export default function Home() {
               </span>
             </div>
 
-            <div className="absolute -right-6 top-1/2 bg-vanilla/95 backdrop-blur-md px-5 py-3 rounded-2xl border border-chestnut/20 shadow-xl hidden sm:block z-20 max-w-[220px]">
+            <div className="absolute -right-6 top-1/2 -translate-y-8 bg-vanilla/95 backdrop-blur-md px-5 py-3 rounded-2xl border border-chestnut/20 shadow-xl hidden sm:block z-20 max-w-[220px]">
               <div className="text-[10px] font-mono text-chestnut uppercase tracking-widest mb-1">
                 SIGNATURE DRINK
               </div>
@@ -250,7 +250,7 @@ export default function Home() {
               <span className="text-xs text-espresso/60 block mt-0.5">Anatomical crafted series</span>
             </div>
 
-            <div className="absolute left-6 bottom-10 bg-espresso/90 backdrop-blur-md px-5 py-3 rounded-full border border-white/20 shadow-xl z-20 flex items-center gap-3">
+            <div className="absolute left-6 bottom-7 bg-espresso/90 backdrop-blur-md px-4 py-2.5 rounded-full border border-white/20 shadow-xl z-20 flex items-center gap-2.5">
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
               <span className="text-xs font-bold tracking-widest text-white font-mono uppercase">
                 GUCI HILLS &bull; HIGH MOUNTAIN MIST
