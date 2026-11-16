@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clavicula coffe - Cafe Enak & Aesthetic di Daerah Slawi Tegal</title>
+<meta name="description" content="clavicula coffe merupakan cafe aesthetic dengan pemandangan indah, makanan enak dan murah di daerah slawi, tegal. Tersedia chicken katsu, dimsum, nasi goreng, dll.">
+<meta name="keywords" content="clavicula coffe, clavicula cafe, cafe clavicula, cafe slawi, cafe di slawi, cafe slawi terdekat, cafe tegal, cafe di tegal, cafe tegal aesthetic">
+<meta name="google" content="notranslate" />
+<meta name="robots" content="index, follow" />
+<meta name="rating" content="general" />
+<meta name="geo.region" content="id_ID" />
+<meta name="geo.country" content="id" />
+<meta name="language" content="Id-ID" />
+<meta name="distribution" content="global" />
+<meta name="geo.placename" content="Indonesia" />
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://claviculacoffee.id/">
+<meta property="og:title" content="clavicula coffe - Cafe Enak & Aesthetic di Daerah Slawi Tegal">
+<meta property="og:description" content="clavicula coffe merupakan cafe aesthetic dengan pemandangan indah, makanan enak dan murah di daerah slawi, tegal. Tersedia chicken katsu, dimsum, nasi goreng, dll.">
+<meta property="og:image" content="https://claviculacoffee.id/assets/Shared/logo.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://claviculacoffee.id/">
+<meta name="twitter:title" content="clavicula coffe - Cafe Enak & Aesthetic di Daerah Slawi Tegal">
+<meta name="twitter:description" content="clavicula coffe merupakan cafe aesthetic dengan pemandangan indah, makanan enak dan murah di daerah slawi, tegal. Tersedia chicken katsu, dimsum, nasi goreng, dll.">
+<meta name="twitter:image" content="https://claviculacoffee.id/assets/Shared/logo.webp">
+<link rel="canonical" href="https://claviculacoffee.id/">
+    <link rel="shortcut icon" href="./assets/Shared/logo.webp" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oregano:ital@0;1&display=swap" rel="stylesheet">
+    <link
+    rel="stylesheet"
+    href="./assets/animate.css"
+  />
+  link:preload
+  <link rel="stylesheet" href="share.css">
+  <link
+  rel="stylesheet"
+  href="./home.css"
+/>
+
+<link
+  rel="stylesheet"
+  href="./responsive.css"
+/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "clavicula coffe",
+  "image": "https://claviculacoffee.id/assets/Shared/logo.webp",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Jalan DR. Soetomo no.3",
+    "addressLocality": "Jawa Tengah",
+    "postalCode": "52416",
+    "addressCountry": "ID"
+  },
+  "url": "https://claviculacoffee.id/",
+  "telephone": "+6287733444426",
+  "servesCuisine": "Indonesian",
+  "priceRange": "Rp14.000 - Rp48.000",
+  "sameAs": [
+	"https://www.instagram.com/clavicula_coffee/",
+    "https://gofood.co.id/tegal/restaurant/clavicula-coffee-idea-575afb3a-4562-4cab-a20c-359419063beb"
+  ]
+}
+</script>
+
+ <!--- css last post -->
+
+<style>
+#latest-posts {
+  padding: 20px;
+  margin: 40px auto;
+  max-width: 1000px;
+  font-family: sans-serif;
+}
+
+#latest-posts h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.grid-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.post-card {
+  width: 200px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+}
+
+.post-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+}
+
+.post-card h3 {
+  font-size: 14px;
+  padding: 10px;
+  margin: 0;
+  color: #0073aa;
+  line-height: 1.4em;
+}
+.post-grid {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: start;
+}
+
+.post-card {
+  width: 220px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+}
+
+.post-card img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+}
+
+.post-card h3 {
+  font-size: 14px;
+  padding: 10px;
+  margin: 0;
+  color: #0073aa;
+  line-height: 1.4em;
+}
+.post-grid {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.post-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+}
+
+.post-card img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  display: block;
+}
+
+.post-card h3 {
+  font-size: 14px;
+  padding: 10px;
+  margin: 0;
+  color: #0073aa;
+  line-height: 1.4em;
+}
+.post-grid-section {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    padding: 0 20px;
+    font-family: sans-serif;
+  }
+
+  .section-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .glide__slides {
+    display: flex;
+    padding: 0;
+    margin: 0;
+  }
+
+  .glide__slide {
+    list-style: none;
+  }
+
+  .post-card {
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+    transition: transform 0.3s;
+  }
+
+  .post-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .post-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+  }
+
+  .post-card-content {
+    padding: 15px;
+  }
+
+  .post-card-content h3 {
+    font-size: 16px;
+    color: #0073aa;
+    margin: 0 0 10px;
+  }
+
+  .post-card-content .meta {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 10px;
+  }
+
+  .post-card-content .read-more {
+    display: inline-block;
+    padding: 6px 12px;
+    background: #0073aa;
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 13px;
+  }
+
+  .post-card-content .read-more:hover {
+    background: #005f87;
+  }
+
+  .glide__arrows {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .glide__arrow {
+    display: inline-block;
+    background: #0073aa;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    margin: 0 4px;
+    border-radius: 4px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+  .glide__arrow:hover {
+    background: #005f87;
+  }
+</style>
+
+
+ <!--- end css last post -->
+
+            <!--- pop up css -->
+    <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    button#openPopup {
+      margin: 10px auto;
+      display: block;
+      padding: 10px 10px;
+      font-size: 16px;
+      background: #2d89ef;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .popup-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      animation: fadeIn 0.3s ease-out;
+      z-index: 9999;
+    }
+
+    .popup-box {
+      background: white;
+      padding: 20px 25px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      max-width: 420px;
+      width: 90%;
+      max-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      animation: slideUp 0.3s ease-out;
+    }
+
+    .popup-box h3 {
+      margin-top: 0;
+      font-size: 20px;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    .popup-list {
+      overflow-y: auto;
+      flex: 1;
+      margin-bottom: 15px;
+      padding-right: 8px;
+    }
+
+    .popup-list ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .popup-list li {
+      margin-bottom: 8px;
+    }
+
+    .popup-list a {
+      color: #2d89ef;
+      text-decoration: none;
+    }
+
+    .popup-list a:hover {
+      text-decoration: underline;
+    }
+
+    .close-btn {
+      text-align: center;
+    }
+
+    .close-btn button {
+      padding: 8px 16px;
+      background: #ccc;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+  </style>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+</head>
+<body>
+    
+    <header>
+        <nav class="pc_navbar container">
+            <a href="/" class="home_ancore"><img src="./assets/Shared/logo.webp" alt="Logo" class="navbar_logo"></a>
+            
+            <button class="menu_toggle">
+                <div class="menu_icon"></div>
+            </button>
+            <div class="social_media_icons">
+                <a href="/" class="nav_menu">Home</a>
+                <a href="#makanan" class="nav_menu">Makanan</a>
+                <a href="#minuman" class="nav_menu">Minuman</a>
+                <a class="nav_menu" href="https://claviculacoffee.id/kontak-kami">Kontak Kami</a>
+<a class="nav_menu" href="/article">Artikel</a>
+                <a rel="nofollow" href="https://gofood.co.id/tegal/restaurant/clavicula-coffee-idea-575afb3a-4562-4cab-a20c-359419063beb" class="primary_btn">GoFood</a>
+            
+            </div>
+            <div class="mobile_menu">
+                <a href="/" class="nav_menu">Home</a>
+                <a href="#makanan" class="nav_menu">Makanan</a>
+                <a href="#minuman" class="nav_menu">Minuman</a>
+                <a class="nav_menu" href="https://claviculacoffee.id/kontak-kami">Kontak Kami</a>
+<a class="nav_menu" href="/article">Artikel</a>
+                <a rel="nofollow" href="https://gofood.co.id/tegal/restaurant/clavicula-coffee-idea-575afb3a-4562-4cab-a20c-359419063beb" class="nav_menu nav_menu_mob">GoFood</a>
+                <a rel="nofollow" class="nav_social" href="https://www.instagram.com/clavicula_coffee/?hl=en"><img src="./assets/Shared/ig.svg" alt="Instagram Icon"></a>
+                <a rel="nofollow" class="nav_social" href="https://api.whatsapp.com/send?phone=6287733444426"><img src="./assets/Shared/wp.svg" alt="Whatsapp Icon"></a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1 class="hero_heading wow bounceIn">Selamat Datang di <span>clavicula coffe</span></h1>
+                <p class="desc">Pilihan tempat yang tepat untuk ngemil dan nongkrong dengan teman di daerah Slawi, Tegal!</p>
+                <a rel="nofollow" href="https://gofood.co.id/tegal/restaurant/clavicula-coffee-idea-575afb3a-4562-4cab-a20c-359419063beb" 
+                   class="primary_btn" aria-label="Order coffee from Clavicula Coffee Idea on GoFood">
+                    GoFood ➜
+                </a>
+            </div>
+            <div class="hero_socials">
+                <a rel="nofollow" href="https://www.instagram.com/clavicula_coffee/?hl=en" target="_blank" rel="noopener" aria-label="Follow us on Instagram">
+                    <img src="./assets/Shared/ig.svg" alt="Instagram Icon">
+                </a>
+                <a rel="nofollow" href="https://api.whatsapp.com/send?phone=6287733444426" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+                    <img src="./assets/Shared/wp.svg" alt="WhatsApp Icon">
+                </a>
+            </div>
+        </section>
+        <section class="makanan wow fadeInUp" id="makanan">
+            <div class="container">
+                <h2 class="heading">Menu <span>Makanan</span> :</h2>
+                <ul class="menu_list wow bounceIn">
+                    <li class="list_item">
+                        <article>
+                            <figure>
+                                <img src="./assets/Menu/Food/Beef BURGER - Rp 32.000.webp" 
+                                     alt="Juicy Beef Burger with fresh lettuce and sauce" 
+                                     width="180" height="180" 
+                                     loading="lazy">
+                                <figcaption>
+                                    <data value="32000">Rp 32.000</data>
+                                </figcaption>
+                            </figure>
+                            <h3 class="item_name">Beef Burger</h3>
+                        </article>
+                    </li>
+                    <li class="list_item">
+                        <article>
+                            <figure>
+                                <img src="./assets/Menu/Food/Chicken Katsu Spicy - Rp 28.000.webp" 
+                                     alt="Spicy Chicken Katsu with crispy coating" 
+                                     width="180" height="180" 
+                                     loading="lazy">
+                                <figcaption>
+                                    <data value="28000">Rp 28.000</data>
+                                </figcaption>
+                            </figure>
+                            <h3 class="item_name">Chicken Katsu Spicy</h3>
+                        </article>
+                    </li>
+                    <li class="list_item">
+                        <article>
+                            <figure>
+                                <img src="./assets/Menu/Food/Chicken Katsu With Sauce - Rp 28.000.webp" 
+                                     alt="Chicken Katsu served with special sauce" 
+                                     width="180" height="180" 
+                                     loading="lazy">
+                                <figcaption>
+                                    <data value="28000">Rp 28.000</data>
+                                </figcaption>
+                            </figure>
+                            <h3 class="item_name">Chicken Katsu With Sauce</h3>
+                        </article>
+                    </li>
+                    <li class="list_item">
+                        <article>
+                            <figure>
+                                <img src="./assets/Menu/Food/Dimsum Mentai - Rp 28.000.webp" 
+                                     alt="Dimsum with creamy mentai sauce" 
+                                     width="180" height="180" 
+                                     loading="lazy">
+                                <figcaption>
+                                    <data value="28000">Rp 28.000</data>
+                                </figcaption>
+                            </figure>
+                            <h3 class="item_name">Dimsum Mentai</h3>
+                        </article>
+                    </li>
+                    <li class="list_item">
+                        <article>
+                            <figure>
+                                <img src="./assets/Menu/Food/Dimsum Ori - Rp 24.000.webp" 
+                                     alt="Classic original dimsum" 
+                                     width="180" height="180" 
+                                     loading="lazy">
+                                <figcaption>
+                                    <data value="24000">Rp 24.000</data>
+                                </figcaption>
+                            </figure>
+                            <h3 class="item_name">Dimsum Ori</h3>
+                        </article>
+                    </li>
+                    <li class="list_item">
+                        <article>
+                            <figure>
+                                <img src="./assets/Menu/Food/Gochucula Chicken Wings - Rp 29.000.webp" 
+                                     alt="Spicy Gochujang glazed chicken wings" 
+                                     width="180" height="180" 
+                                     loading="lazy">
+                                <figcaption>
+                                    <data value="29000">Rp 29.000</data>
+                                </figcaption>
+                            </figure>
+                            <h3 class="item_name">Gochucula Chicken Wings</h3>
+                        </article>
+                    </li>
+                    <li class="list_item">
+                        <article>
+                            <figure>
+                                <img src="./assets/Menu/Food/Hotdog - Rp 36.000.webp" 
+                                     alt="Classic hotdog with toppings" 
+                                     width="180" height="180" 
+                                     loading="lazy">
+                                <figcaption>
+                                    <data value="36000">Rp 36.000</data>
+                                </figcaption>
+                            </figure>
+                            <h3 class="item_name">Hotdog</h3>
+                        </article>
+                    </li>
+                    <li class="list_item">
+                        <article>
+                            <figure>
+                                <img src="./assets/Menu/Food/Javanese Fried Noodles - Rp 23.000.webp" 
+                                     alt="Traditional Javanese-style fried noodles" 
+                                     width="180" height="180" 
+                                     loading="lazy">
+                                <figcaption>
+                                    <data value="23000">Rp 23.000</data>
+                                </figcaption>
+                            </figure>
+                            <h3 class="item_name">Javanese Fried Noodles</h3>
+                        </article>
+                    </li>
+                    <li class="list_item">
+                        <article>
+                            <figure>
+                                <img src="./assets/Menu/Food/Javanese Fried Rice - Rp 23.000.webp" 
+                                     alt="Traditional Javanese-style fried rice" 
+                                     width="180" height="180" 
+                                     loading="lazy">
+                                <figcaption>
+                                    <data value="23000">Rp 23.000</data>
+                                </figcaption>
+                            </figure>
+                            <h3 class="item_name">Javanese Fried Rice</h3>
+                        </article>
+                    </li>
+                    <li class="list_item">
+                        <article>
+                            <figure>
+                                <img src="./assets/Menu/Food/Mentai Rice - Rp 35.000.webp" 
+                                     alt="Rice topped with creamy mentai sauce" 
+                                     width="180" height="180" 
+                                     loading="lazy">
+                                <figcaption>
+                                    <data value="35000">Rp 35.000</data>
+                                </figcaption>
+                            </figure>
+                            <h3 class="item_name">Mentai Rice</h3>
+                        </article>
+                    </li>
+                    <li class="list_item">
+                        <article>
+                            <figure>
+                                <img src="./assets/Menu/Food/Mille Crepes - Rp 37.000.webp" 
+                                     alt="Layered crepe cake with creamy filling" 
+                                     width="180" height="180" 
+                                     loading="lazy">
+                                <figcaption>
+                                    <data value="37000">Rp 37.000</data>
+                                </figcaption>
+                            </figure>
+                            <h3 class="item_name">Mille Crepes</h3>
+                        </article>
+                    </li>
+                    <li class="list_item">
+                        <article>
+                            <figure>
+                                <img src="./assets/Menu/Food/Sate Taichan Mozarella - Rp 31.000.webp" 
+                                     alt="Spicy Taichan satay with melted mozzarella" 
+                                     width="180" height="180" 
+                                     loading="lazy">
+                                <figcaption>
+                                    <data value="31000">Rp 31.000</data>
+                                </figcaption>
+                            </figure>
+                            <h3 class="item_name">Sate Taichan Mozarella</h3>
+                        </article>
+                    </li>
+                    <li class="list_item">
+                        <article>
+                            <figure>
+                                <img src="./assets/Menu/Food/Strawberry Chessecake - Rp 35.000.webp" 
+                                     alt="Creamy strawberry cheesecake" 
+                                     width="180" height="180" 
+                                     loading="lazy">
+                                <figcaption>
+                                    <data value="35000">Rp 35.000</data>
+                                </figcaption>
+                            </figure>
+                            <h3 class="item_name">Strawberry Cheesecake</h3>
+                        </article>
+                    </li>
+                    <li class="list_item">
+                        <article>
+                            <figure>
+                                <img src="./assets/Menu/Food/Tiramisu Cake - Rp 48.000.webp" 
+                                     alt="Classic Italian tiramisu cake" 
+                                     width="180" height="180" 
+                                     loading="lazy">
+                                <figcaption>
+                                    <data value="48000">Rp 48.000</data>
+                                </figcaption>
+                            </figure>
+                            <h3 class="item_name">Tiramisu Cake</h3>
+                        </article>
+                    </li>
+                    <li class="list_item">
+                        <article>
+                            <figure>
+                                <img src="./assets/Menu/Food/Yakitori - Rp 28.000.webp" 
+                                     alt="Grilled chicken skewers with savory glaze" 
+                                     width="180" height="180" 
+                                     loading="lazy">
+                                <figcaption>
+                                    <data value="28000">Rp 28.000</data>
+                                </figcaption>
+                            </figure>
+                            <h3 class="item_name">Yakitori</h3>
+                        </article>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="minuman wow fadeInUp" id="minuman">
+            <div class="container">
+                <h2 class="heading">Menu Minuman :</h2>
+                <ul class="menu_list wow bounceIn">
+                    <li class="list_item">
+                        <article>
+                            <figure>
+                                <img src="./assets/Menu/Drink/Acromion - Rp 32.000.webp" 
+                                     alt="Acromion drink" 
+                                     width="180" height="180" 
+                                     loading="lazy">
+                                <figcaption>
+                                    <data value="32000">Rp 32.000</data>
+                                </figcaption>
+                            </figure>
+                            <h3 class="item_name">Acromion</h3>
+                        </article>
+                    </li>
+                    <li class="list_item">
+                        <article>
+                            <figure>
+                                <img src="./assets/Menu/Drink/Affogato - Rp 14.000.webp" 
+                                     alt="Affogato with a shot of espresso" 
+                                     width="180" height="180" 
+                                     loading="lazy">
+                                <figcaption>
+                                    <data value="14000">Rp 14.000</data>
+                                </figcaption>
+                            </figure>
+                            <h3 class="item_name">Affogato</h3>
+                        </article>
+                    </li>
+                    <li class="list_item">
+                        <article>
+                            <figure>
+                                <img src="./assets/Menu/Drink/Caramel Machiato - Rp 28.000.webp" 
+                                     alt="Caramel Macchiato with rich espresso and caramel drizzle" 
+                                     width="180" height="180" 
+                                     loading="lazy">
+                                <figcaption>
+                                    <data value="28000">Rp 28.000</data>
+                                </figcaption>
+                            </figure>
+                            <h3 class="item_name">Caramel Macchiato</h3>
+                        </article>
+                    </li>
+                    <li class="list_item">
+                        <article>
+                            <figure>
+                                <img src="./assets/Menu/Drink/Carcoal Blend - Rp 28.000.webp" 
+                                     alt="Unique charcoal blend drink" 
+                                     width="180" height="180" 
+                                     loading="lazy">
+                                <figcaption>
+                                    <data value="28000">Rp 28.000</data>
+                                </figcaption>
+                            </figure>
+                            <h3 class="item_name">Charcoal Blend</h3>
+                        </article>
+                    </li>
+                    <li class="list_item">
+                        <article>
+                            <figure>
+                                <img src="./assets/Menu/Drink/Coffee Lemonade - Rp 28.000.webp" 
+                                     alt="Refreshing coffee lemonade" 
+                                     width="180" height="180" 
+                                     loading="lazy">
+                                <figcaption>
+                                    <data value="28000">Rp 28.000</data>
+                                </figcaption>
+                            </figure>
+                            <h3 class="item_name">Coffee Lemonade</h3>
+                        </article>
+                    </li>
+                    <li class="list_item">
+                        <article>
+                            <figure>
+                                <img src="./assets/Menu/Drink/Cookies Coffee - Rp 32.000.webp" 
+                                     alt="Cookies and cream flavored coffee" 
+                                     width="180" height="180" 
+                                     loading="lazy">
+                                <figcaption>
+                                    <data value="32000">Rp 32.000</data>
+                                </figcaption>
+                            </figure>
+                            <h3 class="item_name">Cookies Coffee</h3>
+                        </article>
+                    </li>
+                    <li class="list_item">
+                        <article>
+                            <figure>
+                                <img src="./assets/Menu/Drink/Costa - Rp 33.000.webp" 
+                                     alt="Costa coffee" 
+                                     width="180" height="180" 
+                                     loading="lazy">
+                                <figcaption>
+                                    <data value="33000">Rp 33.000</data>
+                                </figcaption>
+                            </figure>
+                            <h3 class="item_name">Costa</h3>
+                        </article>
+                    </li>
+                    <li class="list_item">
+                        <article>
+                            <figure>
+                                <img src="./assets/Menu/Drink/Flavour Americano - Rp 22.000.webp" 
+                                     alt="Classic Americano coffee" 
+                                     width="180" height="180" 
+                                     loading="lazy">
+                                <figcaption>
+                                    <data value="22000">Rp 22.000</data>
+                                </figcaption>
+                            </figure>
+                            <h3 class="item_name">Flavour Americano</h3>
+                        </article>
+                    </li>
+                    <li class="list_item">
+                        <article>
+                            <figure>
+                                <img src="./assets/Menu/Drink/Flavour Latte - Rp 30.000.webp" 
+                                     alt="Smooth and creamy latte" 
+                                     width="180" height="180" 
+                                     loading="lazy">
+                                <figcaption>
+                                    <data value="30000">Rp 30.000</data>
+                                </figcaption>
+                            </figure>
+                            <h3 class="item_name">Flavour Latte</h3>
+                        </article>
+                    </li>
+                    <li class="list_item">
+                        <article>
+                            <figure>
+                                <img src="./assets/Menu/Drink/Kopi Susu Ori - Rp 20.000.webp" 
+                                     alt="Traditional Indonesian milk coffee" 
+                                     width="180" height="180" 
+                                     loading="lazy">
+                                <figcaption>
+                                    <data value="20000">Rp 20.000</data>
+                                </figcaption>
+                            </figure>
+                            <h3 class="item_name">Kopi Susu Ori</h3>
+                        </article>
+                    </li>
+                    <li class="list_item">
+                        <article>
+                            <figure>
+                                <img src="./assets/Menu/Drink/Manubrium - Rp 33.000.webp" 
+                                     alt="Manubrium drink" 
+                                     width="180" height="180" 
+                                     loading="lazy">
+                                <figcaption>
+                                    <data value="33000">Rp 33.000</data>
+                                </figcaption>
+                            </figure>
+                            <h3 class="item_name">Manubrium</h3>
+                        </article>
+                    </li>
+                    <li class="list_item">
+                        <article>
+                            <figure>
+                                <img src="./assets/Menu/Drink/Matcha Coffee Latte - Rp 32.000.webp" 
+                                     alt="Matcha and coffee latte blend" 
+                                     width="180" height="180" 
+                                     loading="lazy">
+                                <figcaption>
+                                    <data value="32000">Rp 32.000</data>
+                                </figcaption>
+                            </figure>
+                            <h3 class="item_name">Matcha Coffee Latte</h3>
+                        </article>
+                    </li>
+                    <li class="list_item">
+                        <article>
+                            <figure>
+                                <img src="./assets/Menu/Drink/Scapula - Rp 32.000.webp" 
+                                     alt="Scapula drink" 
+                                     width="180" height="180" 
+                                     loading="lazy">
+                                <figcaption>
+                                    <data value="32000">Rp 32.000</data>
+                                </figcaption>
+                            </figure>
+                            <h3 class="item_name">Scapula</h3>
+                        </article>
+                    </li>
+                    <li class="list_item">
+                        <article>
+                            <figure>
+                                <img src="./assets/Menu/Drink/Sternum - Rp 32.000.webp" 
+                                     alt="Sternum drink" 
+                                     width="180" height="180" 
+                                     loading="lazy">
+                                <figcaption>
+                                    <data value="32000">Rp 32.000</data>
+                                </figcaption>
+                            </figure>
+                            <h3 class="item_name">Sternum</h3>
+                        </article>
+                    </li>
+                    <li class="list_item">
+                        <article>
+                            <figure>
+                                <img src="./assets/Menu/Drink/Trapezius - Rp 32.000.webp" 
+                                     alt="Trapezius drink" 
+                                     width="180" height="180" 
+                                     loading="lazy">
+                                <figcaption>
+                                    <data value="32000">Rp 32.000</data>
+                                </figcaption>
+                            </figure>
+                            <h3 class="item_name">Trapezius</h3>
+                        </article>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="contact wow fadeInUp">
+            <div class="container">
+                <h2 class="heading"><span>Extra ordinary taste</span> And Experienced</h2>
+                <div class="content">
+                    <form action="#" method="post">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    
+                        <label for="phone">Your Phone No</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Your Phone No" required>
+                    
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                    
+                        <button type="submit">Send Message</button>
+                    </form>
+                    <div class="infos">
+                        <div class="info">
+                            <img src="./assets/Shared/clock.svg" alt="Operating Hours Icon">
+                            <time datetime="11:00-21:00">
+                                <p>Monday-Saturday<br/>
+                                    (11:00 AM - 9:00 PM)
+                                </p>
+                            </time>
+                        </div>
+                        <div class="info">
+                            <img src="./assets/Shared/location.svg" alt="Business Location Icon">
+                            <address>
+                                <p>
+                                    Jalan DR. Soetomo no.3 RT 004 RT 006.ds.Kalisapu, Kalisapu, Tengah, Griya Prajamukti, Jawa, Kec. Slawi, Kabupaten Tegal, Jawa Tengah 52416
+                                </p>
+                            </address>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </section>
+        <section class="paras">
+            <div class="container">
+                <article
+            itemscope
+            itemtype="https://schema.org/Article"
+            class="wow fadeInUp para"
+          >
+          
+              <h2 class="heading" itemprop="headline">
+                <span>Clavicula Coffee</span> - Cafe Enak & Aesthetic di Daerah Slawi Tegal
+              </h2>
+              <meta
+                itemprop="image"
+                content="https://example.com/assets/Shared/hero_bg.webp"
+              />
+              <span
+                itemprop="author"
+                itemscope
+                itemtype="https://schema.org/Organization"
+              >
+                <meta itemprop="name" content="Bakso kabayan" />
+                <meta itemprop="url" content="https://example.com" />
+              </span>
+    
+              <p class="desc" itemprop="articleBody">
+                <a href="https://claviculacoffee.id/" >Clavicula Coffee</a> hadir sebagai salah satu destinasi cafe aesthetic terbaik di daerah Slawi, Tegal, yang menawarkan pengalaman bersantai dengan pemandangan indah, suasana nyaman, dan aneka menu makanan lezat. Berlokasi strategis, Clavicula Coffee menjadi pilihan utama bagi warga lokal maupun wisatawan yang mencari tempat berkumpul sambil menikmati hidangan berkualitas dengan harga yang terjangkau. Dengan desain interior dan eksterior yang modern serta atmosfer yang tenang, Clavicula Coffee menciptakan suasana yang sempurna untuk bekerja, bersantai, atau bertemu dengan teman dan keluarga.
+              </p>
+              <p class="desc" itemprop="articleBody">
+                Menu yang tersedia di Clavicula Coffee sangat beragam, mulai dari chicken katsu, dimsum, nasi goreng, hingga berbagai pilihan kopi dan minuman segar lainnya. Semua hidangan disajikan menggunakan bahan berkualitas tinggi untuk menghadirkan rasa yang nikmat dan konsisten. Kombinasi antara cita rasa makanan yang lezat, penyajian yang menarik, serta pelayanan yang ramah, menjadikan Clavicula Coffee sebagai salah satu cafe paling rekomendasi di Slawi dan Tegal, baik untuk sekadar nongkrong santai maupun mengadakan acara kecil bersama rekan-rekan.
+              </p>
+              <p class="desc" itemprop="articleBody">
+                Bagi Anda yang sedang mencari <b>cafe aesthetic di Slawi</b> atau tempat makan dengan suasana nyaman di Tegal, Clavicula Coffee adalah pilihan yang tepat. Dengan pemandangan yang memanjakan mata, hidangan yang menggugah selera, serta harga yang bersahabat, Clavicula Coffee siap memberikan pengalaman kuliner yang tak terlupakan. Segera kunjungi Clavicula Coffee dan nikmati kombinasi sempurna antara suasana, rasa, dan keindahan di salah satu cafe terbaik di daerah Tegal.
+              </p>
+        <button id="openPopup">Links</button>
+        <!-- latest post -->
+<div id="latest-posts" class="post-grid-section" style="margin-top: 0; padding-top: 0;">
+  <h2 class="section-title">Postingan Terbaru</h2>
+  <div class="glide">
+    <div class="glide__track" data-glide-el="track">
+      <ul id="post-list" class="glide__slides"></ul>
+    </div>
+    <div class="glide__arrows" data-glide-el="controls">
+      <button class="glide__arrow glide__arrow--left" data-glide-dir="<">❮</button>
+      <button class="glide__arrow glide__arrow--right" data-glide-dir=">">❯</button>
+    </div>
+  </div>
+</div>
+
+<script>
+fetch("https://claviculacoffee.id/article/feed/")
+  .then(res => res.text())
+  .then(str => {
+    const parser = new DOMParser();
+    const xml = parser.parseFromString(str, "text/xml");
+    const items = xml.querySelectorAll("item");
+    const container = document.getElementById("post-list");
+
+    for (let i = 0; i < Math.min(items.length, 21); i++) {
+      const item = items[i];
+      const title = item.querySelector("title").textContent;
+      const link = item.querySelector("link").textContent;
+      const pubDate = new Date(item.querySelector("pubDate").textContent);
+      const dateString = pubDate.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
+      const description = item.querySelector("description").textContent;
+
+      const htmlDoc = parser.parseFromString(description, "text/html");
+      const imgTag = htmlDoc.querySelector("img");
+      const thumbnail = imgTag ? imgTag.src : "https://via.placeholder.com/300x180?text=No+Image";
+
+      const card = document.createElement("li");
+      card.className = "glide__slide";
+      card.innerHTML = `
+        <div class="post-card">
+          <img src="${thumbnail}" alt="${title}" />
+          <div class="post-card-content">
+            <div class="meta">${dateString}</div>
+            <h3>${title}</h3>
+            <a href="${link}" class="read-more" target="_blank" rel="noopener">Read More</a>
+          </div>
+        </div>
+      `;
+      container.appendChild(card);
+    }
+
+    new Glide('.glide', {
+      type: 'carousel',
+      autoplay: 3000,
+      hoverpause: true,
+      perView: 3,
+      gap: 20,
+      breakpoints: {
+        768: { perView: 2 },
+        480: { perView: 1 }
+      }
+    }).mount();
+  })
+  .catch(err => console.error("Gagal ambil RSS feed:", err));
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+
+
+<!-- end latest post -->
+          </article>
+          <div class="bottom_content wow fadeInUp">
+            <div class="thanks">
+                <div class="thank">
+                    <h3 class="thanks_heading">Thank you
+                        for visiting!</h3>
+                        <p class="thanks_desc">Jika anda belum ada waktu untuk datang ke lokasi, anda bisa pesan menu makanan dan minuman kami melalui gofood, silahkan klik tombol dibawah untuk pesan lewat gofood.</p>
+                        <a rel="nofollow" href="https://gofood.co.id/tegal/restaurant/clavicula-coffee-idea-575afb3a-4562-4cab-a20c-359419063beb" 
+                       class="primary_btn" aria-label="Order coffee from Clavicula Coffee Idea on GoFood">
+                        GoFood
+                    </a>
+                </div>
+                <img src="./assets/Shared/thanks_bg.webp" alt="food item">
+            </div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.137544784816!2d109.1240631!3d-6.9930767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6fbfe18132b319%3A0x59ec6ac6face06ce!2sCLAVICULA%20COFFEE%20%26%20IDEA!5e0!3m2!1sid!2sbd!4v1742449115528!5m2!1sid!2sbd" class="map" title="CLAVICULA COFFEE & IDEA location" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+            </div>
+        </section>
+    </main>
+ 
+   
+    <footer>
+        <div class="container">
+            <a href="/" aria-label="Go to homepage">
+                <img src="./assets/Shared/logo.webp" alt=" CLAVICULA COFFEE & IDEA Logo" class="footer_logo">
+            </a>
+            <p class="footer_desc">
+                Selamat datang di Clavicula Coffee, cafe aesthetic dan nyaman di Slawi, Tegal, yang menawarkan pemandangan indah, makanan lezat, serta minuman segar dengan harga yang bersahabat. Kami siap menyambut Anda dengan berbagai pilihan menu seperti chicken katsu, dimsum, nasi goreng, serta aneka kopi terbaik dalam suasana yang hangat dan santai.
+            </p>
+            <nav class="footer_socials">
+                <a rel="nofollow" href="https://www.instagram.com/clavicula_coffee/?hl=en" target="_blank" rel="noopener" aria-label="Follow us on Instagram">
+                    <img src="./assets/Shared/ig.svg" alt="Instagram Icon">
+                </a>
+                <a rel="nofollow" href="https://api.whatsapp.com/send?phone=6287733444426" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+                    <img src="./assets/Shared/wp.svg" alt="WhatsApp Icon">
+                </a>
+            </nav>
+        </div>
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Clavicula Coffee",
+            "url": "https://yourwebsite.com",
+            "logo": "https://yourwebsite.com/assets/Shared/logo.webp",
+            "sameAs": [
+                "https://www.instagram.com/clavicula_coffee/?hl=en",
+                "https://api.whatsapp.com/send?phone=6287733444426"
+            ]
+        }
+        </script>
+    </footer>
+    
+ 
+ 
+    <script>
+        new WOW().init();
+    </script>
+    <script src="script.js"></script>
+    
+        <!--- Pop Up -->
+    
+    <div class="popup-overlay" id="popup">
+    <div class="popup-box">
+      <h3>Links</h3>
+      <div class="popup-list">
+        <ul>
+<li><a href="https://empatrasa.id/" target="_blank">empatrasa.id</a></li>
+<li><a href="https://friedchickengeprekalviko.id/" target="_blank">friedchickengeprekalviko.id</a></li>
+<li><a href="https://gadogadosiramibukartini.id/" target="_blank">gadogadosiramibukartini.id</a></li>
+<li><a href="https://hococoffeelambhuk.id/" target="_blank">hococoffeelambhuk.id</a></li>
+<li><a href="https://houseofmusipadang.id/" target="_blank">houseofmusipadang.id</a></li>
+<li><a href="https://guramispeed.id/" target="_blank">guramispeed.id</a></li>
+<li><a href="https://jardincafebandung.id/" target="_blank">jardincafebandung.id</a></li>
+<li><a href="https://kedaikopimakati.id/" target="_blank">kedaikopimakati.id</a></li>
+<li><a href="https://kedaitifosi.id/" target="_blank">kedaitifosi.id</a></li>
+<li><a href="https://kedaitilil.id/" target="_blank">kedaitilil.id</a></li>
+<li><a href="https://kinarresto.id/" target="_blank">kinarresto.id</a></li>
+<li><a href="https://kulega.id/" target="_blank">kulega.id</a></li>
+<li><a href="https://kumamamacafe.id/" target="_blank">kumamamacafe.id</a></li>
+<li><a href="https://lalapatio.id/" target="_blank">lalapatio.id</a></li>
+<li><a href="https://laurencecoffee.id/" target="_blank">laurencecoffee.id</a></li>
+<li><a href="https://leescafebatam.id/" target="_blank">leescafebatam.id</a></li>
+<li><a href="https://lekkermedan.id/" target="_blank">lekkermedan.id</a></li>
+<li><a href="https://maksemaranganresto.id/" target="_blank">maksemaranganresto.id</a></li>
+<li><a href="https://ariyaniresto.id/" target="_blank">ariyaniresto.id</a></li>
+<li><a href="https://miepaijo.id/" target="_blank">miepaijo.id</a></li>
+<li><a href="https://minapadicoffeespace.id/" target="_blank">minapadicoffeespace.id</a></li>
+<li><a href="https://mrbrewokcafeandresto.id/" target="_blank">mrbrewokcafeandresto.id</a></li>
+<li><a href="https://nakoacafe.id/" target="_blank">nakoacafe.id</a></li>
+<li><a href="https://olivencobatam.id/" target="_blank">olivencobatam.id</a></li>
+<li><a href="https://otterskoffie.id/" target="_blank">otterskoffie.id</a></li>
+<li><a href="https://baksosony.id/" target="_blank">baksosony.id</a></li>
+<li><a href="https://pempekpalembanggaby.id/" target="_blank">pempekpalembanggaby.id</a></li>
+<li><a href="https://peterselikitchen.id/" target="_blank">peterselikitchen.id</a></li>
+<li><a href="https://pondokkemangicibubur.id/" target="_blank">pondokkemangicibubur.id</a></li>
+<li><a href="https://rajarawondia.id/" target="_blank">rajarawondia.id</a></li>
+<li><a href="https://restoayampandeka.id/" target="_blank">restoayampandeka.id</a></li>
+<li><a href="https://yaniskitchen.id/" target="_blank">yaniskitchen.id</a></li>
+<li><a href="https://rmsaungdesa.id/" target="_blank">rmsaungdesa.id</a></li>
+<li><a href="https://rmamperaraya.id/" target="_blank">rmamperaraya.id</a></li>
+<li><a href="https://rotibakarintirub.id/" target="_blank">rotibakarintirub.id</a></li>
+<li><a href="https://rotibakarkemangbenhil.id/" target="_blank">rotibakarkemangbenhil.id</a></li>
+<li><a href="https://sambalbini.id/" target="_blank">sambalbini.id</a></li>
+<li><a href="https://seperduakopi.id/" target="_blank">seperduakopi.id</a></li>
+<li><a href="https://simetricoffeeroasters.id/" target="_blank">simetricoffeeroasters.id</a></li>
+<li><a href="https://sophieauthentique.id/" target="_blank">sophieauthentique.id</a></li>
+<li><a href="https://sotosobhasmawi.id/" target="_blank">sotosobhasmawi.id</a></li>
+<li><a href="https://srawungsaricafe.id/" target="_blank">srawungsaricafe.id</a></li>
+<li><a href="https://restosultanagungbandung.id/" target="_blank">restosultanagungbandung.id</a></li>
+<li><a href="https://tanameracoffeeyogyakarta.id/" target="_blank">tanameracoffeeyogyakarta.id</a></li>
+<li><a href="https://tgardenmedan.id/" target="_blank">tgardenmedan.id</a></li>
+<li><a href="https://warkopagam1972.id/" target="_blank">warkopagam1972.id</a></li>
+<li><a href="https://vannameiseafoodrestaurant.id/" target="_blank">vannameiseafoodrestaurant.id</a></li>
+<li><a href="https://esahua.id/" target="_blank">esahua.id</a></li>
+<li><a href="https://acienpokpia.id/" target="_blank">acienpokpia.id</a></li>
+<li><a href="https://www.bioseleb.com" target="_blank">pkv games</a></li>
+<li><a href="https://ushulutv.sportshub24.com/" target="_blank">situs bola</a></li>
+<li><a href="https://taskvio.com" target="_blank">asikqq</a></li>
+<li><a href="https://dripmotion.com/about-us-2/" target="_blank">bandarqq</a></li>
+<li><a href="https://esm-sls.com" target="_blank">situs slot</a></li>
+<li><a href="https://www.maevaree.com" target="_blank">slot online</a></li>
+<li><a href="https://www.byronpreiss.com" target="_blank">juruscasino</a></li>
+<li><a href="https://mariacallas.org" target="_blank">pg slot</a></li>
+<li><a href="https://www.ridetheaurora.com" target="_blank">demo slot gacor</a></li>
+<li><a href="https://www.allindiapgh.com" target="_blank">demo slot gacor</a></li>
+<li><a href="https://www.tablelearning.com" target="_blank">pragmatic slot</a></li>
+<li><a href="https://www.p2p2007.org" target="_blank">demo slot pg</a></li>
+<li><a href="https://www.pnudcolombia.org" target="_blank">slot demo pg</a></li>
+<li><a href="https://bffsthemovie.com/" target="_blank">asikqq</a></li>
+<li><a href="https://www.hiperlan2.com" target="_blank">slot terpercaya</a></li>
+<li><a href="https://ammatalantaresort.com/" target="_blank">pkv qq</a></li>
+<li><a href="https://www.janissavitt.net" target="_blank">pkv</a></li>
+<li><a href="https://lyricsearth.com" target="_blank">bandarqq</a></li>
+<li><a href="https://factorescucha.com" target="_blank">ahliqq</a></li>
+<li><a href="https://chloemoretzfr.com/" target="_blank">situs pkv games</a></li>
+<li><a href="https://www.lakeclarkechiro.com/accessibility" target="_blank">https://www.lakeclarkechiro.com/accessibility</a></li>
+<li><a href="https://www.siegelchiro.net/website-privacy-policy" target="_blank">https://www.siegelchiro.net/website-privacy-policy</a></li>
+<li><a href="https://qct.opensutd.org/concordances/bringing" target="_blank">https://qct.opensutd.org/concordances/bringing</a></li>
+<li><a href="https://www.egyres.com/about-us/" target="_blank">https://www.egyres.com/about-us/</a></li>
+<li><a href="https://www.scriblyai.com/terms-of-service" target="_blank">https://www.scriblyai.com/terms-of-service</a></li>
+<li><a href="https://downtownsouthorlando.org/special-event" target="_blank">https://downtownsouthorlando.org/special-event</a></li>
+<li><a href="https://unicefstartuplab.org/apply" target="_blank">https://unicefstartuplab.org/apply</a></li>
+<li><a href="https://www.darelhna.com/home/" target="_blank">https://www.darelhna.com/home/</a></li>
+<li><a href="https://magnumx.biz/disclaimer/" target="_blank">https://magnumx.biz/disclaimer/</a></li>
+<li><a href="https://chipotlemenuprice.com/food-menu/chips-guacamole/" target="_blank">https://chipotlemenuprice.com/food-menu/chips-guacamole/</a></li>
+<li><a href="https://www.tipsfu.com/sign-up/" target="_blank">https://www.tipsfu.com/sign-up/</a></li>
+<li><a href="https://gohalloweencostumes.com/product-category/brands/" target="_blank">https://gohalloweencostumes.com/product-category/brands/</a></li>
+<li><a href="https://cclaserdepilacion.com/ondas/" target="_blank">https://cclaserdepilacion.com/ondas/</a></li>
+<li><a href="https://milano-vipchauffeur.com/en-sub/outlets/" target="_blank">https://milano-vipchauffeur.com/en-sub/outlets/</a></li>
+<li><a href="https://www.compositetoeboots.org/about-us/" target="_blank">https://www.compositetoeboots.org/about-us/</a></li>
+<li><a href="https://products.tjartii.com/" target="_blank">https://products.tjartii.com/</a></li>
+<li><a href="https://www.webcam-newzealand.info/webcamgisborne.html" target="_blank">https://www.webcam-newzealand.info/webcamgisborne.html</a></li>
+<li><a href="https://privateyachtrentals.co/contact-us/" target="_blank">https://privateyachtrentals.co/contact-us/</a></li>
+<li><a href="https://cob-acronym.vault111.com" target="_blank">https://cob-acronym.vault111.com</a></li>
+<li><a href="https://usb.androidcity.net/cubot-max-driver" target="_blank">https://usb.androidcity.net/cubot-max-driver</a></li>
+<li><a href="https://mitrasehatklinik.com" target="_blank">https://mitrasehatklinik.com</a></li>
+<li><a href="https://www.numerosromanos.com.mx/x-numero-romano" target="_blank">https://www.numerosromanos.com.mx/x-numero-romano</a></li>
+<li><a href="https://beararcherybows.com/bear-achery-adapt-throwback-tan/" target="_blank">https://beararcherybows.com/bear-achery-adapt-throwback-tan/</a></li>
+<li><a href="https://dripmotion.com/contact-us-2" target="_blank">https://dripmotion.com/contact-us-2</a></li>
+<li><a href="https://www.magwaxingspa.com/brazilian-waxing" target="_blank">https://www.magwaxingspa.com/brazilian-waxing</a></li>
+<li><a href="https://softlumia.com/privacy-policy" target="_blank">https://softlumia.com/privacy-policy</a></li>
+<li><a href="https://www.geekywhat.com/about-us" target="_blank">https://www.geekywhat.com/about-us</a></li>
+<li><a href="https://www.paradores.org/parador-de-plasencia" target="_blank">https://www.paradores.org/parador-de-plasencia</a></li>
+<li><a href="https://sportsweez.com/category/football/football-predictions" target="_blank">https://sportsweez.com/category/football/football-predictions</a></li>
+<li><a href="https://asikqq.com/" target="_blank">https://asikqq.com/</a></li>
+<li><a href="https://117.18.0.36/" target="_blank">https://117.18.0.36/</a></li>
+<li><a href="https://ahliqq.com/" target="_blank">https://ahliqq.com/</a></li>
+<li><a href="https://117.18.0.39/" target="_blank">https://117.18.0.39/</a></li>
+<li><a href="https://jurusqq.net/" target="_blank">https://jurusqq.net/</a></li>
+<li><a href="https://117.18.0.42/" target="_blank">https://117.18.0.42/</a></li>
+<li><a href="https://murahqq.net/" target="_blank">https://murahqq.net/</a></li>
+<li><a href="https://117.18.0.41/" target="_blank">https://117.18.0.41/</a></li>
+<li><a href="https://maindomino99.com/" target="_blank">https://maindomino99.com/</a></li>
+<li><a href="https://117.18.0.38/" target="_blank">https://117.18.0.38/</a></li>
+<li><a href="https://masterdomino99.com/" target="_blank">https://masterdomino99.com/</a></li>
+<li><a href="https://117.18.0.37/" target="_blank">https://117.18.0.37/</a></li>
+<li><a href="https://championqq.com/" target="_blank">https://championqq.com/</a></li>
+<li><a href="https://117.18.0.40/" target="_blank">https://117.18.0.40/</a></li>
+<li><a href="https://hematqq.com/" target="_blank">https://hematqq.com/</a></li>
+<li><a href="https://murniqq.com/" target="_blank">https://murniqq.com/</a></li>
+<li><a href="https://menuqq.com/" target="_blank">https://menuqq.com/</a></li>
+<li><a href="https://m.parlay4d.net/" target="_blank">https://m.parlay4d.net/</a></li>
+<li><a href="https://m.parlay4d.com/" target="_blank">https://m.parlay4d.com/</a></li>
+<li><a href="https://pkvgames.co/" target="_blank">https://pkvgames.co/</a></li>
+<li><a href="https://plisbet.com/" target="_blank">https://plisbet.com/</a></li>
+<li><a href="https://winlose99.com/" target="_blank">https://winlose99.com/</a></li>
+<li><a href="https://saung4d.com/" target="_blank">https://saung4d.com/</a></li>
+<li><a href="https://m.juruscasino.com/" target="_blank">https://m.juruscasino.com/</a></li>
+<li><a href="https://m.juruscasino.org/" target="_blank">https://m.juruscasino.org/</a></li>
+<li><a href="https://3dc.opensutd.org/code_of_conduct/" target="_blank">https://3dc.opensutd.org/code_of_conduct/</a></li>
+<li><a href="https://festival.cfsbangladesh.org/selections/submission-1946" target="_blank">https://festival.cfsbangladesh.org/selections/submission-1946</a></li>
+<li><a href="https://cerrajerosbarcelona24h.com/cajas-fuertes/" target="_blank">https://cerrajerosbarcelona24h.com/cajas-fuertes/</a></li>
+<li><a href="https://adhigroup.com/services/digital-marketing/" target="_blank">https://adhigroup.com/services/digital-marketing/</a></li>
+<li><a href="https://neo-drive.com/am-general/" target="_blank">https://neo-drive.com/am-general/</a></li>
+<li><a href="https://www.courtyouththeatre.org/gallery" target="_blank">https://www.courtyouththeatre.org/gallery</a></li>
+<li><a href="https://trafficriderproapk.org/download/" target="_blank">https://trafficriderproapk.org/download/</a></li>
+<li><a href="https://www.moaq3web.com/creating-videos-with-ai/" target="_blank">https://www.moaq3web.com/creating-videos-with-ai/</a></li>
+<li><a href="http://www.apsarep.org/about-us.html" target="_blank">http://www.apsarep.org/about-us.html</a></li>
+<li><a href="https://golfcartsafari.com/product-category/golf-carts" target="_blank">https://golfcartsafari.com/product-category/golf-carts</a></li>
+<li><a href="https://linklist.bio/asikqq/" target="_blank">https://linklist.bio/asikqq/</a></li>
+<li><a href="https://linklist.bio/ahliqq/" target="_blank">https://linklist.bio/ahliqq/</a></li>
+<li><a href="https://vir.jp/ahliqq" target="_blank">https://vir.jp/ahliqq</a></li>
+<li><a href="https://vlwebs.com/services/" target="_blank">https://vlwebs.com/services/</a></li>
+<li><a href="https://www.taqueriatere.com/menu" target="_blank">https://www.taqueriatere.com/menu</a></li>
+<li><a href="https://komatta-blog.com/mosaic/" target="_blank">https://komatta-blog.com/mosaic/</a></li>
+<li><a href="https://direct.lc.chat/6007151" target="_blank">https://direct.lc.chat/6007151</a></li>
+<li><a href="https://direct.lc.chat/8110621" target="_blank">https://direct.lc.chat/8110621</a></li>
+<li><a href="https://direct.lc.chat/7357541" target="_blank">https://direct.lc.chat/7357541</a></li>
+<li><a href="https://direct.lc.chat/9596540" target="_blank">https://direct.lc.chat/9596540</a></li>
+<li><a href="https://direct.lc.chat/6588521" target="_blank">https://direct.lc.chat/6588521</a></li>
+<li><a href="https://direct.lc.chat/13317408" target="_blank">https://direct.lc.chat/13317408</a></li>
+<li><a href="https://direct.lc.chat/6396391" target="_blank">https://direct.lc.chat/6396391</a></li>
+<li><a href="https://direct.lc.chat/7642671" target="_blank">https://direct.lc.chat/7642671</a></li>
+<li><a href="https://direct.lc.chat/9828265" target="_blank">https://direct.lc.chat/9828265</a></li>
+<li><a href="https://direct.lc.chat/12910731" target="_blank">https://direct.lc.chat/12910731</a></li>
+<li><a href="https://direct.lc.chat/8667886" target="_blank">https://direct.lc.chat/8667886</a></li>
+<li><a href="https://direct.lc.chat/8616234" target="_blank">https://direct.lc.chat/8616234</a></li>
+<li><a href="https://direct.lc.chat/8958274" target="_blank">https://direct.lc.chat/8958274</a></li>
+<li><a href="https://direct.lc.chat/12910614" target="_blank">https://direct.lc.chat/12910614</a></li>
+<li><a href="https://direct.lc.chat/10603557" target="_blank">https://direct.lc.chat/10603557</a></li>
+<li><a href="https://direct.lc.chat/8336271" target="_blank">https://direct.lc.chat/8336271</a></li>
+<li><a href="https://direct.lc.chat/13345176" target="_blank">https://direct.lc.chat/13345176</a></li>
+<li><a href="https://direct.lc.chat/11695416" target="_blank">https://direct.lc.chat/11695416</a></li>
+<li><a href="https://direct.lc.chat/13343889" target="_blank">https://direct.lc.chat/13343889</a></li>
+<li><a href="https://direct.lc.chat/18991385" target="_blank">https://direct.lc.chat/18991385</a></li>
+<li><a href="https://www.bricocasa.net/47-salotti" target="_blank">https://www.bricocasa.net/47-salotti</a></li>
+<li><a href="https://docs.pandoshi.com/introduction-of-pandoshi/charity" target="_blank">https://docs.pandoshi.com/introduction-of-pandoshi/charity</a></li>
+
+
+        </ul>
+      </div>
+      <div class="close-btn">
+        <button onclick="closePopup()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const popup = document.getElementById("popup");
+    const openBtn = document.getElementById("openPopup");
+
+    openBtn.addEventListener("click", () => {
+      popup.style.display = "flex";
+    });
+
+    function closePopup() {
+      popup.style.display = "none";
+    }
+
+    popup.addEventListener("click", function(e) {
+      if (e.target === popup) closePopup();
+    });
+  </script>
+    
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"2ad226b25e44472ba285e4cf7acb8321","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

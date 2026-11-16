@@ -1,0 +1,202 @@
+{
+  "total_menus": 153,
+  "categories": {
+    "Signature Drink": 10,
+    "Espresso Based": 18,
+    "Blend Dan Non Coffee": 20,
+    "Desert dan Snack": 36,
+    "Special Bowl": 14,
+    "Tea Based": 9,
+    "Mocktail": 13,
+    "Manual Brew": 3,
+    "Special CLAVICULA": 16,
+    "MONT SERIES": 1,
+    "Kopi 1 Liter": 9,
+    "Sup": 1,
+    "Ice Food Drink Series": 3
+  },
+  "processed_images": [
+    {
+      "name": "Manubrium",
+      "category": "Signature Drink",
+      "price_gofood": 33000,
+      "path": "images/menu/drinks/manubrium.webp",
+      "cleaned": true
+    },
+    {
+      "name": "Acromion",
+      "category": "Signature Drink",
+      "price_gofood": 32000,
+      "path": "images/menu/drinks/acromion.webp",
+      "cleaned": true
+    },
+    {
+      "name": "Sternum",
+      "category": "Signature Drink",
+      "price_gofood": 32000,
+      "path": "images/menu/drinks/sternum.webp",
+      "cleaned": true
+    },
+    {
+      "name": "Scapula",
+      "category": "Signature Drink",
+      "price_gofood": 32000,
+      "path": "images/menu/drinks/scapula.webp",
+      "cleaned": true
+    },
+    {
+      "name": "Trapezius",
+      "category": "Signature Drink",
+      "price_gofood": 32000,
+      "path": "images/menu/drinks/trapezius.webp",
+      "cleaned": true
+    },
+    {
+      "name": "Costa",
+      "category": "Signature Drink",
+      "price_gofood": 38000,
+      "path": "images/menu/drinks/costa.webp",
+      "cleaned": true
+    },
+    {
+      "name": "Flavour Latte",
+      "category": "Espresso Based",
+      "price_gofood": 30000,
+      "path": "images/menu/drinks/flavour-latte.webp",
+      "cleaned": true
+    },
+    {
+      "name": "Kopi Susu Ori",
+      "category": "Espresso Based",
+      "price_gofood": 23000,
+      "path": "images/menu/drinks/kopi-susu-ori.webp",
+      "cleaned": true
+    },
+    {
+      "name": "Coffee Lemonade",
+      "category": "Espresso Based",
+      "price_gofood": 28000,
+      "path": "images/menu/drinks/coffee-lemonade.webp",
+      "cleaned": true
+    },
+    {
+      "name": "Flavour Americano",
+      "category": "Espresso Based",
+      "price_gofood": 22000,
+      "path": "images/menu/drinks/flavour-americano.webp",
+      "cleaned": true
+    },
+    {
+      "name": "Affogato",
+      "category": "Espresso Based",
+      "price_gofood": 25000,
+      "path": "images/menu/drinks/affogato.webp",
+      "cleaned": true
+    },
+    {
+      "name": "Cookies Coffee",
+      "category": "Espresso Based",
+      "price_gofood": 32000,
+      "path": "images/menu/drinks/cookies-coffee.webp",
+      "cleaned": true
+    },
+    {
+      "name": "Matcha Coffee Latte",
+      "category": "Espresso Based",
+      "price_gofood": 32000,
+      "path": "images/menu/drinks/matcha-coffee-latte.webp",
+      "cleaned": true
+    },
+    {
+      "name": "Yakitori",
+      "category": "Desert dan Snack",
+      "price_gofood": 28000,
+      "path": "images/menu/foods/yakitori.webp",
+      "cleaned": true
+    },
+    {
+      "name": "Dimsum Ori",
+      "category": "Desert dan Snack",
+      "price_gofood": 24000,
+      "path": "images/menu/foods/dimsum-ori.webp",
+      "cleaned": true
+    },
+    {
+      "name": "Dimsum Mentai",
+      "category": "Desert dan Snack",
+      "price_gofood": 28000,
+      "path": "images/menu/foods/dimsum-mentai.webp",
+      "cleaned": true
+    },
+    {
+      "name": "Sate Taichan Mozarella",
+      "category": "Desert dan Snack",
+      "price_gofood": 31000,
+      "path": "images/menu/foods/sate-taichan-mozarella.webp",
+      "cleaned": true
+    },
+    {
+      "name": "Gochucula Chicken Wings",
+      "category": "Desert dan Snack",
+      "price_gofood": 29000,
+      "path": "images/menu/foods/gochucula-chicken-wings.webp",
+      "cleaned": true
+    },
+    {
+      "name": "Hotdog",
+      "category": "Desert dan Snack",
+      "price_gofood": 36000,
+      "path": "images/menu/foods/hotdog.webp",
+      "cleaned": true
+    },
+    {
+      "name": "Tiramisu Cake",
+      "category": "Desert dan Snack",
+      "price_gofood": 48000,
+      "path": "images/menu/foods/tiramisu-cake.webp",
+      "cleaned": true
+    },
+    {
+      "name": "Mille Crepes",
+      "category": "Desert dan Snack",
+      "price_gofood": 37000,
+      "path": "images/menu/foods/mille-crepes.webp",
+      "cleaned": true
+    },
+    {
+      "name": "Chicken Katsu With Sauce",
+      "category": "Special Bowl",
+      "price_gofood": 28000,
+      "path": "images/menu/foods/chicken-katsu-with-sauce.webp",
+      "cleaned": true
+    },
+    {
+      "name": "Chicken Katsu Spicy",
+      "category": "Special Bowl",
+      "price_gofood": 28000,
+      "path": "images/menu/foods/chicken-katsu-spicy.webp",
+      "cleaned": true
+    },
+    {
+      "name": "Mentai Rice",
+      "category": "Special Bowl",
+      "price_gofood": 35000,
+      "path": "images/menu/foods/mentai-rice.webp",
+      "cleaned": true
+    },
+    {
+      "name": "Javanese Fried Rice",
+      "category": "Special Bowl",
+      "price_gofood": 23000,
+      "path": "images/menu/foods/javanese-fried-rice.webp",
+      "cleaned": true
+    },
+    {
+      "name": "Javanese Fried Noodles",
+      "category": "Special Bowl",
+      "price_gofood": 23000,
+      "path": "images/menu/foods/javanese-fried-noodles.webp",
+      "cleaned": true
+    }
+  ]
+}
