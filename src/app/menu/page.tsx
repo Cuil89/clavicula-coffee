@@ -1,49 +1,510 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
+import { Search, Plus, Eye } from "lucide-react";
+import { useUI } from "@/components/UIProvider";
 
-const categories = ["All", "Viennoiserie", "Sourdough Breads", "Savory Hearth", "Pour-Overs", "Signature Drinks"];
+type MenuItem = {
+  name: string;
+  price: number;
+  category: string;
+  desc: string;
+  image?: string;
+  badge?: string;
+};
 
-const menuItems = [
-  { name: "The Truffle & Wild Mushroom Brioche", price: 460, category: "Savory Hearth", desc: "Earthy wild mushrooms, truffle butter, soft laminated brioche." },
-  { name: "Double-Baked Almond & Orange Blossom Croissant", price: 340, category: "Viennoiserie", desc: "Frangipane core, flaked almonds, hint of citrus." },
-  { name: "Whipped Ricotta & Slow-Roasted Fig Toast", price: 380, category: "Savory Hearth", desc: "Thick cut sourdough, honey drizzle, sea salt." },
-  { name: "84% PDO Beurre Laminated Croissant", price: 280, category: "Viennoiserie", desc: "Classic honeycomb crumb, shatter-crisp shell." },
-  { name: "Country Loaf (Whole)", price: 450, category: "Sourdough Breads", desc: "72-hour cold fermented, dark caramelized crust." },
-  { name: "Olive & Rosemary Fougasse", price: 350, category: "Sourdough Breads", desc: "Kalamata olives, fresh herbs, pull-apart texture." },
-  { name: "Chikmagalur Honey-Sun (Chemex)", price: 250, category: "Pour-Overs", desc: "Stone fruit sweetness, clean bright finish. Served for two." },
-  { name: "Araku Anaerobic (AeroPress)", price: 280, category: "Pour-Overs", desc: "Wild fermented complexity, deep caramel." },
-  { name: "Maison Espresso Noir", price: 180, category: "Signature Drinks", desc: "Double shot, thick crema, valrhona cacao notes." },
-  { name: "Iced Vanilla Oat Foam Matcha", price: 320, category: "Signature Drinks", desc: "Ceremonial grade matcha, house-made oat milk, vanilla bean foam." },
+const categories = [
+  "Semua",
+  "Signature Drink (Anatomi)",
+  "Espresso Based",
+  "Manual Brew",
+  "Mocktail & Blend",
+  "Special Bowl & Noodle",
+  "Special Clavicula (Steak & Crab)",
+  "Dessert & Snack",
+  "Non Coffee",
+  "Tea Based",
+  "Mozarella & Paket",
+  "Ice Cream",
+  "Promo Ngopi Pagi/Sore",
+];
+
+const menuItems: MenuItem[] = [
+  // SIGNATURE DRINK (ANATOMI)
+  {
+    name: "Manubrium",
+    price: 30000,
+    category: "Signature Drink (Anatomi)",
+    desc: "Layer krim vanila lembut berpadu double espresso bold, sensasi rasa manis creamy yang seimbang.",
+    image: "/assets/extracted/signature_manubrium.jpg",
+    badge: "Best Seller",
+  },
+  {
+    name: "Acromium",
+    price: 31000,
+    category: "Signature Drink (Anatomi)",
+    desc: "Kombinasi espresso aromatik dengan susu terkaramelisasi dan sentuhan butterscotch lembut.",
+    image: "/assets/extracted/signature_acromium.jpg",
+    badge: "Must Try",
+  },
+  {
+    name: "Subclavius",
+    price: 31000,
+    category: "Signature Drink (Anatomi)",
+    desc: "Sentuhan rasa kaya kopi dengan mahkota foam tebal dan aroma panggangan khas Clavicula.",
+    image: "/assets/extracted/signature_subclavius.jpg",
+    badge: "Signature",
+  },
+  {
+    name: "Trapezius",
+    price: 30000,
+    category: "Signature Drink (Anatomi)",
+    desc: "Perpaduan swirl buah stroberi segar dengan krim lembut dan sentuhan kopi eksotis.",
+    image: "/assets/extracted/signature_trapezius.jpg",
+  },
+  {
+    name: "Sternum",
+    price: 30000,
+    category: "Signature Drink (Anatomi)",
+    desc: "Kopi dingin dengan saus karamel leleh berlapis es, manis pas tanpa menenggelamkan rasa kopi.",
+    image: "/assets/extracted/signature_sternum.jpg",
+  },
+  {
+    name: "Scapula",
+    price: 29000,
+    category: "Signature Drink (Anatomi)",
+    desc: "Gradasi matcha Jepang grade premium dengan susu dan espresso, topping biskuit renyah.",
+    image: "/assets/extracted/signature_scapula.jpg",
+  },
+
+  // ESPRESSO BASED
+  { name: "Single Espresso", price: 14000, category: "Espresso Based", desc: "Single shot konsentrat espresso murni ekstraksi 9 bar." },
+  { name: "Americano", price: 19000, category: "Espresso Based", desc: "Espresso klasik dipadukan air panas/dingin murni, jernih dan segar." },
+  { name: "Long Black", price: 20000, category: "Espresso Based", desc: "Espresso poured over water mempertahankan crema tebal aromatik." },
+  { name: "Es Kopi Susu Clavicula", price: 20000, category: "Espresso Based", desc: "Espresso khas Clavicula dipadukan susu creamy dan gula aren autentik.", badge: "Favorit Harian" },
+  { name: "Flavour Americano", price: 22000, category: "Espresso Based", desc: "Americano dingin dengan pilihan rasa hazelnut, vanila, atau karamel." },
+  { name: "Coffee Late", price: 23000, category: "Espresso Based", desc: "Espresso lembut dengan perbandingan steamed milk yang harmonis." },
+  { name: "Cappuccino", price: 23000, category: "Espresso Based", desc: "Komposisi seimbang espresso, steamed milk, dan busa susu tebal." },
+  { name: "Affogato", price: 23000, category: "Espresso Based", desc: "Satu scoop es krim vanila disiram single shot espresso panas." },
+  { name: "Caramel Machiato", price: 28000, category: "Espresso Based", desc: "Espresso berpadu vanila dan saus karamel panggang gurih." },
+  { name: "Mocccacino", price: 28000, category: "Espresso Based", desc: "Kombinasi cokelat hitam pekat dengan espresso dan susu segar." },
+  { name: "Strawberry Coffee", price: 30000, category: "Espresso Based", desc: "Espresso dingin menyegarkan dengan puree stroberi asli." },
+  { name: "Lemonade Coffee", price: 28000, category: "Espresso Based", desc: "Sensasi sitrus lemon segar berpadu karakter buah kopi arabika." },
+  { name: "Flavour Latte", price: 30000, category: "Espresso Based", desc: "Latte manis pilihan sirup premium (Vanilla / Hazelnut / Caramel)." },
+  { name: "Cookies Coffee", price: 32000, category: "Espresso Based", desc: "Latte dingin berpadu remah biskuit cookies crunchy." },
+  { name: "Matcha Coffee", price: 32000, category: "Espresso Based", desc: "Perpaduan rasa earthy matcha Kyoto dan espresso arabika." },
+  { name: "Caramel Butterscotch", price: 32000, category: "Espresso Based", desc: "Rasa buttery karamel lembut yang memanjakan lidah." },
+  { name: "Lotus Biskof Ice Latte", price: 25454, category: "Espresso Based", desc: "Kopi susu creamy dengan pasta dan remahan Lotus Biscoff speculoos.", badge: "New" },
+
+  // MANUAL BREW
+  { name: "V60 Lokal (Gayo / Sindoro / Ijen / Flores)", price: 26000, category: "Manual Brew", desc: "Seduhan pour-over kertas mikro dengan biji kopi single origin nusantara." },
+  { name: "V60 Luar (Ethiopia / Colombia)", price: 32000, category: "Manual Brew", desc: "Biji kopi impor pilihan dengan keasaman floral buah yang kompleks." },
+  { name: "Aeropress", price: 28000, category: "Manual Brew", desc: "Ekstraksi tekanan udara menghasilkan cangkir bersih dengan bodi padat." },
+  { name: "Vietnam Drip", price: 24000, category: "Manual Brew", desc: "Seduhan tetes lambat tradisional dengan susu kental manis legit." },
+  { name: "French Press", price: 20000, category: "Manual Brew", desc: "Immersion brew penuh bodi dan minyak alami kopi yang utuh." },
+  { name: "Kopi Tubruk", price: 18000, category: "Manual Brew", desc: "Seduhan klasik khas Nusantara dengan biji sangrai segar." },
+
+  // MOCKTAIL COFFEE & BLEND
+  {
+    name: "Brachialis",
+    price: 29000,
+    category: "Mocktail & Blend",
+    desc: "Kiwi segar + Banana lembut + Espresso arabika, rasa tropis eksotis.",
+    image: "/assets/extracted/mocktail_brachialis.jpg",
+    badge: "Anatomi Mocktail",
+  },
+  {
+    name: "Ulnaris",
+    price: 28000,
+    category: "Mocktail & Blend",
+    desc: "Banana puree dipadukan double espresso segar dan sentuhan rempah.",
+    image: "/assets/extracted/mocktail_ulnaris.jpg",
+  },
+  {
+    name: "Radius",
+    price: 28000,
+    category: "Mocktail & Blend",
+    desc: "Strawberry + Sakura matcha + Lemon sitrus segar menyala.",
+    image: "/assets/extracted/mocktail_radius.jpg",
+  },
+  {
+    name: "Vomer",
+    price: 26000,
+    category: "Mocktail & Blend",
+    desc: "Kiwi asam manis berpadu espresso dingin dan gelembung soda.",
+    image: "/assets/extracted/mocktail_vomer.jpg",
+  },
+  { name: "Chocobanana", price: 28000, category: "Mocktail & Blend", desc: "Blend cokelat creamy dan pisang matang lembut." },
+  { name: "Costa", price: 30000, category: "Mocktail & Blend", desc: "Racikan spesial kopi blend dengan lapisan rasa rempah hangat." },
+  { name: "Nutela Blend", price: 30000, category: "Mocktail & Blend", desc: "Ice blend selai hazelnut Nutella melimpah dan susu." },
+  { name: "Baileys Coffee", price: 30000, category: "Mocktail & Blend", desc: "Sensasi aroma baileys (non-alkohol) dengan creamy coffee." },
+  { name: "Pink Candy", price: 27272, category: "Mocktail & Blend", desc: "Minuman blend manis lembut beraroma permen berry segar." },
+  { name: "Fabaceae", price: 27272, category: "Mocktail & Blend", desc: "Mocktail artistik berlapis warna biru telang dan leci manis." },
+
+  // SPECIAL BOWL & NOODLE
+  {
+    name: "Rice/Noodle Chicken Chashu with Sauce",
+    price: 31000,
+    category: "Special Bowl & Noodle",
+    desc: "Pilihan Nasi/Mie dengan ayam chashu empuk berlumur saus (BBQ, Teriyaki, Salted Egg, Blackpepper).",
+    image: "/assets/extracted/bowl_chashu.jpg",
+    badge: "Chef Choice",
+  },
+  {
+    name: "Rice/Noodle Chicken Chashu Spicy",
+    price: 30000,
+    category: "Special Bowl & Noodle",
+    desc: "Ayam chashu gurih dengan sambal matah wangi atau sambal geprek pedas nendang.",
+  },
+  {
+    name: "Mentai Rice (Beef / Chicken)",
+    price: 36000,
+    category: "Special Bowl & Noodle",
+    desc: "Nasi gurih bertabur nori dengan irisan daging berbalut saus mentai bakar lumer.",
+    image: "/assets/extracted/bowl_mentai.jpg",
+  },
+  {
+    name: "Rice Smoke Beef with Sauce/Spicy",
+    price: 39000,
+    category: "Special Bowl & Noodle",
+    desc: "Daging brisket shortplate asap premium dengan saus pilihan gurih meresap.",
+    image: "/assets/extracted/bowl_smoke_beef.jpg",
+  },
+  {
+    name: "Special Beef Fried with Sauce",
+    price: 33000,
+    category: "Special Bowl & Noodle",
+    desc: "Daging sapi tumis gurih saus BBQ / Teriyaki / Salted Egg / Blackpepper.",
+  },
+  {
+    name: "Fried Noodles with Egg Salted",
+    price: 30000,
+    category: "Special Bowl & Noodle",
+    desc: "Mie goreng gurih berlumur saus telur asin autentik dan potongan topping.",
+  },
+  { name: "Chicken Katsu Spicy", price: 26000, category: "Special Bowl & Noodle", desc: "Chicken katsu krispi disajikan dengan sambal matah / sambal geprek segar." },
+  { name: "Chicken Katsu with Sauce", price: 28000, category: "Special Bowl & Noodle", desc: "Katsu renyah dengan siraman saus BBQ / Teriyaki / Blackpepper." },
+  {
+    name: "Javanese Fried Rice",
+    price: 21000,
+    category: "Special Bowl & Noodle",
+    desc: "Nasi goreng tradisional Jawa bumbu rempah harum, disajikan dengan telur & acar.",
+    image: "/assets/extracted/bowl_fried_rice.jpg",
+  },
+  { name: "Javanese Fried Noodles", price: 21000, category: "Special Bowl & Noodle", desc: "Mie goreng Jawa gurih manis dengan sayuran segar dan telur." },
+  { name: "Ayam Goreng Madu", price: 25454, category: "Special Bowl & Noodle", desc: "Potongan ayam renyah berbalut glasir madu manis gurih bertabur wijen." },
+  { name: "Chicken Salted Egg Bowl", price: 25454, category: "Special Bowl & Noodle", desc: "Ayam krispi dibalut krim salted egg daun kari gurih." },
+  { name: "Nasi Kulit Cabe Garam", price: 25454, category: "Special Bowl & Noodle", desc: "Kulit ayam super renyah ditumis bumbu cabe garam bawang pedas nikmat." },
+  { name: "Nasi Chicken Cabe Garam", price: 25454, category: "Special Bowl & Noodle", desc: "Ayam fillet krispi bertabur irisan cabai, bawang putih, dan daun bawang." },
+  {
+    name: "Clavicula Noodle (Kuah Miso / Kuah Tomyum)",
+    price: 25454,
+    category: "Special Bowl & Noodle",
+    desc: "Mie kuah hangat dengan pilihan kuah kaldu miso Jepang atau kuah tomyam asam segar.",
+    badge: "Menu Baru",
+  },
+  {
+    name: "Clavicula Noodle (Spicy Chili Oil / Savory Sweet)",
+    price: 25454,
+    category: "Special Bowl & Noodle",
+    desc: "Mie kering bumbu chili oil pedas harum atau bumbu manis gurih bertelur mata sapi.",
+  },
+
+  // SPECIAL CLAVICULA (STEAK, CRAB, TOMYAM)
+  {
+    name: "Clavicula Tenderloin Steak",
+    price: 72727,
+    category: "Special Clavicula (Steak & Crab)",
+    desc: "Steak daging sapi tenderloin pilihan disajikan dengan mashed potato lembut dan brown sauce.",
+    badge: "Chef Special",
+  },
+  {
+    name: "Special Crab (100% Fresh Crab) - Isi 2",
+    price: 100000,
+    category: "Special Clavicula (Steak & Crab)",
+    desc: "Kepiting segar laut asli isi 2 ekor dimasak bumbu rempah istimewa.",
+    image: "/assets/extracted/special_crab.jpg",
+  },
+  {
+    name: "Special Crab (100% Fresh Crab) - Isi 4",
+    price: 180000,
+    category: "Special Clavicula (Steak & Crab)",
+    desc: "Porsi jumbo kepiting segar isi 4 ekor, pas untuk santap bersama keluarga.",
+    image: "/assets/extracted/special_crab.jpg",
+  },
+  {
+    name: "Tomyam Seporsi Berdua",
+    price: 50000,
+    category: "Special Clavicula (Steak & Crab)",
+    desc: "Hot pot kuah tomyam autentik Thailand porsi berdua dengan aneka udang, cumi & jamur.",
+    image: "/assets/extracted/special_tomyam.jpg",
+    badge: "Porsi Berdua",
+  },
+  {
+    name: "Chicken Steak with Sauce & Mashed Potato",
+    price: 40000,
+    category: "Special Clavicula (Steak & Crab)",
+    desc: "Steak paha ayam panggang empuk dengan mashed potato dan sayuran tumis.",
+    image: "/assets/extracted/special_chicken_steak.jpg",
+  },
+  {
+    name: "Strawberry Cheesecake",
+    price: 45000,
+    category: "Special Clavicula (Steak & Crab)",
+    desc: "Cheesecake lembut New York style dengan glaze selai stroberi segar asam manis.",
+    image: "/assets/extracted/special_cheesecake.jpg",
+  },
+  {
+    name: "Millescrepes (Cookies / Matcha / Redvelvet)",
+    price: 35000,
+    category: "Special Clavicula (Steak & Crab)",
+    desc: "Kue lapis krep tipis dengan krim lembut lumer di setiap gigitan.",
+    image: "/assets/extracted/special_millescrepes.jpg",
+  },
+  { name: "Caramel Soft Cheesecake", price: 15454, category: "Special Clavicula (Steak & Crab)", desc: "Kue keju panggang mini lembut dengan lapisan karamel tipis." },
+
+  // DESSERT & SNACK
+  { name: "Croffle (Caramel/Strawberry/Coklat Crunch/Nutella)", price: 30000, category: "Dessert & Snack", desc: "Croissant waffle hangat renyah di luar, lembut di dalam.", image: "/assets/extracted/snack_croffle.jpg" },
+  { name: "Beef Burger", price: 30000, category: "Dessert & Snack", desc: "Roti burger empuk dengan patty daging sapi panggang dan sayuran segar.", image: "/assets/extracted/snack_burger.jpg" },
+  { name: "Hotdog", price: 32000, category: "Dessert & Snack", desc: "Roti sosis panggang bertabur mustard, saus tomat, dan acar segar." },
+  { name: "Savory Toast", price: 28000, category: "Dessert & Snack", desc: "Roti panggang gurih isi daging ayam telur dengan keju leleh." },
+  { name: "Taiwanese Fried Chicken", price: 28000, category: "Dessert & Snack", desc: "Ayam krispi bumbu oriental gurih asin pedas khas pasar malam Taiwan.", image: "/assets/extracted/snack_taiwanese_chicken.jpg" },
+  { name: "Chicken Pop", price: 28000, category: "Dessert & Snack", desc: "Bite-sized popcorn chicken renyah dengan cocolan saus pedas." },
+  { name: "Japanese Fruit Sandwich", price: 25000, category: "Dessert & Snack", desc: "Sandwich roti tawar susu isi whipped cream lembut dan potongan buah segar.", image: "/assets/extracted/snack_fruit_sandwich.jpg" },
+  { name: "Churros", price: 25000, category: "Dessert & Snack", desc: "Pastri goreng spanyol bertabur gula kayu manis dengan saus cokelat cocol." },
+  { name: "Pancake", price: 26000, category: "Dessert & Snack", desc: "Pancake empuk lembut disajikan dengan sirup maple dan mentega harum." },
+  { name: "Sate Smoke Beef", price: 34000, category: "Dessert & Snack", desc: "Tusukan daging sapi asap empuk dipanggang bumbu gurih." },
+  { name: "Sate Taichan Mozarella", price: 29000, category: "Dessert & Snack", desc: "Sate ayam taichan pedas diselimuti keju mozarella leleh mulur." },
+  { name: "Sate Taichan Daging/Kulit", price: 24000, category: "Dessert & Snack", desc: "Sate taichan bakar gurih pedas jeruk nipis." },
+  { name: "Yakitori", price: 26000, category: "Dessert & Snack", desc: "Sate ayam khas Jepang bumbu tare manis gurih meresap." },
+  { name: "Dimsum Mentai", price: 26000, category: "Dessert & Snack", desc: "Dimsum kukus lembut disiram saus mentai bakar gurih." },
+  { name: "Dimsum Original", price: 22000, category: "Dessert & Snack", desc: "Siomay ayam udang kukus gurih lembut dengan chili oil." },
+  { name: "Gohyong", price: 23636, category: "Dessert & Snack", desc: "Kulit tahu isi daging cincang gurih digoreng renyah dengan kuah asam manis." },
+  { name: "Gochucula Chicken Wings", price: 23636, category: "Dessert & Snack", desc: "Sayap ayam goreng bersaus gochujang pedas manis Korea." },
+  { name: "Springroll", price: 31000, category: "Dessert & Snack", desc: "Lumpia gulung isi sayuran segar renyah dengan saus celup." },
+  { name: "Sweet Toast", price: 20000, category: "Dessert & Snack", desc: "Roti bakar manis hangat dengan topping mentega dan gula manis." },
+  { name: "Pisang Bakar", price: 19000, category: "Dessert & Snack", desc: "Pisang kepok bakar manis bertabur keju parut dan cokelat meses." },
+  { name: "Rujak Cireng Ortega", price: 20000, category: "Dessert & Snack", desc: "Cireng kenyal gurih renyah dengan cocolan bumbu rujak pedas manis." },
+  { name: "Bakso Goreng Ortega", price: 22000, category: "Dessert & Snack", desc: "Bakso goreng mekar renyah di luar, empuk di dalam." },
+  { name: "Tempe Goreng", price: 18000, category: "Dessert & Snack", desc: "Tempe mendoan gurih khas daerah dengan sambal kecap cabai rawit." },
+  { name: "Potato Stick / Kentang Goreng", price: 18000, category: "Dessert & Snack", desc: "Kentang goreng renyah bertabur garam laut." },
+
+  // NON COFFEE
+  { name: "Taro Latte", price: 32000, category: "Non Coffee", desc: "Minuman taro ungu manis gurih dengan steamed milk lembut." },
+  { name: "Sakura Matcha", price: 31000, category: "Non Coffee", desc: "Matcha harum berpadu aroma bunga sakura manis lembut." },
+  { name: "Red Velvet Latte", price: 31000, category: "Non Coffee", desc: "Rasa kue red velvet cokelat manis dengan sentuhan keju lembut." },
+  { name: "Unicorn", price: 31000, category: "Non Coffee", desc: "Minuman fantasi berlapis warna manis segar yang cantik difoto." },
+  { name: "Chocolatte", price: 28000, category: "Non Coffee", desc: "Cokelat pekat pilihan dipadukan susu murni hangat atau dingin." },
+  { name: "Bubble Gum", price: 30000, category: "Non Coffee", desc: "Minuman rasa permen karet nostalgia yang manis menyegarkan." },
+  { name: "Cookies Non-Coffee", price: 30000, category: "Non Coffee", desc: "Susu creamy berpadu remahan biskuit cookies oreo." },
+  { name: "Carcoal (Charcoal Latte)", price: 30000, category: "Non Coffee", desc: "Arang bambu aktif bernuansa hitam elegan dengan rasa vanilla milk." },
+  { name: "Matcha Latte", price: 29000, category: "Non Coffee", desc: "Pure Japanese matcha dipadukan susu segar lembut." },
+  { name: "Chocolate Classic", price: 27000, category: "Non Coffee", desc: "Cokelat nikmat khas yang disukai semua kalangan." },
+
+  // TEA BASED & MOCKTAILS
+  { name: "Strawcha", price: 31000, category: "Tea Based", desc: "Stroberi manis berpadu teh hijau segar dan es batu jernih." },
+  { name: "Green Monkey", price: 31000, category: "Tea Based", desc: "Mocktail mint apel hijau asam manis menyegarkan dahaga." },
+  { name: "Strawberry Mojito", price: 29000, category: "Tea Based", desc: "Soda berkarbonasi dengan daun mint segar dan stroberi hancur." },
+  { name: "Cute Monkey", price: 30000, category: "Tea Based", desc: "Minuman buah pisang stroberi creamy yang lembut dan segar." },
+  { name: "Original Mojito", price: 26000, category: "Tea Based", desc: "Perasan jeruk nipis, mint segar, gula tebu, dan soda dingin." },
+  { name: "Flavour Mojito", price: 30000, category: "Tea Based", desc: "Mojito dengan pilihan sirup buah leci, kiwi, atau stroberi." },
+  { name: "Manis Manja", price: 26000, category: "Tea Based", desc: "Racikan mocktail manis segar dengan aftertaste semilir buah." },
+  { name: "Baby Green", price: 29000, category: "Tea Based", desc: "Mocktail dingin melon dan jeruk nipis yang super segar." },
+  { name: "Regal Milktea", price: 27000, category: "Tea Based", desc: "Teh susu khas dipadukan remahan biskuit Marie Regal." },
+  { name: "Banaki Milktea", price: 25000, category: "Tea Based", desc: "Teh susu beraroma pisang manis lembut." },
+  { name: "Brownsugar Milktea", price: 25000, category: "Tea Based", desc: "Milk tea klasik dengan lelehan gula aren legit." },
+  { name: "Strawberry Tea", price: 21000, category: "Tea Based", desc: "Teh seduh wangi dengan rasa buah stroberi asam manis." },
+  { name: "Kiwi Tea", price: 21000, category: "Tea Based", desc: "Teh dingin dengan bulir buah kiwi hijau segar." },
+  { name: "Lemon Tea", price: 18000, category: "Tea Based", desc: "Teh hitam klasik berpadu perasan lemon murni segar." },
+  { name: "Original Tea (Ice / Hot)", price: 14000, category: "Tea Based", desc: "Teh melati wangi khas Tegal yang otentik menyejukkan." },
+
+  // MOZARELLA & MENU PAKET
+  { name: "Hotdog Mozarella", price: 38000, category: "Mozarella & Paket", desc: "Hotdog lezat dengan lelehan keju mozarella panggang berlimpah." },
+  { name: "Chashu Geprek Mozarella", price: 36000, category: "Mozarella & Paket", desc: "Ayam chashu pedas geprek diselimuti keju mozarella mulur." },
+  { name: "Special Beef Geprek Mozarella", price: 36000, category: "Mozarella & Paket", desc: "Daging sapi empuk bumbu geprek berpadu lumeran mozarella." },
+  { name: "Beef Burger Mozarella", price: 38000, category: "Mozarella & Paket", desc: "Burger daging sapi dengan lapisan keju mozarella leleh tebal." },
+  { name: "Chicken Katsu Geprek Mozarella", price: 33000, category: "Mozarella & Paket", desc: "Katsu renyah sambal geprek dengan keju mozarella bakar." },
+  { name: "Sosis Bakar Mozarella", price: 33000, category: "Mozarella & Paket", desc: "Sosis panggang jumbo dibalut lelehan keju mozarella gurih." },
+  {
+    name: "Paket 1: Chicken Chashu + Original Tea Ice",
+    price: 44000,
+    category: "Mozarella & Paket",
+    desc: "Paket hemat nasi Chicken Chashu + Es Teh Asli + Free Naynay Puding (Mangga/Oreo).",
+    badge: "Free Puding",
+  },
+  {
+    name: "Paket 2: Chicken Katsu + Original Tea Ice",
+    price: 39000,
+    category: "Mozarella & Paket",
+    desc: "Paket hemat nasi Chicken Katsu + Es Teh Asli + Free Naynay Puding.",
+    badge: "Free Puding",
+  },
+  {
+    name: "Paket 3: Special Beef + Lemon Tea Ice",
+    price: 49000,
+    category: "Mozarella & Paket",
+    desc: "Paket lengkap nasi Daging Sapi Spesial + Es Lemon Tea Segar + Free Naynay Puding.",
+    badge: "Free Puding",
+  },
+
+  // ICE CREAM CLAVICULA
+  { name: "Special Clavi Ice Cream (Straw Cheese Cake)", price: 20000, category: "Ice Cream", desc: "Es krim spesial dengan rasa cheesecake stroberi dan remahan biskuit." },
+  { name: "Special Clavi Ice Cream (Taro Cookies)", price: 20000, category: "Ice Cream", desc: "Es krim taro creamy bertabur cookies renyah." },
+  { name: "Special Clavi Ice Cream (Oreo Cookies)", price: 20000, category: "Ice Cream", desc: "Es krim vanila bertabur remah biskuit Oreo gurih." },
+  { name: "Ice Cream with Topping (Red Velvet / Matcha)", price: 15000, category: "Ice Cream", desc: "Es krim lembut dengan pilihan saus dan topping bubuk red velvet / matcha." },
+  { name: "Ice Cream with Topping (Chocochip / Marshmellow / Regal)", price: 15000, category: "Ice Cream", desc: "Es krim manis dengan taburan chocochip, marshmallow empuk, atau biskuit regal." },
+
+  // PROMO NGOPI PAGI & NGOPI SORE
+  { name: "[Promo] Americano (08-10 / 15-17)", price: 12000, category: "Promo Ngopi Pagi/Sore", desc: "Harga spesial jam ngopi pagi & sore Clavicula.", badge: "12K Special" },
+  { name: "[Promo] Long Black (08-10 / 15-17)", price: 12000, category: "Promo Ngopi Pagi/Sore", desc: "Harga spesial jam ngopi pagi & sore Clavicula.", badge: "12K Special" },
+  { name: "[Promo] Coffeelate (08-10 / 15-17)", price: 15000, category: "Promo Ngopi Pagi/Sore", desc: "Harga spesial latte lembut di waktu ngopi santai.", badge: "15K Special" },
+  { name: "[Promo] Kentang Goreng (08-10 / 15-17)", price: 15000, category: "Promo Ngopi Pagi/Sore", desc: "Camilan kentang renyah harga promo.", badge: "15K Snack" },
+  { name: "[Promo] Pisang Bakar (08-10 / 15-17)", price: 15000, category: "Promo Ngopi Pagi/Sore", desc: "Pisang bakar hangat manis legit bertabur topping.", badge: "15K Snack" },
+  { name: "[Promo] Pancake Oneslice (08-10 / 15-17)", price: 15000, category: "Promo Ngopi Pagi/Sore", desc: "Satu lembar pancake empuk dengan sirup manis hangat.", badge: "15K Snack" },
+  { name: "[Promo] Savory Toast Chicken (08-10 / 15-17)", price: 20000, category: "Promo Ngopi Pagi/Sore", desc: "Roti bakar lapis daging ayam gurih kenyang.", badge: "20K Snack" },
 ];
 
 export default function MenuPage() {
-  const [activeCategory, setActiveCategory] = useState("All");
+  const [activeCategory, setActiveCategory] = useState("Semua");
+  const [searchQuery, setSearchQuery] = useState("");
+  const [showPosterGallery, setShowPosterGallery] = useState(false);
+  const { addToCart } = useUI();
 
-  const filteredItems = activeCategory === "All" 
-    ? menuItems 
-    : menuItems.filter(item => item.category === activeCategory);
+  const filteredItems = menuItems.filter((item) => {
+    const matchesCategory =
+      activeCategory === "Semua" ? true : item.category === activeCategory;
+    const matchesSearch =
+      item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.desc.toLowerCase().includes(searchQuery.toLowerCase());
+    return matchesCategory && matchesSearch;
+  });
+
+  const posterImages = [
+    { title: "Cover Clavicula Coffee & Idea", src: "/assets/extracted/clavi_img_0.jpg" },
+    { title: "Espresso & Signature Anatomi", src: "/assets/extracted/clavi_img_1.jpg" },
+    { title: "Mocktail Coffee & Non Coffee", src: "/assets/extracted/clavi_img_2.jpg" },
+    { title: "Mocktails & Tea Based", src: "/assets/extracted/clavi_img_3.jpg" },
+    { title: "Dessert & Snack Clavicula", src: "/assets/extracted/clavi_img_4.jpg" },
+    { title: "Special Rice & Noodle Bowl", src: "/assets/extracted/clavi_img_5.jpg" },
+    { title: "Mozarella Addict & Menu Paket", src: "/assets/extracted/clavi_img_6.jpg" },
+    { title: "Special Crab, Steak & Tomyam", src: "/assets/extracted/clavi_img_7.jpg" },
+    { title: "Ice Cream Clavicula", src: "/assets/extracted/clavi_img_8.jpg" },
+    { title: "Poster Clavicula Noodle", src: "/assets/extracted/menu_asset_21.jpg" },
+    { title: "Poster Menu Ngopi Pagi & Sore", src: "/assets/extracted/menu_asset_22.jpg" },
+  ];
 
   return (
-    <main className="min-h-screen pt-32 pb-24 bg-linen">
-      <div className="mx-auto max-w-5xl px-4 md:px-8">
-        <div className="text-center mb-16">
-          <span className="text-xs font-mono tracking-[0.2em] uppercase text-chestnut mb-4 block">L&apos;ATELIER DU PAIN &amp; ROASTERY</span>
-          <h1 className="text-5xl md:text-7xl font-black tracking-tighter text-espresso mb-6">The Complete Menu</h1>
-          <p className="text-xl font-serif italic text-espresso/70 max-w-2xl mx-auto">
-            Everything baked and roasted in-house. Served fresh daily until sold out.
+    <main className="min-h-screen pt-28 pb-24 bg-linen">
+      <div className="mx-auto max-w-7xl px-4 md:px-8">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 rounded-full border border-chestnut/20 bg-vanilla px-4 py-1.5 mb-4 shadow-sm">
+            <span className="w-2 h-2 rounded-full bg-chestnut"></span>
+            <span className="text-[11px] font-mono tracking-[0.2em] uppercase text-chestnut font-semibold">
+              DAFTAR MENU RESMI // CLAVICULA COFFEE &amp; IDEA
+            </span>
+          </div>
+          <h1 className="text-4xl md:text-6xl font-black tracking-tight text-espresso mb-4">
+            The Complete Menu
+          </h1>
+          <p className="text-lg md:text-xl font-serif italic text-espresso/70 max-w-2xl mx-auto leading-relaxed">
+            Dari racikan kopi anatomi tubuh, manual brew nusantara, santapan steak &amp; kepiting segar, hingga camilan manis. Semua harga sudah termasuk PPN.
           </p>
+
+          {/* Toggle Visual Posters Button */}
+          <div className="mt-6 flex justify-center">
+            <button
+              onClick={() => setShowPosterGallery(!showPosterGallery)}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-chestnut/30 bg-white hover:bg-vanilla text-espresso text-xs font-semibold shadow-sm transition-all"
+            >
+              <Eye size={15} className="text-chestnut" />
+              {showPosterGallery ? "Sembunyikan Lembar PDF Menu" : "Lihat Lembar Poster Asli PDF (11 Halaman)"}
+            </button>
+          </div>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-2 mb-16">
+        {/* Visual Poster Gallery (Expandable) */}
+        {showPosterGallery && (
+          <div className="mb-16 p-6 rounded-3xl bg-vanilla/60 border border-chestnut/20 shadow-inner">
+            <div className="flex items-center justify-between mb-6">
+              <div>
+                <h3 className="text-xl font-bold text-espresso">Lembar Dokumen Menu Resmi Clavicula</h3>
+                <p className="text-xs text-espresso/60">Arsip visual langsung dari buku menu kafe Slawi &amp; Guci</p>
+              </div>
+              <button
+                onClick={() => setShowPosterGallery(false)}
+                className="text-xs font-mono text-chestnut hover:underline font-bold"
+              >
+                Tutup Galeri
+              </button>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+              {posterImages.map((poster, pIdx) => (
+                <div
+                  key={pIdx}
+                  className="group bg-white rounded-2xl overflow-hidden border border-chestnut/15 shadow-sm hover:shadow-warm-card transition-all"
+                >
+                  <div className="relative aspect-[3/4] w-full bg-espresso">
+                    <Image
+                      src={poster.src}
+                      alt={poster.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="p-3">
+                    <span className="text-[11px] font-bold text-espresso line-clamp-1">
+                      {poster.title}
+                    </span>
+                    <a
+                      href={poster.src}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-[10px] font-mono text-chestnut hover:underline flex items-center gap-1 mt-1 font-semibold"
+                    >
+                      Buka Resolusi Penuh →
+                    </a>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Search & Filter Controls */}
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-8">
+          {/* Search Box */}
+          <div className="relative w-full md:w-80">
+            <Search
+              size={17}
+              className="absolute left-3.5 top-1/2 -translate-y-1/2 text-espresso/40"
+            />
+            <input
+              type="text"
+              placeholder="Cari menu, kopi, steak, mie..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full bg-white rounded-full pl-10 pr-4 py-2.5 text-xs md:text-sm border border-chestnut/20 text-espresso placeholder-espresso/40 focus:outline-none focus:border-chestnut transition-colors shadow-sm"
+            />
+          </div>
+
+          <div className="text-xs font-mono text-espresso/60 self-center">
+            Menampilkan <span className="font-bold text-chestnut">{filteredItems.length}</span> menu
+          </div>
+        </div>
+
+        {/* Category Pills */}
+        <div className="flex flex-wrap gap-2 mb-12">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
-                activeCategory === cat 
-                  ? 'bg-chestnut text-white shadow-md' 
-                  : 'bg-vanilla text-espresso/70 hover:bg-buttermilk border border-chestnut/10'
+              className={`px-4 py-2 rounded-full text-xs font-semibold transition-all duration-200 ${
+                activeCategory === cat
+                  ? "bg-chestnut text-white shadow-md scale-105"
+                  : "bg-white text-espresso/70 hover:bg-vanilla border border-chestnut/15"
               }`}
             >
               {cat}
@@ -51,19 +512,73 @@ export default function MenuPage() {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-x-24 gap-y-12">
-          {filteredItems.map((item, idx) => (
-            <div key={idx} className="group border-b border-chestnut/10 pb-6">
-              <div className="flex items-start justify-between gap-4 mb-2">
-                <h4 className="text-xl font-medium text-espresso group-hover:text-chestnut transition-colors leading-tight">
-                  {item.name}
-                </h4>
-                <span className="text-lg font-serif italic text-chestnut whitespace-nowrap">₹{item.price}</span>
+        {/* Items Grid */}
+        {filteredItems.length === 0 ? (
+          <div className="py-20 text-center text-espresso/50">
+            <p className="font-serif italic text-xl text-espresso mb-1">Menu tidak ditemukan</p>
+            <p className="text-xs">Coba gunakan kata kunci pencarian yang lain.</p>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredItems.map((item, idx) => (
+              <div
+                key={idx}
+                className="group bg-white rounded-2xl p-5 border border-chestnut/15 shadow-sm hover:shadow-warm-card transition-all duration-300 flex flex-col justify-between"
+              >
+                <div>
+                  {item.image && (
+                    <div className="relative w-full h-44 mb-4 rounded-xl overflow-hidden bg-vanilla/60 border border-chestnut/10">
+                      <Image
+                        src={item.image}
+                        alt={item.name}
+                        fill
+                        className="object-contain p-2 group-hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
+                  )}
+
+                  <div className="flex items-start justify-between gap-3 mb-1.5">
+                    <div className="flex-1">
+                      {item.badge && (
+                        <span className="inline-block px-2 py-0.5 rounded-md bg-vanilla text-chestnut text-[10px] font-mono font-bold uppercase mb-1">
+                          {item.badge}
+                        </span>
+                      )}
+                      <h4 className="text-base font-bold text-espresso group-hover:text-chestnut transition-colors leading-snug">
+                        {item.name}
+                      </h4>
+                    </div>
+                    <span className="text-base font-serif italic text-chestnut font-bold whitespace-nowrap">
+                      Rp {(item.price / 1000).toLocaleString("id-ID")}.000
+                    </span>
+                  </div>
+
+                  <p className="text-xs text-espresso/60 leading-relaxed mb-4">
+                    {item.desc}
+                  </p>
+                </div>
+
+                <div className="pt-3 border-t border-dashed border-chestnut/10 flex items-center justify-between">
+                  <span className="text-[10px] font-mono text-espresso/40 uppercase">
+                    {item.category}
+                  </span>
+                  <button
+                    onClick={() =>
+                      addToCart({
+                        name: item.name,
+                        price: item.price,
+                        category: item.category,
+                      })
+                    }
+                    className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-vanilla text-chestnut text-xs font-semibold hover:bg-chestnut hover:text-white transition-colors"
+                  >
+                    <Plus size={13} /> Tambah
+                  </button>
+                </div>
               </div>
-              <p className="text-sm text-espresso/60 leading-relaxed pr-12">{item.desc}</p>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
       </div>
     </main>
   );

@@ -1,76 +1,45 @@
-# Maison Brew: Terre & Crème ☕
+# Clavicula Coffee & Idea
 
-![Maison Brew](public/assets/hero-sunlit-hearth.jpeg)
+Website profil resmi untuk **Clavicula Coffee & Idea** (Slawi & Clavicula Hills Guci, Tegal, Jawa Tengah).
 
-**Maison Brew** is a production-ready, Awwwards-caliber web experience for a Luxury Specialty Coffee Roastery, Artisanal Viennoiserie & Architectural Sanctuary located in the Kala Ghoda Arts Precinct, Mumbai.
+## ☕ Tentang Clavicula
+Dilahirkan dari latar belakang kedokteran oleh dr. Ardini Ayu Saptanti & keluarga di Slawi, Tegal. Dinamai dari *clavicula* (tulang selangka)—jembatan anatomis yang menyatukan kepala, detak dada, dan pergerakan tangan. Ruang bagi ide bertumbuh di antara seduhan single origin, sajian berkonsep anatomi, hingga sejuknya kabut pegunungan Clavicula Hills Guci.
 
-Built with a "Warm Organic Modernism" design DNA (Chestnut, Espresso, Vanilla Oat Foam, Buttermilk Crema), the application features complex micro-interactions, GSAP scroll animations, and global state management for an immersive user journey.
+### 📍 Dua Sanctuary (Outlets):
+1. **Clavicula Coffee & Idea (Slawi)**: Jl. Dr. Soetomo No. 3, Kalisapu, Slawi, Tegal (Urban workspace ber-AC, roastery bar, taman outdoor rindang).
+2. **Clavicula Hills (Guci, Tuwel)**: Jl. Obyek Wisata Guci, Tuwel, Bojong, Tegal (Suasana sejuk pegunungan kaki Gunung Slamet).
 
-🌍 **Live Demo:** [maison-brew-app.vercel.app](https://maison-brew-app.vercel.app/)
-
----
-
-## 🛠 Tech Stack
-
-- **Framework**: Next.js 14 (App Router)
-- **Library**: React 18
-- **Styling**: Tailwind CSS
-- **Animations**: GSAP (GreenSock) & ScrollTrigger
-- **Smooth Scrolling**: Lenis (@studio-freight/lenis)
-- **Icons**: Lucide React
-- **Deployment**: Vercel
-
-## ✨ Key Features
-
-The application spans a 5-page Next.js architecture with rich, interconnected user flows:
-
-- **The Flagship Monograph (`/`)**: Hero section, Craft Pillars, Roastery Collection, Interactive Cupping Dial, Atelier Preview, and immersive Footer.
-- **The Complete Atelier Menu (`/menu`)**: A filtered culinary and specialty coffee menu featuring Viennoiserie, Sourdough Breads, Savory Hearth, Pour-Overs, and Signature Drinks.
-- **The Origin Registry (`/terroir`)**: Deep-dive into Indian micro-lots from Chikmagalur and Araku Valley, complete with 1968 Probat flame roaster telemetry.
-- **Architecture & Sanctuary (`/space`)**: A visual monograph of the Kala Ghoda pavilion, acoustic lime plaster, reclaimed teak, and courtyard garden.
-- **Dedicated Booking Concierge (`/reserve`)**: A full-page, elevated reservation experience.
-
-### 🔄 Interactive User Flows
-
-1. **Table Reservation Ticket**: An end-to-end table booking form that generates a unique reservation code (e.g., `MB-2026-XXXX`) presented as an animated digital ticket.
-2. **Shopping Cart Drawer**: A slide-over e-commerce drawer managing state for coffee pouch orders, subtotal calculations, and mock checkout.
-3. **Sensory Dial Bridge**: An interactive coffee preference selector that bridges cross-component data directly to the reservation form as a "Special Request".
-4. **Sanctuary Map Modal**: An immersive modal providing transit, valet, and geographic details for the Kala Ghoda location.
-5. **Toast Notifications**: Animated confirmation popups for newsletter signups and cart additions.
+### 🩺 Menu Anatomi & Spesialti:
+- **Signature Drink Anatomi**: *Manubrium, Acromium, Subclavius, Trapezius, Sternum, Scapula*
+- **Mocktail Anatomi**: *Brachialis, Ulnaris, Radius, Vomer*
+- **Special Clavicula Kitchen**: *Tenderloin Steak, Special Fresh Crab, Tomyam Berdua, Clavicula Noodle, Rice Chicken Chashu Bowl*
+- **Promo Pagi & Sore**: *Menu Ngopi Pagi (08:00 - 10:00) & Ngopi Sore (15:00 - 17:00) 12K - 20K*
 
 ---
 
-## 🚀 Getting Started Locally
+## 🛠️ Tech Stack
+- **Framework**: [Next.js 14](https://nextjs.org/) (App Router)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Animation**: [GSAP](https://greensock.com/gsap/) & [Lenis Scroll](https://lenis.darkroom.engineering/)
+- **Icons**: [Lucide React](https://lucide.dev/)
 
-To run this project on your local machine:
+---
 
-**1. Clone the repository:**
+## 🚀 Menjalankan Secara Lokal
+
 ```bash
-git clone https://github.com/Jayant-1/maison-brew.git
-cd maison-brew
-```
-
-**2. Install dependencies:**
-```bash
+# 1. Install dependensi
 npm install
-```
 
-**3. Run the development server:**
-```bash
+# 2. Jalankan development server
 npm run dev
 ```
 
-**4. View the app:**
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Buka [http://localhost:3000](http://localhost:3000) pada browser Anda.
 
 ---
 
-## 🎨 Design DNA & Assets
-
-- **Typography**: `Inter Tight` (Primary Sans-Serif) & `Instrument Serif` (Italic Accents).
-- **Color Palette**: Chestnut (`#864C31`), Espresso (`#222222`), Vanilla Oat Foam (`#FEF8DD`), Buttermilk Crema (`#F7EEC8`), Warm Linen Ivory (`#FAF7F2`), Golden Caramel (`#D4A055`).
-- **Assets**: All imagery and videos are strictly referenced from `/public/assets` to maintain the highest quality visual fidelity.
-
----
-
-*Designed and engineered with impeccable frontend taste by Google Antigravity.*
+## 🌐 Media Sosial Resmi
+- Instagram Slawi: [@clavicula_coffee](https://www.instagram.com/clavicula_coffee/)
+- Instagram Guci: [@clavicula_hills](https://www.instagram.com/clavicula_hills/)
+- Linktree: [linktr.ee/claviculacoffee](https://linktr.ee/claviculacoffee)

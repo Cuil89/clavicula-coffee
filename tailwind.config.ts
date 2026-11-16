@@ -9,26 +9,31 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        chestnut: "#864C31",
-        espresso: "#222222",
-        vanilla: "#FEF8DD",
-        buttermilk: "#F7EEC8",
-        linen: "#FAF7F2",
+        chestnut: "#B26E2E",
+        ochre: "#C4823F",
+        "clavi-gold": "#D49A3D",
+        espresso: "#171513",
+        "espresso-soft": "#2A2724",
+        vanilla: "#F6F1E7",
+        buttermilk: "#ECE4D4",
+        linen: "#FAF8F5",
         caramel: "#D4A055",
         porcelain: "#FFFFFF",
-        "warm-border": "rgba(134, 76, 49, 0.12)",
+        forest: "#2C4334",
+        "warm-border": "rgba(178, 110, 46, 0.16)",
       },
       fontFamily: {
         sans: ["var(--font-inter-tight)", "sans-serif"],
         serif: ["var(--font-instrument-serif)", "serif"],
       },
       boxShadow: {
-        'warm-card': '0 10px 40px -10px rgba(134, 76, 49, 0.08)',
+        "warm-card": "0 10px 40px -10px rgba(178, 110, 46, 0.12)",
+        "elevation-hover": "0 20px 40px -15px rgba(23, 21, 19, 0.2)",
       },
       borderRadius: {
-        '24': '24px',
-        '240': '240px',
-      }
+        "24": "24px",
+        "240": "240px",
+      },
     },
   },
   plugins: [],

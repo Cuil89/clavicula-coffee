@@ -24,8 +24,12 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Maison Brew | Terre & Crème",
-  description: "Luxury Specialty Coffee Roastery, Artisanal Viennoiserie & Architectural Sanctuary",
+  title: "Clavicula Coffee & Idea | Roastery, Specialty Coffee & Sanctuary",
+  description:
+    "Official profile for Clavicula Coffee & Idea (Slawi & Clavicula Hills Guci, Tegal). Specialty coffee roastery, anatomical signature drinks, manual brew, artisan rice bowls, steaks, and desserts.",
+  icons: {
+    icon: "/assets/clavicula-logo.png",
+  },
 };
 
 export default function RootLayout({
@@ -34,7 +38,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="id">
       <body
         className={`${interTight.variable} ${instrumentSerif.variable} font-sans bg-linen text-espresso antialiased`}
       >
