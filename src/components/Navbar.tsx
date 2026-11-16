@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-import { Menu, X, ShoppingBag, MapPin } from "lucide-react";
+import { Menu, X, MapPin } from "lucide-react";
 import { InstagramIcon } from "@/components/Icons";
 import { useUI } from "@/components/UIProvider";
 
@@ -17,9 +17,7 @@ const navLinks = [
 export default function Navbar() {
   const navRef = useRef<HTMLElement>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { openCart, cartItems, openMap } = useUI();
-
-  const totalItems = cartItems.reduce((acc, item) => acc + item.quantity, 0);
+  const { openMap } = useUI();
 
   useEffect(() => {
     if (!navRef.current) return;
@@ -91,20 +89,6 @@ export default function Navbar() {
             >
               <InstagramIcon size={17} />
             </a>
-
-            {/* Cart Button */}
-            <button
-              onClick={openCart}
-              className="relative p-2 rounded-full border border-chestnut/15 text-espresso/80 hover:text-chestnut hover:bg-vanilla/60 transition-colors flex items-center justify-center"
-              aria-label="Keranjang Belanja"
-            >
-              <ShoppingBag size={18} />
-              {totalItems > 0 && (
-                <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-chestnut text-[10px] font-bold text-white shadow-sm">
-                  {totalItems}
-                </span>
-              )}
-            </button>
 
             {/* Reserve CTA */}
             <Link
