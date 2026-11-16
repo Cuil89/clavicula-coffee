@@ -194,7 +194,7 @@ export default function ReservePage() {
                 </label>
                 <input
                   type="text"
-                  placeholder="Contoh: dr. Farhan"
+                  placeholder="Contoh: Farhan / Dimas"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   required

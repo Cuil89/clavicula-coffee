@@ -162,7 +162,7 @@ export default function Home() {
             </p>
 
             <p className="text-base md:text-lg text-espresso/80 max-w-[48ch] mb-8 leading-relaxed">
-              Dilahirkan dari latar belakang kedokteran oleh dr. Ardini Ayu Saptanti &amp; keluarga di Slawi, Tegal. Dinamai dari <em>clavicula</em> (tulang selangka)—jembatan anatomis yang menyatukan kepala, detak dada, dan pergerakan tangan. Ruang bagi ide bertumbuh di antara seduhan single origin, sajian berkonsep anatomi, hingga sejuknya kabut Clavicula Hills Guci.
+              Dilahirkan dari latar belakang kedokteran di Slawi, Tegal. Dinamai dari <em>clavicula</em> (tulang selangka)—jembatan anatomis yang menyatukan kepala, detak dada, dan pergerakan tangan. Ruang bagi ide bertumbuh di antara seduhan single origin, sajian berkonsep anatomi, hingga sejuknya kabut Clavicula Hills Guci.
             </p>
 
             <div className="flex flex-wrap items-center gap-4 mb-12">
@@ -782,7 +782,7 @@ export default function Home() {
               },
               {
                 text: "Clavicula Hills di Guci pemandangannya luar biasa sejuk. Ngopi hangat sambil menikmati view perbukitan pinus benar-benar sanctuary terbaik setelah perjalanan.",
-                author: "dr. Amanda Putri",
+                author: "Amanda Putri",
                 role: "Wisatawan Guci, Jawa Tengah",
               },
               {

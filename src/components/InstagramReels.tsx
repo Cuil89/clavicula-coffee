@@ -50,7 +50,7 @@ const REELS: ReelCard[] = [
   },
   {
     postUrl: "https://www.instagram.com/clavicula_coffee/",
-    caption: "Signature Coffee berfilosofi anatomi tubuh: Manubrium, Corpus, Sternum, Tibia & Scapula kreasi dr. Ardini & tim barista.",
+    caption: "Signature Coffee berfilosofi anatomi tubuh: Manubrium, Corpus, Sternum, Tibia & Scapula kreasi kurasi tim barista Clavicula.",
     account: "@clavicula_coffee",
     type: "post",
     thumb: "/assets/extracted/signature_0.jpg",
