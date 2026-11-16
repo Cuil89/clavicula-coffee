@@ -1297,27 +1297,36 @@ export default function MenuPage() {
   return (
     <main className="flex min-h-screen flex-col overflow-hidden bg-linen text-espresso selection:bg-chestnut selection:text-white">
       
-      {/* ─── 1. HERO SECTION (EMBER ARCHITECTURE IN WARM LINEN PALETTE) ─── */}
-      <section className="relative min-h-[85vh] flex flex-col justify-end pt-36 pb-16 px-4 md:px-8 border-b border-chestnut/15">
-        <div className="mx-auto max-w-7xl w-full">
-          {/* Eyebrow Pill */}
-          <div className="inline-flex items-center gap-2 rounded-full border border-chestnut/30 bg-vanilla px-4 py-1.5 mb-6 shadow-sm">
-            <span className="w-2.5 h-2.5 rounded-full bg-chestnut animate-pulse"></span>
-            <span className="text-[11px] font-mono tracking-[0.2em] uppercase text-chestnut font-semibold">
-              ANATOMICAL ROASTERY // SLAWI &amp; CLAVICULA HILLS GUCI
-            </span>
-          </div>
+      {/* ─── 1. HERO SECTION (ATMOSPHERIC EMBER COFFEE PHOTO HERO) ───── */}
+      <section className="relative min-h-[92svh] flex flex-col justify-end overflow-hidden pb-16 pt-36 md:pt-44 text-[#f1e7d6]">
+        {/* Background Image: Overhead Artisanal Coffee Cups Table with Dark Cinematic Scrim */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/assets/ember-hero-table.jpg"
+            alt="Artisanal coffee cups slow roast atmosphere at Clavicula Coffee"
+            fill
+            priority
+            className="object-cover object-center brightness-[0.45] contrast-[1.12]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#100d0a] via-[#100d0a]/65 to-[#100d0a]/80 pointer-events-none"></div>
+        </div>
+
+        <div className="container relative z-10 max-w-[1280px] mx-auto px-6 md:px-12 w-full">
+          {/* Eyebrow */}
+          <p className="ember-eyebrow mb-4">
+            Small batch · Anatomical roastery · Slawi &amp; Guci Hills
+          </p>
 
           {/* Heading */}
-          <h1 className="font-display text-5xl sm:text-7xl md:text-8xl lg:text-[90px] font-black tracking-tight text-espresso leading-[0.92] max-w-4xl">
+          <h1 className="font-display text-5xl sm:text-7xl md:text-8xl lg:text-[94px] font-black tracking-tight text-[#f1e7d6] leading-[0.92] max-w-4xl">
             Coffee worth<br />
-            <span className="font-serif italic font-normal text-chestnut">
+            <span className="font-serif italic font-normal text-[#e7a93c]">
               slowing down for.
             </span>
           </h1>
 
           {/* Lead Paragraph */}
-          <p className="mt-6 md:mt-8 max-w-2xl text-base sm:text-lg text-espresso/80 leading-relaxed font-normal">
+          <p className="mt-6 md:mt-8 max-w-2xl text-base sm:text-lg md:text-xl text-[rgba(241,231,214,0.85)] font-light leading-relaxed">
             Sebuah ruang perjumpaan antara presisi anatomi tubuh dan seni sangrai kopi nusantara. 
             Dari bar roastery di Slawi hingga sejuknya kabut pegunungan pinus di Guci, 
             nikmati kurasi sajian single origin, anatomical signature series, serta hidangan dapur spesial.
@@ -1327,19 +1336,19 @@ export default function MenuPage() {
           <div className="mt-8 md:mt-10 flex flex-wrap items-center gap-4">
             <a
               href="#lineup"
-              className="rounded-full bg-chestnut px-8 py-3.5 text-sm font-semibold text-white shadow-md hover:bg-chestnut/90 transition-all active:scale-95 flex items-center gap-2"
+              className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full font-semibold text-sm bg-[#e7a93c] text-[#100d0a] hover:bg-[#faf3e6] hover:-translate-y-0.5 transition-all shadow-[0_18px_40px_-16px_rgba(231,169,60,0.5)]"
             >
               Jelajahi The Lineup ⟶
             </a>
             <a
               href="#full-menu"
-              className="rounded-full border border-chestnut/30 bg-white/80 px-7 py-3.5 text-sm font-semibold text-espresso hover:bg-vanilla transition-all active:scale-95"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-sm text-[#f1e7d6] border border-white/20 hover:bg-white/10 transition-all"
             >
               Daftar Menu Lengkap (120+ Menu)
             </a>
             <button
               onClick={() => setShowPosterGallery(!showPosterGallery)}
-              className="rounded-full border border-chestnut/30 bg-vanilla px-5 py-3.5 text-xs font-mono uppercase tracking-wider text-chestnut font-semibold hover:bg-white transition-all flex items-center gap-2 shadow-sm"
+              className="inline-flex items-center gap-2 px-6 py-4 rounded-full font-mono text-xs uppercase tracking-wider text-[#e7a93c] border border-[#e7a93c]/40 hover:bg-[#e7a93c]/15 transition-all font-semibold shadow-sm"
             >
               <BookOpen size={15} />
               {showPosterGallery ? "Tutup Lembar PDF" : "Buku Menu Fisik (PDF 12 Lembar)"}
@@ -1347,37 +1356,29 @@ export default function MenuPage() {
           </div>
 
           {/* Hero Foot (Key Metrics) */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 w-full border-t border-chestnut/15 pt-8 mt-14">
-            <div className="flex flex-col">
-              <span className="text-3xl font-black text-espresso">88.5+</span>
-              <span className="text-[11px] uppercase tracking-wider text-espresso/60 mt-0.5 font-mono">
-                SCA Cupping Score Arabica
-              </span>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-3xl font-black text-espresso">2 Outlets</span>
-              <span className="text-[11px] uppercase tracking-wider text-espresso/60 mt-0.5 font-mono">
-                Slawi &amp; Guci Hills
-              </span>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-3xl font-black text-espresso">120+ Menu</span>
-              <span className="text-[11px] uppercase tracking-wider text-chestnut mt-0.5 font-mono font-semibold">
-                Sesuai Buku Menu Fisik
-              </span>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-3xl font-black text-espresso">100% Halal</span>
-              <span className="text-[11px] uppercase tracking-wider text-espresso/60 mt-0.5 font-mono">
-                Kitchen &amp; Coffee
-              </span>
-            </div>
+          <div className="mt-16 pt-8 border-t border-[rgba(241,231,214,0.15)] flex flex-wrap items-center gap-6 md:gap-10 text-xs font-mono uppercase tracking-wider text-[rgba(241,231,214,0.7)]">
+            <span className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#e7a93c]"></span>
+              Slawi &amp; Guci Hills, Tegal
+            </span>
+            <span className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#e7a93c]"></span>
+              Est. 2020
+            </span>
+            <span className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#e7a93c]"></span>
+              Anatomy &amp; Single Origin
+            </span>
+            <span className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#e7a93c]"></span>
+              100% Halal Certified Kitchen
+            </span>
           </div>
         </div>
       </section>
 
-      {/* ─── 2. MARQUEE STRIP (WARM CHESTNUT STRIP) ─────────────────── */}
-      <section className="bg-chestnut text-white py-3.5 md:py-4 overflow-hidden border-y border-chestnut/20 select-none font-display font-bold text-base md:text-lg tracking-wide shadow-sm">
+      {/* ─── 2. MARQUEE STRIP (GOLDEN AMBER STRIP) ───────────────────── */}
+      <section className="bg-[#e7a93c] text-[#100d0a] py-3.5 md:py-4 overflow-hidden border-y border-[#100d0a]/20 select-none font-display font-bold text-base md:text-xl tracking-tight shadow-md">
         <div className="animate-ember-marquee flex items-center gap-6 whitespace-nowrap">
           <span>ANATOMICAL COFFEE</span>
           <span className="opacity-60">✶</span>
@@ -1420,7 +1421,7 @@ export default function MenuPage() {
         </div>
       </section>
 
-      {/* ─── 3. MANIFESTO PHILOSOPHY SECTION ────────────────────────── */}
+      {/* ─── 3. MANIFESTO PHILOSOPHY SECTION (WARM LINEN) ────────────── */}
       <section className="py-20 md:py-28 bg-linen border-b border-chestnut/15">
         <div className="mx-auto max-w-7xl px-4 md:px-8">
           <span className="text-[11px] font-mono tracking-[0.2em] uppercase text-chestnut font-semibold block mb-4">
@@ -1547,25 +1548,110 @@ export default function MenuPage() {
         </div>
       </section>
 
-      {/* ─── 5. THE RITUAL (EDITORIAL 2-COLUMN) ─────────────────────── */}
+      {/* ─── 5. SANCTUARY OUTLETS SHOWCASE (REAL CLAVICULA PLACES) ─────── */}
+      <section className="py-20 md:py-28 bg-linen border-b border-chestnut/15">
+        <div className="mx-auto max-w-7xl px-4 md:px-8">
+          <div className="mb-12">
+            <span className="text-[11px] font-mono tracking-[0.2em] uppercase text-chestnut font-semibold block mb-2">
+              DUA RUANG SANCTUARY // SLAWI &amp; GUCI HILLS
+            </span>
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-espresso">
+              Dua Suasana, Satu Cita Rasa
+            </h2>
+            <p className="mt-2 text-sm text-espresso/70 font-serif italic max-w-2xl">
+              Pilih ritme Anda: bar roastery berenergi kreatif di Slawi, atau ketenangan kabut sejuk hutan pinus di Clavicula Hills Guci.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Outlet 1: Slawi Roastery */}
+            <div className="group bg-white rounded-[2.5rem] overflow-hidden border border-chestnut/20 shadow-sm hover:shadow-warm-card transition-all duration-300 flex flex-col justify-between">
+              <div className="relative aspect-[16/10] w-full overflow-hidden bg-espresso">
+                <Image
+                  src="/assets/clavicula/places/hero-slowbar-clavicula.jpg"
+                  alt="Clavicula Coffee & Idea Slow Bar Slawi"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                <span className="absolute top-4 left-4 bg-chestnut text-white font-mono text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-md">
+                  Outlet 01 · Slawi (Kalisapu)
+                </span>
+                <span className="absolute bottom-4 left-4 text-xs font-mono text-white/90">
+                  Jl. DR. Soetomo No.3, Kalisapu, Slawi, Tegal
+                </span>
+              </div>
+              <div className="p-8">
+                <h3 className="font-display text-2xl font-bold text-espresso mb-2 group-hover:text-chestnut transition-colors">
+                  Slow Bar &amp; Roastery Lab Slawi
+                </h3>
+                <p className="text-sm text-espresso/75 leading-relaxed mb-6">
+                  Pusat eksplorasi sangrai kopi dengan Slow Bar manual brew V60, interior berkonsep modern industrial yang sejuk untuk WFC, dan outdoor terrace untuk diskusi kreatif.
+                </p>
+                <div className="flex flex-wrap gap-2 text-xs font-mono text-espresso/70">
+                  <span className="px-3 py-1 rounded-full bg-vanilla/60 border border-chestnut/15">✓ Slow Bar V60</span>
+                  <span className="px-3 py-1 rounded-full bg-vanilla/60 border border-chestnut/15">✓ Roastery In-House</span>
+                  <span className="px-3 py-1 rounded-full bg-vanilla/60 border border-chestnut/15">✓ Co-Working &amp; WFC</span>
+                  <span className="px-3 py-1 rounded-full bg-vanilla/60 border border-chestnut/15">✓ Live Music Weekend</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Outlet 2: Guci Hills */}
+            <div className="group bg-white rounded-[2.5rem] overflow-hidden border border-chestnut/20 shadow-sm hover:shadow-warm-card transition-all duration-300 flex flex-col justify-between">
+              <div className="relative aspect-[16/10] w-full overflow-hidden bg-espresso">
+                <Image
+                  src="/assets/clavicula/places/ruang-wfc-slawi-dan-view-guci.jpg"
+                  alt="Clavicula Coffee & Hills Guci Highland View"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                <span className="absolute top-4 left-4 bg-caramel text-espresso font-mono text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-md">
+                  Outlet 02 · Guci Hills (Highland)
+                </span>
+                <span className="absolute bottom-4 left-4 text-xs font-mono text-white/90">
+                  Kawasan Wisata Guci, Bojong, Tegal (Lereng Gn. Slamet)
+                </span>
+              </div>
+              <div className="p-8">
+                <h3 className="font-display text-2xl font-bold text-espresso mb-2 group-hover:text-chestnut transition-colors">
+                  Highland Sanctuary Hutan Pinus Guci
+                </h3>
+                <p className="text-sm text-espresso/75 leading-relaxed mb-6">
+                  Nikmati udara pegunungan yang sangat dingin dan segar dengan area rooftop terbuka. Menikmati semangkuk tomyam hangat, steak, dan seduhan kopi di tengah panorama hijau.
+                </p>
+                <div className="flex flex-wrap gap-2 text-xs font-mono text-espresso/70">
+                  <span className="px-3 py-1 rounded-full bg-vanilla/60 border border-chestnut/15">✓ Highland Pine View</span>
+                  <span className="px-3 py-1 rounded-full bg-vanilla/60 border border-chestnut/15">✓ Open-Air Rooftop Deck</span>
+                  <span className="px-3 py-1 rounded-full bg-vanilla/60 border border-chestnut/15">✓ Hawa Dingin Pegunungan</span>
+                  <span className="px-3 py-1 rounded-full bg-vanilla/60 border border-chestnut/15">✓ Steak &amp; Tomyam Warmth</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── 6. THE RITUAL (EDITORIAL 2-COLUMN) ─────────────────────── */}
       <section id="ritual" className="py-20 md:py-28 bg-linen border-b border-chestnut/15">
         <div className="mx-auto max-w-7xl px-4 md:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            {/* Left Media */}
+            {/* Left Media: Authentic V60 Pouring at Clavicula */}
             <div className="lg:col-span-5 relative aspect-[3/4] rounded-[2rem] overflow-hidden border border-chestnut/25 shadow-xl bg-white">
               <Image
-                src="/assets/clavicula/cafe/atmosphere-night.webp"
-                alt="Slow bar pour and coffee ritual at Clavicula"
+                src="/assets/clavicula/places/slow-bar-v60-clavicula.jpg"
+                alt="Slow bar pour and manual brew ritual at Clavicula Coffee"
                 fill
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-espresso/85 via-transparent to-transparent"></div>
               <div className="absolute bottom-6 left-6 right-6">
                 <span className="inline-block px-3 py-1 rounded-full bg-chestnut text-white font-mono text-[10px] font-bold uppercase tracking-wider mb-2">
-                  Slow Bar &amp; Roastery
+                  Slow Bar &amp; Roastery Lab
                 </span>
                 <p className="text-xs font-serif italic text-white/90">
-                  Diseduh dengan presisi rasio, temperatur, dan waktu demi memunculkan potensi terbaik biji kopi.
+                  Diseduh dengan presisi rasio, temperatur, dan waktu demi memunculkan potensi terbaik biji kopi arabika pilihan.
                 </p>
               </div>
             </div>
@@ -1641,7 +1727,7 @@ export default function MenuPage() {
         </div>
       </section>
 
-      {/* ─── 6. THE STATS SECTION ───────────────────────────────────── */}
+      {/* ─── 7. THE STATS SECTION ───────────────────────────────────── */}
       <section className="bg-vanilla/40 py-16 border-b border-chestnut/15">
         <div className="mx-auto max-w-7xl px-4 md:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -1684,7 +1770,7 @@ export default function MenuPage() {
         </div>
       </section>
 
-      {/* ─── 7. THE COMPLETE CAFE MENU (ALL 120+ ITEMS FROM PDF) ─────── */}
+      {/* ─── 8. THE COMPLETE CAFE MENU (ALL 120+ ITEMS FROM PDF) ─────── */}
       <section id="full-menu" className="py-20 md:py-28 bg-linen scroll-mt-24">
         <div className="mx-auto max-w-7xl px-4 md:px-8">
           
@@ -1917,12 +2003,12 @@ export default function MenuPage() {
             </div>
           )}
 
-          {/* ─── 8. QUOTE ATMOSPHERE SECTION ─────────────────────────── */}
+          {/* ─── 9. QUOTE ATMOSPHERE SECTION ─────────────────────────── */}
           <div className="mt-24 relative rounded-[2.5rem] overflow-hidden bg-espresso text-white p-10 md:p-16 text-center shadow-2xl">
             <div className="absolute inset-0 z-0">
               <Image
-                src="/assets/clavicula/cafe/atmosphere-night.webp"
-                alt="Clavicula Coffee & Idea Atmosphere"
+                src="/assets/clavicula/places/roastery-lab-clavicula-slawi.jpg"
+                alt="Clavicula Coffee & Idea Atmosphere Roastery"
                 fill
                 className="object-cover opacity-20"
               />
@@ -1941,7 +2027,7 @@ export default function MenuPage() {
             </div>
           </div>
 
-          {/* ─── 9. DINE-IN RESERVATION FOOTER CTA ──────────────────── */}
+          {/* ─── 10. DINE-IN RESERVATION FOOTER CTA ──────────────────── */}
           <div className="mt-16 bg-gradient-to-r from-espresso via-chestnut to-espresso text-white rounded-3xl p-8 md:p-12 text-center relative overflow-hidden shadow-xl">
             <div className="relative z-10 max-w-2xl mx-auto">
               <span className="text-xs font-mono uppercase tracking-[0.2em] text-caramel mb-3 block font-semibold">
