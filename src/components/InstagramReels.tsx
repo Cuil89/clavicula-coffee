@@ -67,7 +67,7 @@ const REELS: ReelCard[] = [
     caption: "Clavicula Tenderloin Steak empuk dengan saus spesial & kentang mashed gurih, sajian terbaik menemani santap malam.",
     account: "@clavicula_coffee",
     type: "post",
-    thumb: "/assets/menu_crops/steak_tenderloin.jpg",
+    thumb: "/assets/clavicula/foods/steak-tenderloin-card.jpg",
   },
 ];
 // ─────────────────────────────────────────────────────────────────────────────
