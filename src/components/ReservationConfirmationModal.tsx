@@ -1,12 +1,14 @@
 "use client";
 
 import { useUI } from "./UIProvider";
-import { X, CalendarPlus, MessageCircle, CheckCircle2, MapPin } from "lucide-react";
+import { X, CalendarPlus, CheckCircle2, MapPin, Copy, Check } from "lucide-react";
+import { InstagramIcon } from "./Icons";
 import { useEffect, useState } from "react";
 
 export default function ReservationConfirmationModal() {
-  const { reservationTicket, reservationData, closeReservationTicket } = useUI();
+  const { reservationTicket, reservationData, closeReservationTicket, addToast } = useUI();
   const [mounted, setMounted] = useState(false);
+  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -26,10 +28,36 @@ export default function ReservationConfirmationModal() {
     notes: "",
   };
 
-  const handleWhatsAppConfirm = () => {
-    const text = `Halo Clavicula Coffee & Idea!%0ASaya telah membuat reservasi meja:%0A- Kode Booking: *${data.code}*%0A- Nama: *${data.name}*%0A- Outlet: *${data.outlet}*%0A- Tanggal: *${data.date}*%0A- Waktu: *${data.time}*%0A- Jumlah Tamu: *${data.guests} Orang*%0A- Area: *${data.seating}*%0A${data.notes ? `- Catatan: ${data.notes}%0A` : ""}%0AMohon konfirmasi reservasinya. Terima kasih!`;
-    const waUrl = `https://wa.me/6287733444426?text=${text}`;
-    window.open(waUrl, "_blank");
+  const isGuci = data.outlet.toLowerCase().includes("guci");
+  const igHandle = isGuci ? "clavicula_hills" : "clavicula_coffee";
+  const igUrl = `https://ig.me/m/${igHandle}`;
+
+  const messageText = `Halo Clavicula Coffee & Idea (@${igHandle})!
+Saya ingin konfirmasi reservasi meja:
+• Kode Booking: ${data.code}
+• Nama: ${data.name}
+• Outlet: ${data.outlet}
+• Tanggal: ${data.date}
+• Waktu: ${data.time}
+• Jumlah Tamu: ${data.guests} Orang (${data.seating})
+${data.phone ? `• Kontak: ${data.phone}\n` : ""}${data.notes ? `• Catatan Khusus: ${data.notes}\n` : ""}
+Mohon bantuan konfirmasi ketersediaan meja. Terima kasih!`;
+
+  const copyFormatToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(messageText);
+      setCopied(true);
+      addToast("Format reservasi berhasil disalin ke clipboard! Silakan paste di DM Instagram.");
+      setTimeout(() => setCopied(false), 3000);
+      return true;
+    } catch {
+      return false;
+    }
+  };
+
+  const handleInstagramConfirm = async () => {
+    await copyFormatToClipboard();
+    window.open(igUrl, "_blank");
   };
 
   const handleGoogleCalendar = () => {
@@ -38,7 +66,7 @@ export default function ReservationConfirmationModal() {
       `Booking Ref: ${data.code}\nNama: ${data.name}\nTamu: ${data.guests} orang\nArea: ${data.seating}`
     );
     const location = encodeURIComponent(
-      data.outlet.includes("Guci")
+      isGuci
         ? "Clavicula Hills, Guci, Tuwel, Tegal"
         : "Clavicula Coffee & Idea, Jl. Dr. Soetomo No.3, Kalisapu, Slawi"
     );
@@ -71,9 +99,12 @@ export default function ReservationConfirmationModal() {
           <span className="text-xs font-mono tracking-widest text-chestnut uppercase mb-1">
             Reservasi Berhasil Diajukan
           </span>
-          <h3 className="text-2xl font-black text-espresso mb-4">Meja Anda Telah Dicatat</h3>
+          <h3 className="text-2xl font-black text-espresso mb-2">Meja Anda Telah Dicatat</h3>
+          <p className="text-xs text-espresso/70 mb-4 leading-relaxed">
+            Langkah terakhir: Konfirmasikan kode booking ini langsung melalui DM Instagram resmi kami.
+          </p>
 
-          <div className="bg-vanilla/60 w-full p-4 rounded-2xl border border-chestnut/15 space-y-2 text-left text-xs">
+          <div className="bg-vanilla/60 w-full p-4 rounded-2xl border border-chestnut/15 space-y-2 text-left text-xs mb-3">
             <div className="flex justify-between border-b border-chestnut/10 pb-1.5">
               <span className="text-espresso/60 font-mono">KODE RESERVASI</span>
               <span className="font-mono font-bold text-chestnut text-sm">{data.code}</span>
@@ -97,20 +128,49 @@ export default function ReservationConfirmationModal() {
               <span className="font-semibold text-espresso">{data.guests} Orang ({data.seating})</span>
             </div>
           </div>
+
+          <div className="w-full bg-[#FAF5ED] border border-chestnut/15 rounded-xl p-3 text-[11px] text-espresso/75 text-left flex items-start gap-2">
+            <span className="text-chestnut font-bold text-sm leading-none mt-0.5">ℹ</span>
+            <span>
+              Format rincian booking di atas akan otomatis disalin ke clipboard saat Anda menekan tombol di bawah. Anda tinggal <strong>Paste (Tempel)</strong> di DM Instagram.
+            </span>
+          </div>
         </div>
 
         <div className="p-6 bg-buttermilk/60 rounded-b-[30px] flex flex-col gap-3">
+          {/* Main Action: DM Instagram */}
           <button
-            onClick={handleWhatsAppConfirm}
-            className="w-full py-3.5 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white text-sm font-semibold flex items-center justify-center gap-2 shadow-sm transition-all"
+            onClick={handleInstagramConfirm}
+            className="w-full py-3.5 rounded-full bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#F77737] hover:opacity-95 text-white text-sm font-bold flex items-center justify-center gap-2.5 shadow-md transition-all active:scale-[0.98]"
           >
-            <MessageCircle size={18} /> Konfirmasi ke WhatsApp Clavicula
+            <InstagramIcon className="w-5 h-5 text-white" />
+            Konfirmasi via DM Instagram (@{igHandle})
           </button>
+
+          {/* Secondary Action: Copy text manually if needed */}
+          <button
+            onClick={copyFormatToClipboard}
+            className="w-full py-2.5 rounded-full bg-white border border-chestnut/20 text-espresso text-xs font-semibold flex items-center justify-center gap-2 hover:bg-vanilla transition-all shadow-sm"
+          >
+            {copied ? (
+              <>
+                <Check size={14} className="text-emerald-600" />
+                <span className="text-emerald-700">Format Berhasil Disalin!</span>
+              </>
+            ) : (
+              <>
+                <Copy size={14} className="text-chestnut" />
+                <span>Salin Teks Format Booking</span>
+              </>
+            )}
+          </button>
+
+          {/* Calendar Action */}
           <button
             onClick={handleGoogleCalendar}
-            className="w-full py-3 rounded-full bg-white border border-chestnut/20 text-chestnut text-xs font-medium flex items-center justify-center gap-2 hover:border-chestnut transition-colors shadow-sm"
+            className="w-full py-2 rounded-full text-chestnut text-xs font-medium flex items-center justify-center gap-1.5 hover:underline transition-colors pt-1"
           >
-            <CalendarPlus size={16} /> Simpan ke Google Calendar
+            <CalendarPlus size={14} /> Simpan ke Google Calendar
           </button>
         </div>
       </div>

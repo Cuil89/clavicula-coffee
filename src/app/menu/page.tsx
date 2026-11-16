@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { Search, BookOpen, ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
+import { InstagramIcon } from "@/components/Icons";
 
 const InteractiveCoffeeBean3D = dynamic(
   () => import("@/components/InteractiveCoffeeBean3D"),
@@ -2133,12 +2134,13 @@ export default function MenuPage() {
                   Reservasi Meja Sekarang →
                 </Link>
                 <a
-                  href="https://wa.me/6287733444426?text=Halo%20Clavicula%2C%20saya%20mau%20tanya%20seputar%20menu%20dan%20kunjungan"
+                  href="https://ig.me/m/clavicula_coffee"
                   target="_blank"
                   rel="noreferrer"
-                  className="px-8 py-3.5 rounded-full border border-white/30 text-white text-xs font-semibold hover:bg-white/10 transition-all"
+                  className="px-8 py-3.5 rounded-full border border-white/30 text-white text-xs font-semibold hover:bg-white/10 transition-all flex items-center gap-2"
                 >
-                  Hubungi Barista via WhatsApp
+                  <InstagramIcon size={14} className="text-white" />
+                  DM Instagram @clavicula_coffee
                 </a>
               </div>
             </div>

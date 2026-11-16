@@ -18,7 +18,7 @@ export default function ReservePage() {
   const handleReservation = (e: React.FormEvent) => {
     e.preventDefault();
     if (!name || !phone) {
-      addToast("Mohon isi nama dan nomor WhatsApp Anda.");
+      addToast("Mohon isi nama dan kontak Anda.");
       return;
     }
     const code = `CLAVI-${new Date().getFullYear()}-${Math.floor(1000 + Math.random() * 9000)}`;
@@ -204,11 +204,11 @@ export default function ReservePage() {
 
               <div>
                 <label className="block text-xs font-mono tracking-wider uppercase text-espresso/60 mb-2 font-semibold">
-                  Nomor WhatsApp Aktif *
+                  Nomor Kontak / Akun Instagram *
                 </label>
                 <input
-                  type="tel"
-                  placeholder="0812-xxxx-xxxx"
+                  type="text"
+                  placeholder="0812-xxxx-xxxx / @username"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                   required
