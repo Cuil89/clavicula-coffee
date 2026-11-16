@@ -1487,23 +1487,27 @@ export default function MenuPage() {
               {/* Outer Card with clean framing */}
               <div className="relative rounded-[2.5rem] overflow-hidden border border-chestnut/20 bg-white p-3.5 shadow-warm-card group">
                 
-                {/* Photographic Stage */}
+                {/* Roastery Video Stage */}
                 <div className="relative aspect-[4/5] w-full rounded-[2rem] overflow-hidden bg-espresso">
-                  <Image
-                    src="/assets/clavicula/places/roastery-lab-clavicula-slawi.jpg"
-                    alt="Clavicula Roastery Lab Cast Iron Drum Craft Slawi"
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-700 brightness-[0.92] contrast-[1.05]"
+                  <video
+                    src="/assets/vidio-rostery.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    poster="/assets/clavicula/places/roastery-lab-clavicula-slawi.jpg"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent pointer-events-none"></div>
 
                   {/* Top Right Monograph Pill */}
-                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full border border-chestnut/20 shadow-sm text-[10px] font-mono uppercase tracking-wider text-espresso font-semibold">
-                    ROASTERY ARCHIVE
+                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full border border-chestnut/20 shadow-sm text-[10px] font-mono uppercase tracking-wider text-espresso font-semibold flex items-center gap-1.5 z-10 pointer-events-none">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                    LIVE ROASTERY
                   </div>
 
                   {/* Bottom Magazine Placard */}
-                  <div className="absolute bottom-5 left-5 right-5">
+                  <div className="absolute bottom-5 left-5 right-5 z-10 pointer-events-none">
                     <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#D4A055] font-semibold block mb-1">
                       FIG. 01 &mdash; THE ANATOMICAL CRAFT
                     </span>
