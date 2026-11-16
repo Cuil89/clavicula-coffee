@@ -885,7 +885,7 @@ export default function Home() {
               },
               {
                 text: "Konsep nama menu anatomi tubuh manusia sangat cerdas dan unik. Makanan beratnya seperti Steak dan Mie Chashu juga sangat lezat, bukan sekadar pelengkap.",
-                author: "Bagus Wicaksono",
+                author: "Dimas Wicaksono",
                 role: "Food & Lifestyle Enthusiast",
               },
             ].map((review, i) => (
