@@ -31,7 +31,7 @@ const SIGNATURE_LINEUP = [
     category: "Signature Anatomi",
     notes: "Cold brew arabika · Saus karamel leleh · Manis seimbang creamy",
     concept: "Anatomi: Tulang dada tengah — perisai penyeimbang rasa kopi dan manis karamel dingin",
-    image: "/assets/clavicula/drinks/sternum.webp",
+    image: "/images/menu/drinks/sternum.webp",
     badge: "Caramel Cold Brew",
   },
   {
@@ -41,7 +41,7 @@ const SIGNATURE_LINEUP = [
     category: "Signature Anatomi",
     notes: "Caramelized milk · Espresso aromatik · Remahan biskuit regal gurih",
     concept: "Anatomi: Puncak tulang bahu — jembatan gerakan presisi tangan barista",
-    image: "/assets/clavicula/drinks/acromion.webp",
+    image: "/images/menu/drinks/acromion.webp",
     badge: "Must Try",
   },
   {
@@ -51,7 +51,7 @@ const SIGNATURE_LINEUP = [
     category: "Signature Specialty",
     notes: "Nutella hazelnut legit · Double espresso arabika · Vanilla ice cream scoop",
     concept: "Anatomi: Tulang rusuk — melindungi kehangatan rasa terdalam",
-    image: "/assets/clavicula/drinks/costa.webp",
+    image: "/images/menu/drinks/costa.webp",
     badge: "Barista Pick",
   },
   {
@@ -71,7 +71,7 @@ const SIGNATURE_LINEUP = [
     category: "Signature Nusantara",
     notes: "Pandan klepon nusantara · Kelapa gurih · Double espresso arabika",
     concept: "Anatomi: Tulang belikat — sayap rasa tradisional bernuansa modern",
-    image: "/assets/clavicula/drinks/scapula.webp",
+    image: "/images/menu/drinks/scapula.webp",
     badge: "Nusantara Heritage",
   },
   {
@@ -81,7 +81,7 @@ const SIGNATURE_LINEUP = [
     category: "Fruit & Cream Fusion",
     notes: "Fresh strawberry swirl · Susu lembut dingin · Kopi eksotis",
     concept: "Anatomi: Otot trapezius — relaksasi rasa manis segar yang menenangkan",
-    image: "/assets/clavicula/drinks/trapezius.webp",
+    image: "/images/menu/drinks/trapezius.webp",
     badge: "Refreshing",
   },
   {
@@ -223,7 +223,7 @@ const ALL_MENU_ITEMS: MenuItem[] = [
     category: "Espresso Based",
     notes: "Vanilla syrup · Foamed milk · Espresso drizzle · Saus karamel legit",
     desc: "Lapisan susu vanilla lembut ditimpa espresso aromatik dan guratan saus karamel lezat.",
-    image: "/assets/clavicula/drinks/caramel-macchiato.webp",
+    image: "/images/menu/drinks/caramel-macchiato.webp",
   },
   {
     id: "esp-06",
@@ -409,7 +409,7 @@ const ALL_MENU_ITEMS: MenuItem[] = [
     category: "Non-Coffee & Blend",
     notes: "Activated bamboo charcoal · Susu segar gurih · Manis lembut menenangkan",
     desc: "Minuman non-coffee estetik berwarna abu-abu gelap dengan rasa manis lembut creamy dan khasiat charcoal alami.",
-    image: "/assets/clavicula/drinks/charcoal-blend.webp",
+    image: "/images/menu/drinks/charcoal-blend.webp",
     badge: "Detox Blend",
   },
 ];
