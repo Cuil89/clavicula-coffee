@@ -3,7 +3,22 @@
 import { useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Search, BookOpen, ChevronLeft, ChevronRight } from "lucide-react";
+import dynamic from "next/dynamic";
+import { Search, BookOpen, ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
+
+const InteractiveCoffeeBean3D = dynamic(
+  () => import("@/components/InteractiveCoffeeBean3D"),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="w-full h-[400px] rounded-[2.5rem] bg-white border border-chestnut/20 flex flex-col items-center justify-center text-espresso/40 font-mono text-xs gap-3">
+        <div className="w-8 h-8 rounded-full border-2 border-chestnut/30 border-t-chestnut animate-spin"></div>
+        <span>Memuat Laboratorium Anatomi Biji 3D...</span>
+      </div>
+    ),
+  }
+);
+
 
 type MenuItem = {
   id: string;
@@ -1297,127 +1312,178 @@ export default function MenuPage() {
   return (
     <main className="flex min-h-screen flex-col overflow-hidden bg-linen text-espresso selection:bg-chestnut selection:text-white">
       
-      {/* ─── 1. HERO SECTION (ATMOSPHERIC EMBER COFFEE PHOTO HERO) ───── */}
-      <section className="relative min-h-[92svh] flex flex-col justify-end overflow-hidden pb-16 pt-36 md:pt-44 text-[#f1e7d6]">
-        {/* Background Image: Overhead Artisanal Coffee Cups Table with Dark Cinematic Scrim */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/assets/ember-hero-table.jpg"
-            alt="Artisanal coffee cups slow roast atmosphere at Clavicula Coffee"
-            fill
-            priority
-            className="object-cover object-center brightness-[0.45] contrast-[1.12]"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#100d0a] via-[#100d0a]/65 to-[#100d0a]/80 pointer-events-none"></div>
-        </div>
+      {/* ─── 1. HERO SECTION (WARM ARCHITECTURAL EDITORIAL HERO) ───── */}
+      <section className="relative w-full pt-32 md:pt-40 pb-16 md:pb-24 px-4 md:px-8 border-b border-chestnut/15 bg-gradient-to-b from-[#FAF8F5] via-[#FAF6F0] to-[#FAF8F5]">
+        <div className="mx-auto max-w-7xl w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+          
+          {/* Left Column (Brand Narrative & Quick Actions) */}
+          <div className="lg:col-span-7 flex flex-col items-start z-10">
+            {/* Pill Tag */}
+            <div className="inline-flex items-center gap-2 rounded-full border border-chestnut/30 bg-vanilla px-3.5 py-1.5 mb-6 shadow-sm">
+              <span className="w-2.5 h-2.5 rounded-full bg-chestnut animate-pulse"></span>
+              <span className="text-[11px] font-mono tracking-[0.18em] uppercase text-chestnut font-semibold">
+                ROASTERY &amp; KITCHEN // BUKU MENU KAFE RESMI
+              </span>
+            </div>
 
-        <div className="container relative z-10 max-w-[1280px] mx-auto px-6 md:px-12 w-full">
-          {/* Eyebrow */}
-          <p className="ember-eyebrow mb-4">
-            Small batch · Anatomical roastery · Slawi &amp; Guci Hills
-          </p>
+            {/* Main Headline */}
+            <h1 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-[76px] font-black tracking-tight text-espresso leading-[0.94] mb-4">
+              Sensasi Rasa,<br />
+              <span className="font-serif italic font-normal text-chestnut">
+                Presisi Anatomi Kopi.
+              </span>
+            </h1>
 
-          {/* Heading */}
-          <h1 className="font-display text-5xl sm:text-7xl md:text-8xl lg:text-[94px] font-black tracking-tight text-[#f1e7d6] leading-[0.92] max-w-4xl">
-            Coffee worth<br />
-            <span className="font-serif italic font-normal text-[#e7a93c]">
-              slowing down for.
-            </span>
-          </h1>
+            {/* Subhead / Lead */}
+            <p className="text-base sm:text-lg md:text-xl text-espresso/80 max-w-[50ch] mb-8 font-light leading-relaxed">
+              Sebuah ruang perjumpaan antara presisi anatomi tubuh dan seni sangrai kopi nusantara. 
+              Dari racikan kopi anatomi tubuh, manual brew single origin, hingga hidangan hangat steak tenderloin dan tomyam segar di kabut pinus Guci. Seluruh harga sudah nett termasuk PPN.
+            </p>
 
-          {/* Lead Paragraph */}
-          <p className="mt-6 md:mt-8 max-w-2xl text-base sm:text-lg md:text-xl text-[rgba(241,231,214,0.85)] font-light leading-relaxed">
-            Sebuah ruang perjumpaan antara presisi anatomi tubuh dan seni sangrai kopi nusantara. 
-            Dari bar roastery di Slawi hingga sejuknya kabut pegunungan pinus di Guci, 
-            nikmati kurasi sajian single origin, anatomical signature series, serta hidangan dapur spesial.
-          </p>
+            {/* Quick Action Navigation */}
+            <div className="flex flex-wrap items-center gap-3.5 mb-10">
+              <a
+                href="#lineup"
+                className="inline-flex items-center gap-2 rounded-full bg-chestnut px-7 py-3.5 text-xs sm:text-sm font-semibold text-white shadow-md hover:bg-chestnut/90 transition-all active:scale-95"
+              >
+                Jelajahi 8 Sajian Ikonik ↓
+              </a>
+              <a
+                href="#anatomy-3d"
+                className="inline-flex items-center gap-2 rounded-full border border-chestnut/30 bg-white/80 px-6 py-3.5 text-xs sm:text-sm font-medium text-espresso hover:bg-vanilla transition-all active:scale-95 shadow-sm"
+              >
+                <Sparkles size={14} className="text-chestnut" />
+                Lab Anatomi Biji 3D
+              </a>
+              <button
+                onClick={() => setShowPosterGallery(!showPosterGallery)}
+                className="inline-flex items-center gap-2 rounded-full border border-chestnut/25 bg-vanilla/60 px-5 py-3.5 text-xs font-mono uppercase tracking-wider text-chestnut hover:bg-vanilla transition-all font-semibold"
+              >
+                <BookOpen size={14} />
+                {showPosterGallery ? "Tutup Lembar PDF" : "Buku Menu Fisik (PDF 12 Lembar)"}
+              </button>
+            </div>
 
-          {/* Action Buttons */}
-          <div className="mt-8 md:mt-10 flex flex-wrap items-center gap-4">
-            <a
-              href="#lineup"
-              className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full font-semibold text-sm bg-[#e7a93c] text-[#100d0a] hover:bg-[#faf3e6] hover:-translate-y-0.5 transition-all shadow-[0_18px_40px_-16px_rgba(231,169,60,0.5)]"
-            >
-              Jelajahi The Lineup ⟶
-            </a>
-            <a
-              href="#full-menu"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-sm text-[#f1e7d6] border border-white/20 hover:bg-white/10 transition-all"
-            >
-              Daftar Menu Lengkap (120+ Menu)
-            </a>
-            <button
-              onClick={() => setShowPosterGallery(!showPosterGallery)}
-              className="inline-flex items-center gap-2 px-6 py-4 rounded-full font-mono text-xs uppercase tracking-wider text-[#e7a93c] border border-[#e7a93c]/40 hover:bg-[#e7a93c]/15 transition-all font-semibold shadow-sm"
-            >
-              <BookOpen size={15} />
-              {showPosterGallery ? "Tutup Lembar PDF" : "Buku Menu Fisik (PDF 12 Lembar)"}
-            </button>
+            {/* Key Metrics Strip */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 w-full border-t border-chestnut/15 pt-6">
+              <div className="flex flex-col">
+                <span className="text-2xl font-black text-espresso">88.5+</span>
+                <span className="text-[11px] uppercase tracking-wider text-espresso/60 font-mono mt-0.5">
+                  SCA Cupping Score
+                </span>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-2xl font-black text-espresso">2 Outlets</span>
+                <span className="text-[11px] uppercase tracking-wider text-espresso/60 font-mono mt-0.5">
+                  Slawi &amp; Guci Hills
+                </span>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-2xl font-black text-espresso">120+</span>
+                <span className="text-[11px] uppercase tracking-wider text-espresso/60 font-mono mt-0.5">
+                  Pilihan Menu Resmi
+                </span>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-2xl font-black text-espresso">100% Halal</span>
+                <span className="text-[11px] uppercase tracking-wider text-chestnut font-mono font-semibold mt-0.5">
+                  Kitchen &amp; Coffee
+                </span>
+              </div>
+            </div>
           </div>
 
-          {/* Hero Foot (Key Metrics) */}
-          <div className="mt-16 pt-8 border-t border-[rgba(241,231,214,0.15)] flex flex-wrap items-center gap-6 md:gap-10 text-xs font-mono uppercase tracking-wider text-[rgba(241,231,214,0.7)]">
-            <span className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#e7a93c]"></span>
-              Slawi &amp; Guci Hills, Tegal
-            </span>
-            <span className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#e7a93c]"></span>
-              Est. 2020
-            </span>
-            <span className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#e7a93c]"></span>
-              Anatomy &amp; Single Origin
-            </span>
-            <span className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#e7a93c]"></span>
-              100% Halal Certified Kitchen
-            </span>
+          {/* Right Column: Architectural Arch Window featuring Clavicula Facade & Atmosphere */}
+          <div className="lg:col-span-5 relative h-[480px] sm:h-[560px] lg:h-[620px] w-full flex items-center justify-center">
+            {/* The Arch Frame */}
+            <div className="relative w-full max-w-[420px] h-full rounded-t-[220px] rounded-b-[32px] overflow-hidden shadow-2xl border border-chestnut/25 bg-[#FAF6F0]">
+              <Image
+                src="/assets/clavicula/places/clavicula-facade-warm-perfect.jpg"
+                alt="Clavicula Coffee &amp; Idea Outdoor Rooftop Facade"
+                fill
+                priority
+                className="object-cover object-center"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent"></div>
+
+              {/* Floating Top Tag */}
+              <div className="absolute top-8 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full border border-chestnut/20 shadow-md whitespace-nowrap">
+                <span className="text-[10px] font-mono tracking-wider uppercase text-espresso font-semibold flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-chestnut"></span>
+                  COFFEE &amp; IDEA // EST. SLAWI
+                </span>
+              </div>
+
+              {/* Floating Center Specialty Badge */}
+              <div className="absolute bottom-24 right-6 bg-white/95 backdrop-blur-md border border-chestnut/20 rounded-2xl p-3 shadow-lg max-w-[210px]">
+                <span className="text-[9px] font-mono uppercase tracking-wider text-chestnut font-bold block mb-0.5">
+                  SIGNATURE DRINK
+                </span>
+                <p className="font-serif italic font-bold text-xs text-espresso">
+                  Manubrium &amp; Scapula
+                </p>
+                <p className="text-[10px] text-espresso/60 font-sans mt-0.5">
+                  Anatomical crafted series
+                </p>
+              </div>
+
+              {/* Bottom Pill Indicator */}
+              <div className="absolute bottom-6 left-6 right-6">
+                <div className="bg-espresso/85 backdrop-blur-md border border-white/20 rounded-full px-4 py-2 flex items-center justify-between text-white text-[11px] font-mono">
+                  <span className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+                    GUCI HILLS &bull; HIGH MOUNTAIN MIST
+                  </span>
+                  <span className="text-white/60 text-[10px]">100% ARABICA</span>
+                </div>
+              </div>
+            </div>
           </div>
+
         </div>
       </section>
 
-      {/* ─── 2. MARQUEE STRIP (GOLDEN AMBER STRIP) ───────────────────── */}
-      <section className="bg-[#e7a93c] text-[#100d0a] py-3.5 md:py-4 overflow-hidden border-y border-[#100d0a]/20 select-none font-display font-bold text-base md:text-xl tracking-tight shadow-md">
-        <div className="animate-ember-marquee flex items-center gap-6 whitespace-nowrap">
+      {/* ─── 2. MARQUEE STRIP (WARM ESPRESSO & CARAMEL ACCENTS) ───── */}
+      <section className="bg-espresso text-[#F5EBE1] py-3.5 md:py-4 overflow-hidden border-y border-chestnut/25 select-none font-display font-medium text-xs md:text-sm tracking-widest shadow-sm">
+        <div className="animate-ember-marquee flex items-center gap-8 whitespace-nowrap uppercase">
           <span>ANATOMICAL COFFEE</span>
-          <span className="opacity-60">✶</span>
+          <span className="text-caramel">✦</span>
           <span>SPECIALTY GRADE ARABICA</span>
-          <span className="opacity-60">✶</span>
+          <span className="text-caramel">✦</span>
           <span>FRESH ROASTED IN-HOUSE</span>
-          <span className="opacity-60">✶</span>
+          <span className="text-caramel">✦</span>
           <span>COZY PINUS CLAVICULA HILLS GUCI</span>
-          <span className="opacity-60">✶</span>
+          <span className="text-caramel">✦</span>
           <span>100% HALAL CERTIFIED KITCHEN</span>
-          <span className="opacity-60">✶</span>
+          <span className="text-caramel">✦</span>
           <span>SLOW BAR SANCTUARY</span>
-          <span className="opacity-60">✶</span>
+          <span className="text-caramel">✦</span>
           <span>STEAK &amp; TOMYAM WARMTH</span>
-          <span className="opacity-60">✶</span>
+          <span className="text-caramel">✦</span>
           <span>MANUAL BREW NUSANTARA</span>
-          <span className="opacity-60">✶</span>
+          <span className="text-caramel">✦</span>
           <span>ALL PRICES NETT (INCL. PPN)</span>
-          <span className="opacity-60">✶</span>
+          <span className="text-caramel">✦</span>
 
-          {/* Loop repeat */}
+          {/* Repeat Loop */}
           <span>ANATOMICAL COFFEE</span>
-          <span className="opacity-60">✶</span>
+          <span className="text-caramel">✦</span>
           <span>SPECIALTY GRADE ARABICA</span>
-          <span className="opacity-60">✶</span>
+          <span className="text-caramel">✦</span>
           <span>FRESH ROASTED IN-HOUSE</span>
-          <span className="opacity-60">✶</span>
+          <span className="text-caramel">✦</span>
           <span>COZY PINUS CLAVICULA HILLS GUCI</span>
-          <span className="opacity-60">✶</span>
+          <span className="text-caramel">✦</span>
           <span>100% HALAL CERTIFIED KITCHEN</span>
-          <span className="opacity-60">✶</span>
+          <span className="text-caramel">✦</span>
           <span>SLOW BAR SANCTUARY</span>
-          <span className="opacity-60">✶</span>
+          <span className="text-caramel">✦</span>
           <span>STEAK &amp; TOMYAM WARMTH</span>
-          <span className="opacity-60">✶</span>
+          <span className="text-caramel">✦</span>
           <span>MANUAL BREW NUSANTARA</span>
-          <span className="opacity-60">✶</span>
+          <span className="text-caramel">✦</span>
           <span>ALL PRICES NETT (INCL. PPN)</span>
-          <span className="opacity-60">✶</span>
+          <span className="text-caramel">✦</span>
         </div>
       </section>
 
@@ -1548,7 +1614,26 @@ export default function MenuPage() {
         </div>
       </section>
 
-      {/* ─── 5. SANCTUARY OUTLETS SHOWCASE (REAL CLAVICULA PLACES) ─────── */}
+      {/* ─── 5. INTERACTIVE 3D ANATOMY LAB (OPTION C: 3D COFFEE BEAN EXPLORATION) ─── */}
+      <section id="anatomy-3d" className="py-20 md:py-28 bg-[#FAF6F0] border-b border-chestnut/15 scroll-mt-20">
+        <div className="mx-auto max-w-7xl px-4 md:px-8">
+          <div className="mb-10 text-center max-w-3xl mx-auto">
+            <span className="text-[11px] font-mono tracking-[0.2em] uppercase text-chestnut font-semibold block mb-2">
+              LABORATORIUM ANATOMI &amp; ROASTERY // 3D EXPLORATION
+            </span>
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-espresso">
+              Eksplorasi Anatomi Biji Kopi 3D
+            </h2>
+            <p className="mt-3 text-sm md:text-base text-espresso/75 font-serif italic">
+              Inspeksi detail rekahan anatomi tulang selangka (fissure), kepadatan mikrolot pegunungan, dan perubahan warna profil sangrai in-house Clavicula secara interaktif 360 derajat.
+            </p>
+          </div>
+
+          <InteractiveCoffeeBean3D />
+        </div>
+      </section>
+
+      {/* ─── 6. SANCTUARY OUTLETS SHOWCASE (REAL CLAVICULA PLACES) ─────── */}
       <section className="py-20 md:py-28 bg-linen border-b border-chestnut/15">
         <div className="mx-auto max-w-7xl px-4 md:px-8">
           <div className="mb-12">
