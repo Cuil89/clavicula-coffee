@@ -768,28 +768,46 @@ export default function Home() {
       {/* 07. KITCHEN ATELIER & SPECIAL CLAVICULA DISHES */}
       <section className="w-full bg-vanilla/40 py-28 px-4 md:px-8 border-b border-chestnut/10">
         <div className="mx-auto max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div className="relative group">
-              <div className="relative w-full aspect-[4/5] rounded-t-[180px] rounded-b-[24px] overflow-hidden shadow-warm-card border border-chestnut/20 bg-espresso">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            {/* Left Column: Authentic Special Menu Chart */}
+            <div className="lg:col-span-5 flex flex-col items-center justify-center">
+              <Link
+                href="/menu"
+                className="group relative w-full max-w-sm sm:max-w-md aspect-[1/1.41] rounded-[28px] overflow-hidden border border-chestnut/20 shadow-2xl bg-[#1a1410] flex items-center justify-center transition-all duration-500 hover:border-chestnut/50 hover:shadow-warm-card hover:-translate-y-1 block"
+              >
                 <Image
-                  src="/assets/extracted/special_tomyam.jpg"
-                  alt="Clavicula Kitchen Specialties"
+                  src="/assets/clavicula-menu-special-food-poster.jpg"
+                  alt="Poster Special Menu Clavicula - Tenderloin Steak, Tomyam, Chicken Steak, Fish and Chip"
                   fill
-                  className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                  className="object-contain p-2 transition-transform duration-500 group-hover:scale-[1.02]"
                 />
-              </div>
 
-              <div className="absolute -bottom-6 -right-4 sm:-right-8 bg-white rounded-2xl p-5 shadow-xl border border-chestnut/15 max-w-xs z-10">
-                <div className="text-[10px] font-mono tracking-widest text-chestnut mb-1 uppercase font-bold">
-                  SPECIAL CLAVICULA DISH
+                {/* Top Badge */}
+                <div className="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none z-10">
+                  <span className="bg-espresso/90 backdrop-blur-md text-[10px] font-mono tracking-widest text-caramel uppercase font-bold px-3 py-1 rounded-full border border-caramel/30">
+                    SPECIAL MENU CLAVICULA
+                  </span>
+                  <span className="bg-chestnut text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow-sm">
+                    Chef Choice
+                  </span>
                 </div>
-                <p className="text-xs md:text-sm font-serif italic text-espresso">
-                  &quot;Tomyam Seporsi Berdua &amp; Kepiting Segar Spesial, dimasak segar untuk momen hangat Anda.&quot;
-                </p>
+
+                {/* Bottom Hover Overlay */}
+                <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-espresso via-espresso/80 to-transparent flex items-center justify-between opacity-90 group-hover:opacity-100 transition-opacity z-10">
+                  <span className="text-xs font-semibold text-white/90">
+                    Buka Menu Makanan &bull; 120+ Pilihan
+                  </span>
+                  <span className="text-xs font-bold text-caramel flex items-center gap-1 group-hover:underline">
+                    Buka <ArrowRight size={13} />
+                  </span>
+                </div>
+              </Link>
+              <div className="text-[11px] font-mono text-chestnut/70 text-center mt-3 tracking-wider">
+                ✦ Tenderloin Steak &bull; Tomyam Berdua &bull; Chicken Steak &bull; Fish &amp; Chip
               </div>
             </div>
 
-            <div className="pl-0 lg:pl-6">
+            <div className="lg:col-span-7 pl-0 lg:pl-4">
               <span className="text-xs font-mono tracking-[0.2em] uppercase text-chestnut font-semibold mb-2 block">
                 MAIN COURSE &amp; SPECIAL BOWL
               </span>
@@ -797,13 +815,14 @@ export default function Home() {
                 Sajian Santap Pilihan
               </h2>
 
-              <div className="space-y-6">
+              <div className="space-y-5">
                 {[
-                  { name: "Clavicula Tenderloin Steak", price: 73000, desc: "Daging tenderloin empuk dengan saus spesial & kentang mashed gurih." },
-                  { name: "Special Crab (100% Fresh Crab)", price: 100000, desc: "Kepiting segar bumbu rempah melimpah (Porsi isi 2 / isi 4)." },
-                  { name: "Tomyam Seporsi Berdua", price: 50000, desc: "Kuah tomyam asam pedas segar dengan aneka seafood & sayuran." },
-                  { name: "Rice/Noodle Chicken Chashu", price: 31000, desc: "Pilihan saus: BBQ, Teriyaki, Salted Egg, atau Lada Hitam." },
-                  { name: "Clavicula Noodle (Miso / Tomyum / Spicy)", price: 25454, desc: "Mie kenyal istimewa dengan kuah miso gurih atau chili oil geprek." },
+                  { name: "Clavicula Tenderloin Steak", price: 73000, desc: "Daging tenderloin empuk premium dengan saus spesial & kentang mashed gurih." },
+                  { name: "Tomyam Seporsi Berdua", price: 50000, desc: "Kuah tomyam asam pedas segar dengan aneka seafood segar porsi komplit berdua." },
+                  { name: "Chicken Steak with Sauce", price: 36000, desc: "Fillet ayam panggang krispi disiram saus gurih pilihan dan sayuran saute." },
+                  { name: "Fish and Chip", price: 32000, desc: "Fillet ikan renyah golden brown disajikan dengan kentang goreng & saus tartar." },
+                  { name: "Modern Fried Rice", price: 27000, desc: "Nasi goreng modern bumbu spesial pilihan: Tomyum, BBQ, Black Pepper, atau Rendang." },
+                  { name: "Special Crab (100% Fresh Crab)", price: 100000, desc: "Kepiting segar bumbu rempah melimpah khas Clavicula (Porsi isi 2 / isi 4)." },
                 ].map((item, idx) => (
                   <div
                     key={idx}
