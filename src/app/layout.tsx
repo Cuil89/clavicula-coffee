@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter_Tight, Instrument_Serif } from "next/font/google";
+import { Inter_Tight, Instrument_Serif, Bricolage_Grotesque, DM_Sans } from "next/font/google";
 import "./globals.css";
 import SmoothScrolling from "@/components/SmoothScrolling";
 import Navbar from "@/components/Navbar";
@@ -23,6 +23,18 @@ const instrumentSerif = Instrument_Serif({
   style: ["italic"],
 });
 
+const bricolage = Bricolage_Grotesque({
+  subsets: ["latin"],
+  variable: "--font-bricolage",
+  weight: ["400", "500", "600", "700", "800"],
+});
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  variable: "--font-dm-sans",
+  weight: ["400", "500", "600", "700"],
+});
+
 export const metadata: Metadata = {
   title: "Clavicula Coffee & Idea | Roastery, Specialty Coffee & Sanctuary",
   description:
@@ -40,7 +52,7 @@ export default function RootLayout({
   return (
     <html lang="id">
       <body
-        className={`${interTight.variable} ${instrumentSerif.variable} font-sans bg-linen text-espresso antialiased`}
+        className={`${interTight.variable} ${instrumentSerif.variable} ${bricolage.variable} ${dmSans.variable} font-sans bg-linen text-espresso antialiased`}
       >
         <UIProvider>
           <SmoothScrolling>

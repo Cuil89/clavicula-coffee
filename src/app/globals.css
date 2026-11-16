@@ -2,8 +2,72 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --void: #100d0a;
+  --coal: #18130e;
+  --char: #221b13;
+  --cream: #f1e7d6;
+  --paper: #faf3e6;
+  --amber: #e7a93c;
+  --amber-deep: #c9852a;
+  --rust: #b4532c;
+  --muted: rgba(241, 231, 214, 0.58);
+  --line: rgba(241, 231, 214, 0.14);
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+/* Ember Coffee Aesthetic Utilities */
+.ember-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #e7a93c;
+}
+
+.ember-eyebrow::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: #e7a93c;
+}
+
+@keyframes emberNudge {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(8px);
+  }
+}
+
+.animate-ember-nudge {
+  animation: emberNudge 1.6s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+@keyframes emberMarquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-ember-marquee {
+  display: inline-flex;
+  width: max-content;
+  animation: emberMarquee 32s linear infinite;
+}
+
+.animate-ember-marquee:hover {
+  animation-play-state: paused;
 }

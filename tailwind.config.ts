@@ -9,6 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        void: "#100d0a",
+        coal: "#18130e",
+        char: "#221b13",
+        cream: "#f1e7d6",
+        paper: "#faf3e6",
+        ember: {
+          DEFAULT: "#e7a93c",
+          deep: "#c9852a",
+          rust: "#b4532c",
+        },
         chestnut: "#B26E2E",
         ochre: "#C4823F",
         "clavi-gold": "#D49A3D",
@@ -25,6 +35,8 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-inter-tight)", "sans-serif"],
         serif: ["var(--font-instrument-serif)", "serif"],
+        display: ["var(--font-bricolage)", "var(--font-inter-tight)", "sans-serif"],
+        dm: ["var(--font-dm-sans)", "sans-serif"],
       },
       boxShadow: {
         "warm-card": "0 10px 40px -10px rgba(178, 110, 46, 0.12)",
