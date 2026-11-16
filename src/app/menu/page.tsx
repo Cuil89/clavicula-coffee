@@ -1444,64 +1444,158 @@ export default function MenuPage() {
         </div>
       </section>
 
-      {/* ─── 2. MARQUEE STRIP (WARM ESPRESSO & CARAMEL ACCENTS) ───── */}
-      <section className="bg-espresso text-[#F5EBE1] py-3.5 md:py-4 overflow-hidden border-y border-chestnut/25 select-none font-display font-medium text-xs md:text-sm tracking-widest shadow-sm">
-        <div className="animate-ember-marquee flex items-center gap-8 whitespace-nowrap uppercase">
+      {/* ─── 2. MARQUEE STRIP (EDITORIAL MONOSPACE TICKER) ───── */}
+      <section className="bg-espresso text-[#F5EBE1] py-3.5 md:py-4 overflow-hidden border-y border-chestnut/25 select-none font-mono font-medium text-xs md:text-sm tracking-[0.2em] uppercase shadow-sm">
+        <div className="animate-ember-marquee flex items-center gap-8 whitespace-nowrap">
           <span>ANATOMICAL COFFEE</span>
-          <span className="text-caramel">✦</span>
+          <span className="text-caramel font-serif text-base">✦</span>
           <span>SPECIALTY GRADE ARABICA</span>
-          <span className="text-caramel">✦</span>
+          <span className="text-caramel font-serif text-base">✦</span>
           <span>FRESH ROASTED IN-HOUSE</span>
-          <span className="text-caramel">✦</span>
+          <span className="text-caramel font-serif text-base">✦</span>
           <span>COZY PINUS CLAVICULA HILLS GUCI</span>
-          <span className="text-caramel">✦</span>
+          <span className="text-caramel font-serif text-base">✦</span>
           <span>100% HALAL CERTIFIED KITCHEN</span>
-          <span className="text-caramel">✦</span>
+          <span className="text-caramel font-serif text-base">✦</span>
           <span>SLOW BAR SANCTUARY</span>
-          <span className="text-caramel">✦</span>
+          <span className="text-caramel font-serif text-base">✦</span>
           <span>STEAK &amp; TOMYAM WARMTH</span>
-          <span className="text-caramel">✦</span>
+          <span className="text-caramel font-serif text-base">✦</span>
           <span>MANUAL BREW NUSANTARA</span>
-          <span className="text-caramel">✦</span>
+          <span className="text-caramel font-serif text-base">✦</span>
           <span>ALL PRICES NETT (INCL. PPN)</span>
-          <span className="text-caramel">✦</span>
+          <span className="text-caramel font-serif text-base">✦</span>
 
           {/* Repeat Loop */}
           <span>ANATOMICAL COFFEE</span>
-          <span className="text-caramel">✦</span>
+          <span className="text-caramel font-serif text-base">✦</span>
           <span>SPECIALTY GRADE ARABICA</span>
-          <span className="text-caramel">✦</span>
+          <span className="text-caramel font-serif text-base">✦</span>
           <span>FRESH ROASTED IN-HOUSE</span>
-          <span className="text-caramel">✦</span>
+          <span className="text-caramel font-serif text-base">✦</span>
           <span>COZY PINUS CLAVICULA HILLS GUCI</span>
-          <span className="text-caramel">✦</span>
+          <span className="text-caramel font-serif text-base">✦</span>
           <span>100% HALAL CERTIFIED KITCHEN</span>
-          <span className="text-caramel">✦</span>
+          <span className="text-caramel font-serif text-base">✦</span>
           <span>SLOW BAR SANCTUARY</span>
-          <span className="text-caramel">✦</span>
+          <span className="text-caramel font-serif text-base">✦</span>
           <span>STEAK &amp; TOMYAM WARMTH</span>
-          <span className="text-caramel">✦</span>
+          <span className="text-caramel font-serif text-base">✦</span>
           <span>MANUAL BREW NUSANTARA</span>
-          <span className="text-caramel">✦</span>
+          <span className="text-caramel font-serif text-base">✦</span>
           <span>ALL PRICES NETT (INCL. PPN)</span>
-          <span className="text-caramel">✦</span>
+          <span className="text-caramel font-serif text-base">✦</span>
         </div>
       </section>
 
-      {/* ─── 3. MANIFESTO PHILOSOPHY SECTION (WARM LINEN) ────────────── */}
-      <section className="py-20 md:py-28 bg-linen border-b border-chestnut/15">
-        <div className="mx-auto max-w-7xl px-4 md:px-8">
-          <span className="text-[11px] font-mono tracking-[0.2em] uppercase text-chestnut font-semibold block mb-4">
-            WHY WE DO THIS // FILOSOFI ANATOMI
-          </span>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-bold text-espresso leading-[1.08] max-w-4xl tracking-tight">
-            Kami percaya kopi bukan sekadar tegukan yang berlalu cepat. 
-            Seperti clavicula yang menghubungkan kepala, detak dada, dan pergerakan tangan—setiap 
-            seduhan kami hadirkan untuk{" "}
-            <span className="font-serif italic font-normal text-chestnut">
-              menyatukan ide, percakapan hangat, dan rasa yang jujur.
-            </span>
-          </h2>
+      {/* ─── 3. MANIFESTO PHILOSOPHY SECTION (EDITORIAL ASYMMETRICAL SPREAD) ─── */}
+      <section className="relative py-24 md:py-32 bg-gradient-to-b from-[#FAF8F5] via-[#F6F2EA] to-[#FAF8F5] border-b border-chestnut/15 overflow-hidden">
+        {/* Ambient Warm Blur Glow */}
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/3 w-[550px] h-[550px] bg-chestnut/[0.04] rounded-full blur-3xl pointer-events-none"></div>
+
+        <div className="mx-auto max-w-7xl px-4 md:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            
+            {/* Left Column (7 cols): Editorial Typography & Narrative */}
+            <div className="lg:col-span-7 flex flex-col items-start">
+              
+              {/* Eyebrow with hairline rule */}
+              <div className="flex items-center gap-3 mb-6">
+                <span className="w-8 h-px bg-chestnut/60"></span>
+                <span className="text-[11px] font-mono tracking-[0.25em] uppercase text-chestnut font-bold">
+                  01 // THE MANIFESTO &bull; FILOSOFI ANATOMI
+                </span>
+              </div>
+
+              {/* Big Serif Pull Quote */}
+              <blockquote className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-normal text-espresso leading-[1.08] tracking-tight mb-8">
+                &ldquo;Kami percaya kopi bukan sekadar tegukan yang berlalu cepat.&rdquo;
+              </blockquote>
+
+              {/* Storytelling Narrative Paragraphs */}
+              <div className="space-y-4 text-base sm:text-lg text-espresso/80 font-light leading-relaxed max-w-xl mb-8">
+                <p>
+                  Dilahirkan dari latar belakang kedokteran di Slawi, nama <em className="font-serif italic font-medium text-espresso">clavicula</em> (tulang selangka) adalah kompas kami: jembatan anatomis yang menyatukan kepala, detak dada, dan presisi jemari barista saat meracik seduhan.
+                </p>
+                <p>
+                  Di tengah dunia yang serba terburu-buru, kami memilih memperlambat ritme. Setiap biji disangrai dalam drum cast-iron dengan profil terukur, diseduh secara seksama, demi{" "}
+                  <span className="font-serif italic font-normal text-chestnut text-lg sm:text-xl">
+                    menyatukan ide, percakapan hangat, dan kejujuran rasa.
+                  </span>
+                </p>
+              </div>
+
+              {/* Editorial Highlights / Badges Row */}
+              <div className="flex flex-wrap items-center gap-3.5 pt-6 border-t border-chestnut/15 w-full">
+                <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-chestnut/20 shadow-sm text-xs font-mono text-espresso/70">
+                  <span className="w-1.5 h-1.5 rounded-full bg-chestnut"></span>
+                  <span>EST. 2020 &bull; SLAWI &amp; GUCI</span>
+                </div>
+                <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-chestnut/20 shadow-sm text-xs font-mono text-espresso/70">
+                  <span className="w-1.5 h-1.5 rounded-full bg-chestnut"></span>
+                  <span>CAST-IRON SMALL BATCH</span>
+                </div>
+                <a
+                  href="#lineup"
+                  className="text-xs font-mono tracking-wider uppercase text-chestnut font-semibold hover:underline inline-flex items-center gap-1.5 ml-auto pt-1"
+                >
+                  Jelajahi 8 Sajian Ikonik &rarr;
+                </a>
+              </div>
+
+            </div>
+
+            {/* Right Column (5 cols): Magazine Photographic Composition */}
+            <div className="lg:col-span-5 relative mt-4 lg:mt-0">
+              {/* Outer Card with clean framing */}
+              <div className="relative rounded-[2.5rem] overflow-hidden border border-chestnut/20 bg-white p-3.5 shadow-warm-card group">
+                
+                {/* Photographic Stage */}
+                <div className="relative aspect-[4/5] w-full rounded-[2rem] overflow-hidden bg-espresso">
+                  <Image
+                    src="/assets/clavicula/places/roastery-lab-clavicula-slawi.jpg"
+                    alt="Clavicula Roastery Lab Cast Iron Drum Craft Slawi"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-700 brightness-[0.92] contrast-[1.05]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent"></div>
+
+                  {/* Top Right Monograph Pill */}
+                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full border border-chestnut/20 shadow-sm text-[10px] font-mono uppercase tracking-wider text-espresso font-semibold">
+                    ROASTERY ARCHIVE
+                  </div>
+
+                  {/* Bottom Magazine Placard */}
+                  <div className="absolute bottom-5 left-5 right-5">
+                    <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#D4A055] font-semibold block mb-1">
+                      FIG. 01 &mdash; THE ANATOMICAL CRAFT
+                    </span>
+                    <p className="font-display font-bold text-lg text-white leading-snug">
+                      Slawi Roastery Lab &bull; In-House Small Batch
+                    </p>
+                    <p className="text-xs text-white/80 font-serif italic mt-1 leading-relaxed">
+                      Dari biji mentah single origin hingga cangkir seduh presisi di Slow Bar.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Overlapping Floating Stamp Tag */}
+                <div className="absolute -bottom-3 -left-3 bg-espresso text-white p-3.5 rounded-2xl border border-chestnut/30 shadow-xl hidden sm:flex items-center gap-3 max-w-[250px] z-20">
+                  <div className="w-8 h-8 rounded-full bg-chestnut flex items-center justify-center text-white text-xs font-mono font-bold shrink-0 shadow-inner">
+                    88+
+                  </div>
+                  <div className="text-[11px] leading-tight">
+                    <span className="font-mono uppercase tracking-wider text-caramel font-semibold block">
+                      SCA Arabica Grade
+                    </span>
+                    <span className="text-white/70">Takengon, Sindoro &amp; Temanggung</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
         </div>
       </section>
 
