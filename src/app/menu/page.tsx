@@ -25,13 +25,13 @@ type MenuItem = {
 const SIGNATURE_LINEUP = [
   {
     index: "01",
-    name: "Manubrium",
+    name: "Sternum",
     price: 30000,
     category: "Signature Anatomi",
-    notes: "Vanilla velvet cream · Double espresso bold · Sweet balanced finish",
-    concept: "Anatomi: Tulang hulu dada — menyatukan ritme napas dan detak jantung",
-    image: "/assets/clavicula/drinks/manubrium.webp",
-    badge: "Best Seller",
+    notes: "Cold brew arabika · Saus karamel leleh · Manis seimbang creamy",
+    concept: "Anatomi: Tulang dada tengah — perisai penyeimbang rasa kopi dan manis karamel dingin",
+    image: "/assets/clavicula/drinks/sternum.webp",
+    badge: "Caramel Cold Brew",
   },
   {
     index: "02",
@@ -55,13 +55,13 @@ const SIGNATURE_LINEUP = [
   },
   {
     index: "04",
-    name: "Subclavius",
-    price: 31000,
-    category: "Artisan Cold Foam",
-    notes: "Velvety cold foam · Espresso deep roast · Distinct aromatic punch",
-    concept: "Anatomi: Otot pengunci di bawah clavicula — fondasi rasa yang kokoh",
-    image: "/assets/extracted/signature_subclavius.jpg",
-    badge: "Signature",
+    name: "Manubrium",
+    price: 30000,
+    category: "Signature Anatomi",
+    notes: "Kopi susu gula aren · Layer krim lembut · Double espresso bold",
+    concept: "Our Signature Menu — racikan kopi susu gula aren legendaris khas Clavicula",
+    image: "/assets/clavicula/drinks/manubrium-fullcard.jpg",
+    badge: "Our Signature Menu",
   },
   {
     index: "05",
@@ -113,10 +113,10 @@ const ALL_MENU_ITEMS: MenuItem[] = [
     name: "Manubrium",
     price: 30000,
     category: "Signature Drink (Anatomi)",
-    notes: "Vanilla velvet cream · Double espresso bold · Creamy finish",
-    desc: "Layer krim vanila lembut berpadu double espresso bold, sensasi rasa manis creamy yang seimbang.",
-    image: "/assets/clavicula/drinks/manubrium.webp",
-    badge: "Best Seller",
+    notes: "Kopi susu gula aren · Layer krim lembut · Double espresso bold",
+    desc: "Racikan signature legendaris Clavicula: kopi susu gula aren dengan layer krim vanila lembut berpadu double espresso bold.",
+    image: "/assets/clavicula/drinks/manubrium-fullcard.jpg",
+    badge: "Our Signature Menu",
     isSignature: true,
   },
   {
@@ -143,37 +143,17 @@ const ALL_MENU_ITEMS: MenuItem[] = [
   },
   {
     id: "sig-04",
-    name: "Subclavius",
-    price: 31000,
-    category: "Signature Drink (Anatomi)",
-    notes: "Velvety foam crown · Espresso deep roast · Distinct aroma",
-    desc: "Mahkota foam lembut berpadu espresso kaya rasa dengan sensasi rasa roasted yang memikat.",
-    image: "/assets/extracted/signature_subclavius.jpg",
-    badge: "Signature",
-    isSignature: true,
-  },
-  {
-    id: "sig-05",
-    name: "Trapezius",
-    price: 30000,
-    category: "Signature Drink (Anatomi)",
-    notes: "Fresh strawberry swirl · Susu lembut dingin · Kopi eksotis",
-    desc: "Perpaduan swirl buah stroberi segar dengan krim lembut dan sentuhan kopi eksotis.",
-    image: "/assets/clavicula/drinks/trapezius.webp",
-    isSignature: true,
-  },
-  {
-    id: "sig-06",
     name: "Sternum",
     price: 30000,
     category: "Signature Drink (Anatomi)",
     notes: "Cold brew · Saus karamel leleh · Manis seimbang",
     desc: "Kopi dingin dengan saus karamel leleh berlapis es, manis pas tanpa menenggelamkan rasa kopi.",
     image: "/assets/clavicula/drinks/sternum.webp",
+    badge: "Caramel Cold Brew",
     isSignature: true,
   },
   {
-    id: "sig-07",
+    id: "sig-05",
     name: "Scapula",
     price: 29000,
     category: "Signature Drink (Anatomi)",
@@ -181,6 +161,17 @@ const ALL_MENU_ITEMS: MenuItem[] = [
     desc: "Kopi susu klepon pandan kelapa harum khas Nusantara, gurih legit dan berkarakter.",
     image: "/assets/clavicula/drinks/scapula.webp",
     badge: "Heritage",
+    isSignature: true,
+  },
+  {
+    id: "sig-06",
+    name: "Trapezius",
+    price: 30000,
+    category: "Signature Drink (Anatomi)",
+    notes: "Fresh strawberry swirl · Susu lembut dingin · Kopi eksotis",
+    desc: "Perpaduan swirl buah stroberi segar dengan krim lembut dan sentuhan kopi eksotis.",
+    image: "/assets/clavicula/drinks/trapezius.webp",
+    badge: "Refreshing",
     isSignature: true,
   },
 
@@ -1260,6 +1251,7 @@ const CATEGORIES = [
 ];
 
 const POSTER_GALLERY = [
+  { title: "Poster Resmi: Our Signature Menu - Manubrium (Kopi Susu Gula Aren)", src: "/assets/clavicula/drinks/manubrium-poster.jpg" },
   { title: "Poster Resmi: Clavicula Tenderloin Steak (80K Nett)", src: "/assets/clavicula/foods/clavicula-tenderloin-steak-poster.jpg" },
   { title: "Poster Resmi: Espresso, Signature & Manual Brew", src: "/assets/clavicula-menu-coffee-poster.jpg" },
   { title: "Poster Resmi: Special Menu Steak, Tomyam & Fried Rice", src: "/assets/clavicula-menu-special-food-poster.jpg" },
@@ -1408,7 +1400,7 @@ export default function MenuPage() {
           <span className="opacity-60">✶</span>
           <span>SPECIALTY GRADE ARABICA</span>
           <span className="opacity-60">✶</span>
-          <span>FRESH ROASTED IN-HOUSE</span>
+          <span>FRESHLY GROUND DAILY</span>
           <span className="opacity-60">✶</span>
           <span>COZY PINUS CLAVICULA HILLS GUCI</span>
           <span className="opacity-60">✶</span>
@@ -1425,10 +1417,10 @@ export default function MenuPage() {
         </div>
       </section>
 
-      {/* ─── 3. MANIFESTO PHILOSOPHY SECTION (EDITORIAL ASYMMETRICAL SPREAD) ─── */}
-      <section className="relative py-24 md:py-32 bg-gradient-to-b from-[#FAF8F5] via-[#F6F2EA] to-[#FAF8F5] border-b border-chestnut/15 overflow-hidden">
-        {/* Ambient Warm Blur Glow */}
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/3 w-[550px] h-[550px] bg-chestnut/[0.04] rounded-full blur-3xl pointer-events-none"></div>
+      {/* ─── 3. MANIFESTO PHILOSOPHY SECTION (COHESIVE ESPRESSO EDITORIAL SPREAD) ─── */}
+      <section className="relative py-20 md:py-28 bg-[#120E0C] text-[#F7F2E8] border-b border-[#2A1D15] overflow-hidden">
+        {/* Ambient Warm Golden Glow */}
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/4 w-[600px] h-[600px] bg-[#e7a93c]/[0.06] rounded-full blur-3xl pointer-events-none"></div>
 
         <div className="mx-auto max-w-7xl px-4 md:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -1438,43 +1430,43 @@ export default function MenuPage() {
               
               {/* Eyebrow with hairline rule */}
               <div className="flex items-center gap-3 mb-6">
-                <span className="w-8 h-px bg-chestnut/60"></span>
-                <span className="text-[11px] font-mono tracking-[0.25em] uppercase text-chestnut font-bold">
-                  01 // THE MANIFESTO &bull; FILOSOFI ANATOMI
+                <span className="w-8 h-px bg-[#e7a93c]/70"></span>
+                <span className="text-[11px] font-mono tracking-[0.25em] uppercase text-[#e7a93c] font-bold">
+                  01 // FILOSOFI &amp; RUANG TEMU &bull; COFFEE &amp; IDEA
                 </span>
               </div>
 
               {/* Big Serif Pull Quote */}
-              <blockquote className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-normal text-espresso leading-[1.08] tracking-tight mb-8">
-                &ldquo;Kami percaya kopi bukan sekadar tegukan yang berlalu cepat.&rdquo;
+              <blockquote className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[50px] font-normal text-[#F7F2E8] leading-[1.12] tracking-tight mb-8">
+                &ldquo;Kami percaya secangkir kopi lebih dari sekadar tegukan yang berlalu.&rdquo;
               </blockquote>
 
               {/* Storytelling Narrative Paragraphs */}
-              <div className="space-y-4 text-base sm:text-lg text-espresso/80 font-light leading-relaxed max-w-xl mb-8">
+              <div className="space-y-4 text-base sm:text-lg text-[#D5CCC1] font-light leading-relaxed max-w-xl mb-8">
                 <p>
-                  Dilahirkan dari latar belakang kedokteran di Slawi, nama <em className="font-serif italic font-medium text-espresso">clavicula</em> (tulang selangka) adalah kompas kami: jembatan anatomis yang menyatukan kepala, detak dada, dan presisi jemari barista saat meracik seduhan.
+                  Terinspirasi dari istilah anatomi <em className="font-serif italic font-medium text-white">clavicula</em> (tulang selangka)—titik simpul yang menghubungkan dan menyeimbangkan gerak tubuh—Clavicula Coffee &amp; Idea hadir di Slawi dan sejuknya dataran tinggi Guci sebagai ruang temu yang bersahaja.
                 </p>
                 <p>
-                  Di tengah dunia yang serba terburu-buru, kami memilih memperlambat ritme. Setiap biji disangrai dalam drum cast-iron dengan profil terukur, diseduh secara seksama, demi{" "}
-                  <span className="font-serif italic font-normal text-chestnut text-lg sm:text-xl">
+                  Di tengah ritme hari yang serba cepat, kami memberi ruang untuk memperlambat langkah. Menikmati seduhan kopi pilihan yang digiling segar, hidangan lezat yang diracik sepenuh hati, demi{" "}
+                  <span className="font-serif italic font-normal text-[#e7a93c] text-lg sm:text-xl">
                     menyatukan ide, percakapan hangat, dan kejujuran rasa.
                   </span>
                 </p>
               </div>
 
               {/* Editorial Highlights / Badges Row */}
-              <div className="flex flex-wrap items-center gap-3.5 pt-6 border-t border-chestnut/15 w-full">
-                <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-chestnut/20 shadow-sm text-xs font-mono text-espresso/70">
-                  <span className="w-1.5 h-1.5 rounded-full bg-chestnut"></span>
-                  <span>EST. 2020 &bull; SLAWI &amp; GUCI</span>
+              <div className="flex flex-wrap items-center gap-3.5 pt-6 border-t border-white/10 w-full">
+                <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 shadow-sm text-xs font-mono text-[#D5CCC1]">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#e7a93c]"></span>
+                  <span>DUA OUTLET &bull; SLAWI &amp; GUCI</span>
                 </div>
-                <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-chestnut/20 shadow-sm text-xs font-mono text-espresso/70">
-                  <span className="w-1.5 h-1.5 rounded-full bg-chestnut"></span>
-                  <span>CAST-IRON SMALL BATCH</span>
+                <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 shadow-sm text-xs font-mono text-[#D5CCC1]">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#e7a93c]"></span>
+                  <span>ALL PRICES NETT (PPN INCL.)</span>
                 </div>
                 <a
                   href="#lineup"
-                  className="text-xs font-mono tracking-wider uppercase text-chestnut font-semibold hover:underline inline-flex items-center gap-1.5 ml-auto pt-1"
+                  className="text-xs font-mono tracking-wider uppercase text-[#e7a93c] font-semibold hover:underline inline-flex items-center gap-1.5 ml-auto pt-1"
                 >
                   Jelajahi 8 Sajian Ikonik &rarr;
                 </a>
@@ -1482,54 +1474,40 @@ export default function MenuPage() {
 
             </div>
 
-            {/* Right Column (5 cols): Magazine Photographic Composition */}
-            <div className="lg:col-span-5 relative mt-4 lg:mt-0">
-              {/* Outer Card with clean framing */}
-              <div className="relative rounded-[2.5rem] overflow-hidden border border-chestnut/20 bg-white p-3.5 shadow-warm-card group">
+            {/* Right Column (5 cols): Cohesive Video Composition */}
+            <div className="lg:col-span-5 relative mt-6 lg:mt-0">
+              {/* Outer Card with seamless dark styling */}
+              <div className="relative rounded-[2rem] overflow-hidden border border-white/10 bg-[#1A1410] shadow-2xl group max-w-[420px] mx-auto lg:ml-auto hover:border-[#e7a93c]/30 transition-all duration-500">
                 
-                {/* Roastery Video Stage */}
-                <div className="relative aspect-[4/5] w-full rounded-[2rem] overflow-hidden bg-espresso">
+                {/* Slow Bar & Espresso Video Stage */}
+                <div className="relative aspect-[9/14] sm:aspect-[4/5] w-full overflow-hidden bg-black">
                   <video
                     src="/assets/vidio-rostery.mp4"
                     autoPlay
                     loop
                     muted
                     playsInline
-                    poster="/assets/clavicula/places/roastery-lab-clavicula-slawi.jpg"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent pointer-events-none"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent pointer-events-none"></div>
 
                   {/* Top Right Monograph Pill */}
-                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full border border-chestnut/20 shadow-sm text-[10px] font-mono uppercase tracking-wider text-espresso font-semibold flex items-center gap-1.5 z-10 pointer-events-none">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                    LIVE ROASTERY
+                  <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/15 shadow-sm text-[10px] font-mono uppercase tracking-wider text-[#e7a93c] font-semibold flex items-center gap-2 z-10 pointer-events-none">
+                    <span className="w-2 h-2 rounded-full bg-[#e7a93c] animate-pulse"></span>
+                    Slow Bar &amp; Espresso
                   </div>
 
-                  {/* Bottom Magazine Placard */}
+                  {/* Bottom Video Placard */}
                   <div className="absolute bottom-5 left-5 right-5 z-10 pointer-events-none">
-                    <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#D4A055] font-semibold block mb-1">
-                      FIG. 01 &mdash; THE ANATOMICAL CRAFT
+                    <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#e7a93c] font-semibold block mb-1">
+                      DAILY COFFEE CRAFT &bull; SLAWI
                     </span>
                     <p className="font-display font-bold text-lg text-white leading-snug">
-                      Slawi Roastery Lab &bull; In-House Small Batch
+                      Freshly Ground for Every Cup
                     </p>
-                    <p className="text-xs text-white/80 font-serif italic mt-1 leading-relaxed">
-                      Dari biji mentah single origin hingga cangkir seduh presisi di Slow Bar.
+                    <p className="text-xs text-white/70 font-serif italic mt-1 leading-relaxed">
+                      Biji kopi pilihan digiling segar untuk racikan espresso dan seduhan presisi.
                     </p>
-                  </div>
-                </div>
-
-                {/* Overlapping Floating Stamp Tag */}
-                <div className="absolute -bottom-3 -left-3 bg-espresso text-white p-3.5 rounded-2xl border border-chestnut/30 shadow-xl hidden sm:flex items-center gap-3 max-w-[250px] z-20">
-                  <div className="w-8 h-8 rounded-full bg-chestnut flex items-center justify-center text-white text-xs font-mono font-bold shrink-0 shadow-inner">
-                    88+
-                  </div>
-                  <div className="text-[11px] leading-tight">
-                    <span className="font-mono uppercase tracking-wider text-caramel font-semibold block">
-                      SCA Arabica Grade
-                    </span>
-                    <span className="text-white/70">Takengon, Sindoro &amp; Temanggung</span>
                   </div>
                 </div>
 
@@ -1630,7 +1608,7 @@ export default function MenuPage() {
                       {sig.name}
                     </h3>
                     <span className="font-mono text-lg font-bold text-chestnut whitespace-nowrap">
-                      Rp {(sig.price / 1000).toLocaleString("id-ID")}.000
+                      Rp {sig.price.toLocaleString("id-ID")}
                     </span>
                   </div>
 
@@ -1791,7 +1769,7 @@ export default function MenuPage() {
                       Sesap Layer Pertama
                     </h3>
                     <p className="text-sm text-espresso/70 leading-relaxed">
-                      Untuk menu anatomi ber-foam seperti Subclavius atau Manubrium, sesap dahulu busa halusnya sebelum diaduk agar seluruh lapisan rasa terasa utuh.
+                      Untuk menu anatomi berlayer seperti Manubrium atau Sternum, sesap dahulu krim halusnya sebelum diaduk agar seluruh lapisan rasa terasa utuh.
                     </p>
                   </div>
                 </li>
@@ -1835,10 +1813,10 @@ export default function MenuPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="border-l border-chestnut/20 pl-5">
               <span className="font-display font-black text-4xl md:text-5xl text-chestnut block leading-none">
-                88.5+
+                6+
               </span>
               <p className="mt-2 text-xs md:text-sm text-espresso/60 font-mono uppercase tracking-wider">
-                SCA Cupping Score Arabica
+                Signature Anatomi Ikonik
               </p>
             </div>
 
@@ -2055,7 +2033,7 @@ export default function MenuPage() {
                         {item.name}
                       </h4>
                       <span className="font-mono text-base font-bold text-chestnut whitespace-nowrap">
-                        Rp {(item.price / 1000).toLocaleString("id-ID")}.000
+                        Rp {item.price.toLocaleString("id-ID")}
                       </span>
                     </div>
 
@@ -2097,7 +2075,7 @@ export default function MenuPage() {
 
                   <div className="sm:text-right shrink-0">
                     <span className="font-mono text-base font-bold text-chestnut">
-                      Rp {(item.price / 1000).toLocaleString("id-ID")}.000
+                      Rp {item.price.toLocaleString("id-ID")}
                     </span>
                   </div>
                 </div>

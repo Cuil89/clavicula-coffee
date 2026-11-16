@@ -162,7 +162,7 @@ export default function Home() {
             </p>
 
             <p className="text-base md:text-lg text-espresso/80 max-w-[48ch] mb-8 leading-relaxed">
-              Dilahirkan dari latar belakang kedokteran di Slawi, Tegal. Dinamai dari <em>clavicula</em> (tulang selangka)—jembatan anatomis yang menyatukan kepala, detak dada, dan pergerakan tangan. Ruang bagi ide bertumbuh di antara seduhan single origin, sajian berkonsep anatomi, hingga sejuknya kabut Clavicula Hills Guci.
+              Dinamai dari <em>clavicula</em> (tulang selangka)—titik simpul anatomis yang menyatukan dan menyeimbangkan gerak tubuh. Clavicula Coffee &amp; Idea hadir di Slawi dan sejuknya dataran tinggi Clavicula Hills Guci sebagai ruang temu hangat untuk menyatukan racikan kopi pilihan, santapan lezat, dan obrolan ide yang mengalir.
             </p>
 
             <div className="flex flex-wrap items-center gap-4 mb-12">
@@ -189,9 +189,9 @@ export default function Home() {
             {/* Key Metrics */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 w-full border-t border-chestnut/15 pt-8">
               <div className="flex flex-col">
-                <span className="text-2xl font-black text-espresso">88.5+</span>
+                <span className="text-2xl font-black text-espresso">6+</span>
                 <span className="text-[11px] uppercase tracking-wider text-espresso/60 mt-0.5 font-mono">
-                  SCA Cupping Score
+                  Signature Anatomi
                 </span>
               </div>
               <div className="flex flex-col">
@@ -271,7 +271,7 @@ export default function Home() {
               Dibuat Dengan Jiwa, Rasa &amp; Nalar
             </h2>
             <p className="text-xl font-serif italic text-espresso/70 max-w-2xl">
-              &quot;Dari ketelitian medis menuju ekstraksi biji kopi nusantara yang sempurna, disajikan dalam harmoni santap hangat.&quot;
+              &quot;Dari inspirasi keseimbangan gerak tubuh menuju seduhan kopi pilihan yang jujur, disajikan dalam harmoni santap hangat.&quot;
             </p>
           </div>
 
@@ -281,10 +281,10 @@ export default function Home() {
                 num: "01",
                 category: "ANATOMICAL CREATION",
                 title: "Menu Khas Anatomi",
-                copy: "Penamaan unik bernuansa medis dan anatomi tubuh manusia: Manubrium, Sternum, Scapula, Subclavius, hingga Mocktail Brachialis & Radius.",
+                copy: "Penamaan unik bertema anatomi tubuh manusia: Manubrium (Kopi Susu Gula Aren), Acromion, Costa, Sternum, Scapula, hingga Trapezius.",
                 cta: "Lihat Signature Drink",
                 link: "/menu",
-                img: "/assets/clavicula/drinks/manubrium.webp",
+                img: "/assets/clavicula/drinks/manubrium-fullcard.jpg",
               },
               {
                 num: "02",
@@ -360,15 +360,14 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3.5 md:gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-3.5 md:gap-4">
             {[
-              { name: "Manubrium", price: 30000, img: "/assets/clavicula/drinks/manubrium.webp", note: "Creamy vanilla layers + double espresso" },
-              { name: "Acromium", price: 31000, img: "/assets/clavicula/drinks/acromion.webp", note: "Caramelized milk with soft regal biscuit" },
-              { name: "Subclavius", price: 31000, img: "/assets/extracted/signature_subclavius.jpg", note: "Velvety foam crown & distinct roast punch" },
-              { name: "Trapezius", price: 30000, img: "/assets/clavicula/drinks/trapezius.webp", note: "Strawberry swirl & silky cream fusion" },
-              { name: "Sternum", price: 30000, img: "/assets/clavicula/drinks/sternum.webp", note: "Golden caramel drizzle with iced espresso" },
+              { name: "Manubrium", price: 30000, img: "/assets/clavicula/drinks/manubrium-fullcard.jpg", note: "Kopi susu gula aren + layer krim lembut" },
+              { name: "Acromion", price: 31000, img: "/assets/clavicula/drinks/acromion.webp", note: "Caramelized milk with soft regal biscuit" },
               { name: "Costa", price: 31000, img: "/assets/clavicula/drinks/costa.webp", note: "Nutella spread, iced espresso & ice cream" },
+              { name: "Sternum", price: 30000, img: "/assets/clavicula/drinks/sternum.webp", note: "Golden caramel drizzle with iced espresso" },
               { name: "Scapula", price: 29000, img: "/assets/clavicula/drinks/scapula.webp", note: "Pandan klepon coconut milk + espresso" },
+              { name: "Trapezius", price: 30000, img: "/assets/clavicula/drinks/trapezius.webp", note: "Strawberry swirl & silky cream fusion" },
             ].map((drink, idx) => (
               <div
                 key={idx}
