@@ -8,6 +8,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowRight, Star, ShoppingBag, MapPin, Clock } from "lucide-react";
 import { InstagramIcon } from "@/components/Icons";
 import { useUI } from "@/components/UIProvider";
+import InstagramReels from "@/components/InstagramReels";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -809,7 +810,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 09. INSTAGRAM & SOCIAL COMMUNITY BANNER */}
+      {/* 09. INSTAGRAM REELS SHOWCASE */}
+      <InstagramReels />
+
+      {/* 10. INSTAGRAM & SOCIAL COMMUNITY BANNER */}
       <section className="w-full bg-vanilla/60 py-20 px-4 md:px-8 text-center">
         <div className="mx-auto max-w-4xl flex flex-col items-center">
           <div className="p-3 bg-white rounded-full border border-chestnut/20 text-chestnut mb-4 shadow-sm">
