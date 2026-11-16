@@ -220,13 +220,13 @@ export default function Home() {
             <div className="absolute inset-0 rounded-t-[220px] rounded-b-[24px] overflow-hidden shadow-2xl border border-chestnut/20 bg-espresso">
               <div className="relative w-full h-full hero-image-container overflow-hidden">
                 <Image
-                  src="/assets/clavicula/places/hero-slowbar-clavicula.jpg"
-                  alt="Clavicula Coffee & Idea Identity"
+                  src="/assets/clavicula/places/clavicula-facade-identity.jpg"
+                  alt="Clavicula Coffee & Idea Identity Facade - Slawi & Guci Hills"
                   fill
-                  className="object-cover object-center hero-image opacity-90 transition-transform duration-700 group-hover:scale-105"
+                  className="object-cover object-center hero-image opacity-95 transition-transform duration-700 group-hover:scale-105"
                   priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-espresso via-espresso/20 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-espresso/80 via-transparent to-transparent"></div>
               </div>
             </div>
 
