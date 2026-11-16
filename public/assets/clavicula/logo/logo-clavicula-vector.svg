@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 120" width="420" height="120">
+  <rect width="420" height="120" rx="8" fill="#16120F"/>
+  <circle cx="60" cy="60" r="38" fill="none" stroke="#F4EFE6" stroke-width="1.5"/>
+  <circle cx="60" cy="60" r="31" fill="none" stroke="#B85D3B" stroke-width="1" stroke-dasharray="3 3"/>
+  <path d="M44 63 C50 53, 70 53, 76 63 C70 69, 50 69, 44 63 Z" fill="none" stroke="#F4EFE6" stroke-width="2"/>
+  <path d="M47 60 C55 64, 65 56, 73 60" fill="none" stroke="#B85D3B" stroke-width="1.8"/>
+  <text x="116" y="58" font-family="Georgia, serif" font-size="34" fill="#F4EFE6" letter-spacing="3">CLAVICULA.</text>
+  <text x="118" y="82" font-family="monospace" font-size="11" fill="#D8CEB8" letter-spacing="4">COFFEE &amp; IDEA • ROASTERY</text>
+</svg>

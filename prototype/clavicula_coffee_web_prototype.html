@@ -1,0 +1,1748 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CLAVICULA COFFEE & IDEA — Roastery, Slow Bar & Ruang Kolaborasi | Slawi & Guci</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            linen: '#F4EFE6',
+            parchment: '#EBE3D5',
+            crema: '#D8CEB8',
+            espresso: '#16120F',
+            umber: '#2B211C',
+            muted: '#5A4D44',
+            terracotta: '#B85D3B',
+            pine: '#3E4F43'
+          },
+          fontFamily: {
+            serif: ['"Instrument Serif"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    :root {
+      --bg-canvas: #F4EFE6;
+      --bg-surface: #EBE3D5;
+      --bg-card: #EFE8DA;
+      --bg-inverse: #16120F;
+      --text-primary: #16120F;
+      --text-secondary: #5A4D44;
+      --accent-primary: #B85D3B;
+      --accent-secondary: #3E4F43;
+      --border-hairline: rgba(22, 18, 15, 0.15);
+    }
+
+    body.dark-editorial {
+      --bg-canvas: #16120F;
+      --bg-surface: #211A16;
+      --bg-card: #2B211C;
+      --bg-inverse: #F4EFE6;
+      --text-primary: #F4EFE6;
+      --text-secondary: #C7BBAE;
+      --accent-primary: #D4744E;
+      --accent-secondary: #688570;
+      --border-hairline: rgba(244, 239, 230, 0.14);
+    }
+
+    body {
+      background-color: var(--bg-canvas);
+      color: var(--text-primary);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+      transition: background-color 0.55s cubic-bezier(0.16, 1, 0.3, 1), color 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .hairline-border {
+      border-color: var(--border-hairline);
+    }
+
+    .surface-bg {
+      background-color: var(--bg-surface);
+    }
+
+    .card-bg {
+      background-color: var(--bg-card);
+    }
+
+    .text-muted-editorial {
+      color: var(--text-secondary);
+    }
+
+    /* Subtle tactile film grain overlay (pure SVG data URI, non-blocking) */
+    .grain-overlay {
+      pointer-events: none;
+      position: fixed;
+      inset: 0;
+      z-index: 45;
+      opacity: 0.035;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+
+    /* Editorial reveal animations */
+    .reveal-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal-up.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .editorial-img-wrap {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .editorial-img-wrap img {
+      transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
+    }
+
+    .editorial-img-wrap:hover img {
+      transform: scale(1.045);
+    }
+
+    /* Infinite marquee animation */
+    @keyframes marqueeScroll {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marqueeScroll 34s linear infinite;
+    }
+
+    .marquee-track:hover {
+      animation-play-state: paused;
+    }
+
+    /* Magnetic pill hover sweep */
+    .btn-editorial {
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .btn-editorial:active {
+      transform: scale(0.98);
+    }
+
+    /* Custom subtle scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F4EFE6;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #B85D3B;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-terracotta selection:text-linen">
+  <!-- Tactile Paper Grain Overlay -->
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- Top Scroll Progress Line -->
+  <div class="fixed top-0 left-0 right-0 h-[2px] z-50 bg-transparent">
+    <div id="scrollProgressBar" class="h-full bg-terracotta transition-all duration-75" style="width: 0%;"></div>
+  </div>
+
+  <!-- Top Editorial Status Strip -->
+  <div class="border-b hairline-border text-[11px] font-mono tracking-wider uppercase py-2 px-4 md:px-10 flex flex-wrap items-center justify-between gap-2 relative z-40 surface-bg">
+    <div class="flex items-center gap-3">
+      <span id="liveStatusDot" class="inline-block w-2 h-2 rounded-full bg-pine"></span>
+      <span id="liveOutletStatusText">OUTLET SLAWI: BUKA HARI INI (10.00 – 23.00 WIB) • ROASTERY BATCH #48 SIAP KIRIM</span>
+    </div>
+    <div class="flex items-center gap-4">
+      <a href="https://radartegal.disway.id/lokal/read/731192/7-cafe-estetik-untuk-wfc-di-slawi-ada-yang-buka-24-jam/15" target="_blank" rel="noopener noreferrer" class="hover:underline">SLAWI HQ: JL. DR. SOETOMO NO. 3 ↗</a>
+      <span class="opacity-40">|</span>
+      <a href="https://radartegal.disway.id/amp/729713/7-cafe-unik-di-guci-tegal-tempat-nongkrong-dengan-view-pegunungan/16" target="_blank" rel="noopener noreferrer" class="hover:underline">CABANG: GUCI HILLS TEGAL ↗</a>
+    </div>
+  </div>
+
+  <!-- Sticky Editorial Navbar -->
+  <header id="navbar" class="sticky top-0 z-40 backdrop-blur-md bg-[#F4EFE6]/85 dark:bg-[#16120F]/85 border-b hairline-border transition-colors duration-500">
+    <div class="max-w-[1400px] mx-auto px-4 md:px-10 h-16 md:h-20 flex items-center justify-between gap-4">
+      <!-- Brand Wordmark -->
+      <button id="brandHomeBtn" type="button" class="text-left group focus:outline-none">
+        <span class="block font-serif text-2xl md:text-3xl tracking-tight leading-none">CLAVICULA.</span>
+        <span class="block font-mono text-[9px] tracking-[0.22em] uppercase text-muted-editorial mt-0.5">COFFEE &amp; IDEA • ROASTERY</span>
+      </button>
+
+      <!-- Center Editorial Nav Links -->
+      <nav class="hidden lg:flex items-center gap-7 text-xs font-mono uppercase tracking-widest">
+        <button type="button" data-scroll-to="cerita" class="nav-scroll-btn hover:text-terracotta transition-colors">01 / Cerita &amp; Filosofi</button>
+        <button type="button" data-scroll-to="roastery" class="nav-scroll-btn hover:text-terracotta transition-colors">02 / Katalog Roastery</button>
+        <button type="button" data-scroll-to="ruang" class="nav-scroll-btn hover:text-terracotta transition-colors">03 / Ruang &amp; Cabang</button>
+        <button type="button" data-scroll-to="jurnal" class="nav-scroll-btn hover:text-terracotta transition-colors">04 / Jurnal IG</button>
+      </nav>
+
+      <!-- Right Actions: Vibe Mode Toggle, IG Pill, Cart Drawer Trigger -->
+      <div class="flex items-center gap-2.5 md:gap-3">
+        <button id="vibeToggleBtn" type="button" class="btn-editorial px-3 py-1.5 text-[11px] font-mono uppercase tracking-wider border hairline-border rounded-full hover:border-terracotta" title="Ubah Suasana Ruang (Linen Siang / Espresso Malam)">
+          <span id="vibeToggleLabel">Mode: Linen Siang</span>
+        </button>
+
+        <a href="https://www.instagram.com/clavicula_coffee/" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 text-[11px] font-mono tracking-wider border hairline-border rounded-full hover:bg-espresso hover:text-linen transition-colors">
+          <span>@clavicula_coffee</span>
+          <span>↗</span>
+        </a>
+
+        <button id="openCartBtn" type="button" class="btn-editorial px-4 py-2 text-xs font-mono uppercase tracking-wider bg-espresso text-linen rounded-full flex items-center gap-2 hover:bg-terracotta transition-colors">
+          <span>Keranjang</span>
+          <span id="cartCountBadge" class="px-1.5 py-0.5 text-[10px] bg-linen text-espresso rounded-full font-semibold">2</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- HERO SECTION (Full-Viewport Editorial Layout inspired by @elyptwebdesign) -->
+    <section id="hero" class="relative border-b hairline-border">
+      <div class="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 min-h-[calc(100vh-6.5rem)]">
+        <!-- Left Column: Editorial Typography & Narrative -->
+        <div class="lg:col-span-7 p-6 sm:p-10 md:p-14 lg:p-16 flex flex-col justify-between border-b lg:border-b-0 lg:border-r hairline-border">
+          <div class="space-y-6">
+            <div class="inline-flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.2em] text-muted-editorial">
+              <span>[ EDISI ROASTERY &amp; SLOW BAR 2026 ]</span>
+              <span>—</span>
+              <span>SLAWI &amp; GUCI, TEGAL</span>
+            </div>
+
+            <h1 class="font-serif text-5xl sm:text-6xl xl:text-[5.1rem] leading-[1.02] tracking-tight">
+              Dari Meja <span class="italic font-normal text-terracotta">Roastery</span> untuk Ruang Ide &amp; Seduhan Harian.
+            </h1>
+
+            <p class="text-base sm:text-lg text-muted-editorial max-w-xl leading-relaxed font-normal">
+              Berangkat dari rumah sangrai mandiri di <strong class="font-semibold text-current">Kalisapu, Slawi</strong> hingga ruang teduh berlatar pinus di <strong class="font-semibold text-current">Guci</strong>, Clavicula Coffee merawat profil sangrai presisi untuk diseduh di kedai maupun di rumah Anda.
+            </p>
+          </div>
+
+          <!-- CTA Group & Quick Interactive Batch Bar -->
+          <div class="pt-10 space-y-8">
+            <div class="flex flex-wrap items-center gap-4">
+              <button type="button" data-scroll-to="roastery" class="nav-scroll-btn btn-editorial px-7 py-4 bg-espresso text-linen font-mono text-xs uppercase tracking-[0.18em] rounded-full hover:bg-terracotta">
+                Belanja Biji Kopi →
+              </button>
+              <button type="button" data-scroll-to="ruang" class="nav-scroll-btn btn-editorial px-6 py-4 border hairline-border font-mono text-xs uppercase tracking-[0.18em] rounded-full hover:border-terracotta">
+                Jelajahi Ruang Kami ↓
+              </button>
+              <button id="openQuickBrewModalBtn" type="button" class="btn-editorial px-5 py-4 font-mono text-xs uppercase tracking-[0.15em] underline underline-offset-4 text-muted-editorial hover:text-terracotta">
+                Kalkulator Rasio Seduh ↗
+              </button>
+            </div>
+
+            <!-- Architectural Spec Metrics Bar (Zero AI Icons, Pure Monospace & Hairlines) -->
+            <div class="grid grid-cols-3 border-t hairline-border pt-6 gap-4">
+              <div>
+                <div class="font-mono text-[10px] uppercase tracking-widest text-muted-editorial">01 / ROASTING PROFILE</div>
+                <div class="font-serif text-2xl sm:text-3xl mt-1">Small-Batch</div>
+                <div class="font-mono text-[11px] text-muted-editorial">100% Freshly Roasted in Slawi</div>
+              </div>
+              <div class="border-l hairline-border pl-4">
+                <div class="font-mono text-[10px] uppercase tracking-widest text-muted-editorial">02 / RUANG SINGGAH</div>
+                <div class="font-serif text-2xl sm:text-3xl mt-1">Slawi &amp; Guci</div>
+                <div class="font-mono text-[11px] text-muted-editorial">WFC Space &amp; Highland Deck</div>
+              </div>
+              <div class="border-l hairline-border pl-4">
+                <div class="font-mono text-[10px] uppercase tracking-widest text-muted-editorial">03 / PENGIRIMAN &amp; PICKUP</div>
+                <div class="font-serif text-2xl sm:text-3xl mt-1">QRIS &amp; GoSend</div>
+                <div class="font-mono text-[11px] text-muted-editorial">Ambil di Outlet / Kurir Instan</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Asymmetric Parallax Frame & Rotating Editorial Stamp -->
+        <div class="lg:col-span-5 relative flex flex-col justify-between p-6 sm:p-10 bg-[#EAE1D0]/60 dark:bg-[#1E1814]">
+          <!-- Top Metadata Caption -->
+          <div class="flex items-center justify-between font-mono text-[11px] uppercase tracking-widest text-muted-editorial pb-4 border-b hairline-border">
+            <span>FIG. 01 — HOUSE ROASTERY &amp; ESPRESSO</span>
+            <span>@CLAVICULA_COFFEE</span>
+          </div>
+
+          <!-- Parallax Image Container -->
+          <div class="relative my-6 editorial-img-wrap rounded-sm border hairline-border aspect-[4/3] lg:aspect-auto lg:h-[440px]">
+            <img
+              id="heroParallaxImg"
+              src="../public/assets/clavicula/places/hero-slowbar-clavicula.jpg"
+              alt="Kemasan biji kopi Clavicula Coffee dan seduhan espresso di meja slow bar"
+              class="w-full h-full object-cover"
+            />
+            <!-- Rotating Circular Typographic Stamp (Scroll-reactive) -->
+            <div class="absolute -bottom-6 -left-4 sm:bottom-4 sm:left-4 w-28 h-28 rounded-full bg-linen/95 text-espresso border hairline-border flex items-center justify-center shadow-sm">
+              <svg id="rotatingStampSvg" viewBox="0 0 100 100" class="w-24 h-24">
+                <defs>
+                  <path id="stampCirclePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" />
+                </defs>
+                <text font-family="JetBrains Mono, monospace" font-size="7.3" letter-spacing="1.7px" fill="#16120F">
+                  <textPath href="#stampCirclePath">
+                    SMALL BATCH ROASTERY • SLAWI &amp; GUCI •
+                  </textPath>
+                </text>
+              </svg>
+              <span class="absolute font-serif italic text-sm">Est.</span>
+            </div>
+          </div>
+
+          <!-- Interactive Featured Bean Quick-Add Strip -->
+          <div class="border hairline-border p-4 card-bg flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <div class="font-mono text-[10px] uppercase tracking-widest text-terracotta">BATCH UNGGULAN MINGGU INI</div>
+              <div class="font-serif text-xl leading-snug">Arabica Guci Highland — Natural Process</div>
+              <div class="font-mono text-[11px] text-muted-editorial">Notes: Wild Berry • Brown Sugar • Clean Citrus (200g)</div>
+            </div>
+            <button id="heroQuickAddBtn" type="button" class="btn-editorial shrink-0 px-4 py-2.5 bg-espresso text-linen font-mono text-[11px] uppercase tracking-wider rounded-full hover:bg-terracotta">
+              + Keranjang (Rp 95.000)
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INFINITE TYPOGRAPHIC MARQUEE TICKER -->
+    <div class="border-b hairline-border py-3.5 bg-espresso text-linen overflow-hidden select-none">
+      <div class="marquee-track font-mono text-xs uppercase tracking-[0.25em]">
+        <span class="mx-6">SMALL BATCH ROASTERY</span>
+        <span class="text-terracotta">•</span>
+        <span class="mx-6">SINGLE ORIGIN &amp; HOUSE BLEND</span>
+        <span class="text-terracotta">•</span>
+        <span class="mx-6">CLAVICULA COFFEE &amp; IDEA — SLAWI (JL. DR. SOETOMO NO. 3)</span>
+        <span class="text-terracotta">•</span>
+        <span class="mx-6">CLAVICULA COFFEE &amp; HILLS — GUCI TEGAL</span>
+        <span class="text-terracotta">•</span>
+        <span class="mx-6">SLOW BAR &amp; RUANG KOLABORASI</span>
+        <span class="text-terracotta">•</span>
+        <span class="mx-6">PEMBAYARAN QRIS &amp; PENGIRIMAN GOSEND / PICKUP OUTLET</span>
+        <span class="text-terracotta">•</span>
+        <span class="mx-6">SMALL BATCH ROASTERY</span>
+        <span class="text-terracotta">•</span>
+        <span class="mx-6">SINGLE ORIGIN &amp; HOUSE BLEND</span>
+        <span class="text-terracotta">•</span>
+        <span class="mx-6">CLAVICULA COFFEE &amp; IDEA — SLAWI (JL. DR. SOETOMO NO. 3)</span>
+        <span class="text-terracotta">•</span>
+        <span class="mx-6">CLAVICULA COFFEE &amp; HILLS — GUCI TEGAL</span>
+        <span class="text-terracotta">•</span>
+      </div>
+    </div>
+
+    <!-- SECTION 01: SPLIT-SCREEN STICKY BRAND STORY (PROFIL & FILOSOFI) -->
+    <section id="cerita" class="border-b hairline-border">
+      <div class="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12">
+        <!-- Sticky Left Narrative Column -->
+        <div class="lg:col-span-5 p-6 sm:p-10 md:p-14 lg:p-16 border-b lg:border-b-0 lg:border-r hairline-border lg:sticky lg:top-20 lg:h-[calc(100vh-5rem)] flex flex-col justify-between">
+          <div class="space-y-5">
+            <div class="font-mono text-xs uppercase tracking-[0.2em] text-terracotta">01 / PROFIL &amp; FILOSOFI</div>
+            <h2 class="font-serif text-4xl sm:text-5xl leading-[1.08] tracking-tight">
+              Lebih dari Sekadar Kedai: <span class="italic font-normal">Laboratorium Rasa</span> &amp; Ruang Kolaborasi.
+            </h2>
+            <p class="text-sm sm:text-base text-muted-editorial leading-relaxed">
+              Nama <strong class="font-semibold text-current">Clavicula Coffee &amp; Idea</strong> lahir dari gagasan bahwa secangkir kopi yang disangrai dengan jujur adalah penghubung terbaik antara rasa, percakapan, dan produktivitas harian.
+            </p>
+          </div>
+
+          <!-- Interactive Story Chapter Indicators -->
+          <div class="my-8 space-y-2 border-t hairline-border pt-6">
+            <div class="font-mono text-[10px] uppercase tracking-widest text-muted-editorial mb-3">TAHAPAN EKOSISTEM CLAVICULA (KLIK UNTUK FOKUS):</div>
+            <button type="button" data-story-target="story-card-1" class="story-nav-btn w-full text-left py-3 px-4 border hairline-border flex items-center justify-between font-mono text-xs uppercase tracking-wider bg-espresso text-linen transition-colors">
+              <span>01. Small-Batch Roastery Lab</span>
+              <span>→</span>
+            </button>
+            <button type="button" data-story-target="story-card-2" class="story-nav-btn w-full text-left py-3 px-4 border hairline-border flex items-center justify-between font-mono text-xs uppercase tracking-wider hover:border-terracotta transition-colors">
+              <span>02. Slow Bar &amp; Manual Brew</span>
+              <span>→</span>
+            </button>
+            <button type="button" data-story-target="story-card-3" class="story-nav-btn w-full text-left py-3 px-4 border hairline-border flex items-center justify-between font-mono text-xs uppercase tracking-wider hover:border-terracotta transition-colors">
+              <span>03. Ruang Kerja (WFC) &amp; Komunitas</span>
+              <span>→</span>
+            </button>
+          </div>
+
+          <div class="font-mono text-[11px] text-muted-editorial flex items-center justify-between border-t hairline-border pt-4">
+            <span>DOKUMENTASI: SLAWI &amp; GUCI</span>
+            <a href="https://www.instagram.com/clavicula_coffee/" target="_blank" rel="noopener noreferrer" class="underline hover:text-terracotta">LIHAT ARSIP IG ↗</a>
+          </div>
+        </div>
+
+        <!-- Scrolling Right Editorial Story Cards -->
+        <div class="lg:col-span-7 divide-y hairline-border">
+          <!-- Story Frame 01 -->
+          <article id="story-card-1" data-story-index="0" class="story-frame p-6 sm:p-10 md:p-14 space-y-6 reveal-up">
+            <div class="flex items-center justify-between font-mono text-xs uppercase tracking-widest text-muted-editorial">
+              <span>BAB 01 / PROSES SANGRAI MANDIRI</span>
+              <span>ROASTERY HQ — KALISAPU, SLAWI</span>
+            </div>
+            <div class="editorial-img-wrap border hairline-border aspect-[4/3]">
+              <img
+                src="../public/assets/clavicula/places/roastery-lab-clavicula-slawi.jpg"
+                alt="Mesin sangrai kopi small-batch roastery Clavicula Coffee"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start pt-2">
+              <div class="md:col-span-8 space-y-2">
+                <h3 class="font-serif text-3xl">Kurasi Biji Mentah &amp; Profil Sangrai Presisi</h3>
+                <p class="text-sm sm:text-base text-muted-editorial leading-relaxed">
+                  Setiap batch disangrai dalam skala terukur untuk menjaga kejernihan karakter asli biji kopi Nusantara—mulai dari lereng Gunung Slamet (Guci) hingga Gayo, Kintamani, dan Toraja. Kami mencatat kurva suhu, waktu *first crack*, dan tanggal sangrai secara transparan pada setiap kemasan.
+                </p>
+              </div>
+              <div class="md:col-span-4 border hairline-border p-4 surface-bg font-mono text-[11px] space-y-1.5">
+                <div class="text-terracotta font-semibold">PARAMETER ROASTERY</div>
+                <div>• Kapasitas: Small-Batch</div>
+                <div>• QC: Cupping Rutin Tiap Batch</div>
+                <div>• Kemasan: One-Way Valve Pouch</div>
+                <div>• Opsi: Biji Utuh / Giling Sesuai Alat</div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Story Frame 02 -->
+          <article id="story-card-2" data-story-index="1" class="story-frame p-6 sm:p-10 md:p-14 space-y-6 reveal-up">
+            <div class="flex items-center justify-between font-mono text-xs uppercase tracking-widest text-muted-editorial">
+              <span>BAB 02 / EKSTRAKSI &amp; DIALOG BARISTA</span>
+              <span>SLOW BAR &amp; ESPRESSO BAR</span>
+            </div>
+            <div class="editorial-img-wrap border hairline-border aspect-[4/3]">
+              <img
+                src="../public/assets/clavicula/places/slow-bar-v60-clavicula.jpg"
+                alt="Seduhan manual brew V60 di meja slow bar Clavicula Coffee"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start pt-2">
+              <div class="md:col-span-8 space-y-2">
+                <h3 class="font-serif text-3xl">Meja Slow Bar yang Terbuka untuk Eksplorasi</h3>
+                <p class="text-sm sm:text-base text-muted-editorial leading-relaxed">
+                  Di meja seduh Clavicula Coffee, pengunjung dapat berdiskusi langsung mengenai karakter *single origin* hari itu, mencoba seduhan *manual brew* V60 atau Kalita Wave, serta membawa pulang biji kopi dengan profil gilingan yang sudah disesuaikan untuk alat seduh di rumah.
+                </p>
+              </div>
+              <div class="md:col-span-4 border hairline-border p-4 surface-bg font-mono text-[11px] space-y-2">
+                <div class="text-terracotta font-semibold">STANDAR EKSTRAKSI</div>
+                <div>• Suhu Air: 90°C – 93°C</div>
+                <div>• Rasio Default: 1 : 15 (V60)</div>
+                <button type="button" id="storyOpenCalculatorBtn" class="underline hover:text-terracotta pt-1 inline-block">
+                  Buka Simulasi Resep Seduh ↗
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Story Frame 03 -->
+          <article id="story-card-3" data-story-index="2" class="story-frame p-6 sm:p-10 md:p-14 space-y-6 reveal-up">
+            <div class="flex items-center justify-between font-mono text-xs uppercase tracking-widest text-muted-editorial">
+              <span>BAB 03 / DUA KARAKTER RUANG</span>
+              <span>WFC SLAWI &amp; DATARAN TINGGI GUCI</span>
+            </div>
+            <div class="editorial-img-wrap border hairline-border aspect-[16/9]">
+              <img
+                src="../public/assets/clavicula/places/ruang-wfc-slawi-dan-view-guci.jpg"
+                alt="Suasana ruang kerja WFC dan teras pegunungan Clavicula Coffee"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start pt-2">
+              <div class="md:col-span-8 space-y-2">
+                <h3 class="font-serif text-3xl">Ruang Produktif di Kota &amp; Pelarian Tenang di Pegunungan</h3>
+                <p class="text-sm sm:text-base text-muted-editorial leading-relaxed">
+                  Sebagaimana diulas pada <a href="https://radartegal.disway.id/lokal/read/731192/7-cafe-estetik-untuk-wfc-di-slawi-ada-yang-buka-24-jam/15" target="_blank" rel="noopener noreferrer" class="underline hover:text-terracotta">Radar Tegal (Rekomendasi Cafe WFC Slawi)</a> dan <a href="https://radartegal.disway.id/amp/729713/7-cafe-unik-di-guci-tegal-tempat-nongkrong-dengan-view-pegunungan/16" target="_blank" rel="noopener noreferrer" class="underline hover:text-terracotta">Radar Tegal (Cafe View Pegunungan Guci)</a>, Clavicula menghadirkan area *indoor* yang kondusif untuk *Work From Cafe* (WFC) maupun diskusi komunitas di Slawi, serta teras sejuk berlatar pegunungan di cabang Guci.
+                </p>
+              </div>
+              <div class="md:col-span-4 border hairline-border p-4 surface-bg font-mono text-[11px] space-y-1.5">
+                <div class="text-terracotta font-semibold">AKTIVITAS RUANG</div>
+                <div>• Work From Cafe (Mahasiswa &amp; Freelancer)</div>
+                <div>• Diskusi Musik &amp; Komunitas Kreatif</div>
+                <div>• Pembelian &amp; Pickup Roastery</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 02: INTERACTIVE ROASTERY E-COMMERCE CATALOG -->
+    <section id="roastery" class="border-b hairline-border py-14 sm:py-20">
+      <div class="max-w-[1400px] mx-auto px-4 sm:px-10">
+        <!-- Section Header -->
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-10 border-b hairline-border">
+          <div class="space-y-3">
+            <div class="font-mono text-xs uppercase tracking-[0.2em] text-terracotta">02 / KATALOG ROASTERY PILIHAN</div>
+            <h2 class="font-serif text-4xl sm:text-6xl leading-none tracking-tight">
+              Etalase Biji Kopi &amp; <span class="italic font-normal">Roastery</span>.
+            </h2>
+          </div>
+          <p class="text-sm sm:text-base text-muted-editorial max-w-md">
+            Pilih berat kemasan dan tingkat gilingan (*grind size*) sesuai alat seduh Anda. Tersedia pembayaran <strong class="font-semibold text-current">QRIS / Virtual Account</strong> dengan opsi pengiriman kurir atau ambil langsung di outlet Slawi.
+          </p>
+        </div>
+
+        <!-- Filter Pills, Search & Sort Controls -->
+        <div class="py-6 flex flex-col md:flex-row md:items-center justify-between gap-4 border-b hairline-border">
+          <div id="categoryFilterGroup" class="flex flex-wrap items-center gap-2">
+            <button type="button" data-category="all" class="roast-filter-btn px-4 py-2 font-mono text-xs uppercase tracking-wider rounded-full bg-espresso text-linen transition-colors">
+              Semua Koleksi (6)
+            </button>
+            <button type="button" data-category="Single Origin" class="roast-filter-btn px-4 py-2 font-mono text-xs uppercase tracking-wider rounded-full border hairline-border hover:border-terracotta transition-colors">
+              Single Origin
+            </button>
+            <button type="button" data-category="House Blend" class="roast-filter-btn px-4 py-2 font-mono text-xs uppercase tracking-wider rounded-full border hairline-border hover:border-terracotta transition-colors">
+              House Blend
+            </button>
+            <button type="button" data-category="Seasonal Release" class="roast-filter-btn px-4 py-2 font-mono text-xs uppercase tracking-wider rounded-full border hairline-border hover:border-terracotta transition-colors">
+              Seasonal &amp; Drip Pack
+            </button>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-3">
+            <div class="relative">
+              <input
+                id="catalogSearchInput"
+                type="text"
+                placeholder="Cari kopi / tasting notes..."
+                class="px-4 py-2 text-xs font-mono bg-transparent border hairline-border rounded-full focus:outline-none focus:border-terracotta w-56 sm:w-64"
+              />
+            </div>
+            <select
+              id="catalogSortSelect"
+              aria-label="Urutkan produk roastery"
+              class="px-4 py-2 text-xs font-mono uppercase tracking-wider bg-transparent border hairline-border rounded-full focus:outline-none focus:border-terracotta"
+            >
+              <option value="featured" class="bg-linen text-espresso">Urutkan: Unggulan</option>
+              <option value="price-asc" class="bg-linen text-espresso">Harga: Terendah</option>
+              <option value="price-desc" class="bg-linen text-espresso">Harga: Tertinggi</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Architectural 3-Column Exposed Hairline Product Grid -->
+        <div id="roasteryGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-l border-r hairline-border">
+          <!-- Populated dynamically by JavaScript from grounded catalog state -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 03: DUAL-BRANCH ARCHITECTURAL SHOWCASE (SLAWI & GUCI) -->
+    <section id="ruang" class="border-b hairline-border py-14 sm:py-20">
+      <div class="max-w-[1400px] mx-auto px-4 sm:px-10">
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-10 border-b hairline-border">
+          <div class="space-y-3">
+            <div class="font-mono text-xs uppercase tracking-[0.2em] text-terracotta">03 / RUANG SINGGAH KAMI</div>
+            <h2 class="font-serif text-4xl sm:text-6xl leading-none tracking-tight">
+              Dua Lokasi, Satu <span class="italic font-normal">Identitas Rasa</span>.
+            </h2>
+          </div>
+
+          <!-- Interactive Branch Highlight Filter -->
+          <div class="flex items-center gap-2 font-mono text-xs">
+            <button type="button" data-branch-view="both" class="branch-tab-btn px-4 py-2 rounded-full bg-espresso text-linen uppercase tracking-wider">
+              Semua Cabang (2)
+            </button>
+            <button type="button" data-branch-view="slawi" class="branch-tab-btn px-4 py-2 rounded-full border hairline-border uppercase tracking-wider hover:border-terracotta">
+              01. Slawi HQ
+            </button>
+            <button type="button" data-branch-view="guci" class="branch-tab-btn px-4 py-2 rounded-full border hairline-border uppercase tracking-wider hover:border-terracotta">
+              02. Guci Hills
+            </button>
+          </div>
+        </div>
+
+        <!-- 2-Column Branch Cards -->
+        <div id="branchCardsContainer" class="grid grid-cols-1 lg:grid-cols-2 border-l border-r border-b hairline-border divide-y lg:divide-y-0 lg:divide-x hairline-border">
+          <!-- Branch 01: Clavicula Coffee & Idea — Slawi -->
+          <article id="branchCardSlawi" class="p-6 sm:p-10 md:p-12 flex flex-col justify-between space-y-8 card-bg">
+            <div class="space-y-6">
+              <div class="flex items-center justify-between font-mono text-xs uppercase tracking-widest">
+                <span class="px-3 py-1 bg-espresso text-linen rounded-full">CABANG 01 • ROASTERY HQ &amp; WFC SPACE</span>
+                <span class="text-muted-editorial">RATING 4.4 / 5 (685+ ULASAN)</span>
+              </div>
+
+              <div class="space-y-2">
+                <h3 class="font-serif text-3xl sm:text-4xl">Clavicula Coffee &amp; Idea — Slawi</h3>
+                <p class="font-mono text-xs text-muted-editorial">
+                  Jalan Dr. Soetomo No. 3, RT 004 / RW 006, Desa Kalisapu, Kec. Slawi, Kabupaten Tegal, Jawa Tengah 52416
+                </p>
+              </div>
+
+              <div class="editorial-img-wrap border hairline-border aspect-[16/9]">
+                <img
+                  src="../public/assets/clavicula/places/hero-slowbar-clavicula.jpg"
+                  alt="Clavicula Coffee and Idea Slawi Roastery dan Slow Bar"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+
+              <p class="text-sm sm:text-base text-muted-editorial leading-relaxed">
+                Berlokasi strategis di Kalisapu, Slawi, cabang utama ini menjadi pusat produksi *small-batch roastery*, meja *slow bar*, sekaligus ruang kerja (*Work From Cafe*) bagi mahasiswa, pekerja lepas (*freelancer*), dan komunitas kreatif di Tegal.
+              </p>
+
+              <!-- Verified Schedule & Contact Table -->
+              <div class="border-t border-b hairline-border py-4 grid grid-cols-1 sm:grid-cols-2 gap-4 font-mono text-xs">
+                <div>
+                  <div class="text-muted-editorial uppercase text-[10px] tracking-widest">JAM OPERASIONAL RESMI</div>
+                  <div class="mt-1">Senin – Kamis: 10.00 – 23.00 WIB</div>
+                  <div>Jumat: 13.00 – 23.00 WIB</div>
+                  <div>Sabtu – Minggu: 10.00 – 23.00 WIB</div>
+                </div>
+                <div>
+                  <div class="text-muted-editorial uppercase text-[10px] tracking-widest">LAYANAN &amp; KONTAK</div>
+                  <div class="mt-1">WhatsApp: 0877-3344-4426</div>
+                  <div>Pickup Biji Kopi Roastery: Tersedia</div>
+                  <div>Ruang: Indoor AC &amp; Semi-Outdoor</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-3 pt-2">
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Clavicula+Coffee+%26+Idea+Jalan+DR.+Soetomo+No.+3+Kalisapu+Slawi+Tegal"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-editorial px-5 py-3 bg-espresso text-linen font-mono text-xs uppercase tracking-wider rounded-full hover:bg-terracotta"
+              >
+                Petunjuk Arah Google Maps ↗
+              </a>
+              <button
+                type="button"
+                id="selectSlawiPickupBtn"
+                class="btn-editorial px-5 py-3 border hairline-border font-mono text-xs uppercase tracking-wider rounded-full hover:border-terracotta"
+              >
+                Jadikan Lokasi Pickup Pesanan
+              </button>
+              <a
+                href="https://radartegal.disway.id/lokal/read/731192/7-cafe-estetik-untuk-wfc-di-slawi-ada-yang-buka-24-jam/15"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="font-mono text-[11px] underline text-muted-editorial hover:text-terracotta ml-auto"
+              >
+                Ulasan Radar Tegal ↗
+              </a>
+            </div>
+          </article>
+
+          <!-- Branch 02: Clavicula Coffee & Hills — Guci -->
+          <article id="branchCardGuci" class="p-6 sm:p-10 md:p-12 flex flex-col justify-between space-y-8 card-bg">
+            <div class="space-y-6">
+              <div class="flex items-center justify-between font-mono text-xs uppercase tracking-widest">
+                <span class="px-3 py-1 bg-pine text-linen rounded-full">CABANG 02 • MOUNTAIN VIEW SANCTUARY</span>
+                <span class="text-muted-editorial">DATARAN TINGGI GUCI</span>
+              </div>
+
+              <div class="space-y-2">
+                <h3 class="font-serif text-3xl sm:text-4xl">Clavicula Coffee &amp; Hills — Guci</h3>
+                <p class="font-mono text-xs text-muted-editorial">
+                  Kawasan Wisata Guci, Lereng Gunung Slamet, Kabupaten Tegal, Jawa Tengah
+                </p>
+              </div>
+
+              <div class="editorial-img-wrap border hairline-border aspect-[16/9]">
+                <img
+                  src="../public/assets/clavicula/places/ruang-wfc-slawi-dan-view-guci.jpg"
+                  alt="Clavicula Coffee and Hills Guci Tegal suasana pegunungan"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+
+              <p class="text-sm sm:text-base text-muted-editorial leading-relaxed">
+                Menghadirkan cita rasa sangrai Clavicula Coffee ke ketinggian lereng Gunung Slamet. Dirancang dengan konsep teras terbuka yang menyatu dengan kabut tipis dan pepohonan Guci—ideal untuk menikmati seduhan hangat bersama keluarga maupun rekan di akhir pekan.
+              </p>
+
+              <!-- Verified Highlights Table -->
+              <div class="border-t border-b hairline-border py-4 grid grid-cols-1 sm:grid-cols-2 gap-4 font-mono text-xs">
+                <div>
+                  <div class="text-muted-editorial uppercase text-[10px] tracking-widest">KARAKTER RUANG &amp; ELEVASI</div>
+                  <div class="mt-1">Lanskap: View Pegunungan &amp; Hutan Pinus</div>
+                  <div>Konsep: Highland Coffee Deck &amp; Eatery</div>
+                  <div>Sajian Khas: Manual Brew &amp; Signature Warm Drink</div>
+                </div>
+                <div>
+                  <div class="text-muted-editorial uppercase text-[10px] tracking-widest">INFORMASI KUNJUNGAN</div>
+                  <div class="mt-1">Instagram: @clavicula_coffee</div>
+                  <div>Suasana: Sejuk Alami &amp; Ramah Keluarga</div>
+                  <div>Pasokan Biji: Langsung dari Roastery Slawi</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-3 pt-2">
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Clavicula+Coffee+Hills+Guci+Tegal"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-editorial px-5 py-3 bg-espresso text-linen font-mono text-xs uppercase tracking-wider rounded-full hover:bg-terracotta"
+              >
+                Cari Lokasi Guci di Maps ↗
+              </a>
+              <a
+                href="https://radartegal.disway.id/amp/729713/7-cafe-unik-di-guci-tegal-tempat-nongkrong-dengan-view-pegunungan/16"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-editorial px-5 py-3 border hairline-border font-mono text-xs uppercase tracking-wider rounded-full hover:border-terracotta"
+              >
+                Artikel Cafe View Pegunungan Guci ↗
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 04: JURNAL VISUAL @CLAVICULA_COFFEE & INSTAGRAM FEED -->
+    <section id="jurnal" class="py-14 sm:py-20 border-b hairline-border">
+      <div class="max-w-[1400px] mx-auto px-4 sm:px-10 space-y-10">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b hairline-border pb-8">
+          <div class="space-y-2">
+            <div class="font-mono text-xs uppercase tracking-[0.2em] text-terracotta">04 / TERHUBUNG DI @CLAVICULA_COFFEE</div>
+            <h2 class="font-serif text-4xl sm:text-5xl leading-none tracking-tight">
+              Jurnal Visual, Rilis Batch &amp; <span class="italic font-normal">Agenda Komunitas</span>.
+            </h2>
+          </div>
+          <a
+            href="https://www.instagram.com/clavicula_coffee/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-editorial self-start md:self-auto px-6 py-3.5 bg-espresso text-linen font-mono text-xs uppercase tracking-[0.18em] rounded-full hover:bg-terracotta"
+          >
+            Buka Instagram @clavicula_coffee ↗
+          </a>
+        </div>
+
+        <!-- 4-Column Film-Strip Editorial Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-l border-t hairline-border">
+          <!-- IG Post Card 01 -->
+          <div class="border-r border-b hairline-border p-5 flex flex-col justify-between space-y-4 card-bg">
+            <div class="flex items-center justify-between font-mono text-[10px] uppercase tracking-widest text-muted-editorial">
+              <span>IG REEL / ROASTERY LOG</span>
+              <span>01</span>
+            </div>
+            <div class="editorial-img-wrap border hairline-border aspect-square">
+              <img src="../public/assets/clavicula/places/roastery-lab-clavicula-slawi.jpg" alt="Roastery batch baru Clavicula Coffee" class="w-full h-full object-cover" />
+            </div>
+            <p class="text-xs text-muted-editorial leading-relaxed">
+              <strong class="text-current font-semibold">@clavicula_coffee</strong> Drop batch sangrai terbaru minggu ini. Tersedia dalam kemasan 200g, 500g, dan 1kg untuk kebutuhan seduh harian maupun suplai kedai.
+            </p>
+            <a href="https://www.instagram.com/clavicula_coffee/" target="_blank" rel="noopener noreferrer" class="font-mono text-[11px] uppercase tracking-wider underline hover:text-terracotta">
+              Lihat di Instagram ↗
+            </a>
+          </div>
+
+          <!-- IG Post Card 02 -->
+          <div class="border-r border-b hairline-border p-5 flex flex-col justify-between space-y-4 card-bg">
+            <div class="flex items-center justify-between font-mono text-[10px] uppercase tracking-widest text-muted-editorial">
+              <span>SLOW BAR / V60 SESSION</span>
+              <span>02</span>
+            </div>
+            <div class="editorial-img-wrap border hairline-border aspect-square">
+              <img src="../public/assets/clavicula/places/slow-bar-v60-clavicula.jpg" alt="Sesi seduh manual brew V60 Clavicula Coffee" class="w-full h-full object-cover" />
+            </div>
+            <p class="text-xs text-muted-editorial leading-relaxed">
+              <strong class="text-current font-semibold">@clavicula_coffee</strong> Sore di meja Slow Bar Kalisapu, Slawi. Pilih sendiri biji *single origin* favoritmu dan diskusikan profil seduhannya bersama barista kami.
+            </p>
+            <a href="https://www.instagram.com/clavicula_coffee/" target="_blank" rel="noopener noreferrer" class="font-mono text-[11px] uppercase tracking-wider underline hover:text-terracotta">
+              Lihat di Instagram ↗
+            </a>
+          </div>
+
+          <!-- IG Post Card 03 -->
+          <div class="border-r border-b hairline-border p-5 flex flex-col justify-between space-y-4 card-bg">
+            <div class="flex items-center justify-between font-mono text-[10px] uppercase tracking-widest text-muted-editorial">
+              <span>WFC &amp; IDEA SPACE</span>
+              <span>03</span>
+            </div>
+            <div class="editorial-img-wrap border hairline-border aspect-square">
+              <img src="../public/assets/clavicula/places/ruang-wfc-slawi-dan-view-guci.jpg" alt="Suasana WFC dan diskusi komunitas di Clavicula Coffee" class="w-full h-full object-cover" />
+            </div>
+            <p class="text-xs text-muted-editorial leading-relaxed">
+              <strong class="text-current font-semibold">@clavicula_coffee</strong> Ruang nyaman untuk nugas, kerja remote (WFC), hingga bertukar ide kreatif dan musik di Slawi maupun Guci.
+            </p>
+            <a href="https://www.instagram.com/clavicula_coffee/" target="_blank" rel="noopener noreferrer" class="font-mono text-[11px] uppercase tracking-wider underline hover:text-terracotta">
+              Lihat di Instagram ↗
+            </a>
+          </div>
+
+          <!-- IG Post Card 04 -->
+          <div class="border-r border-b hairline-border p-5 flex flex-col justify-between space-y-4 card-bg">
+            <div class="flex items-center justify-between font-mono text-[10px] uppercase tracking-widest text-muted-editorial">
+              <span>HOUSE BLEND &amp; ESPRESSO</span>
+              <span>04</span>
+            </div>
+            <div class="editorial-img-wrap border hairline-border aspect-square">
+              <img src="../public/assets/clavicula/places/hero-slowbar-clavicula.jpg" alt="Kemasan house blend Clavicula Coffee" class="w-full h-full object-cover" />
+            </div>
+            <p class="text-xs text-muted-editorial leading-relaxed">
+              <strong class="text-current font-semibold">@clavicula_coffee</strong> Pesan online dari rumah, bayar instan via QRIS, lalu pilih diantar GoSend atau ambil langsung tanpa antre di outlet Slawi.
+            </p>
+            <a href="https://www.instagram.com/clavicula_coffee/" target="_blank" rel="noopener noreferrer" class="font-mono text-[11px] uppercase tracking-wider underline hover:text-terracotta">
+              Lihat di Instagram ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- DEEP ESPRESSO EDITORIAL FOOTER -->
+  <footer class="bg-espresso text-linen border-t hairline-border">
+    <div class="max-w-[1400px] mx-auto px-4 sm:px-10 py-14 sm:py-20 space-y-12">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 pb-12 border-b border-linen/15">
+        <div class="lg:col-span-6 space-y-4">
+          <div class="font-mono text-xs uppercase tracking-[0.2em] text-terracotta">CLAVICULA COFFEE &amp; IDEA • ROASTERY</div>
+          <h2 class="font-serif text-4xl sm:text-6xl leading-none tracking-tight">
+            Seduh Kopimu, Hidupkan <span class="italic font-normal text-crema">Gagasanmu</span>.
+          </h2>
+          <p class="text-sm text-linen/75 max-w-md leading-relaxed">
+            Sistem Informasi Penjualan Produk Roastery dan Profil Perusahaan Terintegrasi Payment Gateway (Studi Kasus: Clavicula Coffee).
+          </p>
+        </div>
+
+        <div class="lg:col-span-3 space-y-3 font-mono text-xs">
+          <div class="text-terracotta uppercase tracking-widest">LOKASI OUTLET</div>
+          <p class="text-linen/80 leading-relaxed">
+            <strong>01. Clavicula Coffee &amp; Idea (Slawi)</strong><br />
+            Jl. Dr. Soetomo No. 3, Kalisapu, Slawi, Kab. Tegal 52416<br />
+            Senin–Kamis &amp; Sabtu–Minggu: 10.00–23.00 WIB<br />
+            Jumat: 13.00–23.00 WIB
+          </p>
+          <p class="text-linen/80 leading-relaxed pt-2">
+            <strong>02. Clavicula Coffee &amp; Hills (Guci)</strong><br />
+            Kawasan Wisata Guci, Kab. Tegal
+          </p>
+        </div>
+
+        <div class="lg:col-span-3 space-y-3 font-mono text-xs">
+          <div class="text-terracotta uppercase tracking-widest">PEMBAYARAN &amp; PENGIRIMAN</div>
+          <ul class="space-y-1.5 text-linen/80">
+            <li>• QRIS Instan (Midtrans Payment Gateway)</li>
+            <li>• Virtual Account Transfer (BCA / BRI / Mandiri)</li>
+            <li>• Ambil di Outlet Slawi (Bebas Ongkir)</li>
+            <li>• Pengiriman Instan GoSend &amp; Ekspedisi</li>
+            <li>• WhatsApp Resmi: <a href="https://wa.me/6287733444426" target="_blank" rel="noopener noreferrer" class="underline hover:text-terracotta">+62 877-3344-4426 ↗</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 font-mono text-[11px] text-linen/60 uppercase tracking-widest">
+        <span>© 2026 CLAVICULA COFFEE &amp; IDEA. ALL RIGHTS RESERVED.</span>
+        <div class="flex flex-wrap items-center gap-5">
+          <a href="https://www.instagram.com/clavicula_coffee/" target="_blank" rel="noopener noreferrer" class="hover:text-linen">INSTAGRAM @CLAVICULA_COFFEE ↗</a>
+          <a href="https://radartegal.disway.id/lokal/read/731192/7-cafe-estetik-untuk-wfc-di-slawi-ada-yang-buka-24-jam/15" target="_blank" rel="noopener noreferrer" class="hover:text-linen">REFERENSI SLAWI ↗</a>
+          <a href="https://radartegal.disway.id/amp/729713/7-cafe-unik-di-guci-tegal-tempat-nongkrong-dengan-view-pegunungan/16" target="_blank" rel="noopener noreferrer" class="hover:text-linen">REFERENSI GUCI ↗</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SLIDE-OVER ROASTERY CART & CHECKOUT DRAWER -->
+  <div id="cartDrawerBackdrop" class="fixed inset-0 bg-espresso/60 backdrop-blur-xs z-50 hidden opacity-0 transition-opacity duration-300"></div>
+  <aside id="cartDrawer" class="fixed top-0 right-0 bottom-0 w-full max-w-lg bg-linen text-espresso z-50 border-l hairline-border translate-x-full transition-transform duration-500 flex flex-col justify-between">
+    <!-- Drawer Header -->
+    <div class="p-6 border-b hairline-border flex items-center justify-between bg-parchment">
+      <div>
+        <div class="font-mono text-[10px] uppercase tracking-widest text-terracotta">ROASTERY ORDER &amp; GATEWAY</div>
+        <h3 id="drawerTitle" class="font-serif text-2xl leading-none mt-1">Keranjang Belanja (2 Item)</h3>
+      </div>
+      <button id="closeCartBtn" type="button" class="px-3 py-1.5 font-mono text-xs uppercase border hairline-border rounded-full hover:bg-espresso hover:text-linen transition-colors">
+        Tutup [✕]
+      </button>
+    </div>
+
+    <!-- Drawer Scrollable Body -->
+    <div class="flex-1 overflow-y-auto p-6 space-y-6">
+      <!-- Cart Items List -->
+      <div id="cartItemsContainer" class="space-y-4"></div>
+
+      <!-- Fulfillment Method Selector (Pickup Outlet vs Kurir/GoSend) -->
+      <div class="border-t hairline-border pt-5 space-y-3">
+        <div class="font-mono text-xs uppercase tracking-wider font-semibold">01 / PILIH METODE PENGAMBILAN / PENGIRIMAN</div>
+        <div class="grid grid-cols-1 gap-2.5 font-mono text-xs" id="shippingOptionsGroup">
+          <label class="flex items-start gap-3 p-3 border hairline-border cursor-pointer bg-parchment/70">
+            <input type="radio" name="fulfillmentMethod" value="pickup" checked class="mt-1 accent-espresso" />
+            <span class="flex-1">
+              <strong class="block">Ambil Langsung di Outlet Slawi (Gratis — Rp 0)</strong>
+              <span class="text-[11px] text-muted">Jl. Dr. Soetomo No. 3, Kalisapu, Slawi (Siap diambil ±30 menit setelah pembayaran QRIS)</span>
+            </span>
+          </label>
+          <label class="flex items-start gap-3 p-3 border hairline-border cursor-pointer hover:bg-parchment/40">
+            <input type="radio" name="fulfillmentMethod" value="gosend" class="mt-1 accent-espresso" />
+            <span class="flex-1">
+              <strong class="block">Kurir Instan / GoSend Area Slawi &amp; Tegal (Rp 12.000)</strong>
+              <span class="text-[11px] text-muted">Pengiriman hari yang sama langsung dari Roastery Kalisapu</span>
+            </span>
+          </label>
+          <label class="flex items-start gap-3 p-3 border hairline-border cursor-pointer hover:bg-parchment/40">
+            <input type="radio" name="fulfillmentMethod" value="ekspedisi" class="mt-1 accent-espresso" />
+            <span class="flex-1">
+              <strong class="block">Ekspedisi Reguler Jawa Tengah &amp; Nasional (Rp 18.000)</strong>
+              <span class="text-[11px] text-muted">Dikemas aman dengan pouch berkatup satu arah (one-way valve)</span>
+            </span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Customer & Payment Gateway Section -->
+      <div class="border-t hairline-border pt-5 space-y-3">
+        <div class="font-mono text-xs uppercase tracking-wider font-semibold">02 / DATA PEMESAN &amp; PAYMENT GATEWAY</div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <input id="buyerNameInput" type="text" placeholder="Nama Pemesan (cth: Sidni)" value="Moh. Sidni Ilma" class="px-3.5 py-2.5 text-xs font-mono bg-transparent border hairline-border focus:outline-none focus:border-terracotta" />
+          <input id="buyerPhoneInput" type="text" placeholder="Nomor WhatsApp Aktif" value="087733444426" class="px-3.5 py-2.5 text-xs font-mono bg-transparent border hairline-border focus:outline-none focus:border-terracotta" />
+        </div>
+        <input id="buyerAddressInput" type="text" placeholder="Catatan / Alamat Pengiriman (Opsional untuk Pickup)" value="Pickup di Outlet Clavicula Slawi (Jl. Dr. Soetomo No. 3)" class="w-full px-3.5 py-2.5 text-xs font-mono bg-transparent border hairline-border focus:outline-none focus:border-terracotta" />
+
+        <div class="grid grid-cols-2 gap-2.5 pt-1 font-mono text-xs">
+          <button type="button" data-pay-method="QRIS Instan (Midtrans)" class="pay-method-btn p-2.5 border hairline-border bg-espresso text-linen text-left">
+            <div class="font-semibold">QRIS Instan</div>
+            <div class="text-[10px] opacity-75">GoPay, OVO, Dana, M-Banking</div>
+          </button>
+          <button type="button" data-pay-method="Virtual Account (BCA/BRI/Mandiri)" class="pay-method-btn p-2.5 border hairline-border text-left hover:border-terracotta">
+            <div class="font-semibold">Virtual Account</div>
+            <div class="text-[10px] text-muted">Verifikasi Otomatis</div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Simulated Payment Gateway Invoice Output (Revealed on Checkout) -->
+      <div id="checkoutInvoiceBox" class="hidden border-2 border-espresso p-4 bg-parchment space-y-3"></div>
+    </div>
+
+    <!-- Drawer Sticky Footer -->
+    <div class="p-6 border-t hairline-border bg-parchment space-y-3">
+      <div class="space-y-1 font-mono text-xs">
+        <div class="flex justify-between text-muted">
+          <span>Subtotal Produk Roastery</span>
+          <span id="cartSubtotalText">Rp 0</span>
+        </div>
+        <div class="flex justify-between text-muted">
+          <span>Biaya Pengiriman / Pickup</span>
+          <span id="cartShippingText">Rp 0 (Pickup Slawi)</span>
+        </div>
+        <div class="flex justify-between text-sm font-semibold pt-2 border-t hairline-border">
+          <span>TOTAL PEMBAYARAN</span>
+          <span id="cartTotalText">Rp 0</span>
+        </div>
+      </div>
+
+      <button id="processCheckoutBtn" type="button" class="btn-editorial w-full py-3.5 bg-espresso text-linen font-mono text-xs uppercase tracking-[0.18em] rounded-full hover:bg-terracotta">
+        Buat Tagihan Payment Gateway →
+      </button>
+    </div>
+  </aside>
+
+  <!-- MODAL DETAIL PRODUK & KALKULATOR RASIO SEDUH INTERAKTIF -->
+  <div id="productModalBackdrop" class="fixed inset-0 bg-espresso/70 backdrop-blur-xs z-50 hidden items-center justify-center p-4">
+    <div class="bg-linen text-espresso border hairline-border max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 space-y-6 shadow-xl">
+      <div class="flex items-start justify-between gap-4 border-b hairline-border pb-4">
+        <div>
+          <div id="modalProductMeta" class="font-mono text-[10px] uppercase tracking-widest text-terracotta">SINGLE ORIGIN • ROASTERY SPEC</div>
+          <h3 id="modalProductTitle" class="font-serif text-3xl sm:text-4xl mt-1">Arabica Guci Highland</h3>
+        </div>
+        <button id="closeProductModalBtn" type="button" class="px-3 py-1.5 font-mono text-xs uppercase border hairline-border rounded-full hover:bg-espresso hover:text-linen">
+          Tutup [✕]
+        </button>
+      </div>
+
+      <div id="modalProductBody" class="space-y-4 text-sm text-muted"></div>
+
+      <!-- Interactive V60 / Espresso Brew Ratio Calculator -->
+      <div class="border hairline-border p-5 bg-parchment space-y-4">
+        <div class="flex items-center justify-between">
+          <span class="font-mono text-xs uppercase tracking-wider font-semibold text-espresso">KALKULATOR PANDUAN SEDUH BARISTA CLAVICULA</span>
+          <span id="brewMethodBadge" class="font-mono text-[11px] px-2.5 py-0.5 bg-espresso text-linen rounded-full">V60 Manual Brew</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 font-mono text-xs">
+          <div>
+            <label for="brewDoseSlider" class="block text-muted mb-1">Dosis Kopi (Gram): <strong id="brewDoseValue" class="text-espresso">15g</strong></label>
+            <input id="brewDoseSlider" type="range" min="10" max="30" step="1" value="15" class="w-full accent-espresso" />
+          </div>
+          <div>
+            <label for="brewRatioSlider" class="block text-muted mb-1">Rasio Air (1 : N): <strong id="brewRatioValue" class="text-espresso">1 : 15</strong></label>
+            <input id="brewRatioSlider" type="range" min="12" max="18" step="1" value="15" class="w-full accent-espresso" />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-3 gap-3 pt-2 border-t hairline-border font-mono text-xs text-espresso">
+          <div>
+            <div class="text-[10px] text-muted uppercase">TOTAL AIR SEDUH</div>
+            <div id="brewTotalWater" class="text-lg font-semibold mt-0.5">225 ml</div>
+          </div>
+          <div>
+            <div class="text-[10px] text-muted uppercase">BLOOMING (0:00–0:40)</div>
+            <div id="brewBloomWater" class="text-lg font-semibold mt-0.5">45 ml</div>
+          </div>
+          <div>
+            <div class="text-[10px] text-muted uppercase">ESTIMASI WAKTU</div>
+            <div id="brewTargetTime" class="text-lg font-semibold mt-0.5">02:15 – 02:30</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EDITORIAL TOAST NOTIFICATION -->
+  <div id="editorialToast" class="fixed bottom-5 left-5 z-50 px-5 py-3 bg-espresso text-linen border border-linen/20 font-mono text-xs tracking-wider uppercase rounded-full shadow-lg translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
+    Produk berhasil ditambahkan ke keranjang.
+  </div>
+
+  <script>
+    (function () {
+      // Grounded Roastery Product Catalog Data
+      var catalogProducts = [
+        {
+          id: 'guci-natural',
+          name: 'Arabica Guci Highland — Natural',
+          category: 'Single Origin',
+          origin: 'Lereng Gunung Slamet, Guci (Tegal)',
+          altitude: '1.450 – 1.600 MDPL',
+          process: 'Natural Process',
+          roastLevel: 'Light to Medium',
+          tastingNotes: 'Wild Berry • Brown Sugar • Clean Citrus',
+          basePrice200g: 95000,
+          image: '../public/assets/clavicula/places/hero-slowbar-clavicula.jpg',
+          description: 'Dipanen dari kebun kopi dataran tinggi Guci di lereng Gunung Slamet dan disangrai small-batch di Roastery Clavicula Slawi. Menghasilkan aroma buah beri matang dengan manis gula aren yang panjang.',
+          selectedWeight: '200g',
+          selectedGrind: 'Biji Utuh (Whole Bean)'
+        },
+        {
+          id: 'clavicula-house-blend',
+          name: 'Clavicula Signature House Blend',
+          category: 'House Blend',
+          origin: '70% Arabica Java – 30% Fine Robusta',
+          altitude: '1.100 – 1.400 MDPL',
+          process: 'Full Washed & Natural',
+          roastLevel: 'Medium to Dark',
+          tastingNotes: 'Dark Chocolate • Roasted Almond • Creamy Body',
+          basePrice200g: 75000,
+          image: '../public/assets/clavicula/places/roastery-lab-clavicula-slawi.jpg',
+          description: 'Racikan khas meja espresso bar Clavicula Coffee & Idea Slawi. Dirancang agar stabil untuk ekstraksi espresso murni maupun dipadukan dengan susu segar (Es Kopi Susu & Latte).',
+          selectedWeight: '200g',
+          selectedGrind: 'Giling Halus (Espresso)'
+        },
+        {
+          id: 'gayo-wine-honey',
+          name: 'Arabica Aceh Gayo — Honey Process',
+          category: 'Single Origin',
+          origin: 'Takengon, Aceh Tengah',
+          altitude: '1.500 – 1.650 MDPL',
+          process: 'Black Honey Process',
+          roastLevel: 'Medium Roast',
+          tastingNotes: 'Caramel • Tropical Fruit • Spiced Cocoa',
+          basePrice200g: 98000,
+          image: '../public/assets/clavicula/places/slow-bar-v60-clavicula.jpg',
+          description: 'Salah satu lini Single Origin paling diminati di meja Slow Bar Clavicula. Memiliki tekstur manis menyerupai karamel dengan keasaman buah tropis yang seimbang.',
+          selectedWeight: '200g',
+          selectedGrind: 'Giling Medium (V60 / Drip)'
+        },
+        {
+          id: 'kalisapu-work-blend',
+          name: 'Kalisapu Morning Filter Blend',
+          category: 'House Blend',
+          origin: '100% Arabica Nusantara Pilihan',
+          altitude: '1.350 – 1.550 MDPL',
+          process: 'Washed & Honey Blend',
+          roastLevel: 'Medium Light',
+          tastingNotes: 'Sweet Orange • Floral Tea • Honey Finish',
+          basePrice200g: 85000,
+          image: '../public/assets/clavicula/places/hero-slowbar-clavicula.jpg',
+          description: 'Didedikasikan untuk teman fokus bekerja (Work From Cafe) maupun seduhan pagi di rumah. Karakter bersih, ringan menyerupai teh bunga dengan akhir rasa madu.',
+          selectedWeight: '200g',
+          selectedGrind: 'Giling Medium (V60 / Drip)'
+        },
+        {
+          id: 'kintamani-washed',
+          name: 'Arabica Bali Kintamani — Washed',
+          category: 'Single Origin',
+          origin: 'Kintamani, Bangli (Bali)',
+          altitude: '1.300 – 1.500 MDPL',
+          process: 'Full Washed Wet-Hulled',
+          roastLevel: 'Light to Medium',
+          tastingNotes: 'Tangerine Peel • Cane Sugar • Crisp Finish',
+          basePrice200g: 92000,
+          image: '../public/assets/clavicula/places/roastery-lab-clavicula-slawi.jpg',
+          description: 'Ditanam berdampingan dengan kebun jeruk di dataran tinggi Kintamani. Sangat segar diseduh menggunakan metode V60 panas maupun Japanese Iced Coffee.',
+          selectedWeight: '200g',
+          selectedGrind: 'Biji Utuh (Whole Bean)'
+        },
+        {
+          id: 'clavicula-drip-box',
+          name: 'Clavicula Roastery Drip Bag Box (Isi 10)',
+          category: 'Seasonal Release',
+          origin: 'Kurasi 3 Single Origin Clavicula',
+          altitude: '1.300 – 1.600 MDPL',
+          process: 'Assorted Natural & Washed',
+          roastLevel: 'Medium Filter Roast',
+          tastingNotes: 'Praktis Seduh Tanpa Alat • Berry • Chocolate',
+          basePrice200g: 80000,
+          image: '../public/assets/clavicula/places/slow-bar-v60-clavicula.jpg',
+          description: 'Paket praktis berisi 10 kantong filter drip siap seduh. Cukup sobek kemasan, gantungkan di bibir cangkir, dan tuang air panas 150 ml.',
+          selectedWeight: '200g',
+          selectedGrind: 'Giling Medium (V60 / Drip)'
+        }
+      ];
+
+      var weightMultipliers = {
+        '200g': 1,
+        '500g': 2.3,
+        '1kg': 4.35
+      };
+
+      var grindOptions = [
+        'Biji Utuh (Whole Bean)',
+        'Giling Medium (V60 / Drip)',
+        'Giling Kasar (Cold Brew)',
+        'Giling Halus (Espresso)'
+      ];
+
+      var state = {
+        activeCategory: 'all',
+        searchQuery: '',
+        sortBy: 'featured',
+        darkEditorialMode: false,
+        fulfillmentMethod: 'pickup',
+        paymentMethod: 'QRIS Instan (Midtrans)',
+        cart: [
+          {
+            cartKey: 'guci-natural__200g__Biji Utuh (Whole Bean)',
+            productId: 'guci-natural',
+            name: 'Arabica Guci Highland — Natural',
+            weight: '200g',
+            grind: 'Biji Utuh (Whole Bean)',
+            unitPrice: 95000,
+            qty: 1
+          },
+          {
+            cartKey: 'clavicula-house-blend__200g__Giling Halus (Espresso)',
+            productId: 'clavicula-house-blend',
+            name: 'Clavicula Signature House Blend',
+            weight: '200g',
+            grind: 'Giling Halus (Espresso)',
+            unitPrice: 75000,
+            qty: 1
+          }
+        ]
+      };
+
+      function formatRupiah(amount) {
+        var n = Math.round(Number(amount) || 0);
+        return 'Rp ' + n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+      }
+
+      function computePrice(base200g, weight) {
+        var mult = weightMultipliers[weight] || 1;
+        return Math.round((base200g * mult) / 1000) * 1000;
+      }
+
+      function showToast(message) {
+        var toast = document.getElementById('editorialToast');
+        if (!toast) return;
+        toast.textContent = message;
+        toast.classList.remove('translate-y-24', 'opacity-0');
+        toast.classList.add('translate-y-0', 'opacity-100');
+        if (window.__toastTimer) clearTimeout(window.__toastTimer);
+        window.__toastTimer = setTimeout(function () {
+          toast.classList.add('translate-y-24', 'opacity-0');
+          toast.classList.remove('translate-y-0', 'opacity-100');
+        }, 2600);
+      }
+
+      // Live Slawi Outlet Operational Status Check
+      function updateLiveOutletStatus() {
+        var now = new Date();
+        var day = now.getDay(); // 0 Sun .. 5 Fri .. 6 Sat
+        var hour = now.getHours();
+        var openHour = day === 5 ? 13 : 10;
+        var isOpen = hour >= openHour && hour < 23;
+        var dot = document.getElementById('liveStatusDot');
+        var text = document.getElementById('liveOutletStatusText');
+        if (!dot || !text) return;
+        if (isOpen) {
+          dot.className = 'inline-block w-2 h-2 rounded-full bg-pine';
+          text.textContent = 'OUTLET SLAWI: BUKA SEKARANG (' + openHour + '.00 – 23.00 WIB) • ROASTERY BATCH #48 SIAP KIRIM';
+        } else {
+          dot.className = 'inline-block w-2 h-2 rounded-full bg-terracotta';
+          text.textContent = 'OUTLET SLAWI: BUKA PUKUL ' + openHour + '.00 – 23.00 WIB • PEMESANAN WEB ROASTERY AKTIF 24 JAM';
+        }
+      }
+
+      // Render Roastery Catalog Grid
+      function renderCatalog() {
+        var grid = document.getElementById('roasteryGrid');
+        if (!grid) return;
+
+        var filtered = catalogProducts.filter(function (item) {
+          var matchesCat = state.activeCategory === 'all' || item.category === state.activeCategory;
+          var q = state.searchQuery.trim().toLowerCase();
+          var matchesQuery = !q ||
+            item.name.toLowerCase().indexOf(q) !== -1 ||
+            item.tastingNotes.toLowerCase().indexOf(q) !== -1 ||
+            item.origin.toLowerCase().indexOf(q) !== -1;
+          return matchesCat && matchesQuery;
+        });
+
+        if (state.sortBy === 'price-asc') {
+          filtered.sort(function (a, b) {
+            return computePrice(a.basePrice200g, a.selectedWeight) - computePrice(b.basePrice200g, b.selectedWeight);
+          });
+        } else if (state.sortBy === 'price-desc') {
+          filtered.sort(function (a, b) {
+            return computePrice(b.basePrice200g, b.selectedWeight) - computePrice(a.basePrice200g, a.selectedWeight);
+          });
+        }
+
+        if (filtered.length === 0) {
+          grid.innerHTML = '<div class="col-span-full p-12 text-center font-mono text-xs uppercase tracking-widest text-muted-editorial border-b hairline-border">Tidak ada produk yang cocok dengan pencarian Anda.</div>';
+          return;
+        }
+
+        grid.innerHTML = filtered.map(function (item, idx) {
+          var currentPrice = computePrice(item.basePrice200g, item.selectedWeight);
+          var indexLabel = '0' + (idx + 1);
+          var weightBtnsHtml = ['200g', '500g', '1kg'].map(function (w) {
+            var active = item.selectedWeight === w;
+            return '<button type="button" data-action="select-weight" data-id="' + item.id + '" data-weight="' + w + '" class="px-2.5 py-1 font-mono text-[11px] border hairline-border transition-colors ' + (active ? 'bg-espresso text-linen' : 'hover:border-terracotta') + '">' + w + '</button>';
+          }).join('');
+
+          var grindOptionsHtml = grindOptions.map(function (g) {
+            var sel = item.selectedGrind === g ? 'selected' : '';
+            return '<option value="' + g + '" ' + sel + ' class="bg-linen text-espresso">' + g + '</option>';
+          }).join('');
+
+          return (
+            '<article class="border-b border-r hairline-border p-6 sm:p-8 flex flex-col justify-between space-y-6 card-bg transition-colors">' +
+              '<div class="space-y-4">' +
+                '<div class="flex items-center justify-between font-mono text-[10px] uppercase tracking-widest text-muted-editorial">' +
+                  '<span>' + indexLabel + ' / ' + item.category.toUpperCase() + '</span>' +
+                  '<span>' + item.altitude + '</span>' +
+                '</div>' +
+                '<div class="editorial-img-wrap border hairline-border aspect-[4/3] group">' +
+                  '<img src="' + item.image + '" alt="' + item.name + '" class="w-full h-full object-cover" />' +
+                  '<div class="absolute bottom-2 left-2 right-2 bg-espresso/90 text-linen px-3 py-1.5 font-mono text-[10px] tracking-wider uppercase">' +
+                    'Notes: ' + item.tastingNotes +
+                  '</div>' +
+                '</div>' +
+                '<div class="space-y-1.5 pt-1">' +
+                  '<div class="font-mono text-[11px] text-terracotta uppercase tracking-wider">' + item.process + ' • ' + item.roastLevel + '</div>' +
+                  '<h3 class="font-serif text-2xl sm:text-3xl leading-snug">' + item.name + '</h3>' +
+                  '<p class="text-xs text-muted-editorial leading-relaxed">' + item.description + '</p>' +
+                '</div>' +
+              '</div>' +
+              '<div class="space-y-4 pt-4 border-t hairline-border">' +
+                '<div class="flex items-center justify-between gap-2">' +
+                  '<span class="font-mono text-[10px] uppercase tracking-wider text-muted-editorial">BERAT KEMASAN:</span>' +
+                  '<div class="flex items-center gap-1.5">' + weightBtnsHtml + '</div>' +
+                '</div>' +
+                '<div class="space-y-1">' +
+                  '<label class="block font-mono text-[10px] uppercase tracking-wider text-muted-editorial">UKURAN GILINGAN (GRIND SIZE):</label>' +
+                  '<select data-action="select-grind" data-id="' + item.id + '" aria-label="Pilih ukuran gilingan untuk ' + item.name + '" class="w-full px-3 py-2 font-mono text-xs bg-transparent border hairline-border focus:outline-none focus:border-terracotta">' +
+                    grindOptionsHtml +
+                  '</select>' +
+                '</div>' +
+                '<div class="flex items-center justify-between pt-2 gap-3">' +
+                  '<div>' +
+                    '<div class="font-mono text-[10px] uppercase text-muted-editorial">HARGA (' + item.selectedWeight + ')</div>' +
+                    '<div class="font-mono text-lg font-semibold">' + formatRupiah(currentPrice) + '</div>' +
+                  '</div>' +
+                  '<div class="flex items-center gap-2">' +
+                    '<button type="button" data-action="inspect-product" data-id="' + item.id + '" class="px-3 py-2.5 border hairline-border font-mono text-[11px] uppercase tracking-wider hover:border-terracotta" title="Detail & Resep Seduh">' +
+                      'Resep ↗' +
+                    '</button>' +
+                    '<button type="button" data-action="add-to-cart" data-id="' + item.id + '" class="btn-editorial px-4 py-2.5 bg-espresso text-linen font-mono text-[11px] uppercase tracking-wider rounded-full hover:bg-terracotta">' +
+                      '+ Keranjang' +
+                    '</button>' +
+                  '</div>' +
+                '</div>' +
+              '</div>' +
+            '</article>'
+          );
+        }).join('');
+      }
+
+      // Add Product to Cart
+      function addToCart(productId) {
+        var prod = catalogProducts.find(function (p) { return p.id === productId; });
+        if (!prod) return;
+        var unitPrice = computePrice(prod.basePrice200g, prod.selectedWeight);
+        var key = prod.id + '__' + prod.selectedWeight + '__' + prod.selectedGrind;
+        var existing = state.cart.find(function (c) { return c.cartKey === key; });
+        if (existing) {
+          existing.qty += 1;
+        } else {
+          state.cart.push({
+            cartKey: key,
+            productId: prod.id,
+            name: prod.name,
+            weight: prod.selectedWeight,
+            grind: prod.selectedGrind,
+            unitPrice: unitPrice,
+            qty: 1
+          });
+        }
+        renderCart();
+        showToast(prod.name + ' (' + prod.selectedWeight + ') ditambahkan ke keranjang.');
+      }
+
+      // Render Cart Drawer
+      function renderCart() {
+        var totalItems = state.cart.reduce(function (acc, item) { return acc + item.qty; }, 0);
+        var badge = document.getElementById('cartCountBadge');
+        var title = document.getElementById('drawerTitle');
+        if (badge) badge.textContent = String(totalItems);
+        if (title) title.textContent = 'Keranjang Roastery (' + totalItems + ' Item)';
+
+        var container = document.getElementById('cartItemsContainer');
+        if (!container) return;
+
+        if (state.cart.length === 0) {
+          container.innerHTML = '<div class="p-8 border hairline-border text-center font-mono text-xs text-muted">Keranjang Roastery Anda masih kosong. Silakan pilih biji kopi dari katalog.</div>';
+        } else {
+          container.innerHTML = state.cart.map(function (item) {
+            return (
+              '<div class="p-4 border hairline-border bg-parchment/60 flex items-start justify-between gap-3">' +
+                '<div class="space-y-1">' +
+                  '<div class="font-serif text-xl leading-snug">' + item.name + '</div>' +
+                  '<div class="font-mono text-[11px] text-muted">Kemasan: ' + item.weight + ' • ' + item.grind + '</div>' +
+                  '<div class="font-mono text-xs font-semibold pt-1">' + formatRupiah(item.unitPrice * item.qty) + '</div>' +
+                '</div>' +
+                '<div class="flex items-center gap-1.5 font-mono text-xs shrink-0">' +
+                  '<button type="button" data-cart-action="dec" data-key="' + item.cartKey + '" class="w-7 h-7 border hairline-border flex items-center justify-center hover:bg-espresso hover:text-linen">-</button>' +
+                  '<span class="w-6 text-center">' + item.qty + '</span>' +
+                  '<button type="button" data-cart-action="inc" data-key="' + item.cartKey + '" class="w-7 h-7 border hairline-border flex items-center justify-center hover:bg-espresso hover:text-linen">+</button>' +
+                '</div>' +
+              '</div>'
+            );
+          }).join('');
+        }
+
+        var subtotal = state.cart.reduce(function (acc, item) { return acc + (item.unitPrice * item.qty); }, 0);
+        var shippingCost = 0;
+        var shippingLabel = 'Rp 0 (Pickup Outlet Slawi)';
+        if (state.fulfillmentMethod === 'gosend') {
+          shippingCost = state.cart.length > 0 ? 12000 : 0;
+          shippingLabel = formatRupiah(shippingCost) + ' (Kurir GoSend)';
+        } else if (state.fulfillmentMethod === 'ekspedisi') {
+          shippingCost = state.cart.length > 0 ? 18000 : 0;
+          shippingLabel = formatRupiah(shippingCost) + ' (Ekspedisi Reguler)';
+        }
+
+        var total = subtotal + shippingCost;
+        var subEl = document.getElementById('cartSubtotalText');
+        var shipEl = document.getElementById('cartShippingText');
+        var totEl = document.getElementById('cartTotalText');
+        if (subEl) subEl.textContent = formatRupiah(subtotal);
+        if (shipEl) shipEl.textContent = shippingLabel;
+        if (totEl) totEl.textContent = formatRupiah(total);
+      }
+
+      function openCartDrawer() {
+        var backdrop = document.getElementById('cartDrawerBackdrop');
+        var drawer = document.getElementById('cartDrawer');
+        if (!backdrop || !drawer) return;
+        backdrop.classList.remove('hidden');
+        setTimeout(function () {
+          backdrop.classList.remove('opacity-0');
+          drawer.classList.remove('translate-x-full');
+        }, 15);
+      }
+
+      function closeCartDrawer() {
+        var backdrop = document.getElementById('cartDrawerBackdrop');
+        var drawer = document.getElementById('cartDrawer');
+        if (!backdrop || !drawer) return;
+        backdrop.classList.add('opacity-0');
+        drawer.classList.add('translate-x-full');
+        setTimeout(function () {
+          backdrop.classList.add('hidden');
+        }, 320);
+      }
+
+      // Open Product Detail & Brew Calculator Modal
+      function openProductModal(productId) {
+        var prod = catalogProducts.find(function (p) { return p.id === productId; }) || catalogProducts[0];
+        var modalBackdrop = document.getElementById('productModalBackdrop');
+        var meta = document.getElementById('modalProductMeta');
+        var title = document.getElementById('modalProductTitle');
+        var body = document.getElementById('modalProductBody');
+        if (!modalBackdrop || !meta || !title || !body) return;
+
+        meta.textContent = prod.category.toUpperCase() + ' • ' + prod.origin.toUpperCase();
+        title.textContent = prod.name;
+        body.innerHTML =
+          '<p class="leading-relaxed">' + prod.description + '</p>' +
+          '<div class="grid grid-cols-2 sm:grid-cols-4 border hairline-border divide-x hairline-border font-mono text-xs text-espresso bg-parchment/50">' +
+            '<div class="p-3"><div class="text-[10px] text-muted">PROSES</div><div class="font-semibold mt-0.5">' + prod.process + '</div></div>' +
+            '<div class="p-3"><div class="text-[10px] text-muted">ELEVASI</div><div class="font-semibold mt-0.5">' + prod.altitude + '</div></div>' +
+            '<div class="p-3"><div class="text-[10px] text-muted">PROFIL SANGRAI</div><div class="font-semibold mt-0.5">' + prod.roastLevel + '</div></div>' +
+            '<div class="p-3"><div class="text-[10px] text-muted">HARGA 200G</div><div class="font-semibold mt-0.5">' + formatRupiah(prod.basePrice200g) + '</div></div>' +
+          '</div>' +
+          '<div class="font-mono text-xs text-espresso"><strong>Tasting Notes:</strong> ' + prod.tastingNotes + '</div>';
+
+        modalBackdrop.classList.remove('hidden');
+        modalBackdrop.classList.add('flex');
+        updateBrewCalculator();
+      }
+
+      function closeProductModal() {
+        var modalBackdrop = document.getElementById('productModalBackdrop');
+        if (!modalBackdrop) return;
+        modalBackdrop.classList.add('hidden');
+        modalBackdrop.classList.remove('flex');
+      }
+
+      function updateBrewCalculator() {
+        var doseSlider = document.getElementById('brewDoseSlider');
+        var ratioSlider = document.getElementById('brewRatioSlider');
+        if (!doseSlider || !ratioSlider) return;
+        var dose = Number(doseSlider.value) || 15;
+        var ratio = Number(ratioSlider.value) || 15;
+        var totalWater = dose * ratio;
+        var bloomWater = dose * 3;
+
+        document.getElementById('brewDoseValue').textContent = dose + 'g';
+        document.getElementById('brewRatioValue').textContent = '1 : ' + ratio;
+        document.getElementById('brewTotalWater').textContent = totalWater + ' ml';
+        document.getElementById('brewBloomWater').textContent = bloomWater + ' ml';
+        document.getElementById('brewTargetTime').textContent = dose > 20 ? '02:45 – 03:10' : '02:15 – 02:35';
+      }
+
+      // Wire Event Listeners
+      document.addEventListener('DOMContentLoaded', function () {
+        updateLiveOutletStatus();
+        renderCatalog();
+        renderCart();
+
+        // Smooth scroll buttons
+        document.querySelectorAll('.nav-scroll-btn').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var targetId = btn.getAttribute('data-scroll-to');
+            var targetEl = document.getElementById(targetId);
+            if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth' });
+          });
+        });
+
+        var brandHomeBtn = document.getElementById('brandHomeBtn');
+        if (brandHomeBtn) {
+          brandHomeBtn.addEventListener('click', function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          });
+        }
+
+        // Vibe Mode Toggle (Warm Linen vs Deep Espresso Editorial Mode)
+        var vibeToggleBtn = document.getElementById('vibeToggleBtn');
+        var vibeToggleLabel = document.getElementById('vibeToggleLabel');
+        if (vibeToggleBtn) {
+          vibeToggleBtn.addEventListener('click', function () {
+            state.darkEditorialMode = !state.darkEditorialMode;
+            document.body.classList.toggle('dark-editorial', state.darkEditorialMode);
+            if (vibeToggleLabel) {
+              vibeToggleLabel.textContent = state.darkEditorialMode ? 'Mode: Espresso Malam' : 'Mode: Linen Siang';
+            }
+            showToast(state.darkEditorialMode ? 'Suasana diubah ke Mode Espresso Malam (Slow Bar).' : 'Suasana diubah ke Mode Linen Siang (Roastery).');
+          });
+        }
+
+        // Hero Quick Add Button
+        var heroQuickAddBtn = document.getElementById('heroQuickAddBtn');
+        if (heroQuickAddBtn) {
+          heroQuickAddBtn.addEventListener('click', function () {
+            addToCart('guci-natural');
+            openCartDrawer();
+          });
+        }
+
+        // Open Quick Brew Modal from Hero & Story
+        var openQuickBrewModalBtn = document.getElementById('openQuickBrewModalBtn');
+        if (openQuickBrewModalBtn) {
+          openQuickBrewModalBtn.addEventListener('click', function () {
+            openProductModal('guci-natural');
+          });
+        }
+        var storyOpenCalculatorBtn = document.getElementById('storyOpenCalculatorBtn');
+        if (storyOpenCalculatorBtn) {
+          storyOpenCalculatorBtn.addEventListener('click', function () {
+            openProductModal('gayo-wine-honey');
+          });
+        }
+
+        var closeProductModalBtn = document.getElementById('closeProductModalBtn');
+        if (closeProductModalBtn) {
+          closeProductModalBtn.addEventListener('click', closeProductModal);
+        }
+
+        var brewDoseSlider = document.getElementById('brewDoseSlider');
+        var brewRatioSlider = document.getElementById('brewRatioSlider');
+        if (brewDoseSlider) brewDoseSlider.addEventListener('input', updateBrewCalculator);
+        if (brewRatioSlider) brewRatioSlider.addEventListener('input', updateBrewCalculator);
+
+        // Story Chapter Navigation Buttons
+        document.querySelectorAll('.story-nav-btn').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var targetId = btn.getAttribute('data-story-target');
+            var targetEl = document.getElementById(targetId);
+            if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            document.querySelectorAll('.story-nav-btn').forEach(function (b) {
+              b.classList.remove('bg-espresso', 'text-linen');
+            });
+            btn.classList.add('bg-espresso', 'text-linen');
+          });
+        });
+
+        // Category Filter Pills
+        document.querySelectorAll('.roast-filter-btn').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            state.activeCategory = btn.getAttribute('data-category') || 'all';
+            document.querySelectorAll('.roast-filter-btn').forEach(function (b) {
+              b.classList.remove('bg-espresso', 'text-linen');
+              b.classList.add('border', 'hairline-border');
+            });
+            btn.classList.add('bg-espresso', 'text-linen');
+            renderCatalog();
+          });
+        });
+
+        // Search & Sort Listeners
+        var searchInput = document.getElementById('catalogSearchInput');
+        if (searchInput) {
+          searchInput.addEventListener('input', function (e) {
+            state.searchQuery = e.target.value || '';
+            renderCatalog();
+          });
+        }
+        var sortSelect = document.getElementById('catalogSortSelect');
+        if (sortSelect) {
+          sortSelect.addEventListener('change', function (e) {
+            state.sortBy = e.target.value || 'featured';
+            renderCatalog();
+          });
+        }
+
+        // Delegated Click & Change on Roastery Grid
+        var roasteryGrid = document.getElementById('roasteryGrid');
+        if (roasteryGrid) {
+          roasteryGrid.addEventListener('click', function (e) {
+            var btn = e.target.closest('button[data-action]');
+            if (!btn) return;
+            var action = btn.getAttribute('data-action');
+            var id = btn.getAttribute('data-id');
+            if (action === 'select-weight') {
+              var prod = catalogProducts.find(function (p) { return p.id === id; });
+              if (prod) {
+                prod.selectedWeight = btn.getAttribute('data-weight') || '200g';
+                renderCatalog();
+              }
+            } else if (action === 'add-to-cart') {
+              addToCart(id);
+            } else if (action === 'inspect-product') {
+              openProductModal(id);
+            }
+          });
+
+          roasteryGrid.addEventListener('change', function (e) {
+            var sel = e.target.closest('select[data-action="select-grind"]');
+            if (!sel) return;
+            var id = sel.getAttribute('data-id');
+            var prod = catalogProducts.find(function (p) { return p.id === id; });
+            if (prod) {
+              prod.selectedGrind = sel.value;
+            }
+          });
+        }
+
+        // Branch Tabs Filter (Slawi vs Guci)
+        document.querySelectorAll('.branch-tab-btn').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var view = btn.getAttribute('data-branch-view');
+            document.querySelectorAll('.branch-tab-btn').forEach(function (b) {
+              b.classList.remove('bg-espresso', 'text-linen');
+              b.classList.add('border', 'hairline-border');
+            });
+            btn.classList.add('bg-espresso', 'text-linen');
+
+            var slawi = document.getElementById('branchCardSlawi');
+            var guci = document.getElementById('branchCardGuci');
+            var container = document.getElementById('branchCardsContainer');
+            if (!slawi || !guci || !container) return;
+
+            if (view === 'slawi') {
+              slawi.classList.remove('hidden');
+              guci.classList.add('hidden');
+              container.classList.remove('lg:grid-cols-2');
+              container.classList.add('lg:grid-cols-1');
+            } else if (view === 'guci') {
+              slawi.classList.add('hidden');
+              guci.classList.remove('hidden');
+              container.classList.remove('lg:grid-cols-2');
+              container.classList.add('lg:grid-cols-1');
+            } else {
+              slawi.classList.remove('hidden');
+              guci.classList.remove('hidden');
+              container.classList.add('lg:grid-cols-2');
+              container.classList.remove('lg:grid-cols-1');
+            }
+          });
+        });
+
+        var selectSlawiPickupBtn = document.getElementById('selectSlawiPickupBtn');
+        if (selectSlawiPickupBtn) {
+          selectSlawiPickupBtn.addEventListener('click', function () {
+            state.fulfillmentMethod = 'pickup';
+            var radio = document.querySelector('input[name="fulfillmentMethod"][value="pickup"]');
+            if (radio) radio.checked = true;
+            renderCart();
+            openCartDrawer();
+            showToast('Metode pengambilan diatur ke: Ambil Langsung di Outlet Slawi.');
+          });
+        }
+
+        // Cart Drawer Controls
+        var openCartBtn = document.getElementById('openCartBtn');
+        var closeCartBtn = document.getElementById('closeCartBtn');
+        var cartDrawerBackdrop = document.getElementById('cartDrawerBackdrop');
+        if (openCartBtn) openCartBtn.addEventListener('click', openCartDrawer);
+        if (closeCartBtn) closeCartBtn.addEventListener('click', closeCartDrawer);
+        if (cartDrawerBackdrop) cartDrawerBackdrop.addEventListener('click', closeCartDrawer);
+
+        var cartItemsContainer = document.getElementById('cartItemsContainer');
+        if (cartItemsContainer) {
+          cartItemsContainer.addEventListener('click', function (e) {
+            var btn = e.target.closest('button[data-cart-action]');
+            if (!btn) return;
+            var action = btn.getAttribute('data-cart-action');
+            var key = btn.getAttribute('data-key');
+            var idx = state.cart.findIndex(function (c) { return c.cartKey === key; });
+            if (idx === -1) return;
+            if (action === 'inc') {
+              state.cart[idx].qty += 1;
+            } else if (action === 'dec') {
+              state.cart[idx].qty -= 1;
+              if (state.cart[idx].qty <= 0) state.cart.splice(idx, 1);
+            }
+            renderCart();
+          });
+        }
+
+        // Fulfillment Method Radio Change
+        document.querySelectorAll('input[name="fulfillmentMethod"]').forEach(function (radio) {
+          radio.addEventListener('change', function (e) {
+            state.fulfillmentMethod = e.target.value;
+            renderCart();
+          });
+        });
+
+        // Payment Method Selector
+        document.querySelectorAll('.pay-method-btn').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            state.paymentMethod = btn.getAttribute('data-pay-method') || 'QRIS Instan (Midtrans)';
+            document.querySelectorAll('.pay-method-btn').forEach(function (b) {
+              b.classList.remove('bg-espresso', 'text-linen');
+            });
+            btn.classList.add('bg-espresso', 'text-linen');
+          });
+        });
+
+        // Process Checkout & Payment Gateway Simulation
+        var processCheckoutBtn = document.getElementById('processCheckoutBtn');
+        if (processCheckoutBtn) {
+          processCheckoutBtn.addEventListener('click', function () {
+            var invoiceBox = document.getElementById('checkoutInvoiceBox');
+            if (!invoiceBox) return;
+            if (state.cart.length === 0) {
+              showToast('Tambahkan produk biji kopi terlebih dahulu sebelum checkout.');
+              return;
+            }
+            var buyerName = (document.getElementById('buyerNameInput').value || 'Pelanggan Clavicula').trim();
+            var buyerPhone = (document.getElementById('buyerPhoneInput').value || '-').trim();
+            var buyerAddress = (document.getElementById('buyerAddressInput').value || '-').trim();
+            var totalText = document.getElementById('cartTotalText').textContent;
+            var orderId = 'CLV-' + Math.floor(100000 + Math.random() * 900000);
+
+            invoiceBox.classList.remove('hidden');
+            invoiceBox.innerHTML =
+              '<div class="flex items-center justify-between font-mono text-[11px] uppercase border-b hairline-border pb-2">' +
+                '<span class="text-pine font-semibold">● TAGIHAN MIDTRANS AKTIF</span>' +
+                '<span>ORDER ID: ' + orderId + '</span>' +
+              '</div>' +
+              '<div class="font-mono text-xs space-y-1">' +
+                '<div>Pemesan: <strong>' + buyerName + '</strong> (' + buyerPhone + ')</div>' +
+                '<div>Metode: <strong>' + state.paymentMethod + '</strong></div>' +
+                '<div>Pengiriman/Pickup: <strong>' + buyerAddress + '</strong></div>' +
+                '<div class="text-sm font-semibold pt-1">Total Tagihan: ' + totalText + '</div>' +
+              '</div>' +
+              '<div class="pt-2 flex flex-wrap items-center gap-2">' +
+                '<a href="https://wa.me/6287733444426?text=' + encodeURIComponent('Halo Clavicula Coffee Slawi, saya ' + buyerName + ' ingin konfirmasi pesanan Roastery ' + orderId + ' dengan total ' + totalText) + '" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-espresso text-linen font-mono text-[11px] uppercase tracking-wider rounded-full hover:bg-terracotta">' +
+                  'Konfirmasi via WhatsApp Outlet ↗' +
+                '</a>' +
+              '</div>';
+            invoiceBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            showToast('Tagihan ' + orderId + ' berhasil dibuat.');
+          });
+        }
+
+        // Scroll-driven Parallax, Progress Bar & Rotating Stamp
+        window.addEventListener('scroll', function () {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+          var progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          var bar = document.getElementById('scrollProgressBar');
+          if (bar) bar.style.width = progress.toFixed(1) + '%';
+
+          var stamp = document.getElementById('rotatingStampSvg');
+          if (stamp) {
+            stamp.style.transform = 'rotate(' + (scrollTop * 0.14).toFixed(1) + 'deg)';
+          }
+        }, { passive: true });
+
+        // Intersection Observer for Editorial Reveal Animations & Story Chapter Sync
+        if ('IntersectionObserver' in window) {
+          var revealObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+              }
+            });
+          }, { threshold: 0.12 });
+
+          document.querySelectorAll('.reveal-up').forEach(function (el) {
+            revealObserver.observe(el);
+          });
+
+          var storyObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                var id = entry.target.getAttribute('id');
+                document.querySelectorAll('.story-nav-btn').forEach(function (btn) {
+                  var match = btn.getAttribute('data-story-target') === id;
+                  btn.classList.toggle('bg-espresso', match);
+                  btn.classList.toggle('text-linen', match);
+                });
+              }
+            });
+          }, { threshold: 0.45 });
+
+          document.querySelectorAll('.story-frame').forEach(function (frame) {
+            storyObserver.observe(frame);
+          });
+        } else {
+          document.querySelectorAll('.reveal-up').forEach(function (el) {
+            el.classList.add('is-visible');
+          });
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -27,7 +27,7 @@ export default function MapModal() {
       mapsUrl: "https://maps.google.com/?q=Clavicula+Coffee+%26+Idea+Slawi",
       instagram: "@clavicula_coffee",
       igUrl: "https://www.instagram.com/clavicula_coffee/",
-      image: "/assets/clavicula-slawi-bar.jpg",
+      image: "/assets/clavicula/places/depan-tempat-clavicula-slawi.webp",
     },
     guci: {
       title: "Clavicula Hills (Guci, Tuwel)",
@@ -38,7 +38,7 @@ export default function MapModal() {
       mapsUrl: "https://maps.google.com/?q=Clavicula+Hills+Guci+Tuwel",
       instagram: "@clavicula_hills",
       igUrl: "https://www.instagram.com/clavicula_hills/",
-      image: "/assets/clavicula-hills-guci.jpg",
+      image: "/assets/clavicula/places/suasana-tempat-clavicula-guci-hills.png",
     },
   };
 
@@ -65,7 +65,7 @@ export default function MapModal() {
           <div className="flex items-center gap-3">
             <div className="relative w-8 h-8 rounded-full overflow-hidden bg-espresso border border-chestnut/30 shrink-0">
               <Image
-                src="/assets/clavicula-logo.png"
+                src="/assets/clavicula/logo/logo-clavicula.webp"
                 alt="Clavicula Logo"
                 fill
                 className="object-contain p-0.5"

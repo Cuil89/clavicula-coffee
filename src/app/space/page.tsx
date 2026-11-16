@@ -30,8 +30,8 @@ export default function SpacePage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-28 bg-white rounded-[32px] p-6 md:p-12 border border-chestnut/15 shadow-warm-card">
           <div className="lg:col-span-6 relative aspect-[4/3] sm:aspect-[16/11] rounded-2xl overflow-hidden shadow-md bg-espresso">
             <Image
-              src="/assets/clavicula-slawi-bar.jpg"
-              alt="Clavicula Coffee & Idea Slawi - Bar & Counter"
+              src="/assets/clavicula/places/depan-tempat-clavicula-slawi.webp"
+              alt="Clavicula Coffee & Idea Slawi - Industrial Facade"
               fill
               className="object-cover"
             />
@@ -169,8 +169,8 @@ export default function SpacePage() {
 
           <div className="lg:col-span-6 order-1 lg:order-2 relative aspect-[4/3] sm:aspect-[16/11] rounded-2xl overflow-hidden shadow-xl bg-espresso-soft z-10">
             <Image
-              src="/assets/clavicula-hills-guci.jpg"
-              alt="Clavicula Hills Guci"
+              src="/assets/clavicula/places/suasana-tempat-clavicula-guci-hills.png"
+              alt="Clavicula Hills Guci - Highland Terrace"
               fill
               className="object-cover"
             />

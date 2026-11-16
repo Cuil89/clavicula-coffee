@@ -41,7 +41,7 @@ export default function CartDrawer() {
       total
     )}*%0A%0AMohon konfirmasi ketersediaan & pembayaran. Terima kasih!`;
 
-    const waUrl = `https://wa.me/6285876000000?text=${message}`;
+    const waUrl = `https://wa.me/6287733444426?text=${message}`;
     window.open(waUrl, "_blank");
     addToast("Membuka WhatsApp untuk konfirmasi pesanan...");
   };

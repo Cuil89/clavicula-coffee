@@ -43,7 +43,7 @@ export default function Footer() {
             <div className="flex items-center gap-3 mb-8">
               <div className="relative w-12 h-12 rounded-full overflow-hidden bg-espresso border border-white/20 shadow-md">
                 <Image
-                  src="/assets/clavicula-logo.png"
+                  src="/assets/clavicula/logo/logo-clavicula.webp"
                   alt="Clavicula Coffee & Idea"
                   fill
                   className="object-contain p-1"

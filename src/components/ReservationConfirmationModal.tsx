@@ -28,7 +28,7 @@ export default function ReservationConfirmationModal() {
 
   const handleWhatsAppConfirm = () => {
     const text = `Halo Clavicula Coffee & Idea!%0ASaya telah membuat reservasi meja:%0A- Kode Booking: *${data.code}*%0A- Nama: *${data.name}*%0A- Outlet: *${data.outlet}*%0A- Tanggal: *${data.date}*%0A- Waktu: *${data.time}*%0A- Jumlah Tamu: *${data.guests} Orang*%0A- Area: *${data.seating}*%0A${data.notes ? `- Catatan: ${data.notes}%0A` : ""}%0AMohon konfirmasi reservasinya. Terima kasih!`;
-    const waUrl = `https://wa.me/6285876000000?text=${text}`;
+    const waUrl = `https://wa.me/6287733444426?text=${text}`;
     window.open(waUrl, "_blank");
   };
 

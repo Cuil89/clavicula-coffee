@@ -220,7 +220,7 @@ export default function Home() {
             <div className="absolute inset-0 rounded-t-[220px] rounded-b-[24px] overflow-hidden shadow-2xl border border-chestnut/20 bg-espresso">
               <div className="relative w-full h-full hero-image-container overflow-hidden">
                 <Image
-                  src="/assets/extracted/clavi_img_0.jpg"
+                  src="/assets/clavicula/places/hero-slowbar-clavicula.jpg"
                   alt="Clavicula Coffee & Idea Identity"
                   fill
                   className="object-cover object-center hero-image opacity-90 transition-transform duration-700 group-hover:scale-105"
@@ -284,7 +284,7 @@ export default function Home() {
                 copy: "Penamaan unik bernuansa medis dan anatomi tubuh manusia: Manubrium, Sternum, Scapula, Subclavius, hingga Mocktail Brachialis & Radius.",
                 cta: "Lihat Signature Drink",
                 link: "/menu",
-                img: "/assets/extracted/signature_manubrium.jpg",
+                img: "/assets/clavicula/drinks/manubrium.webp",
               },
               {
                 num: "02",
@@ -293,7 +293,7 @@ export default function Home() {
                 copy: "Biji kopi pilihan Nusantara (Gayo, Sindoro, Ijen, Kerinci) dan mancanegara diseduh V60, Aeropress, Vietnam Drip, dan espresso murni.",
                 cta: "Profil Roastery",
                 link: "/terroir",
-                img: "/assets/roasting-craft-flame.jpeg",
+                img: "/assets/clavicula/places/roastery-lab-clavicula-slawi.jpg",
               },
               {
                 num: "03",
@@ -302,7 +302,7 @@ export default function Home() {
                 copy: "Hidangan lengkap dari Tenderloin Steak, Kepiting Segar (Special Crab), Tomyam Berdua, Clavicula Noodle, hingga Rice Bowl Chashu.",
                 cta: "Pilihan Santap",
                 link: "/menu",
-                img: "/assets/extracted/special_chicken_steak.jpg",
+                img: "/assets/clavicula/foods/chicken-katsu-spicy.webp",
               },
               {
                 num: "04",
@@ -311,7 +311,7 @@ export default function Home() {
                 copy: "Dua suasana istimewa: Ruang kerja kreatif ber-AC & taman di Slawi, serta hawa dingin pegunungan berkabut di Clavicula Hills Guci.",
                 cta: "Jelajahi 2 Outlet",
                 link: "/space",
-                img: "/assets/clavicula-hills-guci.jpg",
+                img: "/assets/clavicula/places/suasana-tempat-clavicula-guci-hills.png",
               },
             ].map((pillar, i) => (
               <Link
@@ -362,12 +362,12 @@ export default function Home() {
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-5">
             {[
-              { name: "Manubrium", price: 30000, img: "/assets/extracted/signature_manubrium.jpg", note: "Creamy vanilla layers + rich espresso" },
-              { name: "Acromium", price: 31000, img: "/assets/extracted/signature_acromium.jpg", note: "Sweet caramelize harmony with roasted beans" },
-              { name: "Subclavius", price: 31000, img: "/assets/extracted/signature_subclavius.jpg", note: "Velvety foam crown & distinct roast punch" },
-              { name: "Trapezius", price: 30000, img: "/assets/extracted/signature_trapezius.jpg", note: "Strawberry swirl & silky cream fusion" },
-              { name: "Sternum", price: 30000, img: "/assets/extracted/signature_sternum.jpg", note: "Golden caramel drizzle with iced espresso" },
-              { name: "Scapula", price: 29000, img: "/assets/extracted/signature_scapula.jpg", note: "Matcha green layer topped with soft cream" },
+              { name: "Manubrium", price: 30000, img: "/assets/clavicula/drinks/manubrium.webp", note: "Creamy vanilla layers + rich espresso" },
+              { name: "Acromion", price: 31000, img: "/assets/clavicula/drinks/acromion.webp", note: "Sweet caramelize harmony with roasted beans" },
+              { name: "Costa", price: 31000, img: "/assets/clavicula/drinks/costa.webp", note: "Nutella spread, iced espresso & vanilla ice cream" },
+              { name: "Trapezius", price: 30000, img: "/assets/clavicula/drinks/trapezius.webp", note: "Strawberry swirl & silky cream fusion" },
+              { name: "Sternum", price: 30000, img: "/assets/clavicula/drinks/sternum.webp", note: "Golden caramel drizzle with iced espresso" },
+              { name: "Scapula", price: 29000, img: "/assets/clavicula/drinks/scapula.webp", note: "Pandan klepon coconut milk + espresso" },
             ].map((drink, idx) => (
               <div
                 key={idx}
@@ -524,36 +524,44 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
+                sku: "RB-01",
                 name: "Clavicula House Blend",
-                badge: "House Signature",
+                badge: "House Blend 80:20",
                 roast: 4,
-                price: 75000,
-                desc: "Perpaduan Arabica & Robusta halus dengan aroma cokelat pekat, hazelnut, dan karamel.",
-                weight: "250g",
-              },
-              {
-                name: "Sumatra Gayo Anaerobic",
-                badge: "Specialty Lot",
-                roast: 2,
-                price: 95000,
-                desc: "Fermentasi anaerobik menghadirkan rasa buah beri matang, floral jasmine, dan asam buah segar.",
+                price: 65000,
+                desc: "80% Arabica : 20% Robusta. Formula andalan Clavicula untuk espresso & es kopi susu dengan rasa cokelat pekat.",
                 weight: "200g",
+                img: "/assets/clavicula/roastery/rb-01-clavicula-house-blend.jpg",
               },
               {
-                name: "Java Sindoro Honey",
-                badge: "Honey Process",
-                roast: 3,
+                sku: "RB-02",
+                name: "Arabica Lokal V60",
+                badge: "Single Origin",
+                roast: 2,
                 price: 85000,
-                desc: "Tumbuh di lereng Gunung Sindoro dengan rasa madu manis alami, aprikot, dan aftertaste bersih.",
+                desc: "Biji arabica terroir pilihan petani lokal Nusantara dengan aroma buah manis alami dan aftertaste bersih.",
                 weight: "200g",
+                img: "/assets/clavicula/roastery/rb-02-arabica-lokal-v60.jpg",
               },
               {
-                name: "Bali Kintamani Citrus",
-                badge: "Washed Clean",
+                sku: "RB-03",
+                name: "Arabica Impor V60 Luar",
+                badge: "Imported Lot",
                 roast: 2,
-                price: 90000,
-                desc: "Khas aroma bunga jeruk kintamani, brown sugar, dan keasaman sitrus yang menyegarkan.",
+                price: 120000,
+                desc: "Kurasi biji kopi impor pilihan Afrika & Amerika Latin dengan aroma floral melati dan keasaman sitrus elegan.",
                 weight: "200g",
+                img: "/assets/clavicula/roastery/rb-03-arabica-impor-v60-luar.jpg",
+              },
+              {
+                sku: "RB-04",
+                name: "Fine Robusta Selection",
+                badge: "Fine Robusta",
+                roast: 4,
+                price: 55000,
+                desc: "Pilihan biji robusta berkualitas tinggi dengan bodi tebal, aroma rempah harum, dan rasa manis karamel.",
+                weight: "200g",
+                img: "/assets/clavicula/roastery/rb-04-fine-robusta-selection.jpg",
               },
             ].map((coffee, i) => (
               <div
@@ -562,7 +570,7 @@ export default function Home() {
               >
                 <div className="relative h-60 w-full mb-5 rounded-2xl overflow-hidden bg-vanilla flex items-center justify-center">
                   <Image
-                    src="/assets/roastery-pouches-lineup.jpeg"
+                    src={coffee.img}
                     alt={coffee.name}
                     fill
                     className="object-cover object-center transition-transform duration-700 group-hover:scale-105"

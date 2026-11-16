@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   description:
     "Official profile for Clavicula Coffee & Idea (Slawi & Clavicula Hills Guci, Tegal). Specialty coffee roastery, anatomical signature drinks, manual brew, artisan rice bowls, steaks, and desserts.",
   icons: {
-    icon: "/assets/clavicula-logo.png",
+    icon: "/assets/clavicula/logo/logo-clavicula.webp",
   },
 };
 

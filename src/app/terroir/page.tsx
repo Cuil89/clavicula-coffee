@@ -75,8 +75,8 @@ export default function TerroirPage() {
 
           <div className="relative h-80 sm:h-96 rounded-3xl overflow-hidden border border-white/15 shadow-2xl">
             <Image
-              src="/assets/roasting-craft-flame.jpeg"
-              alt="Clavicula Flame Roaster"
+              src="/assets/clavicula/places/roastery-lab-clavicula-slawi.jpg"
+              alt="Clavicula Roastery Lab Slawi"
               fill
               className="object-cover"
             />
@@ -106,8 +106,8 @@ export default function TerroirPage() {
           </div>
           <div className="order-1 md:order-2 relative h-[360px] rounded-3xl overflow-hidden shadow-warm-card border border-chestnut/15 bg-white">
             <Image
-              src="/assets/roastery-pouches-lineup.jpeg"
-              alt="Java Sindoro Honey"
+              src="/assets/clavicula/roastery/rb-01-clavicula-house-blend.jpg"
+              alt="Clavicula House Blend Roastery"
               fill
               className="object-cover"
             />
@@ -118,8 +118,8 @@ export default function TerroirPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <div className="relative h-[360px] rounded-3xl overflow-hidden shadow-warm-card border border-chestnut/15 bg-white">
             <Image
-              src="/assets/hero-sunlit-hearth.jpeg"
-              alt="Sumatra Gayo Lot"
+              src="/assets/clavicula/places/slow-bar-v60-clavicula.jpg"
+              alt="Slow Bar V60 Clavicula"
               fill
               className="object-cover"
             />

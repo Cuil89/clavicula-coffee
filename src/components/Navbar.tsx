@@ -41,7 +41,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center gap-3 group relative z-20">
             <div className="relative w-9 h-9 md:w-10 md:h-10 rounded-full overflow-hidden border border-chestnut/30 bg-espresso shrink-0 shadow-sm transition-transform duration-300 group-hover:scale-105">
               <Image
-                src="/assets/clavicula-logo.png"
+                src="/assets/clavicula/logo/logo-clavicula.webp"
                 alt="Clavicula Coffee & Idea Logo"
                 fill
                 className="object-contain p-0.5"
@@ -141,7 +141,7 @@ export default function Navbar() {
           <div className="flex items-center gap-3 pb-6 border-b border-chestnut/15">
             <div className="relative w-12 h-12 rounded-full overflow-hidden border border-chestnut/30 bg-espresso">
               <Image
-                src="/assets/clavicula-logo.png"
+                src="/assets/clavicula/logo/logo-clavicula.webp"
                 alt="Clavicula Coffee Logo"
                 fill
                 className="object-contain p-1"

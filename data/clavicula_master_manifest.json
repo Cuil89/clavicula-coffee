@@ -1,0 +1,472 @@
+{
+  "project_name": "Sistem Informasi E-Commerce Roastery & Company Profile Clavicula Coffee & Idea",
+  "brand_profile": {
+    "brand_name": "Clavicula Coffee & Idea",
+    "secondary_brand": "Clavicula Coffee & Hills (Guci)",
+    "owners_and_founders": [
+      "Irfan Bagus Dwi Prayoga (Owner / Narahubung Utama)",
+      "dr. Ardini Ayu Saptanti (Co-Founder)",
+      "dr. Anindya Ryan Pramudya (Co-Founder)"
+    ],
+    "established": "Maret 2021",
+    "brand_philosophy": "Nama Clavicula diambil dari istilah anatomi medis tulang selangka yang terletak di antara bahu dan dada—melambangkan bahu sebagai tempat bersandar yang nyaman dan dada sebagai kehangatan hati bagi pengunjung untuk menikmati kopi, berdiskusi ide, maupun bekerja (Work From Cafe).",
+    "contacts": {
+      "whatsapp_raw": "6287733444426",
+      "whatsapp_display": "+62 877-3344-4426",
+      "whatsapp_url": "https://api.whatsapp.com/send?phone=6287733444426",
+      "instagram_main": "https://www.instagram.com/clavicula_coffee/",
+      "instagram_handle_main": "@clavicula_coffee",
+      "instagram_handle_guci": "@clavicula_hills",
+      "linktree": "https://linktr.ee/claviculacoffee",
+      "website_domain": "https://claviculacoffee.id/",
+      "gofood_url": "https://gofood.co.id/tegal/restaurant/clavicula-coffee-idea-575afb3a-4562-4cab-a20c-359419063beb"
+    },
+    "operating_hours": {
+      "general": "Setiap Hari: 08.00 – 23.00 WIB",
+      "promo_ngopi_pagi": "08.00 – 10.00 WIB (Special Price Rp12.000 – Rp20.000)",
+      "promo_ngopi_sore": "15.00 – 17.00 WIB (Special Price Rp12.000 – Rp20.000)",
+      "live_music": "Jumat, Sabtu & Minggu mulai pukul 20.00 WIB – selesai"
+    },
+    "design_tokens": {
+      "bg_canvas_linen": "#F4EFE6",
+      "bg_surface_parchment": "#EBE3D5",
+      "bg_inverse_espresso": "#16120F",
+      "bg_card_umber": "#2B211C",
+      "text_primary": "#16120F",
+      "text_secondary": "#5A4D44",
+      "accent_terracotta": "#B85D3B",
+      "accent_guci_pine": "#3E4F43",
+      "font_heading": "Instrument Serif / Playfair Display",
+      "font_body": "Plus Jakarta Sans / Inter",
+      "font_mono": "JetBrains Mono"
+    }
+  },
+  "non_menu_site_assets": [
+    {
+      "asset_id": "logo-main-webp",
+      "category": "logo",
+      "filename": "logo-clavicula.webp",
+      "local_path": "assets/clavicula/logo/logo-clavicula.webp",
+      "fallback_local_path": "assets/clavicula/logo/logo-clavicula-vector.svg",
+      "remote_url": "https://claviculacoffee.id/assets/Shared/logo.webp",
+      "alt_text": "Logo Resmi Clavicula Coffee & Idea",
+      "usage_section": "Navbar, Footer, Favicon, Nota PDF"
+    },
+    {
+      "asset_id": "logo-ig-avatar",
+      "category": "logo",
+      "filename": "avatar-instagram-clavicula.jpg",
+      "local_path": "assets/clavicula/logo/avatar-instagram-clavicula.jpg",
+      "remote_url": "https://scontent-lga3-2.cdninstagram.com/v/t51.2885-19/143199030_318011499652106_6576477763714717378_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_cat=105&_nc_map=urlgen_bucketless&ig_cache_key=GDYLiQgKpHjSOiEBAMKWeLOuV0RbbkULAAAB1501500j-ccb7-5&ccb=7-5&_nc_sid=669407&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=QQAqX4uetUwQ7kNvwEVFpPy&_nc_oc=AdpgakxVYHKlkRnt8z5_5qEj1P006xy3i7j4FhWRh-HUAunM2bxII5jvhmmvE0DwKhE&_nc_zt=24&_nc_ht=scontent-lga3-2.cdninstagram.com&_nc_ss=72689&_nc_ct=RQosPBUCFQIAAAA&oh=00_AQQao-qVBzEQYv5vymBywsR6yvU5OpCb9yLpp_SyAmDWBA&oe=6B006933",
+      "alt_text": "Foto Profil Instagram @clavicula_coffee",
+      "usage_section": "Header Feed Instagram & Profil Mitra"
+    },
+    {
+      "asset_id": "place-slawi-exterior-front",
+      "category": "places",
+      "filename": "depan-tempat-clavicula-slawi.webp",
+      "local_path": "assets/clavicula/places/depan-tempat-clavicula-slawi.webp",
+      "fallback_local_path": "assets/clavicula/places/hero-slowbar-clavicula.jpg",
+      "remote_url": "https://asset.tribunnews.com/R9qSUN3AKV9Rpbv9BcqM5uNT2-Q=/1200x675/filters:upscale():quality(30):format(webp):focal(0.5x0.5:0.5x0.5)/pantura/foto/bank/originals/suasana-di-cafe-clavicula-yang-beralamat-di-jalan-dr-soetomo-rt-01rw-09.jpg",
+      "source_page": "https://pantura.tribunnews.com/2021/04/11/ini-cafe-yang-sedang-hits-di-slawi-tegal-sajikan-menu-nama-nama-tulang",
+      "alt_text": "Fasad Depan Bangunan Industrial Clavicula Coffee & Idea di Jl. Dr. Soetomo No. 3 Kalisapu Slawi dengan Signboard CLAVICULA dan Area Rooftop",
+      "usage_section": "Kartu Cabang 01 (Slawi HQ), Hero Background, & Seksi Company Profile"
+    },
+    {
+      "asset_id": "place-guci-hills-view",
+      "category": "places",
+      "filename": "suasana-tempat-clavicula-guci-hills.png",
+      "local_path": "assets/clavicula/places/suasana-tempat-clavicula-guci-hills.png",
+      "fallback_local_path": "assets/clavicula/places/ruang-wfc-slawi-dan-view-guci.jpg",
+      "remote_url": "https://radartegal.disway.id/upload/5e49bf9be2753c56c5485195b1cc169d.png",
+      "source_page": "https://radartegal.disway.id/lokal/read/724546/view-alam-terbaik-7-cafe-di-guci-tegal-ini-bikin-betah-nongkrong/15",
+      "alt_text": "Suasana Teras Outdoor Clavicula Coffee & Hills Guci Tegal Menghadap Pemandangan Lembah dan Pegunungan",
+      "usage_section": "Kartu Cabang 02 (Guci Hills) & Galeri Suasana Tempat"
+    },
+    {
+      "asset_id": "place-gofood-store-banner",
+      "category": "places",
+      "filename": "banner-outlet-clavicula-gofood.jpg",
+      "local_path": "assets/clavicula/places/banner-outlet-clavicula-gofood.jpg",
+      "remote_url": "https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/802f16e1-586b-4cb3-acc6-b847212ebfb0_Go-Biz_20211204_144800.jpeg",
+      "source_page": "https://gofood.co.id/tegal/restaurant/clavicula-coffee-idea-575afb3a-4562-4cab-a20c-359419063beb",
+      "alt_text": "Banner Resmi Outlet Clavicula Coffee & Idea di GoFood",
+      "usage_section": "Seksi Tentang Kami & Banner Toko"
+    },
+    {
+      "asset_id": "place-roastery-lab",
+      "category": "places",
+      "filename": "roastery-lab-clavicula-slawi.jpg",
+      "local_path": "assets/clavicula/places/roastery-lab-clavicula-slawi.jpg",
+      "remote_url": "",
+      "alt_text": "Mesin Sangrai Kopi Small-Batch Roastery Clavicula Coffee",
+      "usage_section": "Seksi 01 Split-Screen Sticky Story (Bab 01 Proses Sangrai)"
+    },
+    {
+      "asset_id": "place-slowbar-v60",
+      "category": "places",
+      "filename": "slow-bar-v60-clavicula.jpg",
+      "local_path": "assets/clavicula/places/slow-bar-v60-clavicula.jpg",
+      "remote_url": "",
+      "alt_text": "Seduhan Manual Brew V60 di Meja Slow Bar Clavicula Coffee",
+      "usage_section": "Seksi 01 Split-Screen Sticky Story (Bab 02 Slow Bar)"
+    },
+    {
+      "asset_id": "place-wfc-space",
+      "category": "places",
+      "filename": "ruang-wfc-slawi-dan-view-guci.jpg",
+      "local_path": "assets/clavicula/places/ruang-wfc-slawi-dan-view-guci.jpg",
+      "remote_url": "",
+      "alt_text": "Area Indoor Work From Cafe (WFC) dan Teras Pegunungan Clavicula Coffee",
+      "usage_section": "Seksi 01 Split-Screen Sticky Story (Bab 03 Ruang WFC & Komunitas)"
+    }
+  ],
+  "branches": [
+    {
+      "code": "SLAWI",
+      "name": "Clavicula Coffee & Idea — Cabang Utama Slawi",
+      "badge": "ROASTERY HQ • SLOW BAR • WFC & IDEA SPACE",
+      "address": "Jl. Dr. Soetomo No. 3, RT 004 / RW 006, Desa Kalisapu, Griya Prajamukti, Kec. Slawi, Kabupaten Tegal, Jawa Tengah 52416",
+      "hours": "Setiap Hari: 08.00 – 23.00 WIB (Live Music Jumat & Sabtu)",
+      "whatsapp": "+62 877-3344-4426",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Clavicula+Coffee+%26+Idea+Jalan+DR.+Soetomo+No.+3+Kalisapu+Slawi+Tegal",
+      "exterior_image_local": "assets/clavicula/places/depan-tempat-clavicula-slawi.webp",
+      "exterior_image_remote": "https://asset.tribunnews.com/R9qSUN3AKV9Rpbv9BcqM5uNT2-Q=/1200x675/filters:upscale():quality(30):format(webp):focal(0.5x0.5:0.5x0.5)/pantura/foto/bank/originals/suasana-di-cafe-clavicula-yang-beralamat-di-jalan-dr-soetomo-rt-01rw-09.jpg",
+      "highlights": [
+        "Bangunan Industrial Modern 2 Lantai + Rooftop View Sawah",
+        "Pusat Penyangraian Biji Kopi (Small-Batch Roastery)",
+        "Ruang Indoor AC Nyaman untuk WFC & Nugas",
+        "Titik Pengambilan Pesanan Web (Pay at Outlet / Pickup)"
+      ]
+    },
+    {
+      "code": "GUCI",
+      "name": "Clavicula Coffee & Hills — Cabang Wisata Guci",
+      "badge": "HIGHLAND SANCTUARY • MOUNTAIN VIEW DECK",
+      "address": "Jl. Objek Wisata Guci, Desa Tuwel, Kec. Bojong, Kabupaten Tegal, Jawa Tengah",
+      "hours": "Setiap Hari: 08.00 – 23.00 WIB",
+      "whatsapp": "+62 877-3344-4426",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Clavicula+Coffee+Hills+Guci+Tegal",
+      "exterior_image_local": "assets/clavicula/places/suasana-tempat-clavicula-guci-hills.png",
+      "exterior_image_remote": "https://radartegal.disway.id/upload/5e49bf9be2753c56c5485195b1cc169d.png",
+      "highlights": [
+        "Balkon & Area Outdoor Menghadap Lembah Pegunungan Guci",
+        "Udara Sejuk Lereng Gunung Slamet",
+        "Menyajikan Lini Kopi Manual Brew, Signature Anatomi & Camilan Hangat"
+      ]
+    }
+  ],
+  "scraped_drink_images_15": [
+    {
+      "sku": "SG-01",
+      "name": "Manubrium",
+      "price_web": 33000,
+      "price_slawi": 27272,
+      "price_guci": 30000,
+      "filename": "manubrium.webp",
+      "local_path": "assets/clavicula/drinks/manubrium.webp",
+      "remote_url": "https://claviculacoffee.id/assets/Menu/Drink/Manubrium%20-%20Rp%2033.000.webp"
+    },
+    {
+      "sku": "SG-02",
+      "name": "Acromion",
+      "price_web": 32000,
+      "price_slawi": 27272,
+      "price_guci": 31000,
+      "filename": "acromion.webp",
+      "local_path": "assets/clavicula/drinks/acromion.webp",
+      "remote_url": "https://claviculacoffee.id/assets/Menu/Drink/Acromion%20-%20Rp%2032.000.webp"
+    },
+    {
+      "sku": "SG-03",
+      "name": "Sternum",
+      "price_web": 32000,
+      "price_slawi": 27272,
+      "price_guci": 30000,
+      "filename": "sternum.webp",
+      "local_path": "assets/clavicula/drinks/sternum.webp",
+      "remote_url": "https://claviculacoffee.id/assets/Menu/Drink/Sternum%20-%20Rp%2032.000.webp"
+    },
+    {
+      "sku": "SG-04",
+      "name": "Scapula",
+      "price_web": 32000,
+      "price_slawi": 27272,
+      "price_guci": 29000,
+      "filename": "scapula.webp",
+      "local_path": "assets/clavicula/drinks/scapula.webp",
+      "remote_url": "https://claviculacoffee.id/assets/Menu/Drink/Scapula%20-%20Rp%2032.000.webp"
+    },
+    {
+      "sku": "SG-06",
+      "name": "Costa",
+      "price_web": 33000,
+      "price_slawi": 27272,
+      "price_guci": 33000,
+      "filename": "costa.webp",
+      "local_path": "assets/clavicula/drinks/costa.webp",
+      "remote_url": "https://claviculacoffee.id/assets/Menu/Drink/Costa%20-%20Rp%2033.000.webp"
+    },
+    {
+      "sku": "SG-10",
+      "name": "Trapezius",
+      "price_web": 32000,
+      "price_slawi": 27272,
+      "price_guci": 32000,
+      "filename": "trapezius.webp",
+      "local_path": "assets/clavicula/drinks/trapezius.webp",
+      "remote_url": "https://claviculacoffee.id/assets/Menu/Drink/Trapezius%20-%20Rp%2032.000.webp"
+    },
+    {
+      "sku": "EB-04",
+      "name": "Kopi Susu Ori",
+      "price_web": 20000,
+      "price_slawi": 16363,
+      "price_guci": 20000,
+      "filename": "kopi-susu-ori.webp",
+      "local_path": "assets/clavicula/drinks/kopi-susu-ori.webp",
+      "remote_url": "https://claviculacoffee.id/assets/Menu/Drink/Kopi%20Susu%20Ori%20-%20Rp%2020.000.webp"
+    },
+    {
+      "sku": "EB-05",
+      "name": "Flavour Americano",
+      "price_web": 22000,
+      "price_slawi": 18181,
+      "price_guci": 22000,
+      "filename": "flavour-americano.webp",
+      "local_path": "assets/clavicula/drinks/flavour-americano.webp",
+      "remote_url": "https://claviculacoffee.id/assets/Menu/Drink/Flavour%20Americano%20-%20Rp%2022.000.webp"
+    },
+    {
+      "sku": "EB-08",
+      "name": "Affogato",
+      "price_web": 14000,
+      "price_slawi": 19090,
+      "price_guci": 23000,
+      "filename": "affogato.webp",
+      "local_path": "assets/clavicula/drinks/affogato.webp",
+      "remote_url": "https://claviculacoffee.id/assets/Menu/Drink/Affogato%20-%20Rp%2014.000.webp"
+    },
+    {
+      "sku": "EB-09",
+      "name": "Caramel Macchiato",
+      "price_web": 28000,
+      "price_slawi": 23636,
+      "price_guci": 28000,
+      "filename": "caramel-macchiato.webp",
+      "local_path": "assets/clavicula/drinks/caramel-macchiato.webp",
+      "remote_url": "https://claviculacoffee.id/assets/Menu/Drink/Caramel%20Machiato%20-%20Rp%2028.000.webp"
+    },
+    {
+      "sku": "EB-11",
+      "name": "Coffee Lemonade",
+      "price_web": 28000,
+      "price_slawi": 23636,
+      "price_guci": 28000,
+      "filename": "coffee-lemonade.webp",
+      "local_path": "assets/clavicula/drinks/coffee-lemonade.webp",
+      "remote_url": "https://claviculacoffee.id/assets/Menu/Drink/Coffee%20Lemonade%20-%20Rp%2028.000.webp"
+    },
+    {
+      "sku": "EB-12",
+      "name": "Flavour Latte",
+      "price_web": 30000,
+      "price_slawi": 25454,
+      "price_guci": 30000,
+      "filename": "flavour-latte.webp",
+      "local_path": "assets/clavicula/drinks/flavour-latte.webp",
+      "remote_url": "https://claviculacoffee.id/assets/Menu/Drink/Flavour%20Latte%20-%20Rp%2030.000.webp"
+    },
+    {
+      "sku": "EB-14",
+      "name": "Cookies Coffee",
+      "price_web": 32000,
+      "price_slawi": 27272,
+      "price_guci": 32000,
+      "filename": "cookies-coffee.webp",
+      "local_path": "assets/clavicula/drinks/cookies-coffee.webp",
+      "remote_url": "https://claviculacoffee.id/assets/Menu/Drink/Cookies%20Coffee%20-%20Rp%2032.000.webp"
+    },
+    {
+      "sku": "EB-15",
+      "name": "Matcha Coffee Latte",
+      "price_web": 32000,
+      "price_slawi": 27272,
+      "price_guci": 32000,
+      "filename": "matcha-coffee-latte.webp",
+      "local_path": "assets/clavicula/drinks/matcha-coffee-latte.webp",
+      "remote_url": "https://claviculacoffee.id/assets/Menu/Drink/Matcha%20Coffee%20Latte%20-%20Rp%2032.000.webp"
+    },
+    {
+      "sku": "NC-01",
+      "name": "Charcoal Blend",
+      "price_web": 28000,
+      "price_slawi": 23636,
+      "price_guci": 28000,
+      "filename": "charcoal-blend.webp",
+      "local_path": "assets/clavicula/drinks/charcoal-blend.webp",
+      "remote_url": "https://claviculacoffee.id/assets/Menu/Drink/Carcoal%20Blend%20-%20Rp%2028.000.webp"
+    }
+  ],
+  "scraped_food_images_15": [
+    {
+      "name": "Beef Burger",
+      "price_web": 32000,
+      "filename": "beef-burger.webp",
+      "local_path": "assets/clavicula/foods/beef-burger.webp",
+      "remote_url": "https://claviculacoffee.id/assets/Menu/Food/Beef%20Burger%20-%20Rp%2032.000.webp"
+    },
+    {
+      "name": "Chicken Katsu Spicy",
+      "price_web": 28000,
+      "filename": "chicken-katsu-spicy.webp",
+      "local_path": "assets/clavicula/foods/chicken-katsu-spicy.webp",
+      "remote_url": "https://claviculacoffee.id/assets/Menu/Food/Chicken%20Katsu%20Spicy%20-%20Rp%2028.000.webp"
+    },
+    {
+      "name": "Chicken Katsu With Sauce",
+      "price_web": 28000,
+      "filename": "chicken-katsu-with-sauce.webp",
+      "local_path": "assets/clavicula/foods/chicken-katsu-with-sauce.webp",
+      "remote_url": "https://claviculacoffee.id/assets/Menu/Food/Chicken%20Katsu%20With%20Sauce%20-%20Rp%2028.000.webp"
+    },
+    {
+      "name": "Dimsum Mentai",
+      "price_web": 28000,
+      "filename": "dimsum-mentai.webp",
+      "local_path": "assets/clavicula/foods/dimsum-mentai.webp",
+      "remote_url": "https://claviculacoffee.id/assets/Menu/Food/Dimsum%20Mentai%20-%20Rp%2028.000.webp"
+    },
+    {
+      "name": "Dimsum Ori",
+      "price_web": 24000,
+      "filename": "dimsum-ori.webp",
+      "local_path": "assets/clavicula/foods/dimsum-ori.webp",
+      "remote_url": "https://claviculacoffee.id/assets/Menu/Food/Dimsum%20Ori%20-%20Rp%2024.000.webp"
+    },
+    {
+      "name": "Gochucula Chicken Wings",
+      "price_web": 29000,
+      "filename": "gochucula-chicken-wings.webp",
+      "local_path": "assets/clavicula/foods/gochucula-chicken-wings.webp",
+      "remote_url": "https://claviculacoffee.id/assets/Menu/Food/Gochucula%20Chicken%20Wings%20-%20Rp%2029.000.webp"
+    },
+    {
+      "name": "Hotdog",
+      "price_web": 36000,
+      "filename": "hotdog.webp",
+      "local_path": "assets/clavicula/foods/hotdog.webp",
+      "remote_url": "https://claviculacoffee.id/assets/Menu/Food/Hotdog%20-%20Rp%2036.000.webp"
+    },
+    {
+      "name": "Javanese Fried Noodles",
+      "price_web": 23000,
+      "filename": "javanese-fried-noodles.webp",
+      "local_path": "assets/clavicula/foods/javanese-fried-noodles.webp",
+      "remote_url": "https://claviculacoffee.id/assets/Menu/Food/Javanese%20Fried%20Noodles%20-%20Rp%2023.000.webp"
+    },
+    {
+      "name": "Javanese Fried Rice",
+      "price_web": 23000,
+      "filename": "javanese-fried-rice.webp",
+      "local_path": "assets/clavicula/foods/javanese-fried-rice.webp",
+      "remote_url": "https://claviculacoffee.id/assets/Menu/Food/Javanese%20Fried%20Rice%20-%20Rp%2023.000.webp"
+    },
+    {
+      "name": "Mentai Rice",
+      "price_web": 35000,
+      "filename": "mentai-rice.webp",
+      "local_path": "assets/clavicula/foods/mentai-rice.webp",
+      "remote_url": "https://claviculacoffee.id/assets/Menu/Food/Mentai%20Rice%20-%20Rp%2035.000.webp"
+    },
+    {
+      "name": "Mille Crepes",
+      "price_web": 37000,
+      "filename": "mille-crepes.webp",
+      "local_path": "assets/clavicula/foods/mille-crepes.webp",
+      "remote_url": "https://claviculacoffee.id/assets/Menu/Food/Mille%20Crepes%20-%20Rp%2037.000.webp"
+    },
+    {
+      "name": "Sate Taichan Mozarella",
+      "price_web": 31000,
+      "filename": "sate-taichan-mozarella.webp",
+      "local_path": "assets/clavicula/foods/sate-taichan-mozarella.webp",
+      "remote_url": "https://claviculacoffee.id/assets/Menu/Food/Sate%20Taichan%20Mozarella%20-%20Rp%2031.000.webp"
+    },
+    {
+      "name": "Strawberry Cheesecake",
+      "price_web": 35000,
+      "filename": "strawberry-cheesecake.webp",
+      "local_path": "assets/clavicula/foods/strawberry-cheesecake.webp",
+      "remote_url": "https://claviculacoffee.id/assets/Menu/Food/Strawberry%20Cheesecake%20-%20Rp%2035.000.webp"
+    },
+    {
+      "name": "Tiramisu Cake",
+      "price_web": 48000,
+      "filename": "tiramisu-cake.webp",
+      "local_path": "assets/clavicula/foods/tiramisu-cake.webp",
+      "remote_url": "https://claviculacoffee.id/assets/Menu/Food/Tiramisu%20Cake%20-%20Rp%2048.000.webp"
+    },
+    {
+      "name": "Yakitori",
+      "price_web": 28000,
+      "filename": "yakitori.webp",
+      "local_path": "assets/clavicula/foods/yakitori.webp",
+      "remote_url": "https://claviculacoffee.id/assets/Menu/Food/Yakitori%20-%20Rp%2028.000.webp"
+    }
+  ],
+  "roastery_beans_4_sku": [
+    {
+      "sku": "RB-01",
+      "name": "Clavicula House Blend (80% Arabica : 20% Robusta)",
+      "roast_level": "Medium-to-Dark Roast",
+      "tasting_notes": "Dark Chocolate • Roasted Almond • Balanced Acidity",
+      "prices": {
+        "200g": 65000,
+        "500g": 145000,
+        "1kg": 270000
+      },
+      "filename": "rb-01-clavicula-house-blend.jpg",
+      "local_path": "assets/clavicula/roastery/rb-01-clavicula-house-blend.jpg"
+    },
+    {
+      "sku": "RB-02",
+      "name": "Single Origin Arabica Lokal V60 (100% Arabica Nusantara)",
+      "roast_level": "Light-to-Medium Roast",
+      "tasting_notes": "Floral • Bright Fruity • Clean Body",
+      "prices": {
+        "200g": 85000,
+        "500g": 195000,
+        "1kg": 370000
+      },
+      "filename": "rb-02-arabica-lokal-v60.jpg",
+      "local_path": "assets/clavicula/roastery/rb-02-arabica-lokal-v60.jpg"
+    },
+    {
+      "sku": "RB-03",
+      "name": "Single Origin Arabica Impor V60 Luar (100% Arabica Impor)",
+      "roast_level": "Light-to-Medium Roast",
+      "tasting_notes": "Wild Berry • Sweet Fruity • Silky Body",
+      "prices": {
+        "200g": 120000,
+        "500g": 280000,
+        "1kg": 520000
+      },
+      "filename": "rb-03-arabica-impor-v60-luar.jpg",
+      "local_path": "assets/clavicula/roastery/rb-03-arabica-impor-v60-luar.jpg"
+    },
+    {
+      "sku": "RB-04",
+      "name": "Fine Robusta Selection (100% Biji Kopi Robusta)",
+      "roast_level": "Medium-Dark Roast",
+      "tasting_notes": "Dark Chocolate • Earthy • Heavy Bold Body (Low Acidity)",
+      "prices": {
+        "200g": 55000,
+        "500g": 125000,
+        "1kg": 230000
+      },
+      "filename": "rb-04-fine-robusta-selection.jpg",
+      "local_path": "assets/clavicula/roastery/rb-04-fine-robusta-selection.jpg"
+    }
+  ]
+}
