@@ -389,6 +389,7 @@ export default function MenuPage() {
   });
 
   const posterImages = [
+    { title: "Poster Resmi: Espresso, Signature & Manual Brew", src: "/assets/clavicula-menu-coffee-poster.jpg" },
     { title: "Cover Clavicula Coffee & Idea", src: "/assets/extracted/clavi_img_0.jpg" },
     { title: "Espresso & Signature Anatomi", src: "/assets/extracted/clavi_img_1.jpg" },
     { title: "Mocktail Coffee & Non Coffee", src: "/assets/extracted/clavi_img_2.jpg" },

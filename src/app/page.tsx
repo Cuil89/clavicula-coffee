@@ -360,13 +360,14 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-5">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3.5 md:gap-4">
             {[
-              { name: "Manubrium", price: 30000, img: "/assets/clavicula/drinks/manubrium.webp", note: "Creamy vanilla layers + rich espresso" },
-              { name: "Acromion", price: 31000, img: "/assets/clavicula/drinks/acromion.webp", note: "Sweet caramelize harmony with roasted beans" },
-              { name: "Costa", price: 31000, img: "/assets/clavicula/drinks/costa.webp", note: "Nutella spread, iced espresso & vanilla ice cream" },
+              { name: "Manubrium", price: 30000, img: "/assets/clavicula/drinks/manubrium.webp", note: "Creamy vanilla layers + double espresso" },
+              { name: "Acromium", price: 31000, img: "/assets/clavicula/drinks/acromion.webp", note: "Caramelized milk with soft regal biscuit" },
+              { name: "Subclavius", price: 31000, img: "/assets/extracted/signature_subclavius.jpg", note: "Velvety foam crown & distinct roast punch" },
               { name: "Trapezius", price: 30000, img: "/assets/clavicula/drinks/trapezius.webp", note: "Strawberry swirl & silky cream fusion" },
               { name: "Sternum", price: 30000, img: "/assets/clavicula/drinks/sternum.webp", note: "Golden caramel drizzle with iced espresso" },
+              { name: "Costa", price: 31000, img: "/assets/clavicula/drinks/costa.webp", note: "Nutella spread, iced espresso & ice cream" },
               { name: "Scapula", price: 29000, img: "/assets/clavicula/drinks/scapula.webp", note: "Pandan klepon coconut milk + espresso" },
             ].map((drink, idx) => (
               <div
@@ -724,13 +725,42 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="lg:col-span-5 relative h-80 sm:h-96 rounded-3xl overflow-hidden border border-white/15 shadow-2xl">
-            <Image
-              src="/assets/extracted/clavi_img_8.jpg"
-              alt="Promo Ngopi Pagi & Sore"
-              fill
-              className="object-cover object-center"
-            />
+          {/* Right Column: Authentic Coffee Menu Chart */}
+          <div className="lg:col-span-5 flex flex-col items-center justify-center">
+            <Link
+              href="/menu"
+              className="group relative w-full max-w-sm aspect-[1/1.41] rounded-[28px] overflow-hidden border border-white/20 shadow-2xl bg-[#1a1410] flex items-center justify-center transition-all duration-500 hover:border-caramel/50 hover:shadow-warm-card hover:-translate-y-1 block"
+            >
+              <Image
+                src="/assets/clavicula-menu-coffee-poster.jpg"
+                alt="Poster Menu Kopi Clavicula - Espresso, Signature &amp; Manual Brew"
+                fill
+                className="object-contain p-2 transition-transform duration-500 group-hover:scale-[1.02]"
+              />
+
+              {/* Top Badge */}
+              <div className="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none z-10">
+                <span className="bg-espresso/90 backdrop-blur-md text-[10px] font-mono tracking-widest text-caramel uppercase font-bold px-3 py-1 rounded-full border border-caramel/30">
+                  COFFEE MENU CHART
+                </span>
+                <span className="bg-caramel text-espresso text-[10px] font-bold px-2.5 py-0.5 rounded-full">
+                  Resmi
+                </span>
+              </div>
+
+              {/* Bottom Hover Overlay */}
+              <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-espresso via-espresso/80 to-transparent flex items-center justify-between opacity-90 group-hover:opacity-100 transition-opacity z-10">
+                <span className="text-xs font-semibold text-white/90">
+                  Buka Menu Lengkap &bull; 120+ Pilihan
+                </span>
+                <span className="text-xs font-bold text-caramel flex items-center gap-1 group-hover:underline">
+                  Buka <ArrowRight size={13} />
+                </span>
+              </div>
+            </Link>
+            <div className="text-[11px] font-mono text-white/50 text-center mt-3 tracking-wider">
+              ✦ Espresso Based &bull; Signature Drinks &bull; Manual Brew
+            </div>
           </div>
         </div>
       </section>
