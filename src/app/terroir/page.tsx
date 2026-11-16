@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Flame, ArrowRight } from "lucide-react";
+import { InstagramIcon } from "@/components/Icons";
 
 export default function TerroirPage() {
 
@@ -26,7 +27,7 @@ export default function TerroirPage() {
 
       {/* Video Loop & Drum Roaster Section */}
       <div className="w-full bg-espresso text-porcelain py-24 px-4 md:px-8 relative overflow-hidden mb-24">
-        <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0 opacity-40">
           <video
             src="/assets/video-roaster-cooling.mp4"
             autoPlay
@@ -39,15 +40,25 @@ export default function TerroirPage() {
 
         <div className="relative z-10 mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
-            <span className="text-xs font-mono tracking-widest text-caramel uppercase mb-2 block">
-              PRESISI EKSTRAKSI &amp; ROASTING
-            </span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-[11px] font-mono uppercase tracking-widest text-caramel mb-3">
+              <Flame size={12} className="text-caramel" /> LIVE ROASTER &bull; SLAWI LAB
+            </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Dedikasi di Balik Mesin Sangrai
             </h2>
-            <p className="text-base text-linen/80 mb-6 font-serif italic leading-relaxed">
+            <p className="text-base text-linen/90 mb-6 font-serif italic leading-relaxed">
               &quot;Dengan latar belakang medis, kami memandang penyangraian kopi seperti ilmu kinetika kimia dan biologis murni—mengontrol kurva panas, airflow, dan Maillard reaction untuk mengeluarkan karakter asli tanah tempat biji itu tumbuh.&quot;
             </p>
+            <div className="mb-6">
+              <a
+                href="https://www.instagram.com/p/DfToychTVCE/"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-chestnut to-caramel text-white text-xs sm:text-sm font-bold shadow-md hover:scale-105 transition-all"
+              >
+                <InstagramIcon size={14} /> Tonton Video Roastery di Instagram Reel ↗
+              </a>
+            </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 border-t border-white/10 pt-6">
               <div>
                 <div className="text-[10px] font-mono tracking-widest text-caramel uppercase mb-1">
