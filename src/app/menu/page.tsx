@@ -1295,38 +1295,29 @@ export default function MenuPage() {
   });
 
   return (
-    <main className="min-h-screen bg-[#100d0a] text-[#f1e7d6] selection:bg-[#e7a93c] selection:text-[#100d0a] overflow-x-hidden">
+    <main className="flex min-h-screen flex-col overflow-hidden bg-linen text-espresso selection:bg-chestnut selection:text-white">
       
-      {/* ─── 1. HERO SECTION (EMBER COFFEE AESTHETIC) ───────────────── */}
-      <section className="relative min-h-[90svh] flex flex-col justify-end overflow-hidden pb-16 pt-36 md:pt-44">
-        {/* Background Image with Cinematic Scrim */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/assets/clavicula/cafe/roastery-bar.webp"
-            alt="Clavicula Coffee Roastery Bar"
-            fill
-            priority
-            className="object-cover object-center brightness-[0.4] contrast-[1.1]"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#100d0a] via-[#100d0a]/75 to-[#100d0a]/85"></div>
-        </div>
+      {/* ─── 1. HERO SECTION (EMBER ARCHITECTURE IN WARM LINEN PALETTE) ─── */}
+      <section className="relative min-h-[85vh] flex flex-col justify-end pt-36 pb-16 px-4 md:px-8 border-b border-chestnut/15">
+        <div className="mx-auto max-w-7xl w-full">
+          {/* Eyebrow Pill */}
+          <div className="inline-flex items-center gap-2 rounded-full border border-chestnut/30 bg-vanilla px-4 py-1.5 mb-6 shadow-sm">
+            <span className="w-2.5 h-2.5 rounded-full bg-chestnut animate-pulse"></span>
+            <span className="text-[11px] font-mono tracking-[0.2em] uppercase text-chestnut font-semibold">
+              ANATOMICAL ROASTERY // SLAWI &amp; CLAVICULA HILLS GUCI
+            </span>
+          </div>
 
-        <div className="container relative z-10 max-w-[1280px] mx-auto px-6 md:px-12">
-          {/* Eyebrow */}
-          <p className="ember-eyebrow mb-4">
-            Small batch · Anatomical roastery · Slawi &amp; Guci Hills
-          </p>
-
-          {/* Title */}
-          <h1 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight text-[#f1e7d6] leading-[0.98] max-w-4xl">
+          {/* Heading */}
+          <h1 className="font-display text-5xl sm:text-7xl md:text-8xl lg:text-[90px] font-black tracking-tight text-espresso leading-[0.92] max-w-4xl">
             Coffee worth<br />
-            <span className="font-serif italic font-normal text-[#e7a93c]">
-              slowing down for
+            <span className="font-serif italic font-normal text-chestnut">
+              slowing down for.
             </span>
           </h1>
 
           {/* Lead Paragraph */}
-          <p className="mt-6 md:mt-8 max-w-2xl text-base sm:text-lg md:text-xl text-[rgba(241,231,214,0.78)] font-light leading-relaxed">
+          <p className="mt-6 md:mt-8 max-w-2xl text-base sm:text-lg text-espresso/80 leading-relaxed font-normal">
             Sebuah ruang perjumpaan antara presisi anatomi tubuh dan seni sangrai kopi nusantara. 
             Dari bar roastery di Slawi hingga sejuknya kabut pegunungan pinus di Guci, 
             nikmati kurasi sajian single origin, anatomical signature series, serta hidangan dapur spesial.
@@ -1336,49 +1327,57 @@ export default function MenuPage() {
           <div className="mt-8 md:mt-10 flex flex-wrap items-center gap-4">
             <a
               href="#lineup"
-              className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full font-semibold text-sm bg-[#e7a93c] text-[#100d0a] hover:bg-[#faf3e6] hover:-translate-y-0.5 transition-all shadow-[0_18px_40px_-16px_rgba(231,169,60,0.5)]"
+              className="rounded-full bg-chestnut px-8 py-3.5 text-sm font-semibold text-white shadow-md hover:bg-chestnut/90 transition-all active:scale-95 flex items-center gap-2"
             >
               Jelajahi The Lineup ⟶
             </a>
             <a
               href="#full-menu"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-sm text-[#f1e7d6] border border-[rgba(241,231,214,0.22)] hover:bg-white/5 transition-all"
+              className="rounded-full border border-chestnut/30 bg-white/80 px-7 py-3.5 text-sm font-semibold text-espresso hover:bg-vanilla transition-all active:scale-95"
             >
               Daftar Menu Lengkap (120+ Menu)
             </a>
             <button
               onClick={() => setShowPosterGallery(!showPosterGallery)}
-              className="inline-flex items-center gap-2 px-6 py-4 rounded-full font-mono text-xs uppercase tracking-wider text-[#e7a93c] border border-[#e7a93c]/30 hover:bg-[#e7a93c]/10 transition-all font-semibold"
+              className="rounded-full border border-chestnut/30 bg-vanilla px-5 py-3.5 text-xs font-mono uppercase tracking-wider text-chestnut font-semibold hover:bg-white transition-all flex items-center gap-2 shadow-sm"
             >
               <BookOpen size={15} />
               {showPosterGallery ? "Tutup Lembar PDF" : "Buku Menu Fisik (PDF 12 Lembar)"}
             </button>
           </div>
 
-          {/* Hero Foot (Ember Style) */}
-          <div className="mt-16 pt-8 border-t border-[rgba(241,231,214,0.12)] flex flex-wrap items-center gap-6 md:gap-10 text-xs font-mono uppercase tracking-wider text-[rgba(241,231,214,0.6)]">
-            <span className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#e7a93c]"></span>
-              Slawi &amp; Guci Hills, Tegal
-            </span>
-            <span className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#e7a93c]"></span>
-              Est. 2020
-            </span>
-            <span className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#e7a93c]"></span>
-              Anatomy &amp; Single Origin
-            </span>
-            <span className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#e7a93c]"></span>
-              100% Halal Certified Kitchen
-            </span>
+          {/* Hero Foot (Key Metrics) */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 w-full border-t border-chestnut/15 pt-8 mt-14">
+            <div className="flex flex-col">
+              <span className="text-3xl font-black text-espresso">88.5+</span>
+              <span className="text-[11px] uppercase tracking-wider text-espresso/60 mt-0.5 font-mono">
+                SCA Cupping Score Arabica
+              </span>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-3xl font-black text-espresso">2 Outlets</span>
+              <span className="text-[11px] uppercase tracking-wider text-espresso/60 mt-0.5 font-mono">
+                Slawi &amp; Guci Hills
+              </span>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-3xl font-black text-espresso">120+ Menu</span>
+              <span className="text-[11px] uppercase tracking-wider text-chestnut mt-0.5 font-mono font-semibold">
+                Sesuai Buku Menu Fisik
+              </span>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-3xl font-black text-espresso">100% Halal</span>
+              <span className="text-[11px] uppercase tracking-wider text-espresso/60 mt-0.5 font-mono">
+                Kitchen &amp; Coffee
+              </span>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ─── 2. MARQUEE STRIP (EMBER COFFEE MARQUEE) ────────────────── */}
-      <section className="bg-[#e7a93c] text-[#100d0a] py-3.5 md:py-4 overflow-hidden border-y border-[#100d0a]/20 select-none font-display font-bold text-base md:text-xl tracking-tight">
+      {/* ─── 2. MARQUEE STRIP (WARM CHESTNUT STRIP) ─────────────────── */}
+      <section className="bg-chestnut text-white py-3.5 md:py-4 overflow-hidden border-y border-chestnut/20 select-none font-display font-bold text-base md:text-lg tracking-wide shadow-sm">
         <div className="animate-ember-marquee flex items-center gap-6 whitespace-nowrap">
           <span>ANATOMICAL COFFEE</span>
           <span className="opacity-60">✶</span>
@@ -1421,30 +1420,34 @@ export default function MenuPage() {
         </div>
       </section>
 
-      {/* ─── 3. MANIFESTO PHILOSOPHY SECTION (EMBER MANIFESTO) ──────── */}
-      <section className="py-20 md:py-28 bg-[#100d0a] border-b border-[rgba(241,231,214,0.08)]">
-        <div className="container max-w-[1280px] mx-auto px-6 md:px-12">
-          <p className="ember-eyebrow mb-6">Why we do this // Filosofi Anatomi</p>
-          <h2 className="font-display text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-[#f1e7d6] leading-[1.1] max-w-4xl">
+      {/* ─── 3. MANIFESTO PHILOSOPHY SECTION ────────────────────────── */}
+      <section className="py-20 md:py-28 bg-linen border-b border-chestnut/15">
+        <div className="mx-auto max-w-7xl px-4 md:px-8">
+          <span className="text-[11px] font-mono tracking-[0.2em] uppercase text-chestnut font-semibold block mb-4">
+            WHY WE DO THIS // FILOSOFI ANATOMI
+          </span>
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-bold text-espresso leading-[1.08] max-w-4xl tracking-tight">
             Kami percaya kopi bukan sekadar tegukan yang berlalu cepat. 
             Seperti clavicula yang menghubungkan kepala, detak dada, dan pergerakan tangan—setiap 
             seduhan kami hadirkan untuk{" "}
-            <span className="text-[#e7a93c]">
+            <span className="font-serif italic font-normal text-chestnut">
               menyatukan ide, percakapan hangat, dan rasa yang jujur.
             </span>
           </h2>
         </div>
       </section>
 
-      {/* ─── 4. THE SIGNATURE LINEUP (EMBER HORIZONTAL TRACK) ────────── */}
-      <section id="lineup" className="bg-[#18130e] py-20 md:py-28 overflow-hidden border-b border-[rgba(241,231,214,0.08)]">
-        <div className="container max-w-[1280px] mx-auto px-6 md:px-12 mb-10">
+      {/* ─── 4. THE SIGNATURE LINEUP (EMBER HORIZONTAL TRACK IN WARM CREAM) ─ */}
+      <section id="lineup" className="bg-[#FAF5ED] py-20 md:py-28 overflow-hidden border-b border-chestnut/15">
+        <div className="mx-auto max-w-7xl px-4 md:px-8 mb-10">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
             <div>
-              <p className="ember-eyebrow mb-3">The Lineup // Curated Roasts &amp; Anatomy</p>
-              <h2 className="font-display text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#f1e7d6] leading-tight">
+              <span className="text-[11px] font-mono tracking-[0.2em] uppercase text-chestnut font-semibold block mb-2">
+                THE SIGNATURE LINEUP // CURATED ROASTS &amp; ANATOMY
+              </span>
+              <h2 className="font-display text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-espresso leading-tight">
                 Delapan Sajian Ikonik,<br />
-                <span className="font-serif italic font-normal text-[#e7a93c]">
+                <span className="font-serif italic font-normal text-chestnut">
                   Ragam Karakter Rasa
                 </span>
               </h2>
@@ -1452,22 +1455,22 @@ export default function MenuPage() {
 
             <div className="flex items-center gap-4 self-start lg:self-auto">
               {/* Hint Arrow */}
-              <div className="hidden sm:inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[rgba(241,231,214,0.6)] mr-2">
+              <div className="hidden sm:inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-espresso/60 mr-2">
                 <span>Geser untuk melihat</span>
-                <span className="text-[#e7a93c] animate-ember-nudge">⟶</span>
+                <span className="text-chestnut animate-ember-nudge">⟶</span>
               </div>
               {/* Controls */}
               <button
                 onClick={() => scrollLineup("left")}
                 aria-label="Scroll left"
-                className="w-12 h-12 rounded-full border border-[rgba(241,231,214,0.18)] bg-[#221b13] text-[#f1e7d6] flex items-center justify-center hover:bg-[#e7a93c] hover:text-[#100d0a] transition-all"
+                className="w-12 h-12 rounded-full border border-chestnut/25 bg-white text-espresso flex items-center justify-center hover:bg-chestnut hover:text-white shadow-sm transition-all"
               >
                 <ChevronLeft size={20} />
               </button>
               <button
                 onClick={() => scrollLineup("right")}
                 aria-label="Scroll right"
-                className="w-12 h-12 rounded-full border border-[rgba(241,231,214,0.18)] bg-[#221b13] text-[#f1e7d6] flex items-center justify-center hover:bg-[#e7a93c] hover:text-[#100d0a] transition-all"
+                className="w-12 h-12 rounded-full border border-chestnut/25 bg-white text-espresso flex items-center justify-center hover:bg-chestnut hover:text-white shadow-sm transition-all"
               >
                 <ChevronRight size={20} />
               </button>
@@ -1478,15 +1481,15 @@ export default function MenuPage() {
         {/* Horizontal Track Container */}
         <div
           ref={lineupTrackRef}
-          className="flex gap-6 overflow-x-auto px-6 md:px-12 pb-6 scroll-smooth snap-x snap-mandatory scrollbar-thin max-w-[100vw]"
+          className="flex gap-6 overflow-x-auto px-4 md:px-8 pb-6 scroll-smooth snap-x snap-mandatory scrollbar-thin max-w-[100vw]"
         >
           {SIGNATURE_LINEUP.map((sig) => (
             <article
               key={sig.index}
-              className="w-[300px] sm:w-[350px] md:w-[380px] shrink-0 snap-start bg-[#221b13] border border-[rgba(241,231,214,0.14)] rounded-[1.75rem] overflow-hidden hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between group shadow-xl"
+              className="w-[310px] sm:w-[350px] md:w-[370px] shrink-0 snap-start bg-white border border-chestnut/20 rounded-[2rem] overflow-hidden hover:-translate-y-2 hover:shadow-warm-card transition-all duration-300 flex flex-col justify-between shadow-sm group"
             >
               {/* Media Container (Ember 4:5 Aspect Ratio) */}
-              <div className="relative aspect-[4/5] w-full bg-[#18130e] overflow-hidden">
+              <div className="relative aspect-[4/5] w-full bg-[#FAF6F0] overflow-hidden border-b border-chestnut/10">
                 <Image
                   src={sig.image}
                   alt={sig.name}
@@ -1497,21 +1500,20 @@ export default function MenuPage() {
                       : "object-cover"
                   }`}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#221b13] via-transparent to-black/20 pointer-events-none"></div>
 
                 {/* Bottom Left Tag */}
-                <span className="absolute bottom-4 left-4 bg-[#100d0a]/85 backdrop-blur-md text-[#f1e7d6] font-mono text-[10px] tracking-wider uppercase px-3 py-1.5 rounded-full border border-white/10">
+                <span className="absolute bottom-4 left-4 bg-espresso/85 backdrop-blur-md text-white font-mono text-[10px] tracking-wider uppercase px-3 py-1.5 rounded-full border border-white/20">
                   {sig.category}
                 </span>
 
                 {/* Top Right Index (01, 02...) */}
-                <span className="absolute top-4 right-4 font-display font-extrabold text-2xl text-white/90 drop-shadow-md">
+                <span className="absolute top-4 right-4 font-display font-black text-2xl text-espresso/80 bg-white/90 backdrop-blur-md px-3 py-1 rounded-2xl border border-chestnut/15 shadow-sm">
                   {sig.index}
                 </span>
 
                 {/* Badge if present */}
                 {sig.badge && (
-                  <span className="absolute top-4 left-4 bg-[#e7a93c] text-[#100d0a] font-mono font-bold text-[9px] uppercase tracking-wider px-2.5 py-1 rounded-full shadow-md">
+                  <span className="absolute top-4 left-4 bg-chestnut text-white font-mono font-bold text-[9px] uppercase tracking-wider px-2.5 py-1 rounded-full shadow-sm">
                     {sig.badge}
                   </span>
                 )}
@@ -1521,21 +1523,21 @@ export default function MenuPage() {
               <div className="p-6 md:p-7 flex flex-col justify-between flex-1">
                 <div>
                   <div className="flex items-baseline justify-between gap-3 mb-2">
-                    <h3 className="font-display text-2xl font-bold text-[#f1e7d6] group-hover:text-[#e7a93c] transition-colors leading-tight">
+                    <h3 className="font-display text-2xl font-black text-espresso group-hover:text-chestnut transition-colors leading-tight">
                       {sig.name}
                     </h3>
-                    <span className="font-mono text-lg font-bold text-[#e7a93c] whitespace-nowrap">
+                    <span className="font-mono text-lg font-bold text-chestnut whitespace-nowrap">
                       Rp {(sig.price / 1000).toLocaleString("id-ID")}.000
                     </span>
                   </div>
 
-                  <p className="text-sm text-[#f1e7d6] font-medium leading-relaxed mb-3">
+                  <p className="text-sm text-espresso/85 font-medium leading-relaxed mb-3">
                     {sig.notes}
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-[rgba(241,231,214,0.1)] mt-auto">
-                  <p className="text-xs text-[rgba(241,231,214,0.58)] font-serif italic leading-relaxed">
+                <div className="pt-3 border-t border-chestnut/10 mt-auto">
+                  <p className="text-xs text-espresso/60 font-serif italic leading-relaxed">
                     {sig.concept}
                   </p>
                 </div>
@@ -1545,24 +1547,24 @@ export default function MenuPage() {
         </div>
       </section>
 
-      {/* ─── 5. THE RITUAL (EMBER COFFEE RITUAL / STEPS) ────────────── */}
-      <section id="ritual" className="py-20 md:py-28 bg-[#100d0a] border-b border-[rgba(241,231,214,0.08)]">
-        <div className="container max-w-[1280px] mx-auto px-6 md:px-12">
+      {/* ─── 5. THE RITUAL (EDITORIAL 2-COLUMN) ─────────────────────── */}
+      <section id="ritual" className="py-20 md:py-28 bg-linen border-b border-chestnut/15">
+        <div className="mx-auto max-w-7xl px-4 md:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             {/* Left Media */}
-            <div className="lg:col-span-5 relative aspect-[3/4] rounded-[1.75rem] overflow-hidden border border-[rgba(241,231,214,0.14)] shadow-2xl">
+            <div className="lg:col-span-5 relative aspect-[3/4] rounded-[2rem] overflow-hidden border border-chestnut/25 shadow-xl bg-white">
               <Image
                 src="/assets/clavicula/cafe/atmosphere-night.webp"
                 alt="Slow bar pour and coffee ritual at Clavicula"
                 fill
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#100d0a]/90 via-transparent to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-espresso/85 via-transparent to-transparent"></div>
               <div className="absolute bottom-6 left-6 right-6">
-                <span className="inline-block px-3 py-1 rounded-full bg-[#e7a93c] text-[#100d0a] font-mono text-[10px] font-bold uppercase tracking-wider mb-2">
+                <span className="inline-block px-3 py-1 rounded-full bg-chestnut text-white font-mono text-[10px] font-bold uppercase tracking-wider mb-2">
                   Slow Bar &amp; Roastery
                 </span>
-                <p className="text-xs font-serif italic text-[#f1e7d6]/80">
+                <p className="text-xs font-serif italic text-white/90">
                   Diseduh dengan presisi rasio, temperatur, dan waktu demi memunculkan potensi terbaik biji kopi.
                 </p>
               </div>
@@ -1570,63 +1572,65 @@ export default function MenuPage() {
 
             {/* Right Text */}
             <div className="lg:col-span-7">
-              <p className="ember-eyebrow mb-3">The Ritual // Seni Menikmati Kopi</p>
-              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#f1e7d6] leading-tight mb-8">
+              <span className="text-[11px] font-mono tracking-[0.2em] uppercase text-chestnut font-semibold block mb-2">
+                THE RITUAL // SENI MENIKMATI KOPI
+              </span>
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-espresso leading-tight mb-8">
                 Empat Langkah Menikmati Sajian Clavicula
               </h2>
 
               <ol className="space-y-6">
-                <li className="flex gap-5 pb-6 border-b border-[rgba(241,231,214,0.12)]">
-                  <span className="font-display text-2xl md:text-3xl font-extrabold text-[#e7a93c] min-w-[2.5rem]">
+                <li className="flex gap-5 pb-6 border-b border-chestnut/15">
+                  <span className="font-display text-2xl md:text-3xl font-extrabold text-chestnut min-w-[2.5rem]">
                     01
                   </span>
                   <div>
-                    <h3 className="font-display text-xl font-bold text-[#f1e7d6] mb-1">
+                    <h3 className="font-display text-xl font-bold text-espresso mb-1">
                       Hirup Aromanya
                     </h3>
-                    <p className="text-sm text-[rgba(241,231,214,0.65)] leading-relaxed">
+                    <p className="text-sm text-espresso/70 leading-relaxed">
                       Sebelum menyesap, dekatkan cangkir dan hirup aroma karamel, rempah buah, atau wangi floral yang terperangkap dalam crema espresso murni.
                     </p>
                   </div>
                 </li>
 
-                <li className="flex gap-5 pb-6 border-b border-[rgba(241,231,214,0.12)]">
-                  <span className="font-display text-2xl md:text-3xl font-extrabold text-[#e7a93c] min-w-[2.5rem]">
+                <li className="flex gap-5 pb-6 border-b border-chestnut/15">
+                  <span className="font-display text-2xl md:text-3xl font-extrabold text-chestnut min-w-[2.5rem]">
                     02
                   </span>
                   <div>
-                    <h3 className="font-display text-xl font-bold text-[#f1e7d6] mb-1">
+                    <h3 className="font-display text-xl font-bold text-espresso mb-1">
                       Sesap Layer Pertama
                     </h3>
-                    <p className="text-sm text-[rgba(241,231,214,0.65)] leading-relaxed">
+                    <p className="text-sm text-espresso/70 leading-relaxed">
                       Untuk menu anatomi ber-foam seperti Subclavius atau Manubrium, sesap dahulu busa halusnya sebelum diaduk agar seluruh lapisan rasa terasa utuh.
                     </p>
                   </div>
                 </li>
 
-                <li className="flex gap-5 pb-6 border-b border-[rgba(241,231,214,0.12)]">
-                  <span className="font-display text-2xl md:text-3xl font-extrabold text-[#e7a93c] min-w-[2.5rem]">
+                <li className="flex gap-5 pb-6 border-b border-chestnut/15">
+                  <span className="font-display text-2xl md:text-3xl font-extrabold text-chestnut min-w-[2.5rem]">
                     03
                   </span>
                   <div>
-                    <h3 className="font-display text-xl font-bold text-[#f1e7d6] mb-1">
+                    <h3 className="font-display text-xl font-bold text-espresso mb-1">
                       Padukan dengan Santapan Dapur
                     </h3>
-                    <p className="text-sm text-[rgba(241,231,214,0.65)] leading-relaxed">
+                    <p className="text-sm text-espresso/70 leading-relaxed">
                       Seduhan kopi semakin sempurna disandingkan dengan gurihnya Clavicula Tenderloin Steak lada hitam, semangkuk tomyam hangat, atau camilan manis croffle.
                     </p>
                   </div>
                 </li>
 
                 <li className="flex gap-5">
-                  <span className="font-display text-2xl md:text-3xl font-extrabold text-[#e7a93c] min-w-[2.5rem]">
+                  <span className="font-display text-2xl md:text-3xl font-extrabold text-chestnut min-w-[2.5rem]">
                     04
                   </span>
                   <div>
-                    <h3 className="font-display text-xl font-bold text-[#f1e7d6] mb-1">
+                    <h3 className="font-display text-xl font-bold text-espresso mb-1">
                       Duduk &amp; Bertukar Ide
                     </h3>
-                    <p className="text-sm text-[rgba(241,231,214,0.65)] leading-relaxed">
+                    <p className="text-sm text-espresso/70 leading-relaxed">
                       Biarkan waktu melambat. Ruang kafe kami di Slawi dan pemandangan pinus Guci dirancang agar Anda bisa berdiskusi, bekerja santai, atau melepas penat bersama kerabat.
                     </p>
                   </div>
@@ -1637,42 +1641,42 @@ export default function MenuPage() {
         </div>
       </section>
 
-      {/* ─── 6. STATS SECTION (EMBER STATS) ─────────────────────────── */}
-      <section className="bg-[#18130e] py-16 border-b border-[rgba(241,231,214,0.08)]">
-        <div className="container max-w-[1280px] mx-auto px-6 md:px-12">
+      {/* ─── 6. THE STATS SECTION ───────────────────────────────────── */}
+      <section className="bg-vanilla/40 py-16 border-b border-chestnut/15">
+        <div className="mx-auto max-w-7xl px-4 md:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="border-l border-[rgba(241,231,214,0.15)] pl-5">
-              <span className="font-display font-extrabold text-4xl md:text-5xl text-[#e7a93c] block leading-none">
+            <div className="border-l border-chestnut/20 pl-5">
+              <span className="font-display font-black text-4xl md:text-5xl text-chestnut block leading-none">
                 88.5+
               </span>
-              <p className="mt-2 text-xs md:text-sm text-[rgba(241,231,214,0.6)] font-mono uppercase tracking-wider">
+              <p className="mt-2 text-xs md:text-sm text-espresso/60 font-mono uppercase tracking-wider">
                 SCA Cupping Score Arabica
               </p>
             </div>
 
-            <div className="border-l border-[rgba(241,231,214,0.15)] pl-5">
-              <span className="font-display font-extrabold text-4xl md:text-5xl text-[#e7a93c] block leading-none">
+            <div className="border-l border-chestnut/20 pl-5">
+              <span className="font-display font-black text-4xl md:text-5xl text-chestnut block leading-none">
                 2
               </span>
-              <p className="mt-2 text-xs md:text-sm text-[rgba(241,231,214,0.6)] font-mono uppercase tracking-wider">
+              <p className="mt-2 text-xs md:text-sm text-espresso/60 font-mono uppercase tracking-wider">
                 Sanctuary Outlet (Slawi &amp; Guci)
               </p>
             </div>
 
-            <div className="border-l border-[rgba(241,231,214,0.15)] pl-5">
-              <span className="font-display font-extrabold text-4xl md:text-5xl text-[#e7a93c] block leading-none">
+            <div className="border-l border-chestnut/20 pl-5">
+              <span className="font-display font-black text-4xl md:text-5xl text-chestnut block leading-none">
                 120+
               </span>
-              <p className="mt-2 text-xs md:text-sm text-[rgba(241,231,214,0.6)] font-mono uppercase tracking-wider">
+              <p className="mt-2 text-xs md:text-sm text-espresso/60 font-mono uppercase tracking-wider">
                 Menu Minuman &amp; Santapan Dapur
               </p>
             </div>
 
-            <div className="border-l border-[rgba(241,231,214,0.15)] pl-5">
-              <span className="font-display font-extrabold text-4xl md:text-5xl text-[#e7a93c] block leading-none">
+            <div className="border-l border-chestnut/20 pl-5">
+              <span className="font-display font-black text-4xl md:text-5xl text-chestnut block leading-none">
                 100%
               </span>
-              <p className="mt-2 text-xs md:text-sm text-[rgba(241,231,214,0.6)] font-mono uppercase tracking-wider">
+              <p className="mt-2 text-xs md:text-sm text-espresso/60 font-mono uppercase tracking-wider">
                 Halal Certified Kitchen
               </p>
             </div>
@@ -1681,29 +1685,31 @@ export default function MenuPage() {
       </section>
 
       {/* ─── 7. THE COMPLETE CAFE MENU (ALL 120+ ITEMS FROM PDF) ─────── */}
-      <section id="full-menu" className="py-20 md:py-28 bg-[#100d0a] scroll-mt-24">
-        <div className="container max-w-[1280px] mx-auto px-6 md:px-12">
+      <section id="full-menu" className="py-20 md:py-28 bg-linen scroll-mt-24">
+        <div className="mx-auto max-w-7xl px-4 md:px-8">
           
           {/* Section Header */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 pb-6 border-b border-[rgba(241,231,214,0.12)]">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 pb-6 border-b border-chestnut/15">
             <div>
-              <p className="ember-eyebrow mb-2">Daftar Menu Resmi // Buku Menu Kafe Lengkap</p>
-              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#f1e7d6]">
+              <span className="text-[11px] font-mono tracking-[0.2em] uppercase text-chestnut font-semibold block mb-2">
+                DAFTAR MENU RESMI // BUKU MENU KAFE LENGKAP
+              </span>
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-espresso">
                 The Complete Cafe Menu
               </h2>
-              <p className="mt-2 text-xs md:text-sm text-[rgba(241,231,214,0.6)] font-serif italic">
+              <p className="mt-2 text-xs md:text-sm text-espresso/70 font-serif italic">
                 Seluruh hidangan dan seduhan resmi dari 8 halaman buku menu fisik kafe Slawi &amp; Guci. Semua harga sudah nett termasuk PPN.
               </p>
             </div>
 
             {/* View Mode Switcher */}
-            <div className="flex items-center gap-2 self-start md:self-auto bg-[#18130e] p-1.5 rounded-full border border-[rgba(241,231,214,0.18)] shadow-inner">
+            <div className="flex items-center gap-2 self-start md:self-auto bg-white p-1.5 rounded-full border border-chestnut/20 shadow-sm">
               <button
                 onClick={() => setViewMode("card")}
                 className={`px-5 py-2 rounded-full text-xs font-semibold transition-all ${
                   viewMode === "card"
-                    ? "bg-[#e7a93c] text-[#100d0a] shadow-md"
-                    : "text-[rgba(241,231,214,0.7)] hover:text-[#f1e7d6]"
+                    ? "bg-chestnut text-white shadow-sm"
+                    : "text-espresso/70 hover:text-espresso"
                 }`}
               >
                 Kartu Bergambar (Ember View)
@@ -1712,8 +1718,8 @@ export default function MenuPage() {
                 onClick={() => setViewMode("paper")}
                 className={`px-5 py-2 rounded-full text-xs font-semibold transition-all ${
                   viewMode === "paper"
-                    ? "bg-[#e7a93c] text-[#100d0a] shadow-md"
-                    : "text-[rgba(241,231,214,0.7)] hover:text-[#f1e7d6]"
+                    ? "bg-chestnut text-white shadow-sm"
+                    : "text-espresso/70 hover:text-espresso"
                 }`}
               >
                 Format Buku Menu (Paper)
@@ -1723,19 +1729,19 @@ export default function MenuPage() {
 
           {/* Official Scanned PDF Posters Drawer */}
           {showPosterGallery && (
-            <div className="mb-14 p-6 md:p-8 bg-[#18130e] rounded-3xl border border-[#e7a93c]/30 shadow-2xl animate-in fade-in duration-300">
+            <div className="mb-14 p-6 md:p-8 bg-vanilla/80 rounded-3xl border border-chestnut/20 shadow-sm animate-in fade-in duration-300">
               <div className="flex items-center justify-between mb-6">
                 <div>
-                  <h3 className="font-display text-lg md:text-xl font-bold text-[#f1e7d6]">
+                  <h3 className="font-display text-lg md:text-xl font-bold text-espresso">
                     Lembar Dokumen Menu Asli PDF (12 Lembar Kafe)
                   </h3>
-                  <p className="text-xs text-[rgba(241,231,214,0.6)] font-serif italic">
+                  <p className="text-xs text-espresso/60 font-serif italic">
                     Arsip visual dokumen resmi dari meja kasir dan dapur Clavicula Slawi &amp; Guci Hills
                   </p>
                 </div>
                 <button
                   onClick={() => setShowPosterGallery(false)}
-                  className="text-xs font-mono text-[#e7a93c] hover:underline font-semibold"
+                  className="text-xs font-mono text-chestnut hover:underline font-semibold"
                 >
                   Tutup Galeri
                 </button>
@@ -1745,7 +1751,7 @@ export default function MenuPage() {
                 {POSTER_GALLERY.map((poster, idx) => (
                   <div
                     key={idx}
-                    className="snap-start shrink-0 w-64 md:w-72 bg-[#221b13] rounded-2xl overflow-hidden border border-[rgba(241,231,214,0.14)] shadow-md"
+                    className="snap-start shrink-0 w-64 md:w-72 bg-white rounded-2xl overflow-hidden border border-chestnut/15 shadow-sm"
                   >
                     <div className="relative aspect-[1/1.41] bg-black">
                       <Image
@@ -1755,15 +1761,15 @@ export default function MenuPage() {
                         className="object-contain"
                       />
                     </div>
-                    <div className="p-3 bg-[#18130e] border-t border-[rgba(241,231,214,0.1)]">
-                      <span className="text-xs font-bold text-[#f1e7d6] line-clamp-1 block">
+                    <div className="p-3 bg-white border-t border-chestnut/10">
+                      <span className="text-xs font-bold text-espresso line-clamp-1 block">
                         {poster.title}
                       </span>
                       <a
                         href={poster.src}
                         target="_blank"
                         rel="noreferrer"
-                        className="text-[10px] font-mono text-[#e7a93c] hover:underline flex items-center gap-1 mt-1 font-semibold"
+                        className="text-[10px] font-mono text-chestnut hover:underline flex items-center gap-1 mt-1 font-semibold"
                       >
                         Buka Resolusi Penuh →
                       </a>
@@ -1779,18 +1785,18 @@ export default function MenuPage() {
             <div className="relative w-full sm:w-80">
               <Search
                 size={16}
-                className="absolute left-4 top-1/2 -translate-y-1/2 text-[rgba(241,231,214,0.4)]"
+                className="absolute left-4 top-1/2 -translate-y-1/2 text-espresso/40"
               />
               <input
                 type="text"
                 placeholder="Cari menu, kopi, steak, tomyam, camilan..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-[#18130e] rounded-full pl-11 pr-4 py-3 text-xs md:text-sm border border-[rgba(241,231,214,0.18)] text-[#f1e7d6] placeholder-[rgba(241,231,214,0.4)] focus:outline-none focus:border-[#e7a93c] transition-colors shadow-inner"
+                className="w-full bg-white rounded-full pl-11 pr-4 py-3 text-xs md:text-sm border border-chestnut/20 text-espresso placeholder-espresso/40 focus:outline-none focus:border-chestnut transition-colors shadow-sm"
               />
             </div>
-            <div className="text-xs font-mono text-[rgba(241,231,214,0.6)] self-center">
-              Menampilkan <span className="font-bold text-[#e7a93c]">{filteredItems.length}</span> pilihan menu
+            <div className="text-xs font-mono text-espresso/60 self-center">
+              Menampilkan <span className="font-bold text-chestnut">{filteredItems.length}</span> pilihan menu
             </div>
           </div>
 
@@ -1802,8 +1808,8 @@ export default function MenuPage() {
                 onClick={() => setActiveCategory(cat)}
                 className={`px-4 py-2 rounded-full text-xs font-semibold transition-all duration-200 ${
                   activeCategory === cat
-                    ? "bg-[#e7a93c] text-[#100d0a] shadow-md scale-105"
-                    : "bg-[#18130e] text-[rgba(241,231,214,0.75)] hover:bg-[#221b13] border border-[rgba(241,231,214,0.14)]"
+                    ? "bg-chestnut text-white shadow-md scale-105"
+                    : "bg-white text-espresso/75 hover:bg-vanilla border border-chestnut/15"
                 }`}
               >
                 {cat}
@@ -1811,10 +1817,10 @@ export default function MenuPage() {
             ))}
           </div>
 
-          {/* ─── DISPLAY: CARD VIEW (EMBER COFFEE DARK CARDS) ───────── */}
+          {/* ─── DISPLAY: CARD VIEW (EMBER COFFEE LUXURY LIGHT CARDS) ──── */}
           {filteredItems.length === 0 ? (
-            <div className="py-20 text-center text-[rgba(241,231,214,0.5)] bg-[#18130e] rounded-3xl border border-[rgba(241,231,214,0.14)] p-8">
-              <p className="font-serif italic text-2xl text-[#f1e7d6] mb-2">Menu tidak ditemukan</p>
+            <div className="py-20 text-center text-espresso/50 bg-white rounded-3xl border border-chestnut/15 p-8 shadow-sm">
+              <p className="font-serif italic text-2xl text-espresso mb-2">Menu tidak ditemukan</p>
               <p className="text-xs">Coba gunakan kata kunci pencarian yang lain.</p>
             </div>
           ) : viewMode === "card" ? (
@@ -1822,11 +1828,11 @@ export default function MenuPage() {
               {filteredItems.map((item) => (
                 <article
                   key={item.id}
-                  className="group bg-[#18130e] rounded-3xl p-5 border border-[rgba(241,231,214,0.12)] hover:border-[#e7a93c]/50 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between shadow-lg"
+                  className="group bg-white rounded-3xl p-5 border border-chestnut/15 hover:border-chestnut/40 hover:shadow-warm-card hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between shadow-sm"
                 >
                   <div>
                     {item.image ? (
-                      <div className="relative w-full aspect-[4/3] mb-4 rounded-2xl overflow-hidden bg-[#221b13] border border-[rgba(241,231,214,0.08)]">
+                      <div className="relative w-full aspect-[4/3] mb-4 rounded-2xl overflow-hidden bg-[#FAF6F0] border border-chestnut/10">
                         <Image
                           src={item.image}
                           alt={item.name}
@@ -1837,20 +1843,19 @@ export default function MenuPage() {
                               : "object-cover"
                           }`}
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#18130e]/80 via-transparent to-transparent pointer-events-none"></div>
                         {item.badge && (
-                          <span className="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-[#e7a93c] text-[#100d0a] font-mono text-[9px] font-bold uppercase tracking-wider shadow-sm">
+                          <span className="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-chestnut text-white font-mono text-[9px] font-bold uppercase tracking-wider shadow-sm">
                             {item.badge}
                           </span>
                         )}
                       </div>
                     ) : (
-                      <div className="w-full h-20 mb-4 rounded-2xl bg-[#221b13] border border-[rgba(241,231,214,0.08)] flex items-center justify-between px-4">
-                        <span className="text-[11px] font-mono tracking-wider text-[#e7a93c] uppercase">
+                      <div className="w-full h-20 mb-4 rounded-2xl bg-vanilla/40 border border-chestnut/10 flex items-center justify-between px-4">
+                        <span className="text-[11px] font-mono tracking-wider text-chestnut uppercase font-semibold">
                           ✦ {item.category}
                         </span>
                         {item.badge && (
-                          <span className="px-2 py-0.5 rounded bg-[#e7a93c]/20 text-[#e7a93c] font-mono text-[9px] font-bold uppercase">
+                          <span className="px-2 py-0.5 rounded bg-chestnut/15 text-chestnut font-mono text-[9px] font-bold uppercase">
                             {item.badge}
                           </span>
                         )}
@@ -1858,52 +1863,52 @@ export default function MenuPage() {
                     )}
 
                     <div className="flex items-start justify-between gap-3 mb-2">
-                      <h4 className="font-display text-lg font-bold text-[#f1e7d6] group-hover:text-[#e7a93c] transition-colors leading-snug">
+                      <h4 className="font-display text-lg font-bold text-espresso group-hover:text-chestnut transition-colors leading-snug">
                         {item.name}
                       </h4>
-                      <span className="font-mono text-base font-bold text-[#e7a93c] whitespace-nowrap">
+                      <span className="font-mono text-base font-bold text-chestnut whitespace-nowrap">
                         Rp {(item.price / 1000).toLocaleString("id-ID")}.000
                       </span>
                     </div>
 
-                    <p className="text-xs text-[rgba(241,231,214,0.7)] leading-relaxed mb-4">
+                    <p className="text-xs text-espresso/70 leading-relaxed mb-4">
                       {item.notes}
                     </p>
                   </div>
 
-                  <div className="pt-3 border-t border-[rgba(241,231,214,0.08)] flex items-center justify-between text-[11px] font-mono text-[rgba(241,231,214,0.5)]">
+                  <div className="pt-3 border-t border-chestnut/10 flex items-center justify-between text-[11px] font-mono text-espresso/50">
                     <span>{item.category}</span>
-                    <span className="text-[#e7a93c] font-semibold">Tersedia di Outlet</span>
+                    <span className="text-chestnut font-semibold">Tersedia di Outlet</span>
                   </div>
                 </article>
               ))}
             </div>
           ) : (
             /* ─── DISPLAY: PAPER STYLE MENU (CLASSIC EDITORIAL LIST) ─── */
-            <div className="bg-[#18130e] rounded-3xl p-6 md:p-10 border border-[rgba(241,231,214,0.12)] shadow-xl divide-y divide-[rgba(241,231,214,0.08)]">
+            <div className="bg-white rounded-3xl p-6 md:p-10 border border-chestnut/20 shadow-sm divide-y divide-chestnut/15">
               {filteredItems.map((item) => (
                 <div
                   key={item.id}
-                  className="py-4 first:pt-0 last:pb-0 flex flex-col sm:flex-row sm:items-baseline justify-between gap-3 hover:bg-white/5 px-4 rounded-xl transition-colors"
+                  className="py-4 first:pt-0 last:pb-0 flex flex-col sm:flex-row sm:items-baseline justify-between gap-3 hover:bg-vanilla/40 px-4 rounded-xl transition-colors"
                 >
                   <div className="flex-1 pr-4">
                     <div className="flex items-center gap-2">
-                      <h4 className="font-display text-base font-bold text-[#f1e7d6] leading-snug">
+                      <h4 className="font-display text-base font-bold text-espresso leading-snug">
                         {item.name}
                       </h4>
                       {item.badge && (
-                        <span className="px-2 py-0.5 rounded text-[9px] font-mono uppercase bg-[#e7a93c] text-[#100d0a] font-bold">
+                        <span className="px-2 py-0.5 rounded text-[9px] font-mono uppercase bg-vanilla text-chestnut font-bold border border-chestnut/20">
                           {item.badge}
                         </span>
                       )}
                     </div>
-                    <p className="text-xs text-[rgba(241,231,214,0.6)] font-serif italic mt-0.5">
+                    <p className="text-xs text-espresso/60 font-serif italic mt-0.5">
                       {item.notes}
                     </p>
                   </div>
 
                   <div className="sm:text-right shrink-0">
-                    <span className="font-mono text-base font-bold text-[#e7a93c]">
+                    <span className="font-mono text-base font-bold text-chestnut">
                       Rp {(item.price / 1000).toLocaleString("id-ID")}.000
                     </span>
                   </div>
@@ -1912,46 +1917,47 @@ export default function MenuPage() {
             </div>
           )}
 
-          {/* ─── 8. QUOTE ATMOSPHERE SECTION (EMBER QUOTE) ───────────── */}
-          <div className="mt-24 relative rounded-[2rem] overflow-hidden border border-[rgba(241,231,214,0.14)] p-10 md:p-16 text-center shadow-2xl">
+          {/* ─── 8. QUOTE ATMOSPHERE SECTION ─────────────────────────── */}
+          <div className="mt-24 relative rounded-[2.5rem] overflow-hidden bg-espresso text-white p-10 md:p-16 text-center shadow-2xl">
             <div className="absolute inset-0 z-0">
               <Image
                 src="/assets/clavicula/cafe/atmosphere-night.webp"
                 alt="Clavicula Coffee & Idea Atmosphere"
                 fill
-                className="object-cover brightness-[0.25]"
+                className="object-cover opacity-20"
               />
-              <div className="absolute inset-0 bg-[#100d0a]/70"></div>
             </div>
 
             <div className="relative z-10 max-w-3xl mx-auto">
-              <p className="ember-eyebrow mb-6 mx-auto justify-center">The Roastery Philosophy</p>
-              <blockquote className="font-display text-2xl sm:text-3xl md:text-4xl font-medium text-[#f1e7d6] leading-snug tracking-tight mb-6">
+              <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-[#D4A055] font-semibold mb-4 block">
+                THE ROASTERY PHILOSOPHY
+              </span>
+              <blockquote className="font-display text-2xl sm:text-3xl md:text-4xl font-medium text-white leading-snug tracking-tight mb-6">
                 &ldquo;Kopi yang baik tidak pernah rumit. Ia lahir dari ketelitian merawat setiap detail kecil rasa—dari petani kebun, mesin sangrai, hingga senyum di cangkir Anda.&rdquo;
               </blockquote>
-              <cite className="font-serif italic text-sm text-[#e7a93c] block not-italic">
+              <cite className="font-serif italic text-sm text-[#D4A055] block not-italic">
                 — Clavicula Coffee &amp; Idea, Slawi &amp; Guci Hills
               </cite>
             </div>
           </div>
 
           {/* ─── 9. DINE-IN RESERVATION FOOTER CTA ──────────────────── */}
-          <div className="mt-16 bg-[#18130e] border border-[rgba(241,231,214,0.15)] text-[#f1e7d6] rounded-3xl p-8 md:p-12 text-center relative overflow-hidden shadow-2xl">
+          <div className="mt-16 bg-gradient-to-r from-espresso via-chestnut to-espresso text-white rounded-3xl p-8 md:p-12 text-center relative overflow-hidden shadow-xl">
             <div className="relative z-10 max-w-2xl mx-auto">
-              <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#e7a93c] mb-3 block font-semibold">
+              <span className="text-xs font-mono uppercase tracking-[0.2em] text-caramel mb-3 block font-semibold">
                 DINE-IN · SLOW BAR · OUTDOOR SANCTUARY
               </span>
               <h3 className="font-display text-2xl md:text-4xl font-bold mb-4">
                 Nikmati Sajian Langsung di Meja Anda
               </h3>
-              <p className="text-xs md:text-sm text-[rgba(241,231,214,0.7)] font-serif italic mb-8 leading-relaxed">
+              <p className="text-xs md:text-sm text-white/80 font-serif italic mb-8 leading-relaxed">
                 Kunjungi outlet Clavicula Slawi untuk suasana roastery bar &amp; ruang diskusi kreatif, 
                 atau nikmati sejuknya kabut pegunungan pinus di Clavicula Hills Guci.
               </p>
               <div className="flex flex-wrap items-center justify-center gap-4">
                 <Link
                   href="/reserve"
-                  className="px-8 py-3.5 rounded-full bg-[#e7a93c] text-[#100d0a] text-xs font-bold hover:bg-[#faf3e6] transition-all shadow-md hover:-translate-y-0.5"
+                  className="px-8 py-3.5 rounded-full bg-caramel text-espresso text-xs font-bold hover:bg-caramel/90 transition-all shadow-md hover:-translate-y-0.5"
                 >
                   Reservasi Meja Sekarang →
                 </Link>
@@ -1959,7 +1965,7 @@ export default function MenuPage() {
                   href="https://wa.me/6287733444426?text=Halo%20Clavicula%2C%20saya%20mau%20tanya%20seputar%20menu%20dan%20kunjungan"
                   target="_blank"
                   rel="noreferrer"
-                  className="px-8 py-3.5 rounded-full border border-[rgba(241,231,214,0.25)] text-[#f1e7d6] text-xs font-semibold hover:bg-white/10 transition-all"
+                  className="px-8 py-3.5 rounded-full border border-white/30 text-white text-xs font-semibold hover:bg-white/10 transition-all"
                 >
                   Hubungi Barista via WhatsApp
                 </a>
