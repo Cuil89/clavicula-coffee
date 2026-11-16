@@ -99,12 +99,12 @@ const SIGNATURE_LINEUP = [
   {
     index: "07",
     name: "Clavicula Tenderloin Steak",
-    price: 73000,
+    price: 80000,
     category: "Special Hot Kitchen",
-    notes: "Daging sapi tenderloin empuk · Saus spesial lada hitam · Mashed potato & sayur",
-    concept: "Main Course Spesial Dapur Clavicula — disajikan fresh setiap pesanan",
-    image: "/assets/menu_crops/steak_tenderloin.jpg",
-    badge: "Chef Choice",
+    notes: "Tenderloin empuk juicy · Dual dipping sauce · Mashed potato & sayuran",
+    concept: "Main Course Ikonik Clavicula Slawi & Guci — 100% daging sapi pilihan (Sudah termasuk PPN)",
+    image: "/assets/clavicula/foods/steak-tenderloin-card.jpg",
+    badge: "Chef Choice · 80K Nett",
   },
   {
     index: "08",
@@ -597,12 +597,12 @@ const ALL_MENU_ITEMS: MenuItem[] = [
   {
     id: "spc-01",
     name: "Clavicula Tenderloin Steak",
-    price: 73000,
+    price: 80000,
     category: "Special Clavicula (Steak & Crab)",
-    notes: "Tenderloin beef empuk · Saus spesial · Mashed potato & sayur saute",
-    desc: "Daging sapi tenderloin empuk panggang disajikan dengan mashed potato gurih, saus spesial, dan sayur.",
+    notes: "Tenderloin beef empuk · Saus spesial dual dip · Mashed potato & sayur saute",
+    desc: "Daging sapi tenderloin empuk panggang disajikan dengan mashed potato gurih, saus spesial, dan sayur saute (Harga sudah termasuk PPN).",
     image: "/assets/menu_crops/steak_tenderloin.jpg",
-    badge: "Chef Choice",
+    badge: "80K Nett PPN",
     isSignature: true,
   },
   {
@@ -1273,6 +1273,7 @@ const CATEGORIES = [
 ];
 
 const POSTER_GALLERY = [
+  { title: "Poster Resmi: Clavicula Tenderloin Steak (80K Nett)", src: "/assets/clavicula/foods/clavicula-tenderloin-steak-poster.jpg" },
   { title: "Poster Resmi: Espresso, Signature & Manual Brew", src: "/assets/clavicula-menu-coffee-poster.jpg" },
   { title: "Poster Resmi: Special Menu Steak, Tomyam & Fried Rice", src: "/assets/clavicula-menu-special-food-poster.jpg" },
   { title: "Espresso & Signature Anatomi", src: "/assets/extracted/clavi_img_1.jpg" },

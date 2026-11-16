@@ -817,7 +817,7 @@ export default function Home() {
 
               <div className="space-y-5">
                 {[
-                  { name: "Clavicula Tenderloin Steak", price: 73000, desc: "Daging tenderloin empuk premium dengan saus spesial & kentang mashed gurih." },
+                  { name: "Clavicula Tenderloin Steak", price: 80000, desc: "Daging tenderloin empuk premium dengan saus spesial & kentang mashed gurih (80K Nett)." },
                   { name: "Tomyam Seporsi Berdua", price: 50000, desc: "Kuah tomyam asam pedas segar dengan aneka seafood segar porsi komplit berdua." },
                   { name: "Chicken Steak with Sauce", price: 36000, desc: "Fillet ayam panggang krispi disiram saus gurih pilihan dan sayuran saute." },
                   { name: "Fish and Chip", price: 32000, desc: "Fillet ikan renyah golden brown disajikan dengan kentang goreng & saus tartar." },
