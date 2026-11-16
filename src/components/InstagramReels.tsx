@@ -28,53 +28,52 @@ interface ReelCard {
 // ─── UPDATE THESE WITH ACTUAL POST URLs FROM INSTAGRAM ──────────────────────
 const REELS: ReelCard[] = [
   {
-    postUrl: "https://www.instagram.com/clavicula_coffee/",
-    caption: "Suasana roasting pagi di Clavicula Slawi — aroma biji kopi specialty yang baru dipanggang memenuhi ruangan.",
+    postUrl: "https://www.instagram.com/p/DfToychTVCE/",
+    caption: "Clavicula roastery 😎 Live roasting session biji kopi pilihan langsung di bar roastery Slawi.",
     account: "@clavicula_coffee",
     type: "reel",
-    thumb: "/assets/extracted/clavi_img_1.jpg",
+    thumb: "/assets/ig-reel-dftoychtvce.jpg",
   },
   {
     postUrl: "https://www.instagram.com/clavicula_hills/",
-    caption: "View perbukitan Guci yang memukau sambil menikmati secangkir kopi hangat di Clavicula Hills.",
+    caption: "View sejuk Clavicula Hills Guci di lereng Gunung Slamet. Menikmati secangkir kopi hangat di tengah hawa dingin pegunungan pinus.",
     account: "@clavicula_hills",
-    type: "reel",
-    thumb: "/assets/extracted/clavi_img_3.jpg",
+    type: "post",
+    thumb: "/assets/clavicula-hills-guci.jpg",
   },
   {
     postUrl: "https://www.instagram.com/clavicula_coffee/",
-    caption: "Signature drinks kami: Manubrium, Corpus, Tibia — nama dari anatomi tubuh yang terinspirasi filosofi Clavicula.",
+    caption: "Suasana coffee bar & open kitchen Clavicula Slawi — pilihan tea based, steaks, tomyam, dessert hingga special bowl.",
+    account: "@clavicula_coffee",
+    type: "post",
+    thumb: "/assets/clavicula-slawi-bar.jpg",
+  },
+  {
+    postUrl: "https://www.instagram.com/clavicula_coffee/",
+    caption: "Signature Coffee berfilosofi anatomi tubuh: Manubrium, Corpus, Sternum, Tibia & Scapula kreasi dr. Ardini & tim barista.",
     account: "@clavicula_coffee",
     type: "post",
     thumb: "/assets/extracted/signature_0.jpg",
   },
   {
     postUrl: "https://www.instagram.com/clavicula_coffee/",
-    caption: "Manual brew series: pour over, V60, AeroPress — setiap tetes diracik dengan presisi dan penuh jiwa.",
+    caption: "Single origin Nusantara diseduh dengan metode presisi V60, Japanese Drip, dan Aeropress untuk profil rasa terbaik.",
     account: "@clavicula_coffee",
     type: "reel",
     thumb: "/assets/extracted/clavi_img_5.jpg",
   },
   {
-    postUrl: "https://www.instagram.com/clavicula_hills/",
-    caption: "Momen golden hour di Clavicula Hills — saat langit senja menyinari hamparan perkebunan Guci.",
-    account: "@clavicula_hills",
-    type: "post",
-    thumb: "/assets/extracted/clavi_img_7.jpg",
-  },
-  {
     postUrl: "https://www.instagram.com/clavicula_coffee/",
-    caption: "Artisan snacks & rice bowls: perpaduan cita rasa lokal dengan teknik penyajian modern ala Clavicula.",
+    caption: "Chicken Steak, Sirloin Meltique & Rice Bowl hangat menemani diskusi sore di area outdoor dan indoor Clavicula.",
     account: "@clavicula_coffee",
     type: "post",
-    thumb: "/assets/extracted/bowl_0.jpg",
+    thumb: "/assets/extracted/special_chicken_steak.jpg",
   },
 ];
 // ─────────────────────────────────────────────────────────────────────────────
 
 function ReelCard({ reel, index }: { reel: ReelCard; index: number }) {
   const [hovered, setHovered] = useState(false);
-  const cardRef = useRef<HTMLDivElement>(null);
 
   const isHills = reel.account === "@clavicula_hills";
   const accentColor = isHills ? "bg-forest" : "bg-chestnut";
@@ -82,9 +81,11 @@ function ReelCard({ reel, index }: { reel: ReelCard; index: number }) {
   const accentText = isHills ? "text-forest" : "text-chestnut";
 
   return (
-    <div
-      ref={cardRef}
-      className="group relative flex flex-col rounded-3xl overflow-hidden border border-chestnut/15 bg-white shadow-sm hover:shadow-warm-card transition-all duration-500 cursor-pointer"
+    <a
+      href={reel.postUrl}
+      target="_blank"
+      rel="noreferrer"
+      className="group relative flex flex-col rounded-3xl overflow-hidden border border-chestnut/15 bg-white shadow-sm hover:shadow-warm-card hover:-translate-y-1.5 transition-all duration-500 cursor-pointer block h-full"
       style={{ animationDelay: `${index * 100}ms` }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -111,8 +112,8 @@ function ReelCard({ reel, index }: { reel: ReelCard; index: number }) {
               hovered ? "opacity-100" : "opacity-0"
             }`}
           >
-            <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center shadow-lg">
-              <Play size={28} className="text-espresso fill-espresso ml-1" />
+            <div className="w-14 h-14 rounded-full bg-white/95 flex items-center justify-center shadow-lg">
+              <Play size={24} className="text-espresso fill-espresso ml-1" />
             </div>
           </div>
         )}
@@ -138,16 +139,13 @@ function ReelCard({ reel, index }: { reel: ReelCard; index: number }) {
         <p className="text-sm text-espresso/75 font-serif italic leading-relaxed line-clamp-3">
           {reel.caption}
         </p>
-        <a
-          href={reel.postUrl}
-          target="_blank"
-          rel="noreferrer"
-          className={`mt-auto inline-flex items-center gap-1.5 text-xs font-semibold tracking-wide uppercase ${accentText} hover:underline`}
+        <span
+          className={`mt-auto inline-flex items-center gap-1.5 text-xs font-semibold tracking-wide uppercase ${accentText} group-hover:underline`}
         >
           Lihat di Instagram <ExternalLink size={12} />
-        </a>
+        </span>
       </div>
-    </div>
+    </a>
   );
 }
 
