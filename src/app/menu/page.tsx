@@ -441,11 +441,52 @@ const POSTER_GALLERY = [
   { title: "Poster Menu Ngopi Pagi & Sore", src: "/assets/extracted/menu_asset_22.jpg" },
 ];
 
+const HERO_BG_PRESETS = [
+  {
+    id: "twilight",
+    name: "Twilight Sanctuary",
+    label: "01 · Twilight Pavilion",
+    src: "/assets/cafe-twilight-pavilion.jpeg",
+    alt: "Warm ambient twilight architectural cafe pavilion with incandescent glow",
+    description: "Pendar lampu hangat, interior kayu estetik, dan suasana senja yang tenang.",
+    brightness: "brightness-[0.55] contrast-[1.08]",
+  },
+  {
+    id: "slowbar",
+    name: "Slow Bar Slawi",
+    label: "02 · Slow Bar Slawi (Asli)",
+    src: "/assets/clavicula/places/hero-slowbar-clavicula.jpg",
+    alt: "Authentic Clavicula Coffee Slow Bar with artisan espresso station",
+    description: "Ruang bar asli Clavicula Slawi dengan mesin espresso dan cahaya temaram hangat.",
+    brightness: "brightness-[0.50] contrast-[1.10]",
+  },
+  {
+    id: "arches",
+    name: "Sunlit Arches",
+    label: "03 · Sunlit Arches",
+    src: "/assets/sanctuary-interior-arches.jpeg",
+    alt: "Minimalist sunlit architectural arches with warm linen daylight",
+    description: "Sentuhan arsitektur modern minimalis dengan cahaya alami yang menenangkan.",
+    brightness: "brightness-[0.48] contrast-[1.08]",
+  },
+  {
+    id: "guci",
+    name: "Guci Pine Hills",
+    label: "04 · Pine Forest Guci (Asli)",
+    src: "/assets/clavicula/places/suasana-tempat-clavicula-guci-hills.png",
+    alt: "Clavicula Hills Guci surrounded by cool mountain pine trees",
+    description: "Kesejukan udara pegunungan dan panorama hutan pinus Clavicula Hills Guci.",
+    brightness: "brightness-[0.45] contrast-[1.12]",
+  },
+];
+
 export default function MenuPage() {
   const [activeCategory, setActiveCategory] = useState("Semua");
   const [searchQuery, setSearchQuery] = useState("");
   const [viewMode, setViewMode] = useState<"card" | "paper">("card");
   const [showPosterGallery, setShowPosterGallery] = useState(false);
+  const [selectedBg, setSelectedBg] = useState<string>("twilight");
+  const activeBgPreset = HERO_BG_PRESETS.find((p) => p.id === selectedBg) || HERO_BG_PRESETS[0];
   const lineupTrackRef = useRef<HTMLDivElement>(null);
 
   const scrollLineup = (direction: "left" | "right") => {
@@ -467,30 +508,61 @@ export default function MenuPage() {
   return (
     <main className="flex min-h-screen flex-col overflow-hidden bg-linen text-espresso selection:bg-chestnut selection:text-white">
       
-      {/* ─── 1. HERO SECTION (ATMOSPHERIC EMBER COFFEE PHOTO HERO) ───── */}
-      <section className="relative min-h-[92svh] flex flex-col justify-end overflow-hidden pb-16 pt-36 md:pt-44 text-[#f1e7d6]">
-        {/* Background Image: Overhead Artisanal Coffee Cups Table with Dark Cinematic Scrim */}
+      {/* ─── 1. HERO SECTION (ATMOSPHERIC SANCTUARY COFFEE PHOTO HERO) ───── */}
+      <section className="relative min-h-[92svh] flex flex-col justify-center overflow-hidden pt-40 md:pt-48 pb-16 text-[#f1e7d6]">
+        {/* Dynamic Atmospheric Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/assets/ember-hero-table.jpg"
-            alt="Artisanal coffee cups slow roast atmosphere at Clavicula Coffee"
+            key={activeBgPreset.id}
+            src={activeBgPreset.src}
+            alt={activeBgPreset.alt}
             fill
             priority
-            className="object-cover object-center brightness-[0.45] contrast-[1.12]"
+            className={`object-cover object-center transition-all duration-700 ease-in-out ${activeBgPreset.brightness}`}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#100d0a] via-[#100d0a]/65 to-[#100d0a]/80 pointer-events-none"></div>
+          {/* Subtle cinematic gradient scrim */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0e0b09] via-[#0e0b09]/55 to-[#0e0b09]/75 pointer-events-none"></div>
+          {/* Subtle amber radial glow */}
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(14,11,9,0.5)_100%)] pointer-events-none"></div>
         </div>
 
         <div className="container relative z-10 max-w-[1280px] mx-auto px-6 md:px-12 w-full">
+          {/* Interactive Aesthetic Atmosphere / Background Switcher */}
+          <div className="mb-6 flex flex-wrap items-center gap-2">
+            <div className="inline-flex flex-wrap items-center gap-1.5 p-1.5 rounded-full bg-black/45 backdrop-blur-md border border-white/15 shadow-xl">
+              <span className="text-[10px] md:text-xs font-mono uppercase tracking-wider text-[#e7a93c] px-3 font-semibold flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-[#e7a93c] animate-pulse"></span>
+                Pilihan Suasana:
+              </span>
+              {HERO_BG_PRESETS.map((preset) => (
+                <button
+                  key={preset.id}
+                  onClick={() => setSelectedBg(preset.id)}
+                  className={`px-3 md:px-4 py-1 md:py-1.5 rounded-full text-xs font-mono transition-all duration-300 ${
+                    selectedBg === preset.id
+                      ? "bg-[#e7a93c] text-[#100d0a] font-bold shadow-md scale-[1.03]"
+                      : "text-white/80 hover:text-white hover:bg-white/10"
+                  }`}
+                  title={preset.description}
+                >
+                  {preset.label}
+                </button>
+              ))}
+            </div>
+            <span className="hidden xl:inline-block text-[11px] font-mono text-white/50 italic">
+              ✦ {activeBgPreset.description}
+            </span>
+          </div>
+
           {/* Eyebrow */}
           <p className="ember-eyebrow mb-4">
             Small batch · Anatomical roastery · Slawi &amp; Guci Hills
           </p>
 
-          {/* Heading */}
-          <h1 className="font-display text-5xl sm:text-7xl md:text-8xl lg:text-[94px] font-black tracking-tight text-[#f1e7d6] leading-[0.92] max-w-4xl">
+          {/* Heading with generous clearance below floating navbar */}
+          <h1 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-[84px] font-black tracking-tight text-[#f7f2e8] leading-[0.98] max-w-4xl">
             Coffee worth<br />
-            <span className="font-serif italic font-normal text-[#e7a93c]">
+            <span className="font-serif italic font-normal text-[#e7a93c] tracking-normal">
               slowing down for.
             </span>
           </h1>
@@ -526,7 +598,7 @@ export default function MenuPage() {
           </div>
 
           {/* Hero Foot (Key Metrics) */}
-          <div className="mt-16 pt-8 border-t border-[rgba(241,231,214,0.15)] flex flex-wrap items-center gap-6 md:gap-10 text-xs font-mono uppercase tracking-wider text-[rgba(241,231,214,0.7)]">
+          <div className="mt-14 pt-8 border-t border-[rgba(241,231,214,0.15)] flex flex-wrap items-center gap-6 md:gap-10 text-xs font-mono uppercase tracking-wider text-[rgba(241,231,214,0.7)]">
             <span className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#e7a93c]"></span>
               Slawi &amp; Guci Hills, Tegal
@@ -547,47 +619,37 @@ export default function MenuPage() {
         </div>
       </section>
 
-      {/* ─── 2. TRANSISI MARQUEE EMAS (GOLDEN AMBER STRIP) ───────────── */}
-      <section className="bg-[#e7a93c] text-[#100d0a] py-3.5 md:py-4 overflow-hidden border-y border-[#100d0a]/20 select-none font-display font-bold text-base md:text-xl tracking-tight shadow-md">
+      {/* ─── 2. TRANSISI MARQUEE REFINED (REFINED ESPRESSO & WARM GOLD TICKER) ───────────── */}
+      <section className="bg-[#120e0b] text-[#e7a93c] py-4 md:py-4.5 overflow-hidden border-y border-[#e7a93c]/20 select-none font-display font-bold text-sm md:text-base tracking-[0.18em] uppercase shadow-inner">
         <div className="animate-ember-marquee flex items-center gap-6 whitespace-nowrap">
           <span>ANATOMICAL COFFEE</span>
-          <span className="opacity-60">✶</span>
+          <span className="text-[#e7a93c]/50">✦</span>
           <span>SPECIALTY GRADE ARABICA</span>
-          <span className="opacity-60">✶</span>
+          <span className="text-[#e7a93c]/50">✦</span>
           <span>FRESH ROASTED IN-HOUSE</span>
-          <span className="opacity-60">✶</span>
+          <span className="text-[#e7a93c]/50">✦</span>
           <span>COZY PINUS CLAVICULA HILLS GUCI</span>
-          <span className="opacity-60">✶</span>
+          <span className="text-[#e7a93c]/50">✦</span>
           <span>100% HALAL CERTIFIED KITCHEN</span>
-          <span className="opacity-60">✶</span>
+          <span className="text-[#e7a93c]/50">✦</span>
           <span>SLOW BAR SANCTUARY</span>
-          <span className="opacity-60">✶</span>
+          <span className="text-[#e7a93c]/50">✦</span>
           <span>STEAK &amp; TOMYAM WARMTH</span>
-          <span className="opacity-60">✶</span>
+          <span className="text-[#e7a93c]/50">✦</span>
           <span>MANUAL BREW NUSANTARA</span>
-          <span className="opacity-60">✶</span>
+          <span className="text-[#e7a93c]/50">✦</span>
           <span>ALL PRICES NETT (INCL. PPN)</span>
-          <span className="opacity-60">✶</span>
+          <span className="text-[#e7a93c]/50">✦</span>
 
           {/* Loop repeat */}
           <span>ANATOMICAL COFFEE</span>
-          <span className="opacity-60">✶</span>
+          <span className="text-[#e7a93c]/50">✦</span>
           <span>SPECIALTY GRADE ARABICA</span>
-          <span className="opacity-60">✶</span>
+          <span className="text-[#e7a93c]/50">✦</span>
           <span>FRESHLY GROUND DAILY</span>
-          <span className="opacity-60">✶</span>
+          <span className="text-[#e7a93c]/50">✦</span>
           <span>COZY PINUS CLAVICULA HILLS GUCI</span>
-          <span className="opacity-60">✶</span>
-          <span>100% HALAL CERTIFIED KITCHEN</span>
-          <span className="opacity-60">✶</span>
-          <span>SLOW BAR SANCTUARY</span>
-          <span className="opacity-60">✶</span>
-          <span>STEAK &amp; TOMYAM WARMTH</span>
-          <span className="opacity-60">✶</span>
-          <span>MANUAL BREW NUSANTARA</span>
-          <span className="opacity-60">✶</span>
-          <span>ALL PRICES NETT (INCL. PPN)</span>
-          <span className="opacity-60">✶</span>
+          <span className="text-[#e7a93c]/50">✦</span>
         </div>
       </section>
 
