@@ -38,5 +38,17 @@ next-env.d.ts
 # large archives and raw pdfs
 *.zip
 *.pdf
-vidio rostery.mp4
+*.mp4
 foto_menu_desert/
+
+# raw asset packs (too large for git)
+clavicula_web_assets/
+clavicula_coffee_full_hd_images_and_menu_pack/
+clavicula_gofood_1024_hd_pack/
+extracted_gofood_pack/
+public/clavicula_web_assets/
+
+# python scripts & scratch
+scripts/__pycache__/
+scripts/*.png
+scripts/*.webp

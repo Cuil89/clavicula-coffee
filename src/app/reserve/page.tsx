@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { ArrowRight, MapPin } from "lucide-react";
 import { useUI } from "@/components/UIProvider";
 
@@ -48,9 +49,15 @@ export default function ReservePage() {
           <h1 className="text-3xl md:text-5xl font-black tracking-tight text-espresso mb-3">
             Reservasi Meja Clavicula
           </h1>
-          <p className="text-base md:text-lg font-serif italic text-espresso/70">
+          <p className="text-base md:text-lg font-serif italic text-espresso/70 mb-3">
             Amankan meja di Slawi maupun Clavicula Hills Guci untuk waktu terbaik Anda.
           </p>
+          <div className="inline-block p-2.5 px-4 bg-vanilla/80 rounded-2xl border border-chestnut/15 text-xs text-espresso/80">
+            ℹ️ <strong>Hanya ingin beli biji kopi sangrai atau Kopi Botol 1L takeaway?</strong> Anda tidak perlu reservasi meja.{" "}
+            <Link href="/terroir" className="text-chestnut font-bold underline hover:text-espresso">
+              Pesan langsung &amp; ambil di kasir di sini →
+            </Link>
+          </div>
         </div>
 
         <form

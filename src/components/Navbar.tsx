@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-import { Menu, X, MapPin } from "lucide-react";
+import { Menu, X, MapPin, ShoppingBag } from "lucide-react";
 import { InstagramIcon } from "@/components/Icons";
 import { useUI } from "@/components/UIProvider";
 
@@ -17,14 +17,15 @@ const navLinks = [
 export default function Navbar() {
   const navRef = useRef<HTMLElement>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { openMap } = useUI();
+  const { openMap, openCart, cartItems } = useUI();
+  const totalCartCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
   useEffect(() => {
     if (!navRef.current) return;
     gsap.fromTo(
       navRef.current,
-      { y: -50, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1, ease: "power3.out", delay: 0.2 }
+      { y: -30, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.8, ease: "power3.out", delay: 0.1 }
     );
   }, []);
 
@@ -32,7 +33,7 @@ export default function Navbar() {
     <>
       <header
         ref={navRef}
-        className="fixed top-4 md:top-6 left-0 right-0 z-50 flex justify-center w-full px-3 md:px-6 pointer-events-none"
+        className="fixed top-12 md:top-14 left-0 right-0 z-50 flex justify-center w-full px-3 md:px-6 pointer-events-none"
       >
         <div className="pointer-events-auto flex w-full max-w-6xl items-center justify-between rounded-full border border-chestnut/20 bg-linen/90 px-4 md:px-6 py-2.5 md:py-3 backdrop-blur-md shadow-warm-card transition-all duration-300">
           {/* Left Side: Brand Logo & Title */}
@@ -79,6 +80,21 @@ export default function Navbar() {
 
           {/* Right Side: Actions */}
           <div className="flex items-center gap-2 md:gap-3">
+            {/* Cart trigger button */}
+            <button
+              onClick={openCart}
+              className="relative p-2 md:px-3 md:py-2 rounded-full border border-chestnut/20 text-espresso hover:text-chestnut hover:bg-vanilla/80 transition-all flex items-center gap-2"
+              aria-label="Keranjang Belanja"
+            >
+              <ShoppingBag size={18} />
+              <span className="hidden sm:inline text-xs font-bold font-mono">Keranjang</span>
+              {totalCartCount > 0 && (
+                <span className="w-5 h-5 rounded-full bg-chestnut text-white text-[11px] font-bold flex items-center justify-center">
+                  {totalCartCount}
+                </span>
+              )}
+            </button>
+
             {/* Instagram quick link */}
             <a
               href="https://www.instagram.com/clavicula_coffee/"
@@ -157,6 +173,15 @@ export default function Navbar() {
                 {link.name}
               </Link>
             ))}
+            <button
+              onClick={() => {
+                setIsMobileMenuOpen(false);
+                openCart();
+              }}
+              className="text-left text-xl font-bold text-chestnut flex items-center gap-2"
+            >
+              <ShoppingBag size={20} /> Keranjang Belanja ({totalCartCount} item)
+            </button>
             <button
               onClick={() => {
                 setIsMobileMenuOpen(false);

@@ -22,16 +22,16 @@ export default function Home() {
     {
       id: 0,
       label: "01 / Floral & Citrus",
-      name: "V60 Sumatra Gayo Anaerobic",
-      origin: "Aceh Gayo - 1,600m ASL",
+      name: "Arabica Lokal Selection (V60 Bar)",
+      origin: "Sindoro & Sumbing Highland - 1,500m ASL",
       sweet: 82,
       floral: 94,
       body: 50,
       temp: "92.5°C",
       pour: "Hario V60 (1:15 Ratio)",
       pastry: "Japanese Fruit Sandwich / Sweet Toast",
-      notes: "Aroma melati semerbak, keasaman sitrus segar, dan aftertaste peach yang elegan.",
-      badge: "Single Origin Filter",
+      notes: "Aroma melati semerbak, keasaman sitrus segar, dan aftertaste madu alami yang elegan.",
+      badge: "V60 Bar Selection",
     },
     {
       id: 1,
@@ -284,14 +284,14 @@ export default function Home() {
                 copy: "Penamaan unik bertema anatomi tubuh manusia: Manubrium (Kopi Susu Gula Aren), Acromion, Costa, Sternum, Scapula, hingga Trapezius.",
                 cta: "Lihat Signature Drink",
                 link: "/menu",
-                img: "/assets/clavicula/drinks/manubrium-fullcard.jpg",
+                img: "/images/manubrium.jpg",
               },
               {
                 num: "02",
-                category: "ROASTERY & MANUAL",
-                title: "Specialty Micro-Lots",
-                copy: "Biji kopi pilihan Nusantara (Gayo, Sindoro, Ijen, Kerinci) dan mancanegara diseduh V60, Aeropress, Vietnam Drip, dan espresso murni.",
-                cta: "Profil Roastery",
+                category: "ROASTERY & CRAFT",
+                title: "Signature House Blend & Roastery",
+                copy: "Biji sangrai resmi Clavicula (House Blend 80:20, Arabica V60 Bar, dan Fine Robusta). Pesan online & bayar di kasir outlet tanpa antre.",
+                cta: "Pesan Biji Kopi & Kopi 1L",
                 link: "/terroir",
                 img: "/assets/clavicula/places/roastery-lab-clavicula-slawi.jpg",
               },
@@ -302,7 +302,7 @@ export default function Home() {
                 copy: "Hidangan lengkap dari Tenderloin Steak, Kepiting Segar (Special Crab), Tomyam Berdua, Clavicula Noodle, hingga Rice Bowl Chashu.",
                 cta: "Pilihan Santap",
                 link: "/menu",
-                img: "/assets/clavicula/foods/chicken-katsu-spicy.webp",
+                img: "/images/clavicula-kitchen-steak.jpg",
               },
               {
                 num: "04",
@@ -360,45 +360,137 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-3.5 md:gap-4">
-            {[
-              { name: "Manubrium", price: 30000, img: "/assets/clavicula/drinks/manubrium-fullcard.jpg", note: "Kopi susu gula aren + layer krim lembut" },
-              { name: "Acromion", price: 31000, img: "/assets/clavicula/drinks/acromion.webp", note: "Caramelized milk with soft regal biscuit" },
-              { name: "Costa", price: 31000, img: "/assets/clavicula/drinks/costa.webp", note: "Nutella spread, iced espresso & ice cream" },
-              { name: "Sternum", price: 30000, img: "/assets/clavicula/drinks/sternum.webp", note: "Golden caramel drizzle with iced espresso" },
-              { name: "Scapula", price: 29000, img: "/assets/clavicula/drinks/scapula.webp", note: "Pandan klepon coconut milk + espresso" },
-              { name: "Trapezius", price: 30000, img: "/assets/clavicula/drinks/trapezius.webp", note: "Strawberry swirl & silky cream fusion" },
-            ].map((drink, idx) => (
-              <div
-                key={idx}
-                className="group flex flex-col bg-white rounded-2xl p-4 border border-chestnut/15 shadow-sm hover:shadow-warm-card transition-all duration-300"
-              >
-                <div className="relative w-full aspect-[3/4] mb-3 rounded-xl overflow-hidden bg-vanilla">
-                  <Image
-                    src={drink.img}
-                    alt={drink.name}
-                    fill
-                    className="object-contain p-2 group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute top-2 right-2 bg-espresso text-white text-[10px] font-mono px-2 py-0.5 rounded-full font-bold">
-                    {drink.price / 1000}K
+          {/* ── EDITORIAL SIGNATURE DRINKS LAYOUT ── */}
+          {(() => {
+            const drinks = [
+              { name: "Manubrium", num: "No. 01", price: 33000, img: "/images/manubrium.jpg", note: "Kopi susu gula aren + layer krim lembut", tag: "Best Seller" },
+              { name: "Acromion", num: "No. 02", price: 32000, img: "/images/acromion.jpg", note: "Caramelized milk with soft regal biscuit", tag: null },
+              { name: "Costa", num: "No. 03", price: 38000, img: "/images/costa.jpg", note: "Nutella spread, iced espresso & ice cream", tag: "Chef's Pick" },
+              { name: "Sternum", num: "No. 04", price: 32000, img: "/images/sternum.jpg", note: "Golden caramel drizzle with iced espresso", tag: null },
+              { name: "Scapula", num: "No. 05", price: 32000, img: "/images/scapula.jpg", note: "Pandan klepon coconut milk + espresso", tag: null },
+              { name: "Trapezius", num: "No. 06", price: 32000, img: "/images/trapezius.jpg", note: "Strawberry swirl & silky cream fusion", tag: null },
+            ];
+            const [hero, ...rest] = drinks;
+            return (
+              <div className="flex flex-col gap-4">
+                {/* ── ROW 1: Hero + 2 featured side cards ── */}
+                <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+                  {/* HERO CARD — Manubrium */}
+                  <div className="md:col-span-2 relative overflow-hidden rounded-3xl group cursor-pointer min-h-[480px] md:min-h-[520px] bg-espresso shadow-xl">
+                    <Image
+                      src={hero.img}
+                      alt={hero.name}
+                      fill
+                      className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                    />
+                    {/* cinematic gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
+                    {/* tag */}
+                    {hero.tag && (
+                      <div className="absolute top-5 left-5 bg-amber-400 text-espresso text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">
+                        {hero.tag}
+                      </div>
+                    )}
+                    {/* price badge */}
+                    <div className="absolute top-5 right-5 bg-white/15 backdrop-blur-md border border-white/20 text-white text-xs font-mono font-bold px-3 py-1 rounded-full">
+                      Rp {hero.price.toLocaleString("id-ID")}
+                    </div>
+                    {/* bottom text */}
+                    <div className="absolute bottom-0 left-0 right-0 p-7">
+                      <span className="text-[10px] font-mono text-amber-400 uppercase tracking-[0.25em] mb-1 block">{hero.num} · Signature</span>
+                      <h3 className="text-4xl font-black text-white italic font-serif leading-tight mb-2">{hero.name}</h3>
+                      <p className="text-sm text-white/70 leading-relaxed mb-5">{hero.note}</p>
+                      <button
+                        onClick={() => addToCart({ name: `${hero.name} (Cup)`, price: hero.price, size: "Reguler Cup", image: hero.img, category: "Signature Anatomi" })}
+                        className="inline-flex items-center gap-2 bg-white text-espresso text-xs font-black uppercase tracking-wider px-5 py-2.5 rounded-full hover:bg-amber-400 transition-colors duration-300"
+                      >
+                        <ShoppingBag size={13} /> Pesan Sekarang
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* RIGHT: 2 stacked featured cards (Costa + Acromion) */}
+                  <div className="md:col-span-3 grid grid-rows-2 gap-4">
+                    {rest.slice(0, 2).map((drink, idx) => (
+                      <div key={idx} className="relative overflow-hidden rounded-2xl group cursor-pointer min-h-[200px] bg-espresso shadow-lg">
+                        <Image
+                          src={drink.img}
+                          alt={drink.name}
+                          fill
+                          className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/30 to-transparent" />
+                        {drink.tag && (
+                          <div className="absolute top-4 right-4 bg-amber-400 text-espresso text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">
+                            {drink.tag}
+                          </div>
+                        )}
+                        <div className="absolute inset-0 flex flex-col justify-end p-6">
+                          <span className="text-[10px] font-mono text-amber-400/80 uppercase tracking-[0.2em] mb-1">{drink.num}</span>
+                          <div className="flex items-end justify-between">
+                            <div>
+                              <h3 className="text-2xl font-black text-white italic font-serif leading-tight">{drink.name}</h3>
+                              <p className="text-xs text-white/65 mt-1 max-w-xs">{drink.note}</p>
+                            </div>
+                            <div className="flex flex-col items-end gap-2 ml-4">
+                              <span className="text-xs font-mono text-white/80">Rp {(drink.price / 1000).toFixed(0)}K</span>
+                              <button
+                                onClick={() => addToCart({ name: `${drink.name} (Cup)`, price: drink.price, size: "Reguler Cup", image: drink.img, category: "Signature Anatomi" })}
+                                className="flex items-center gap-1.5 bg-white/15 backdrop-blur-sm border border-white/25 text-white text-[11px] font-semibold px-4 py-1.5 rounded-full hover:bg-white hover:text-espresso transition-colors duration-300"
+                              >
+                                <ShoppingBag size={11} /> Pesan
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
-                <h4 className="font-bold text-espresso text-base mb-1 group-hover:text-chestnut transition-colors">
-                  {drink.name}
-                </h4>
-                <p className="text-[11px] text-espresso/60 leading-tight mb-3 flex-grow">
-                  {drink.note}
-                </p>
-                <button
-                  onClick={() => addToCart({ name: drink.name, price: drink.price, grind: "Signature Drink" })}
-                  className="w-full py-1.5 px-3 rounded-full bg-vanilla text-chestnut text-xs font-semibold border border-chestnut/20 hover:bg-chestnut hover:text-white transition-colors flex items-center justify-center gap-1.5"
-                >
-                  <ShoppingBag size={13} /> Pesan
-                </button>
+
+                {/* ── ROW 2: 3 cinematic portrait cards (Sternum, Scapula, Trapezius) ── */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  {rest.slice(2).map((drink, idx) => (
+                    <div key={idx} className="relative overflow-hidden rounded-2xl group cursor-pointer bg-espresso shadow-lg" style={{ minHeight: "300px" }}>
+                      <Image
+                        src={drink.img}
+                        alt={drink.name}
+                        fill
+                        className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                      />
+                      {/* dark gradient bottom */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+                      {/* subtle top vignette */}
+                      <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/30 to-transparent" />
+
+                      {/* num tag top-left */}
+                      <div className="absolute top-4 left-4 text-[10px] font-mono text-white/50 uppercase tracking-[0.2em]">{drink.num}</div>
+                      {/* price top-right */}
+                      <div className="absolute top-4 right-4 bg-black/30 backdrop-blur-sm border border-white/15 text-white text-[10px] font-mono px-2.5 py-1 rounded-full">
+                        {drink.price / 1000}K
+                      </div>
+
+                      {/* bottom info */}
+                      <div className="absolute bottom-0 left-0 right-0 p-5 flex flex-col gap-2">
+                        <div>
+                          <h3 className="text-xl font-black text-white italic font-serif">{drink.name}</h3>
+                          <p className="text-[11px] text-white/60 mt-0.5 leading-snug">{drink.note}</p>
+                        </div>
+                        {/* horizontal divider */}
+                        <div className="w-8 h-px bg-amber-400/60" />
+                        <button
+                          onClick={() => addToCart({ name: `${drink.name} (Cup)`, price: drink.price, size: "Reguler Cup", image: drink.img, category: "Signature Anatomi" })}
+                          className="self-start inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm border border-white/20 text-white text-[11px] font-semibold px-4 py-1.5 rounded-full hover:bg-amber-400 hover:text-espresso hover:border-amber-400 transition-colors duration-300"
+                        >
+                          <ShoppingBag size={11} /> Pesan
+                        </button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
-            ))}
-          </div>
+            );
+          })()}
         </div>
       </section>
 
@@ -651,9 +743,12 @@ export default function Home() {
                     <button
                       onClick={() =>
                         addToCart({
-                          name: `${coffee.name} (${coffee.weight})`,
+                          name: `${coffee.name}`,
                           price: coffee.price,
-                          grind: "Biji Kopi Utuh (Whole Bean)",
+                          size: coffee.weight,
+                          grind: "Biji Utuh / Whole Bean (Rekomendasi)",
+                          image: coffee.img,
+                          category: "Roastery Beans",
                         })
                       }
                       className="flex items-center gap-1.5 px-4 py-2 rounded-full bg-chestnut text-white text-xs font-medium hover:bg-chestnut/90 transition-colors shadow-sm"
@@ -750,7 +845,7 @@ export default function Home() {
               {/* Bottom Hover Overlay */}
               <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-espresso via-espresso/80 to-transparent flex items-center justify-between opacity-90 group-hover:opacity-100 transition-opacity z-10">
                 <span className="text-xs font-semibold text-white/90">
-                  Buka Menu Lengkap &bull; 120+ Pilihan
+                  Buka Menu Lengkap &bull; 88 Pilihan HD
                 </span>
                 <span className="text-xs font-bold text-caramel flex items-center gap-1 group-hover:underline">
                   Buka <ArrowRight size={13} />
@@ -794,7 +889,7 @@ export default function Home() {
                 {/* Bottom Hover Overlay */}
                 <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-espresso via-espresso/80 to-transparent flex items-center justify-between opacity-90 group-hover:opacity-100 transition-opacity z-10">
                   <span className="text-xs font-semibold text-white/90">
-                    Buka Menu Makanan &bull; 120+ Pilihan
+                    Buka Menu Makanan &bull; 88 Pilihan HD
                   </span>
                   <span className="text-xs font-bold text-caramel flex items-center gap-1 group-hover:underline">
                     Buka <ArrowRight size={13} />

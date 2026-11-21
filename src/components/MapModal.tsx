@@ -8,11 +8,13 @@ import Image from "next/image";
 export default function MapModal() {
   const { isMapOpen, closeMap, selectedOutlet, setSelectedOutlet } = useUI();
   const [mounted, setMounted] = useState(false);
-  const [activeTab, setActiveTab] = useState<"slawi" | "guci">(selectedOutlet);
+  const [activeTab, setActiveTab] = useState<"slawi" | "guci">(
+    selectedOutlet.toLowerCase() as "slawi" | "guci"
+  );
 
   useEffect(() => {
     setMounted(true);
-    setActiveTab(selectedOutlet);
+    setActiveTab(selectedOutlet.toLowerCase() as "slawi" | "guci");
   }, [selectedOutlet]);
 
   if (!mounted) return null;

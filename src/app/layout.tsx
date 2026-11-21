@@ -9,6 +9,9 @@ import ToastContainer from "@/components/ToastContainer";
 import CartDrawer from "@/components/CartDrawer";
 import MapModal from "@/components/MapModal";
 import ReservationConfirmationModal from "@/components/ReservationConfirmationModal";
+import PickupTicketModal from "@/components/PickupTicketModal";
+import TopAnnouncementBar from "@/components/TopAnnouncementBar";
+import FloatingCartButton from "@/components/FloatingCartButton";
 
 const interTight = Inter_Tight({
   subsets: ["latin"],
@@ -36,9 +39,9 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Clavicula Coffee & Idea | Roastery, Specialty Coffee & Sanctuary",
+  title: "The Clavicula Roastery & Craft | Pesan di Web, Bayar di Outlet Slawi & Guci",
   description:
-    "Official profile for Clavicula Coffee & Idea (Slawi & Clavicula Hills Guci, Tegal). Specialty coffee roastery, anatomical signature drinks, manual brew, artisan rice bowls, steaks, and desserts.",
+    "Pusat sangrai biji kopi nusantara Clavicula Coffee (Slawi & Guci Hills). Pesan roast bean RB-01 s.d. RB-04 Rp 0 di web, bayar saat ambil di kasir tanpa biaya admin.",
   icons: {
     icon: "/assets/clavicula/logo/logo-clavicula.webp",
   },
@@ -55,6 +58,7 @@ export default function RootLayout({
         className={`${interTight.variable} ${instrumentSerif.variable} ${bricolage.variable} ${dmSans.variable} font-sans bg-linen text-espresso antialiased`}
       >
         <UIProvider>
+          <TopAnnouncementBar />
           <SmoothScrolling>
             <Navbar />
             {children}
@@ -64,6 +68,8 @@ export default function RootLayout({
           <CartDrawer />
           <MapModal />
           <ReservationConfirmationModal />
+          <PickupTicketModal />
+          <FloatingCartButton />
         </UIProvider>
       </body>
     </html>

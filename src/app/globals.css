@@ -21,7 +21,193 @@
   }
 }
 
-/* Ember Coffee Aesthetic Utilities */
+/* ─── ROASTERY PAGE CUSTOM ANIMATIONS ─────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes subtlePan {
+  0%   { transform: scale(1.06) translateX(0px); }
+  100% { transform: scale(1.06) translateX(-16px); }
+}
+@keyframes shimmer {
+  0%   { background-position: -300px 0; }
+  100% { background-position: 300px 0; }
+}
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(178,110,46,0.4); }
+  50%       { box-shadow: 0 0 0 8px rgba(178,110,46,0); }
+}
+@keyframes marqueeScroll {
+  0%   { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-6px); }
+}
+@keyframes countUp {
+  from { opacity: 0; transform: scale(0.85); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.anim-fade-up          { animation: fadeUp 0.65s cubic-bezier(0.22,1,0.36,1) both; }
+.anim-fade-up-d1       { animation: fadeUp 0.65s 0.1s cubic-bezier(0.22,1,0.36,1) both; }
+.anim-fade-up-d2       { animation: fadeUp 0.65s 0.2s cubic-bezier(0.22,1,0.36,1) both; }
+.anim-fade-up-d3       { animation: fadeUp 0.65s 0.3s cubic-bezier(0.22,1,0.36,1) both; }
+.anim-fade-up-d4       { animation: fadeUp 0.65s 0.4s cubic-bezier(0.22,1,0.36,1) both; }
+.anim-fade-in          { animation: fadeIn 0.5s ease both; }
+.anim-pan              { animation: subtlePan 14s ease-in-out infinite alternate; }
+.anim-pulse-glow       { animation: pulseGlow 2.4s ease-in-out infinite; }
+.anim-marquee          { animation: marqueeScroll 32s linear infinite; }
+.anim-marquee:hover    { animation-play-state: paused; }
+.anim-spin-slow        { animation: spinSlow 20s linear infinite; }
+.anim-float            { animation: float 3s ease-in-out infinite; }
+.anim-count-up         { animation: countUp 0.5s cubic-bezier(0.22,1,0.36,1) both; }
+
+/* ─── ROASTERY MARQUEE TICKER ─────────────────────────────────── */
+.ticker-wrap {
+  overflow: hidden;
+  display: flex;
+  width: 100%;
+}
+.ticker-inner {
+  display: inline-flex;
+  width: max-content;
+  animation: marqueeScroll 28s linear infinite;
+}
+.ticker-inner:hover { animation-play-state: paused; }
+
+/* ─── BEAN CARD HOVER SYSTEM ─────────────────────────────────── */
+.bean-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.bean-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 32px 64px -16px rgba(23, 21, 19, 0.28);
+}
+.bean-card-img {
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.bean-card:hover .bean-card-img {
+  transform: scale(1.07);
+}
+
+/* ─── SAVINGS BADGE SHIMMER ───────────────────────────────────── */
+.shimmer-badge {
+  background: linear-gradient(
+    90deg,
+    #22c55e 0%,
+    #16a34a 40%,
+    #22c55e 60%,
+    #16a34a 100%
+  );
+  background-size: 300px 100%;
+  animation: shimmer 2.4s ease-in-out infinite;
+}
+
+/* ─── STICKY BOTTOM CTA BAR ───────────────────────────────────── */
+.sticky-cta-bar {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 60;
+  transform: translateY(100%);
+  transition: transform 0.45s cubic-bezier(0.22,1,0.36,1);
+}
+.sticky-cta-bar.visible {
+  transform: translateY(0);
+}
+
+/* ─── FLAVOR PROFILE BARS ─────────────────────────────────────── */
+.flavor-bar-track {
+  height: 3px;
+  background: rgba(178,110,46,0.15);
+  border-radius: 99px;
+  overflow: hidden;
+}
+.flavor-bar-fill {
+  height: 100%;
+  border-radius: 99px;
+  background: linear-gradient(90deg, #B26E2E, #D4A055);
+  transition: width 0.8s cubic-bezier(0.22,1,0.36,1);
+}
+
+/* ─── SIZE SELECTOR ACTIVE STATE ──────────────────────────────── */
+.size-btn {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.22,1,0.36,1);
+}
+.size-btn.active {
+  background: #171513;
+  color: #FAF8F5;
+  border-color: #171513;
+}
+.size-btn:not(.active):hover {
+  border-color: #B26E2E;
+  background: rgba(178,110,46,0.06);
+}
+
+/* ─── GRIND PILL SELECTOR ─────────────────────────────────────── */
+.grind-pill {
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.grind-pill.active {
+  background: #B26E2E;
+  color: #fff;
+  border-color: #B26E2E;
+}
+.grind-pill:not(.active):hover {
+  border-color: rgba(178,110,46,0.5);
+}
+
+/* ─── STICKY SCROLL INDICATOR ─────────────────────────────────── */
+.scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #B26E2E, #D4A055);
+  z-index: 999;
+  transform-origin: left;
+  transition: width 0.1s linear;
+}
+
+/* ─── RADIAL GRADIENT ORBS ────────────────────────────────────── */
+.orb-amber {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212,160,85,0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+.orb-dark {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(23,21,19,0.6) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ─── GLASS MORPHISM CARD ─────────────────────────────────────── */
+.glass-card {
+  background: rgba(250,248,245,0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(250,248,245,0.12);
+}
+
+/* ─── LEGACY MARQUEE (retained for compatibility) ─────────────── */
 .ember-eyebrow {
   display: inline-flex;
   align-items: center;
@@ -32,42 +218,16 @@
   text-transform: uppercase;
   color: #e7a93c;
 }
-
 .ember-eyebrow::before {
   content: "";
   width: 28px;
   height: 1px;
   background: #e7a93c;
 }
-
 @keyframes emberNudge {
-  0%, 100% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(8px);
-  }
+  0%, 100% { transform: translateX(0); }
+  50%       { transform: translateX(8px); }
 }
-
-.animate-ember-nudge {
-  animation: emberNudge 1.6s cubic-bezier(0.22, 1, 0.36, 1) infinite;
-}
-
-@keyframes emberMarquee {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-.animate-ember-marquee {
-  display: inline-flex;
-  width: max-content;
-  animation: emberMarquee 32s linear infinite;
-}
-
-.animate-ember-marquee:hover {
-  animation-play-state: paused;
-}
+.animate-ember-nudge   { animation: emberNudge 1.6s cubic-bezier(0.22, 1, 0.36, 1) infinite; }
+.animate-ember-marquee { display: inline-flex; width: max-content; animation: marqueeScroll 32s linear infinite; }
+.animate-ember-marquee:hover { animation-play-state: paused; }

@@ -8,423 +8,14 @@ import { InstagramIcon } from "@/components/Icons";
 
 
 
-type MenuItem = {
-  id: string;
-  name: string;
-  price: number;
-  category: string;
-  notes: string;
-  desc?: string;
-  image?: string;
-  badge?: string;
-  isSignature?: boolean;
-  isBestSeller?: boolean;
-  concept?: string;
-};
-
-// ─── THE 8 CURATED SIGNATURE HIGHLIGHTS (EMBER STYLE) ─────────────────────
-const SIGNATURE_LINEUP = [
-  {
-    index: "01",
-    name: "Sternum",
-    price: 30000,
-    category: "Signature Anatomi",
-    notes: "Cold brew arabika · Saus karamel leleh · Manis seimbang creamy",
-    concept: "Anatomi: Tulang dada tengah — perisai penyeimbang rasa kopi dan manis karamel dingin",
-    image: "/images/menu/drinks/sternum.webp",
-    badge: "Caramel Cold Brew",
-  },
-  {
-    index: "02",
-    name: "Acromion",
-    price: 31000,
-    category: "Signature Anatomi",
-    notes: "Caramelized milk · Espresso aromatik · Remahan biskuit regal gurih",
-    concept: "Anatomi: Puncak tulang bahu — jembatan gerakan presisi tangan barista",
-    image: "/images/menu/drinks/acromion.webp",
-    badge: "Must Try",
-  },
-  {
-    index: "03",
-    name: "Costa",
-    price: 31000,
-    category: "Signature Specialty",
-    notes: "Nutella hazelnut legit · Double espresso arabika · Vanilla ice cream scoop",
-    concept: "Anatomi: Tulang rusuk — melindungi kehangatan rasa terdalam",
-    image: "/images/menu/drinks/costa.webp",
-    badge: "Barista Pick",
-  },
-  {
-    index: "04",
-    name: "Manubrium",
-    price: 30000,
-    category: "Signature Anatomi",
-    notes: "Kopi susu gula aren · Layer krim lembut · Double espresso bold",
-    concept: "Our Signature Menu — racikan kopi susu gula aren legendaris khas Clavicula",
-    image: "/assets/clavicula/drinks/manubrium-fullcard.jpg",
-    badge: "Our Signature Menu",
-  },
-  {
-    index: "05",
-    name: "Scapula",
-    price: 29000,
-    category: "Signature Nusantara",
-    notes: "Pandan klepon nusantara · Kelapa gurih · Double espresso arabika",
-    concept: "Anatomi: Tulang belikat — sayap rasa tradisional bernuansa modern",
-    image: "/images/menu/drinks/scapula.webp",
-    badge: "Nusantara Heritage",
-  },
-  {
-    index: "06",
-    name: "Trapezius",
-    price: 30000,
-    category: "Fruit & Cream Fusion",
-    notes: "Fresh strawberry swirl · Susu lembut dingin · Kopi eksotis",
-    concept: "Anatomi: Otot trapezius — relaksasi rasa manis segar yang menenangkan",
-    image: "/images/menu/drinks/trapezius.webp",
-    badge: "Refreshing",
-  },
-  {
-    index: "07",
-    name: "Clavicula Tenderloin Steak",
-    price: 80000,
-    category: "Special Hot Kitchen",
-    notes: "Tenderloin empuk juicy · Dual dipping sauce · Mashed potato & sayuran",
-    concept: "Main Course Ikonik Clavicula Slawi & Guci — 100% daging sapi pilihan (Sudah termasuk PPN)",
-    image: "/assets/clavicula/foods/steak-tenderloin-card.jpg",
-    badge: "Chef Choice · 80K Nett",
-  },
-  {
-    index: "08",
-    name: "Dimsum Mentai",
-    price: 24000,
-    category: "Favorite Snack",
-    notes: "Dimsum kukus lembut · Saus mentai creamy torched · Taburan nori & tobiko gurih",
-    concept: "Snack favorit Clavicula — perpaduan dimsum daging kenyal dengan lelehan saus mentai bakar",
-    image: "/images/menu/foods/dimsum-mentai.webp",
-    badge: "Best Seller Snack",
-  },
-];
-
-// ─── COMPLETE CAFE MENU (ONLY AUTHENTIC FOOD & BEVERAGE PHOTOGRAPHY) ───
-const ALL_MENU_ITEMS: MenuItem[] = [
-  // 1. SIGNATURE DRINK (ANATOMI)
-  {
-    id: "sig-01",
-    name: "Manubrium",
-    price: 30000,
-    category: "Signature Drink (Anatomi)",
-    notes: "Kopi susu gula aren · Layer krim lembut · Double espresso bold",
-    desc: "Minuman kopi susu kekinian dengan tambahan cream dan gula aren yang menciptakan rasa aren khas legit seimbang.",
-    image: "/assets/clavicula/drinks/manubrium-fullcard.jpg",
-    badge: "Our Signature Menu",
-    isSignature: true,
-  },
-  {
-    id: "sig-02",
-    name: "Acromion",
-    price: 31000,
-    category: "Signature Drink (Anatomi)",
-    notes: "Caramelized milk · Espresso aromatik · Biskuit regal gurih",
-    desc: "Kopi susu kekinian yang dipadu dengan gurihnya biskuit regal lembut dan aroma espresso aromatik.",
-    image: "/images/menu/drinks/acromion.webp",
-    badge: "Must Try",
-    isSignature: true,
-  },
-  {
-    id: "sig-03",
-    name: "Costa",
-    price: 31000,
-    category: "Signature Drink (Anatomi)",
-    notes: "Nutella hazelnut legit · Double espresso · Vanilla ice cream scoop",
-    desc: "Kopi susu dengan tambahan manisnya Nutella legit berpadu scoop es krim vanila lembut.",
-    image: "/images/menu/drinks/costa.webp",
-    badge: "Specialty",
-    isSignature: true,
-  },
-  {
-    id: "sig-04",
-    name: "Sternum",
-    price: 30000,
-    category: "Signature Drink (Anatomi)",
-    notes: "Cold brew arabika · Saus karamel leleh · Manis seimbang creamy",
-    desc: "Kopi susu kekinian dengan cita rasa karamel khas dipadu dengan lembutnya whip cream.",
-    image: "/images/menu/drinks/sternum.webp",
-    badge: "Caramel Cold Brew",
-    isSignature: true,
-  },
-  {
-    id: "sig-05",
-    name: "Scapula",
-    price: 29000,
-    category: "Signature Drink (Anatomi)",
-    notes: "Pandan klepon nusantara · Kelapa gurih · Double espresso arabika",
-    desc: "Kopi susu kekinian dengan cita rasa pandan klepon yang harum, gurih kelapa, dan unik di lidah.",
-    image: "/images/menu/drinks/scapula.webp",
-    badge: "Nusantara Heritage",
-    isSignature: true,
-  },
-  {
-    id: "sig-06",
-    name: "Trapezius",
-    price: 30000,
-    category: "Signature Drink (Anatomi)",
-    notes: "Fresh strawberry swirl · Susu lembut dingin · Kopi eksotis",
-    desc: "Unik dan segarnya jus stroberi kental berpadu krim lembut dan susu segar yang menyejukkan.",
-    image: "/images/menu/drinks/trapezius.webp",
-    badge: "Refreshing Fusion",
-    isSignature: true,
-  },
-
-  // 2. ESPRESSO BASED
-  {
-    id: "esp-01",
-    name: "Es Kopi Susu Clavicula",
-    price: 19000,
-    category: "Espresso Based",
-    notes: "Espresso robusta-arabika · Susu kental manis · Fresh milk dingin",
-    desc: "Kopi susu klasik racikan orisinal Clavicula, manis legit pas dan menyegarkan.",
-    image: "/images/menu/drinks/kopi-susu-ori.webp",
-    badge: "All-Day Classic",
-  },
-  {
-    id: "esp-02",
-    name: "Flavour Latte",
-    price: 24000,
-    category: "Espresso Based",
-    notes: "Sirup hazelnut / vanilla / caramel · Double ristretto · Steamed milk",
-    desc: "Espresso dengan paduan sirup aromatik pilihan dan tekstur steamed milk lembut silky.",
-    image: "/images/menu/drinks/flavour-latte.webp",
-    badge: "Barista Special",
-  },
-  {
-    id: "esp-03",
-    name: "Coffee Lemonade",
-    price: 24000,
-    category: "Espresso Based",
-    notes: "Lemon segar · Soda dingin effervescent · Espresso float",
-    desc: "Sensasi perasan lemon sitrun asam segar dipadukan soda dingin dan ekstrak kopi berkarakter.",
-    image: "/images/menu/drinks/coffee-lemonade.webp",
-    badge: "Summer Cooler",
-  },
-  {
-    id: "esp-04",
-    name: "Flavour Americano",
-    price: 18000,
-    category: "Espresso Based",
-    notes: "Double shot espresso · Cold sparkling/still water · Touch of citrus",
-    desc: "Americano dingin jernih berkarakter dengan sentuhan aroma manis buah yang menyegarkan.",
-    image: "/images/menu/drinks/flavour-americano.webp",
-  },
-  {
-    id: "esp-05",
-    name: "Caramel Machiato",
-    price: 24000,
-    category: "Espresso Based",
-    notes: "Vanilla syrup · Foamed milk · Espresso drizzle · Saus karamel legit",
-    desc: "Lapisan susu vanilla lembut ditimpa espresso aromatik dan guratan saus karamel lezat.",
-    image: "/images/menu/drinks/caramel-macchiato.webp",
-  },
-  {
-    id: "esp-06",
-    name: "Affogato",
-    price: 19000,
-    category: "Espresso Based",
-    notes: "2 scoop vanilla gelato · Hot double ristretto pour",
-    desc: "Es krim vanila premium diguyur double espresso panas yang pekat dan harum semerbak.",
-    image: "/images/menu/drinks/affogato.webp",
-    badge: "Classic Italian",
-  },
-  {
-    id: "esp-07",
-    name: "Cookies Coffee",
-    price: 26000,
-    category: "Espresso Based",
-    notes: "Espresso blend · Remahan cookies hitam cokelat · Whipped cream",
-    desc: "Minuman kopi dingin creamy bertekstur krispi biskuit cokelat dengan topping krim.",
-    image: "/images/menu/drinks/cookies-coffee.webp",
-  },
-  {
-    id: "esp-08",
-    name: "Matcha Coffee Latte",
-    price: 26000,
-    category: "Espresso Based",
-    notes: "Pure Uji Matcha · Fresh milk · Layer double shot espresso",
-    desc: "Tiga layer warna cantik menyatukan pahit manis matcha otentik dengan espresso harum.",
-    image: "/images/menu/drinks/matcha-coffee-latte.webp",
-    badge: "Artisan Layer",
-  },
-
-  // 3. SPECIAL CLAVICULA (STEAK & KITCHEN)
-  {
-    id: "spc-01",
-    name: "Clavicula Tenderloin Steak",
-    price: 80000,
-    category: "Special Clavicula (Steak & Kitchen)",
-    notes: "Tenderloin empuk juicy · Dual dipping sauce · Mashed potato & sauted vegetables",
-    desc: "Steak daging sapi tenderloin pilihan dipanggang empuk dengan mashed potato gurih lembut dan dua pilihan saus lezat. (Harga sudah termasuk PPN).",
-    image: "/assets/clavicula/foods/steak-tenderloin-card.jpg",
-    badge: "Chef Choice · 80K Nett",
-    isBestSeller: true,
-  },
-
-  // 4. SPECIAL BOWL & NOODLE
-  {
-    id: "bwl-01",
-    name: "Chicken Katsu With Sauce",
-    price: 24000,
-    category: "Special Bowl & Noodle",
-    notes: "Fillet ayam krispi tebal · Nasi pulen hangat · Saus gurih pilihan (BBQ/Teriyaki)",
-    desc: "Ayam fillet katsu goreng renyah keemasan disiram saus gurih spesial di atas semangkuk nasi pulen.",
-    image: "/images/menu/foods/chicken-katsu-with-sauce.webp",
-    badge: "Best Value",
-  },
-  {
-    id: "bwl-02",
-    name: "Chicken Katsu Spicy",
-    price: 24000,
-    category: "Special Bowl & Noodle",
-    notes: "Katsu dada ayam renyah · Bumbu cabai pedas meresap · Nasi hangat",
-    desc: "Ayam katsu gurih renyah berpadu baluran saus pedas nikmat untuk penikmat cita rasa pedas mantap.",
-    image: "/images/menu/foods/chicken-katsu-spicy.webp",
-    badge: "Spicy Lovers",
-  },
-  {
-    id: "bwl-03",
-    name: "Mentai Rice Bowl",
-    price: 28000,
-    category: "Special Bowl & Noodle",
-    notes: "Nasi pulen Jepang · Topping daging gurih · Saus mentai creamy torched",
-    desc: "Nasi hangat ditutupi daging olahan lezat dan siraman saus mentai bakar beraroma khas smoky menggugah selera.",
-    image: "/images/menu/foods/mentai-rice.webp",
-    badge: "Torched Mentai",
-    isBestSeller: true,
-  },
-  {
-    id: "bwl-04",
-    name: "Javanese Fried Rice",
-    price: 20000,
-    category: "Special Bowl & Noodle",
-    notes: "Nasi goreng bumbu rempah Jawa · Suwiran ayam · Kerupuk & acar",
-    desc: "Nasi goreng racikan bumbu khas tradisional Jawa beraroma wajan panas smoky gurih manis pas.",
-    image: "/images/menu/foods/javanese-fried-rice.webp",
-    badge: "Indonesian Classic",
-  },
-  {
-    id: "bwl-05",
-    name: "Javanese Fried Noodles",
-    price: 20000,
-    category: "Special Bowl & Noodle",
-    notes: "Mie telur kenyal · Bumbu kecap rempah wangi · Sayuran segar & telur",
-    desc: "Mie goreng gurih nikmat dimasak dengan api besar bersama sayur segar, telur, dan bumbu rempah autentik.",
-    image: "/images/menu/foods/javanese-fried-noodles.webp",
-  },
-
-  // 5. DESSERT & SNACK
-  {
-    id: "snk-01",
-    name: "Yakitori Clavicula",
-    price: 24000,
-    category: "Dessert & Snack",
-    notes: "Sate ayam fillet empuk · Saus tare manis gurih karamel · 4 tusuk porsi",
-    desc: "Sate ayam khas Jepang dengan potongan daging paha empuk berlumur saus tare gurih manis dipanggang merata.",
-    image: "/images/menu/foods/yakitori.webp",
-    badge: "Japanese Pick",
-    isBestSeller: true,
-  },
-  {
-    id: "snk-02",
-    name: "Dimsum Mentai",
-    price: 24000,
-    category: "Dessert & Snack",
-    notes: "Dimsum kukus lembut · Saus mentai creamy bakar · Taburan nori gurih",
-    desc: "Dimsum olahan ayam dan udang kenyal gurih dibalut lelehan saus mentai gurih beraroma bakar torched.",
-    image: "/images/menu/foods/dimsum-mentai.webp",
-    badge: "Best Seller Snack",
-    isBestSeller: true,
-  },
-  {
-    id: "snk-03",
-    name: "Dimsum Ori",
-    price: 20000,
-    category: "Dessert & Snack",
-    notes: "Dimsum ayam kukus pulen · Chili oil pedas harum · Porsi 4 pcs",
-    desc: "Dimsum kukus renyah gurih daging ayam segar disajikan hangat dengan dipping chili oil aromatik.",
-    image: "/images/menu/foods/dimsum-ori.webp",
-  },
-  {
-    id: "snk-04",
-    name: "Gochucula Chicken Wings",
-    price: 25000,
-    category: "Dessert & Snack",
-    notes: "Sayap ayam goreng garing · Glaze gochujang manis pedas Korea · Wijen",
-    desc: "Sayap ayam renyah berbalut saus gochujang khas Korea dengan sensasi manis gurih pedas bikin nagih.",
-    image: "/images/menu/foods/gochucula-chicken-wings.webp",
-    badge: "Korean Glazed",
-  },
-  {
-    id: "snk-05",
-    name: "Sate Taichan Mozarella",
-    price: 26000,
-    category: "Dessert & Snack",
-    notes: "Daging dada ayam panggang gurih · Sambal taichan pedas asam segar · Keju mozarella leleh",
-    desc: "Sate taichan daging ayam lembut diselimuti lelehan keju mozarella molor dan sambal taichan pedas nendang.",
-    image: "/images/menu/foods/sate-taichan-mozarella.webp",
-    badge: "Mozarella Melt",
-  },
-  {
-    id: "snk-06",
-    name: "Hotdog Clavicula",
-    price: 26000,
-    category: "Dessert & Snack",
-    notes: "Sosis bratwurst panggang juicy · Roti bun empuk · Mustard, mayo & keju",
-    desc: "Roti hotdog panggang lembut dengan sosis jumbo berkualitas, saus keju gurih, dan taburan saus mustard nikmat.",
-    image: "/images/menu/foods/hotdog.webp",
-  },
-  {
-    id: "snk-07",
-    name: "Tiramisu Cake",
-    price: 35000,
-    category: "Dessert & Snack",
-    notes: "Ladyfinger sponge renyah lembut · Kopi espresso soak · Krim mascarpone & cocoa",
-    desc: "Kue tiramisu klasik Italia dengan lapisan krim lembut berpadu aroma rendaman espresso otentik.",
-    image: "/images/menu/foods/tiramisu-cake.webp",
-    badge: "Sweet Tooth",
-  },
-  {
-    id: "snk-08",
-    name: "Mille Crepes",
-    price: 32000,
-    category: "Dessert & Snack",
-    notes: "Puluhan lapis crepe tipis · Krim vanilla lembut meleleh di mulut",
-    desc: "Kue crepe berlapis-lapis tipis dengan isian krim manis lembut segar disajikan dingin pas untuk teman kopi.",
-    image: "/images/menu/foods/mille-crepes.webp",
-  },
-
-  // 6. NON-COFFEE & BLEND
-  {
-    id: "nc-01",
-    name: "Charcoal Blend",
-    price: 24000,
-    category: "Non-Coffee & Blend",
-    notes: "Activated bamboo charcoal · Susu segar gurih · Manis lembut menenangkan",
-    desc: "Minuman non-coffee estetik berwarna abu-abu gelap dengan rasa manis lembut creamy dan khasiat charcoal alami.",
-    image: "/images/menu/drinks/charcoal-blend.webp",
-    badge: "Detox Blend",
-  },
-];
-
-const CATEGORIES = [
-  "Semua",
-  "Signature Drink (Anatomi)",
-  "Espresso Based",
-  "Special Clavicula (Steak & Kitchen)",
-  "Special Bowl & Noodle",
-  "Dessert & Snack",
-  "Non-Coffee & Blend",
-];
+import {
+  SIGNATURE_LINEUP,
+  ALL_MENU_ITEMS,
+  CATEGORIES,
+} from "@/data/menuData";
 
 const POSTER_GALLERY = [
+  { title: "Banner Resmi: Clavicula Coffee & Idea", src: "/images/banner-clavicula.jpg" },
   { title: "Poster Resmi: Our Signature Menu - Manubrium (Kopi Susu Gula Aren)", src: "/assets/clavicula/drinks/manubrium-poster.jpg" },
   { title: "Poster Resmi: Clavicula Tenderloin Steak (80K Nett)", src: "/assets/clavicula/foods/clavicula-tenderloin-steak-poster.jpg" },
   { title: "Poster Resmi: Espresso, Signature & Manual Brew", src: "/assets/clavicula-menu-coffee-poster.jpg" },
@@ -656,7 +247,7 @@ export default function MenuPage() {
 
           {/* Lead Paragraph with rich real information */}
           <p className="mt-4 md:mt-6 max-w-2xl text-base sm:text-lg text-[rgba(241,231,214,0.85)] font-light leading-relaxed">
-            Dilahirkan dari latar belakang medis di Slawi, nama <strong className="text-white font-medium">Clavicula</strong> (tulang selangka) menjadi simbol simpul penyeimbang yang menyatukan ide, raga, dan rasa. Dari aroma sangrai segar di bar roastery Slawi hingga sejuknya kabut hutan pinus di Clavicula Hills Guci (1.050 mdpl), nikmati kurasi 120+ sajian halal: deretan signature anatomi berlayer, seduhan single origin arabika nusantara, serta hidangan dapur hangat mulai dari Tenderloin Steak hingga semangkuk Tomyam gurih.
+            Dilahirkan dari latar belakang medis di Slawi, nama <strong className="text-white font-medium">Clavicula</strong> (tulang selangka) menjadi simbol simpul penyeimbang yang menyatukan ide, raga, dan rasa. Dari aroma sangrai segar di bar roastery Slawi hingga sejuknya kabut hutan pinus di Clavicula Hills Guci (1.050 mdpl), nikmati kurasi 88 sajian halal berfoto HD: deretan signature anatomi berlayer, seduhan single origin arabika nusantara, serta hidangan dapur hangat mulai dari Tenderloin Steak hingga semangkuk Tomyam gurih.
           </p>
 
           {/* Action Buttons */}
@@ -671,7 +262,7 @@ export default function MenuPage() {
               href="#full-menu"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-sm text-[#f1e7d6] border border-white/20 hover:bg-white/10 transition-all font-mono tracking-wide"
             >
-              Daftar Menu Lengkap (120+ Menu)
+              Daftar Menu Lengkap (88 Menu HD)
             </a>
             <button
               onClick={() => setShowPosterGallery(!showPosterGallery)}
@@ -895,58 +486,64 @@ export default function MenuPage() {
           {SIGNATURE_LINEUP.map((sig) => (
             <article
               key={sig.index}
-              className={`w-[310px] sm:w-[350px] md:w-[370px] shrink-0 snap-start ${t.cardBg} border ${t.cardBorder} rounded-[2rem] overflow-hidden hover:-translate-y-2 ${t.cardShadow} transition-all duration-300 flex flex-col justify-between group`}
+              className={`w-[300px] sm:w-[330px] md:w-[350px] shrink-0 snap-start ${t.cardBg} border ${t.cardBorder} rounded-[2rem] overflow-hidden hover:-translate-y-2 ${t.cardShadow} transition-all duration-300 flex flex-col justify-between group`}
             >
-              {/* Media Container (Ember 4:5 Aspect Ratio) */}
-              <div className={`relative aspect-[4/5] w-full ${t.cardImageBg} overflow-hidden border-b ${t.sectionBorder}`}>
+              {/* Media Container with clean object-cover & soft ambient backdrop */}
+              <div className={`relative aspect-[4/5] w-full bg-[#f6f2ec] overflow-hidden border-b ${t.sectionBorder}`}>
                 <Image
                   src={sig.image}
                   alt={sig.name}
                   fill
-                  className={`group-hover:scale-105 transition-transform duration-700 ${
-                    sig.image.endsWith(".webp")
-                      ? "object-contain p-4"
-                      : "object-cover"
-                  }`}
+                  sizes="(max-width: 768px) 300px, 350px"
+                  className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
 
-                {/* Bottom Left Tag */}
-                <span className="absolute bottom-4 left-4 bg-espresso/85 backdrop-blur-md text-white font-mono text-[10px] tracking-wider uppercase px-3 py-1.5 rounded-full border border-white/20">
-                  {sig.category}
-                </span>
+                {/* Subtle gradient vignette to give depth without clutter */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-black/30 pointer-events-none" />
 
-                {/* Top Right Index (01, 02...) */}
-                <span className={`absolute top-4 right-4 font-display font-black text-2xl ${t.headingColor} ${t.cardBg} backdrop-blur-md px-3 py-1 rounded-2xl border ${t.cardBorder} shadow-sm`}>
-                  {sig.index}
-                </span>
-
-                {/* Badge if present */}
+                {/* Single Elegant Top-Left Badge */}
                 {sig.badge && (
-                  <span className={`absolute top-4 left-4 ${t.badgeBg} ${t.badgeText} font-mono font-bold text-[9px] uppercase tracking-wider px-2.5 py-1 rounded-full shadow-sm`}>
-                    {sig.badge}
-                  </span>
+                  <div className="absolute top-3.5 left-3.5 z-10">
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-stone-900/80 backdrop-blur-md text-amber-200 text-[10px] font-mono tracking-widest uppercase border border-amber-500/20 shadow-sm">
+                      <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+                      {sig.badge}
+                    </span>
+                  </div>
                 )}
+
+                {/* Understated Minimal Top-Right Index */}
+                <span className="absolute top-3.5 right-3.5 z-10 font-mono text-[11px] font-semibold text-stone-200 bg-stone-900/70 backdrop-blur-md px-2.5 py-0.5 rounded-full border border-white/15">
+                  #{sig.index}
+                </span>
+
+                {/* Bottom Left Category Eyebrow */}
+                <div className="absolute bottom-3 left-4 z-10">
+                  <span className="text-[10px] font-mono tracking-[0.2em] uppercase text-stone-200 drop-shadow-sm font-semibold">
+                    {sig.category}
+                  </span>
+                </div>
               </div>
 
               {/* Body */}
-              <div className="p-6 md:p-7 flex flex-col justify-between flex-1">
+              <div className="p-5 sm:p-6 flex flex-col justify-between flex-1">
                 <div>
                   <div className="flex items-baseline justify-between gap-3 mb-2">
-                    <h3 className={`font-display text-2xl font-black ${t.headingColor} transition-colors leading-tight`}>
+                    <h3 className={`font-display text-2xl font-black ${t.headingColor} group-hover:${t.accentColor} transition-colors leading-tight`}>
                       {sig.name}
                     </h3>
-                    <span className={`font-mono text-lg font-bold ${t.accentColor} whitespace-nowrap`}>
+                    <span className={`font-mono text-base font-bold ${t.accentColor} whitespace-nowrap bg-amber-500/10 px-2.5 py-0.5 rounded-md border border-amber-500/20`}>
                       Rp {sig.price.toLocaleString("id-ID")}
                     </span>
                   </div>
 
-                  <p className={`text-sm ${t.subtextColor} font-medium leading-relaxed mb-3`}>
+                  <p className={`text-xs sm:text-sm ${t.subtextColor} font-medium leading-relaxed mb-3 line-clamp-2`}>
                     {sig.notes}
                   </p>
                 </div>
 
-                <div className={`pt-3 border-t ${t.sectionBorder} mt-auto`}>
-                  <p className={`text-xs ${t.subtextColor} font-serif italic leading-relaxed opacity-80`}>
+                <div className={`pt-3 border-t ${t.sectionBorder} mt-auto flex items-start gap-2`}>
+                  <span className="text-amber-800/60 text-xs font-serif italic shrink-0">✦</span>
+                  <p className={`text-[11px] ${t.subtextColor} font-serif italic leading-relaxed opacity-80 line-clamp-2`}>
                     {sig.concept}
                   </p>
                 </div>
@@ -1169,10 +766,10 @@ export default function MenuPage() {
 
             <div className={`border-l ${t.sectionBorder} pl-5`}>
               <span className={`font-display font-black text-4xl md:text-5xl ${t.accentColor} block leading-none`}>
-                120+
+                88
               </span>
               <p className={`mt-2 text-xs md:text-sm ${t.subtextColor} font-mono uppercase tracking-wider`}>
-                Menu Minuman &amp; Santapan Dapur
+                Menu Minuman &amp; Santapan Berfoto HD
               </p>
             </div>
 
@@ -1188,7 +785,7 @@ export default function MenuPage() {
         </div>
       </section>
 
-      {/* ─── 8. THE COMPLETE CAFE MENU (ALL 120+ ITEMS FROM PDF) ─────── */}
+      {/* ─── 8. THE COMPLETE CAFE MENU (ALL 88 ITEMS FROM WEB ASSETS) ─────── */}
       <section id="full-menu" className={`py-20 md:py-28 ${t.sectionBg} scroll-mt-24 transition-colors duration-500`}>
         <div className="mx-auto max-w-7xl px-4 md:px-8">
           

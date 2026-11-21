@@ -53,7 +53,7 @@ const REELS: ReelCard[] = [
     caption: "Signature Coffee berfilosofi anatomi: Manubrium, Acromion, Subclavius, Sternum, Costa & Scapula racikan barista Clavicula.",
     account: "@clavicula_coffee",
     type: "post",
-    thumb: "/assets/clavicula/drinks/manubrium.webp",
+    thumb: "/images/manubrium.jpg",
   },
   {
     postUrl: "https://www.instagram.com/clavicula_coffee/",

@@ -8,8 +8,12 @@ export type CartItem = {
   price: number;
   quantity: number;
   grind?: string;
+  size?: string;
+  savings?: number;
+  appPrice?: number;
   category?: string;
   image?: string;
+  notes?: string;
 };
 
 type Toast = {
@@ -29,6 +33,27 @@ export type ReservationDetails = {
   notes?: string;
 };
 
+export type PickupOrder = {
+  pickupCode: string;
+  outlet: "Slawi" | "Guci";
+  outletAddress: string;
+  orderType: "pickup" | "dine_in";
+  orderTypeLabel: string;
+  customerName: string;
+  customerPhone: string;
+  pickupTime: string;
+  pickupTimeLabel: string;
+  items: CartItem[];
+  subtotal: number;
+  taxAmount: number;
+  totalAmount: number;
+  totalAppPrice: number;
+  totalSavings: number;
+  status: "MENUNGGU_KONFIRMASI_WA" | "DIKONFIRMASI";
+  notes?: string;
+  createdAt: string;
+};
+
 type UIContextType = {
   isCartOpen: boolean;
   openCart: () => void;
@@ -43,19 +68,25 @@ type UIContextType = {
   openReservationTicket: (code: string, data?: Partial<ReservationDetails>) => void;
   closeReservationTicket: () => void;
 
+  pickupOrder: PickupOrder | null;
+  openPickupTicket: (order: PickupOrder) => void;
+  closePickupTicket: () => void;
+
   toasts: Toast[];
   addToast: (message: string) => void;
 
   cartItems: CartItem[];
   addToCart: (item: Omit<CartItem, "quantity" | "id">) => void;
   updateQuantity: (id: string, delta: number) => void;
+  updateItemGrind: (id: string, grind: string) => void;
+  updateItemSize: (id: string, size: string, newPrice: number, savings?: number) => void;
   clearCart: () => void;
 
   specialRequest: string;
   setSpecialRequest: (req: string) => void;
 
-  selectedOutlet: "slawi" | "guci";
-  setSelectedOutlet: (outlet: "slawi" | "guci") => void;
+  selectedOutlet: "Slawi" | "Guci";
+  setSelectedOutlet: (outlet: "Slawi" | "Guci" | "slawi" | "guci") => void;
 };
 
 const UIContext = createContext<UIContextType | undefined>(undefined);
@@ -65,10 +96,19 @@ export function UIProvider({ children }: { children: ReactNode }) {
   const [isMapOpen, setIsMapOpen] = useState(false);
   const [reservationTicket, setReservationTicket] = useState<string | null>(null);
   const [reservationData, setReservationData] = useState<ReservationDetails | null>(null);
+  const [pickupOrder, setPickupOrder] = useState<PickupOrder | null>(null);
   const [toasts, setToasts] = useState<Toast[]>([]);
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [specialRequest, setSpecialRequest] = useState("");
-  const [selectedOutlet, setSelectedOutlet] = useState<"slawi" | "guci">("slawi");
+  const [selectedOutlet, setInternalSelectedOutlet] = useState<"Slawi" | "Guci">("Slawi");
+
+  const setSelectedOutlet = (outlet: "Slawi" | "Guci" | "slawi" | "guci") => {
+    if (outlet.toLowerCase() === "guci") {
+      setInternalSelectedOutlet("Guci");
+    } else {
+      setInternalSelectedOutlet("Slawi");
+    }
+  };
 
   const openCart = () => setIsCartOpen(true);
   const closeCart = () => setIsCartOpen(false);
@@ -98,6 +138,14 @@ export function UIProvider({ children }: { children: ReactNode }) {
     setReservationData(null);
   };
 
+  const openPickupTicket = (order: PickupOrder) => {
+    setPickupOrder(order);
+  };
+
+  const closePickupTicket = () => {
+    setPickupOrder(null);
+  };
+
   const addToast = (message: string) => {
     const id = Math.random().toString(36).substring(7);
     setToasts((prev) => [...prev, { id, message }]);
@@ -109,7 +157,10 @@ export function UIProvider({ children }: { children: ReactNode }) {
   const addToCart = (item: Omit<CartItem, "quantity" | "id">) => {
     setCartItems((prev) => {
       const existing = prev.find(
-        (i) => i.name === item.name && (i.grind === item.grind || (!i.grind && !item.grind))
+        (i) =>
+          i.name === item.name &&
+          (i.size === item.size || (!i.size && !item.size)) &&
+          (i.grind === item.grind || (!i.grind && !item.grind))
       );
       if (existing) {
         return prev.map((i) =>
@@ -125,7 +176,7 @@ export function UIProvider({ children }: { children: ReactNode }) {
         },
       ];
     });
-    addToast(`${item.name} berhasil ditambahkan ke keranjang.`);
+    addToast(`${item.name} ${item.size ? `(${item.size})` : ""} ditambahkan ke keranjang.`);
     openCart();
   };
 
@@ -140,6 +191,20 @@ export function UIProvider({ children }: { children: ReactNode }) {
           return item;
         })
         .filter((i) => i.quantity > 0)
+    );
+  };
+
+  const updateItemGrind = (id: string, grind: string) => {
+    setCartItems((prev) =>
+      prev.map((item) => (item.id === id ? { ...item, grind } : item))
+    );
+  };
+
+  const updateItemSize = (id: string, size: string, newPrice: number, savings?: number) => {
+    setCartItems((prev) =>
+      prev.map((item) =>
+        item.id === id ? { ...item, size, price: newPrice, savings: savings ?? item.savings } : item
+      )
     );
   };
 
@@ -158,11 +223,16 @@ export function UIProvider({ children }: { children: ReactNode }) {
         reservationData,
         openReservationTicket,
         closeReservationTicket,
+        pickupOrder,
+        openPickupTicket,
+        closePickupTicket,
         toasts,
         addToast,
         cartItems,
         addToCart,
         updateQuantity,
+        updateItemGrind,
+        updateItemSize,
         clearCart,
         specialRequest,
         setSpecialRequest,
