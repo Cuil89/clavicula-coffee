@@ -52,6 +52,9 @@ export default function PickupTicketModal() {
       `*TOTAL NETT BAYAR DI KASIR: ${formatRupiah(pickupOrder.totalAmount)}*\n` +
       `(Rp 0 Biaya Admin — Bayar Tunai / QRIS di Kasir)\n` +
       (pickupOrder.notes ? `\nCatatan: ${pickupOrder.notes}\n` : "") +
+      (pickupOrder.isHighValue
+        ? `\n⚠️ Catatan: Pesanan partai besar (> Rp 150.000), siap menerima arahan QRIS DP kasir.\n`
+        : "") +
       `\nHalo Kasir Clavicula, mohon konfirmasi pesanan saya agar bisa disiapkan. Terima kasih!`
   )}`;
 
@@ -195,6 +198,17 @@ export default function PickupTicketModal() {
               </div>
             </div>
 
+            {/* High-Value / Large Order Safeguard Banner */}
+            {pickupOrder.isHighValue && (
+              <div className="p-3 bg-amber-50 border border-amber-300 rounded-2xl flex items-start gap-2.5">
+                <AlertCircle size={18} className="text-amber-600 shrink-0 mt-0.5" />
+                <div className="text-[11px] text-espresso/80 leading-relaxed">
+                  <strong className="block font-bold text-amber-950">Pesanan Partai Besar (&ge; Rp 150.000):</strong>
+                  Kasir akan memeriksa kesiapan bahan via WhatsApp dan dapat memberikan QRIS DP agar pesanan langsung diprioritaskan.
+                </div>
+              </div>
+            )}
+
             {/* Fresh Grind Guarantee Banner */}
             <div className="p-3 bg-amber-50 border border-amber-300/80 rounded-2xl flex items-start gap-2.5">
               <ShieldCheck size={18} className="text-chestnut shrink-0 mt-0.5" />
@@ -282,20 +296,21 @@ export default function PickupTicketModal() {
           {/* ── ACTION FOOTER ── */}
           <div className="p-5 bg-linen border-t border-chestnut/10 space-y-2.5">
             {/* Anti Ghost-Order Warning */}
-            <div className="p-2.5 bg-amber-50 border border-amber-300/80 rounded-2xl flex items-start gap-2 text-[11px] text-espresso leading-snug">
-              <span className="shrink-0 text-sm">⚠️</span>
-              <span>
-                <strong>Perhatian:</strong> Barista di kasir <u>hanya akan mulai meracik pesanan</u> setelah pesan WhatsApp di bawah terkirim. Mohon tekan tombol hijau berikut:
-              </span>
+            <div className="p-3 bg-amber-50 border border-amber-300/80 rounded-2xl flex items-start gap-2.5 text-[11px] text-espresso leading-snug">
+              <span className="shrink-0 text-base">⚠️</span>
+              <div>
+                <strong className="text-amber-950 block">Penting untuk Menghindari Kopi Meleleh:</strong>
+                Barista kasir baru akan mulai meracik hidangan setelah Anda mengirim rincian tiket via WhatsApp di bawah atau saat Anda tiba di kasir outlet.
+              </div>
             </div>
 
             {/* Primary WA Button (Crucial Anti Ghost-Order Step) */}
             <button
               onClick={handleOpenWhatsApp}
-              className="w-full py-3.5 px-6 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold flex items-center justify-center gap-2 shadow-md transition-all active:scale-[0.98] text-xs sm:text-sm"
+              className="w-full py-4 px-6 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-black flex items-center justify-center gap-2.5 shadow-lg hover:shadow-xl transition-all active:scale-[0.98] text-sm"
             >
-              <MessageCircle size={18} />
-              1-Klik Kirim WhatsApp ke Kasir (+62 877-3344-4426)
+              <MessageCircle size={20} className="fill-white" />
+              <span>Kirim Tiket ke WhatsApp Kasir (1-Klik)</span>
             </button>
 
             <button

@@ -49,6 +49,7 @@ export type PickupOrder = {
   totalAmount: number;
   totalAppPrice: number;
   totalSavings: number;
+  isHighValue?: boolean;
   status: "MENUNGGU_KONFIRMASI_WA" | "DIKONFIRMASI";
   notes?: string;
   createdAt: string;

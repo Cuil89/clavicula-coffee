@@ -15,6 +15,7 @@ import {
   UtensilsCrossed,
   PackageCheck,
   Info,
+  AlertTriangle,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import Link from "next/link";
@@ -39,6 +40,7 @@ export default function CartDrawer() {
   const [mounted, setMounted] = useState(false);
   const [customerName, setCustomerName] = useState("");
   const [customerPhone, setCustomerPhone] = useState("");
+  const [isAutoFilled, setIsAutoFilled] = useState(false);
   const [orderType, setOrderType] = useState<"pickup" | "dine_in">("pickup");
   const [pickupSlot, setPickupSlot] = useState(PICKUP_TIME_OPTIONS[0].id);
   const [customTime, setCustomTime] = useState("");
@@ -47,6 +49,19 @@ export default function CartDrawer() {
 
   useEffect(() => {
     setMounted(true);
+    try {
+      const saved = localStorage.getItem("clavicula_customer_info");
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (parsed.name || parsed.phone) {
+          if (parsed.name) setCustomerName(parsed.name);
+          if (parsed.phone) setCustomerPhone(parsed.phone);
+          setIsAutoFilled(true);
+        }
+      }
+    } catch {
+      // ignore
+    }
   }, []);
 
   if (!mounted) return null;
@@ -115,12 +130,32 @@ export default function CartDrawer() {
       return;
     }
 
+    const digitsOnly = customerPhone.replace(/\D/g, "");
+    if (digitsOnly.length < 9) {
+      addToast("Nomor WhatsApp belum valid (minimal 10 digit angka).");
+      return;
+    }
+
     setIsSubmitting(true);
+
+    // Save customer info in device for instant auto-remember next time
+    try {
+      localStorage.setItem(
+        "clavicula_customer_info",
+        JSON.stringify({
+          name: customerName.trim(),
+          phone: customerPhone.trim(),
+        })
+      );
+    } catch {
+      // ignore
+    }
 
     // Generate official Pickup Code: CLV-SLW-XXX or CLV-GCI-XXX
     const randomNum = Math.floor(100 + Math.random() * 900);
     const branchPrefix = isSlawi ? "SLW" : "GCI";
     const pickupCode = `CLV-${branchPrefix}-${randomNum}`;
+    const isHighValue = totalNett >= 150000;
 
     const orderData = {
       pickupCode,
@@ -138,6 +173,7 @@ export default function CartDrawer() {
       totalAmount: totalNett,
       totalAppPrice,
       totalSavings,
+      isHighValue,
       status: "MENUNGGU_KONFIRMASI_WA" as const,
       notes: orderNotes.trim(),
       createdAt: new Date().toLocaleString("id-ID", {
@@ -525,6 +561,30 @@ export default function CartDrawer() {
                   <span className="text-[10px] text-emerald-700 font-semibold">15 Detik Selesai</span>
                 </div>
 
+                {/* Auto-filled banner if returning customer */}
+                {isAutoFilled && (
+                  <div className="flex items-center justify-between text-[10px] text-emerald-800 bg-emerald-50 px-2.5 py-1.5 rounded-xl border border-emerald-200">
+                    <span className="flex items-center gap-1.5 font-medium">
+                      <Sparkles size={12} className="text-emerald-600 shrink-0" />
+                      Data nama &amp; WA terisi otomatis dari pesanan Anda sebelumnya
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setCustomerName("");
+                        setCustomerPhone("");
+                        setIsAutoFilled(false);
+                        try {
+                          localStorage.removeItem("clavicula_customer_info");
+                        } catch {}
+                      }}
+                      className="text-[9px] underline hover:text-chestnut ml-2 text-emerald-700 shrink-0 font-semibold"
+                    >
+                      (Ganti)
+                    </button>
+                  </div>
+                )}
+
                 {/* Field 1: Nama */}
                 <div>
                   <label className="text-[10px] font-mono uppercase tracking-wider text-espresso/60 block mb-1">
@@ -554,7 +614,7 @@ export default function CartDrawer() {
                     className="w-full text-xs px-3 py-2 rounded-xl border border-chestnut/20 bg-linen focus:bg-white focus:outline-none focus:ring-1 focus:ring-chestnut font-medium text-espresso"
                   />
                   <span className="text-[9px] text-espresso/50 mt-0.5 block">
-                    Digunakan kasir untuk konfirmasi pesanan Anda via WhatsApp
+                    Kasir akan mengirim update &amp; konfirmasi pesanan ke nomor ini
                   </span>
                 </div>
 
@@ -674,7 +734,51 @@ export default function CartDrawer() {
         {/* ── 7. DRAWER FOOTER: TOMBOL CHECKOUT (BAYAR DI KASIR) ── */}
         {cartItems.length > 0 && (
           <div className="p-4 sm:p-5 bg-white border-t border-chestnut/15 space-y-2.5 shadow-lg shrink-0">
-            <div className="flex justify-between items-baseline">
+            {/* Branch Selection Guard (Anti-Salah Outlet) */}
+            <div className="flex items-center justify-between p-2.5 bg-vanilla/70 border border-chestnut/15 rounded-xl text-xs">
+              <div className="flex items-center gap-2">
+                <MapPin size={15} className="text-chestnut shrink-0" />
+                <div>
+                  <span className="font-bold text-espresso block text-[11px]">
+                    Outlet Ambil: {isSlawi ? "Cabang 01 Slawi (Roastery HQ)" : "Cabang 02 Guci Hills"}
+                  </span>
+                  <span className="text-[10px] text-espresso/60 block">
+                    {isSlawi ? "Buka 08.00 — 23.00 WIB" : "Buka 09.00 — 21.00 WIB"}
+                  </span>
+                </div>
+              </div>
+              <button
+                type="button"
+                onClick={() => setSelectedOutlet(isSlawi ? "Guci" : "Slawi")}
+                className="text-[10px] font-mono text-chestnut hover:bg-chestnut hover:text-white font-bold px-2 py-1 rounded-lg bg-white border border-chestnut/20 transition-all shrink-0"
+              >
+                Ganti Cabang ⇄
+              </button>
+            </div>
+
+            {/* Smart Safety Cap Alert (Partai Besar vs Reguler) */}
+            {totalNett >= 150000 ? (
+              <div className="p-2.5 rounded-xl bg-amber-50 border border-amber-300 text-[11px] text-espresso leading-snug flex items-start gap-2">
+                <AlertTriangle size={15} className="text-amber-600 shrink-0 mt-0.5" />
+                <div>
+                  <span className="font-bold text-amber-900 block text-[11px]">
+                    Proteksi Pesanan Besar (&ge; Rp 150.000)
+                  </span>
+                  <span className="text-espresso/70 text-[10px] leading-tight block">
+                    Untuk menjaga kesegaran hidangan, kasir akan memvalidasi &amp; mengirim QRIS DP via WhatsApp sebelum pesanan mulai dimasak.
+                  </span>
+                </div>
+              </div>
+            ) : (
+              <div className="p-2 rounded-xl bg-emerald-50 border border-emerald-200 text-[10px] text-emerald-800 leading-tight flex items-center gap-2">
+                <ShieldCheck size={14} className="text-emerald-600 shrink-0" />
+                <span>
+                  <strong>Fresh Guarantee:</strong> Makanan &amp; minuman baru dibuat saat Anda konfirmasi WA atau tiba di kasir.
+                </span>
+              </div>
+            )}
+
+            <div className="flex justify-between items-baseline pt-1">
               <div>
                 <span className="text-[10px] text-espresso/60 block uppercase font-mono">
                   Total Bayar di Kasir {selectedOutlet}:
@@ -702,7 +806,7 @@ export default function CartDrawer() {
 
             {/* Anti-Ambiguity Reminder */}
             <p className="text-[10px] text-center text-espresso/60 font-medium leading-relaxed">
-              🔒 <strong>Bayar di Outlet:</strong> Tidak perlu transfer di muka. Cukup tunjukkan kode pickup di kasir {isSlawi ? "Cabang Slawi" : "Cabang Guci"}.
+              🔒 <strong>Bayar di Outlet:</strong> Tidak perlu transfer sekarang. Tunjukkan kode tiket di kasir saat mengambil pesanan.
             </p>
 
             <button
