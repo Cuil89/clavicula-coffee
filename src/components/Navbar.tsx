@@ -9,6 +9,7 @@ import { InstagramIcon } from "@/components/Icons";
 import { useUI } from "@/components/UIProvider";
 
 const navLinks = [
+  { name: "Beranda", path: "/" },
   { name: "Menu & Signature", path: "/menu" },
   { name: "Roastery & Craft", path: "/terroir" },
   { name: "Outlets & Hills", path: "/space" },
@@ -153,9 +154,6 @@ export default function Navbar() {
           </div>
 
           <nav className="flex flex-col gap-6 text-2xl font-bold pt-4 text-espresso">
-            <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>
-              Beranda
-            </Link>
             {navLinks.map((link) => (
               <Link
                 key={link.name}
