@@ -152,29 +152,29 @@ export default function Home() {
             </div>
 
             <div className="flex items-center gap-3 mb-2">
-              <h1 className="text-5xl md:text-7xl lg:text-[84px] leading-[0.92] font-black tracking-tighter text-espresso">
+              <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[84px] leading-[0.92] font-black tracking-tighter text-espresso">
                 CLAVICULA
               </h1>
             </div>
 
-            <p className="text-2xl md:text-4xl font-serif italic text-chestnut mb-6">
+            <p className="text-xl sm:text-2xl md:text-4xl font-serif italic text-chestnut mb-6">
               Coffee &amp; Idea — Where Specialty Meets Human Anatomy.
             </p>
 
-            <p className="text-base md:text-lg text-espresso/80 max-w-[48ch] mb-8 leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-espresso/80 max-w-[48ch] mb-8 leading-relaxed">
               Dinamai dari <em>clavicula</em> (tulang selangka)—titik simpul anatomis yang menyatukan dan menyeimbangkan gerak tubuh. Clavicula Coffee &amp; Idea hadir di Slawi dan sejuknya dataran tinggi Clavicula Hills Guci sebagai ruang temu hangat untuk menyatukan racikan kopi pilihan, santapan lezat, dan obrolan ide yang mengalir.
             </p>
 
-            <div className="flex flex-wrap items-center gap-4 mb-12">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mb-10 sm:mb-12 w-full sm:w-auto">
               <Link
                 href="/menu"
-                className="rounded-full bg-chestnut px-8 py-3.5 text-sm font-semibold text-white shadow-md hover:bg-chestnut/90 transition-all active:scale-95 flex items-center gap-2"
+                className="rounded-full bg-chestnut px-7 sm:px-8 py-3.5 text-sm font-semibold text-white shadow-md hover:bg-chestnut/90 transition-all active:scale-95 flex items-center justify-center gap-2"
               >
                 Lihat Menu Lengkap <ArrowRight size={16} />
               </Link>
               <Link
                 href="/space"
-                className="rounded-full border border-chestnut/40 bg-white/60 px-7 py-3.5 text-sm font-medium text-espresso hover:bg-vanilla transition-all active:scale-95 flex items-center gap-2"
+                className="rounded-full border border-chestnut/40 bg-white/60 px-6 sm:px-7 py-3.5 text-sm font-medium text-espresso hover:bg-vanilla transition-all active:scale-95 flex items-center justify-center gap-2"
               >
                 <MapPin size={16} className="text-chestnut" /> 2 Outlet Sanctuary
               </Link>
@@ -216,8 +216,8 @@ export default function Home() {
           </div>
 
           {/* Right Column (Hero Visual & Emblem) */}
-          <div className="lg:col-span-5 relative h-[540px] lg:h-[660px] w-full mt-6 lg:mt-0 group">
-            <div className="absolute inset-0 rounded-t-[200px] rounded-b-[24px] overflow-hidden shadow-2xl border border-chestnut/25 bg-[#FAF6F0]">
+          <div className="lg:col-span-5 relative h-[420px] sm:h-[520px] lg:h-[660px] w-full mt-6 lg:mt-0 group">
+            <div className="absolute inset-0 rounded-t-[140px] sm:rounded-t-[200px] rounded-b-[24px] overflow-hidden shadow-2xl border border-chestnut/25 bg-[#FAF6F0]">
               <div className="relative w-full h-full hero-image-container overflow-hidden">
                 <Image
                   src="/assets/clavicula/places/clavicula-facade-warm-perfect.jpg"
@@ -250,9 +250,9 @@ export default function Home() {
               <span className="text-xs text-espresso/60 block mt-0.5">Anatomical crafted series</span>
             </div>
 
-            <div className="absolute left-6 bottom-7 bg-espresso/90 backdrop-blur-md px-4 py-2.5 rounded-full border border-white/20 shadow-xl z-20 flex items-center gap-2.5">
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
-              <span className="text-xs font-bold tracking-widest text-white font-mono uppercase">
+            <div className="absolute left-4 sm:left-6 bottom-5 sm:bottom-7 bg-espresso/90 backdrop-blur-md px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full border border-white/20 shadow-xl z-20 flex items-center gap-2 sm:gap-2.5 max-w-[calc(100%-2rem)]">
+              <span className="w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
+              <span className="text-[10px] sm:text-xs font-bold tracking-widest text-white font-mono uppercase truncate">
                 GUCI HILLS &bull; HIGH MOUNTAIN MIST
               </span>
             </div>
@@ -267,15 +267,15 @@ export default function Home() {
             <span className="text-xs font-mono tracking-[0.2em] uppercase text-chestnut mb-3 font-semibold">
               FILOSOFI &amp; TIGA PILAR CLAVICULA
             </span>
-            <h2 className="text-4xl lg:text-5xl font-black tracking-tight text-espresso mb-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-espresso mb-4">
               Dibuat Dengan Jiwa, Rasa &amp; Nalar
             </h2>
-            <p className="text-xl font-serif italic text-espresso/70 max-w-2xl">
+            <p className="text-base sm:text-xl font-serif italic text-espresso/70 max-w-2xl">
               &quot;Dari inspirasi keseimbangan gerak tubuh menuju seduhan kopi pilihan yang jujur, disajikan dalam harmoni santap hangat.&quot;
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {[
               {
                 num: "01",
@@ -376,7 +376,7 @@ export default function Home() {
                 {/* ── ROW 1: Hero + 2 featured side cards ── */}
                 <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
                   {/* HERO CARD — Manubrium */}
-                  <div className="md:col-span-2 relative overflow-hidden rounded-3xl group cursor-pointer min-h-[480px] md:min-h-[520px] bg-espresso shadow-xl">
+                  <div className="md:col-span-2 relative overflow-hidden rounded-3xl group cursor-pointer min-h-[440px] sm:min-h-[480px] md:min-h-[520px] bg-espresso shadow-xl">
                     <Image
                       src={hero.img}
                       alt={hero.name}
@@ -387,22 +387,22 @@ export default function Home() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
                     {/* tag */}
                     {hero.tag && (
-                      <div className="absolute top-5 left-5 bg-amber-400 text-espresso text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">
+                      <div className="absolute top-4 sm:top-5 left-4 sm:left-5 bg-amber-400 text-espresso text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full shadow-sm">
                         {hero.tag}
                       </div>
                     )}
                     {/* price badge */}
-                    <div className="absolute top-5 right-5 bg-white/15 backdrop-blur-md border border-white/20 text-white text-xs font-mono font-bold px-3 py-1 rounded-full">
+                    <div className="absolute top-4 sm:top-5 right-4 sm:right-5 bg-white/15 backdrop-blur-md border border-white/20 text-white text-xs font-mono font-bold px-3 py-1 rounded-full shadow-sm">
                       Rp {hero.price.toLocaleString("id-ID")}
                     </div>
                     {/* bottom text */}
-                    <div className="absolute bottom-0 left-0 right-0 p-7">
+                    <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-7">
                       <span className="text-[10px] font-mono text-amber-400 uppercase tracking-[0.25em] mb-1 block">{hero.num} · Signature</span>
-                      <h3 className="text-4xl font-black text-white italic font-serif leading-tight mb-2">{hero.name}</h3>
-                      <p className="text-sm text-white/70 leading-relaxed mb-5">{hero.note}</p>
+                      <h3 className="text-3xl sm:text-4xl font-black text-white italic font-serif leading-tight mb-2">{hero.name}</h3>
+                      <p className="text-xs sm:text-sm text-white/70 leading-relaxed mb-4 sm:mb-5">{hero.note}</p>
                       <button
                         onClick={() => addToCart({ name: `${hero.name} (Cup)`, price: hero.price, size: "Reguler Cup", image: hero.img, category: "Signature Anatomi" })}
-                        className="inline-flex items-center gap-2 bg-white text-espresso text-xs font-black uppercase tracking-wider px-5 py-2.5 rounded-full hover:bg-amber-400 transition-colors duration-300"
+                        className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white text-espresso text-xs font-black uppercase tracking-wider px-5 py-3 sm:py-2.5 rounded-full hover:bg-amber-400 transition-colors duration-300"
                       >
                         <ShoppingBag size={13} /> Pesan Sekarang
                       </button>
@@ -410,33 +410,33 @@ export default function Home() {
                   </div>
 
                   {/* RIGHT: 2 stacked featured cards (Costa + Acromion) */}
-                  <div className="md:col-span-3 grid grid-rows-2 gap-4">
+                  <div className="md:col-span-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 md:grid-rows-2 gap-4">
                     {rest.slice(0, 2).map((drink, idx) => (
-                      <div key={idx} className="relative overflow-hidden rounded-2xl group cursor-pointer min-h-[200px] bg-espresso shadow-lg">
+                      <div key={idx} className="relative overflow-hidden rounded-2xl group cursor-pointer min-h-[190px] sm:min-h-[200px] bg-espresso shadow-lg">
                         <Image
                           src={drink.img}
                           alt={drink.name}
                           fill
                           className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/30 to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/35 to-transparent" />
                         {drink.tag && (
-                          <div className="absolute top-4 right-4 bg-amber-400 text-espresso text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">
+                          <div className="absolute top-4 right-4 bg-amber-400 text-espresso text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full shadow-sm">
                             {drink.tag}
                           </div>
                         )}
-                        <div className="absolute inset-0 flex flex-col justify-end p-6">
+                        <div className="absolute inset-0 flex flex-col justify-end p-5 sm:p-6">
                           <span className="text-[10px] font-mono text-amber-400/80 uppercase tracking-[0.2em] mb-1">{drink.num}</span>
-                          <div className="flex items-end justify-between">
+                          <div className="flex items-end justify-between gap-3">
                             <div>
-                              <h3 className="text-2xl font-black text-white italic font-serif leading-tight">{drink.name}</h3>
-                              <p className="text-xs text-white/65 mt-1 max-w-xs">{drink.note}</p>
+                              <h3 className="text-xl sm:text-2xl font-black text-white italic font-serif leading-tight">{drink.name}</h3>
+                              <p className="text-[11px] sm:text-xs text-white/65 mt-1 max-w-xs">{drink.note}</p>
                             </div>
-                            <div className="flex flex-col items-end gap-2 ml-4">
-                              <span className="text-xs font-mono text-white/80">Rp {(drink.price / 1000).toFixed(0)}K</span>
+                            <div className="flex flex-col items-end gap-1.5 sm:gap-2 shrink-0">
+                              <span className="text-xs font-mono text-white/80 font-bold">Rp {(drink.price / 1000).toFixed(0)}K</span>
                               <button
                                 onClick={() => addToCart({ name: `${drink.name} (Cup)`, price: drink.price, size: "Reguler Cup", image: drink.img, category: "Signature Anatomi" })}
-                                className="flex items-center gap-1.5 bg-white/15 backdrop-blur-sm border border-white/25 text-white text-[11px] font-semibold px-4 py-1.5 rounded-full hover:bg-white hover:text-espresso transition-colors duration-300"
+                                className="flex items-center gap-1.5 bg-white/15 backdrop-blur-sm border border-white/25 text-white text-[11px] font-semibold px-3.5 sm:px-4 py-1.5 rounded-full hover:bg-white hover:text-espresso transition-colors duration-300"
                               >
                                 <ShoppingBag size={11} /> Pesan
                               </button>
@@ -451,7 +451,7 @@ export default function Home() {
                 {/* ── ROW 2: 3 cinematic portrait cards (Sternum, Scapula, Trapezius) ── */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   {rest.slice(2).map((drink, idx) => (
-                    <div key={idx} className="relative overflow-hidden rounded-2xl group cursor-pointer bg-espresso shadow-lg" style={{ minHeight: "300px" }}>
+                    <div key={idx} className="relative overflow-hidden rounded-2xl group cursor-pointer bg-espresso shadow-lg min-h-[260px] sm:min-h-[300px]">
                       <Image
                         src={drink.img}
                         alt={drink.name}
@@ -471,16 +471,16 @@ export default function Home() {
                       </div>
 
                       {/* bottom info */}
-                      <div className="absolute bottom-0 left-0 right-0 p-5 flex flex-col gap-2">
+                      <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 flex flex-col gap-2">
                         <div>
-                          <h3 className="text-xl font-black text-white italic font-serif">{drink.name}</h3>
+                          <h3 className="text-lg sm:text-xl font-black text-white italic font-serif">{drink.name}</h3>
                           <p className="text-[11px] text-white/60 mt-0.5 leading-snug">{drink.note}</p>
                         </div>
                         {/* horizontal divider */}
                         <div className="w-8 h-px bg-amber-400/60" />
                         <button
                           onClick={() => addToCart({ name: `${drink.name} (Cup)`, price: drink.price, size: "Reguler Cup", image: drink.img, category: "Signature Anatomi" })}
-                          className="self-start inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm border border-white/20 text-white text-[11px] font-semibold px-4 py-1.5 rounded-full hover:bg-amber-400 hover:text-espresso hover:border-amber-400 transition-colors duration-300"
+                          className="w-full sm:w-auto self-stretch sm:self-start inline-flex items-center justify-center gap-1.5 bg-white/15 backdrop-blur-sm border border-white/20 text-white text-[11px] font-semibold px-4 py-2 sm:py-1.5 rounded-full hover:bg-amber-400 hover:text-espresso hover:border-amber-400 transition-colors duration-300"
                         >
                           <ShoppingBag size={11} /> Pesan
                         </button>
@@ -497,23 +497,23 @@ export default function Home() {
       {/* 04. SENSORY DIAL / EXTRACTION SELECTOR */}
       <section className="w-full bg-buttermilk/40 py-28 px-4 md:px-8 border-y border-chestnut/10">
         <div className="mx-auto max-w-5xl">
-          <div className="text-center mb-14">
+          <div className="text-center mb-10 sm:mb-14">
             <span className="text-xs font-mono tracking-[0.2em] uppercase text-chestnut font-semibold mb-2 block">
               SENSORY TASTING LAB
             </span>
-            <h2 className="text-4xl font-black text-espresso mb-3">Panduan Rasa &amp; Seduhan</h2>
-            <p className="text-chestnut font-serif italic text-lg">
+            <h2 className="text-3xl sm:text-4xl font-black text-espresso mb-3">Panduan Rasa &amp; Seduhan</h2>
+            <p className="text-chestnut font-serif italic text-base sm:text-lg">
               Temukan profil ekstraksi yang pas untuk mood dan selera Anda hari ini.
             </p>
           </div>
 
-          {/* Selector Tabs */}
-          <div className="flex flex-wrap justify-center gap-2 mb-10">
+          {/* Selector Tabs (Swipeable on mobile, centered on desktop) */}
+          <div className="flex overflow-x-auto no-scrollbar sm:flex-wrap sm:justify-center gap-2 mb-8 sm:mb-10 pb-2 sm:pb-0 px-2 sm:px-0">
             {sensoryProfiles.map((tab, idx) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(idx)}
-                className={`px-5 py-2.5 rounded-full text-xs md:text-sm font-semibold transition-all duration-300 ${
+                className={`whitespace-nowrap px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs md:text-sm font-semibold transition-all duration-300 shrink-0 ${
                   activeTab === idx
                     ? "bg-chestnut text-white shadow-md scale-105"
                     : "bg-white text-espresso/70 hover:bg-vanilla border border-chestnut/15"
@@ -525,7 +525,7 @@ export default function Home() {
           </div>
 
           {/* Tasting Card */}
-          <div className="bg-white rounded-[28px] p-6 md:p-12 border border-chestnut/15 shadow-warm-card min-h-[380px] flex flex-col justify-between">
+          <div className="bg-white rounded-[24px] sm:rounded-[28px] p-5 sm:p-8 md:p-12 border border-chestnut/15 shadow-warm-card min-h-[380px] flex flex-col justify-between">
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 mb-8">
               <div className="md:col-span-7">
                 <div className="mb-6">

@@ -18,16 +18,16 @@ export default function SpacePage() {
               DUAL SANCTUARY // SLAWI &amp; GUCI HILLS
             </span>
           </div>
-          <h1 className="text-4xl md:text-6xl lg:text-[76px] leading-[0.95] font-black tracking-tighter text-espresso mb-6">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[76px] leading-[0.95] font-black tracking-tighter text-espresso mb-4 sm:mb-6">
             Dua Ruang, Satu Jiwa
           </h1>
-          <p className="text-xl md:text-2xl font-serif italic text-espresso/70 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-xl md:text-2xl font-serif italic text-espresso/70 max-w-3xl mx-auto leading-relaxed">
             Dari ruang cipta gagasan di pusat Slawi, hingga pesona kabut sejuk di pelataran Clavicula Hills Guci.
           </p>
         </div>
 
         {/* OUTLET 1: SLAWI */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-28 bg-white rounded-[32px] p-6 md:p-12 border border-chestnut/15 shadow-warm-card">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-16 sm:mb-28 bg-white rounded-[24px] sm:rounded-[32px] p-5 sm:p-8 md:p-12 border border-chestnut/15 shadow-warm-card">
           <div className="lg:col-span-6 relative aspect-[4/3] sm:aspect-[16/11] rounded-2xl overflow-hidden shadow-md bg-espresso">
             <Image
               src="/assets/clavicula/places/depan-tempat-clavicula-slawi.webp"
@@ -104,7 +104,7 @@ export default function SpacePage() {
         </div>
 
         {/* OUTLET 2: CLAVICULA HILLS (GUCI) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-24 bg-espresso text-porcelain rounded-[32px] p-6 md:p-12 shadow-2xl overflow-hidden relative">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-16 sm:mb-24 bg-espresso text-porcelain rounded-[24px] sm:rounded-[32px] p-5 sm:p-8 md:p-12 shadow-2xl overflow-hidden relative">
           <div className="lg:col-span-6 order-2 lg:order-1 flex flex-col justify-between z-10">
             <div>
               <span className="text-xs font-mono tracking-widest text-emerald-400 font-semibold uppercase mb-1 block">

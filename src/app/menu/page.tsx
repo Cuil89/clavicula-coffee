@@ -919,13 +919,13 @@ export default function MenuPage() {
             </div>
           </div>
 
-          {/* Category Filter Pills */}
-          <div className="flex flex-wrap gap-2.5 mb-12">
+          {/* Category Filter Pills (Swipeable on mobile like modern food apps) */}
+          <div className="flex overflow-x-auto no-scrollbar sm:flex-wrap gap-2 sm:gap-2.5 pb-2 sm:pb-0 mb-8 sm:mb-12 -mx-4 px-4 sm:mx-0 sm:px-0">
             {CATEGORIES.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-4 py-2 rounded-full text-xs font-semibold transition-all duration-200 ${
+                className={`whitespace-nowrap shrink-0 px-3.5 sm:px-4 py-2 rounded-full text-xs font-semibold transition-all duration-200 ${
                   activeCategory === cat
                     ? `${t.pillActive} scale-105`
                     : `${t.pillInactive}`
@@ -943,11 +943,11 @@ export default function MenuPage() {
               <p className="text-xs">Coba gunakan kata kunci pencarian yang lain.</p>
             </div>
           ) : viewMode === "card" ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {filteredItems.map((item) => (
                 <article
                   key={item.id}
-                  className={`group ${t.cardBg} rounded-3xl p-5 border ${t.cardBorder} hover:-translate-y-1.5 ${t.cardShadow} transition-all duration-300 flex flex-col justify-between`}
+                  className={`group ${t.cardBg} rounded-2xl sm:rounded-3xl p-4 sm:p-5 border ${t.cardBorder} hover:-translate-y-1.5 ${t.cardShadow} transition-all duration-300 flex flex-col justify-between`}
                 >
                   <div>
                     {item.image ? (

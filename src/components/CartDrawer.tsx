@@ -733,7 +733,7 @@ export default function CartDrawer() {
 
         {/* ── 7. DRAWER FOOTER: TOMBOL CHECKOUT (BAYAR DI KASIR) ── */}
         {cartItems.length > 0 && (
-          <div className="p-4 sm:p-5 bg-white border-t border-chestnut/15 space-y-2.5 shadow-lg shrink-0">
+          <div className="p-3.5 sm:p-5 bg-white border-t border-chestnut/15 space-y-2 sm:space-y-2.5 shadow-lg shrink-0 pb-[max(1rem,env(safe-area-inset-bottom))]">
             {/* Branch Selection Guard (Anti-Salah Outlet) */}
             <div className="flex items-center justify-between p-2.5 bg-vanilla/70 border border-chestnut/15 rounded-xl text-xs">
               <div className="flex items-center gap-2">

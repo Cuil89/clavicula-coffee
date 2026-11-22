@@ -127,7 +127,7 @@ export default function Navbar() {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 z-40 lg:hidden flex flex-col justify-between px-8 py-20 bg-linen text-espresso transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] ${
+        className={`fixed inset-0 z-40 lg:hidden flex flex-col justify-between px-6 sm:px-8 py-16 sm:py-20 bg-linen text-espresso transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] overflow-y-auto ${
           isMobileMenuOpen
             ? "translate-y-0 opacity-100 pointer-events-auto"
             : "-translate-y-full opacity-0 pointer-events-none"
