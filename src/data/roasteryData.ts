@@ -372,7 +372,7 @@ export const ANATOMY_DRINKS: AnatomyDrink[] = [
   {
     id: "anat-manubrium",
     name: "Manubrium",
-    price: 33000,
+    price: 27272,
     image: "/images/manubrium.jpg",
     tag: "Best Seller • Kopi Susu Gula Aren & Krim",
     flavorNotes: "Karamel gula aren legit, layer krim lembut, double shot espresso bold",
@@ -383,7 +383,7 @@ export const ANATOMY_DRINKS: AnatomyDrink[] = [
   {
     id: "anat-acromion",
     name: "Acromion",
-    price: 32000,
+    price: 27272,
     image: "/images/acromion.jpg",
     tag: "Caramelized Milk & Gurih Biskuit Regal",
     flavorNotes: "Espresso mantap, caramelized milk, gurih remahan biskuit regal lembut",
@@ -394,7 +394,7 @@ export const ANATOMY_DRINKS: AnatomyDrink[] = [
   {
     id: "anat-sternum",
     name: "Sternum",
-    price: 32000,
+    price: 27272,
     image: "/images/sternum.jpg",
     tag: "Caramel Cold Brew & Whip Cream",
     flavorNotes: "Cold brew arabika, saus karamel leleh, manis seimbang creamy",
@@ -405,7 +405,7 @@ export const ANATOMY_DRINKS: AnatomyDrink[] = [
   {
     id: "anat-scapula",
     name: "Scapula",
-    price: 32000,
+    price: 27272,
     image: "/images/scapula.jpg",
     tag: "Nusantara Heritage • Pandan Klepon & Kelapa",
     flavorNotes: "Pandan klepon wangi, santan kelapa gurih, double espresso arabika",
@@ -416,8 +416,7 @@ export const ANATOMY_DRINKS: AnatomyDrink[] = [
   {
     id: "anat-costa",
     name: "Costa",
-    price: 38000,
-    price_val: 38000,
+    price: 27272, price_val: 27272,
     image: "/images/costa.jpg",
     tag: "Nutella Hazelnut & Vanilla Ice Cream",
     flavorNotes: "Nutella legit berlimpah, espresso aromatik, scoop ice cream vanilla lembut",
@@ -428,7 +427,7 @@ export const ANATOMY_DRINKS: AnatomyDrink[] = [
   {
     id: "anat-trapezius",
     name: "Trapezius",
-    price: 32000,
+    price: 27272,
     image: "/images/trapezius.jpg",
     tag: "Fruit & Cream Fusion • Fresh Strawberry Swirl",
     flavorNotes: "Jus stroberi kental segar, krim lembut dingin, ekstrak kopi eksotis",
@@ -439,7 +438,7 @@ export const ANATOMY_DRINKS: AnatomyDrink[] = [
   {
     id: "anat-vomer",
     name: "Vomer",
-    price: 28000,
+    price: 23636,
     image: "/images/vomer.jpg",
     tag: "Citrus Cooler • Cold Brew, Lemon & Mint",
     flavorNotes: "Cold brew aromatik, perasan lemon sitrun segar, daun mint sejuk",
@@ -450,7 +449,7 @@ export const ANATOMY_DRINKS: AnatomyDrink[] = [
   {
     id: "anat-brachialis",
     name: "Brachialis",
-    price: 28000,
+    price: 23636,
     image: "/images/brachialis.jpg",
     tag: "Coffee Mocktail • Kiwi Segar & Banana",
     flavorNotes: "Ekstrak espresso dingin, potongan buah kiwi segar, sentuhan pisang lembut",
@@ -461,7 +460,7 @@ export const ANATOMY_DRINKS: AnatomyDrink[] = [
   {
     id: "anat-ulnaris",
     name: "Ulnaris",
-    price: 28000,
+    price: 23636,
     image: "/images/ulnaris.jpg",
     tag: "Anatomy Mocktail • Floral Botanic & Citrus Sparkling",
     flavorNotes: "Cold brew aromatik, sentuhan floral botanic, soda effervescent segar",
@@ -471,7 +470,7 @@ export const ANATOMY_DRINKS: AnatomyDrink[] = [
   {
     id: "anat-radius",
     name: "Radius",
-    price: 28000,
+    price: 23636,
     image: "/images/radius.jpg",
     tag: "Anatomy Mocktail • Tropical Fruit Twist",
     flavorNotes: "Ekstrak kopi dingin, sari buah tropis, soda dingin effervescent",
@@ -481,7 +480,7 @@ export const ANATOMY_DRINKS: AnatomyDrink[] = [
   {
     id: "anat-humerus",
     name: "Original Tea Humerus",
-    price: 16000,
+    price: 12727,
     image: "/images/original-tea-humerus.jpg",
     tag: "Teh Melati Otentik Slawi",
     flavorNotes: "Daun teh melati pilihan, aroma wangi alami menenangkan, manis pas",
@@ -566,7 +565,7 @@ export const POPULAR_FOODS: PopularFood[] = [
   {
     id: "food-mentai-rice",
     name: "Mentai Rice",
-    price: 35000,
+    price: 27272,
     image: "/images/mentai-rice.jpg",
     tag: "Nasi Pulen Jepang, Daging Gurih & Saus Mentai Bakar",
     description: "Nasi hangat ditutupi olahan daging gurih dan siraman saus mentai bakar beraroma smoky menggugah selera.",
@@ -575,7 +574,7 @@ export const POPULAR_FOODS: PopularFood[] = [
   {
     id: "food-nasgor",
     name: "Javanese Fried Rice",
-    price: 23000,
+    price: 19090,
     image: "/images/javanese-fried-rice.jpg",
     tag: "Nasi Goreng Resep Spesial Rempah Jawa",
     description: "Nasi goreng bumbu rempah khas tradisional Jawa beraroma wajan panas smoky gurih manis pas.",
@@ -584,7 +583,7 @@ export const POPULAR_FOODS: PopularFood[] = [
   {
     id: "food-katsu",
     name: "Chicken Katsu With Sauce",
-    price: 28000,
+    price: 25454,
     image: "/images/chicken-katsu-with-sauce.jpg",
     tag: "Ayam Fillet Krispi Saus Katsu Gurih",
     description: "Ayam fillet katsu goreng renyah keemasan disiram saus gurih spesial di atas semangkuk nasi pulen.",
@@ -593,7 +592,7 @@ export const POPULAR_FOODS: PopularFood[] = [
   {
     id: "food-mie-godog",
     name: "Javanese Fried Noodles",
-    price: 23000,
+    price: 19090,
     image: "/images/javanese-fried-noodles.jpg",
     tag: "Mie Telur Kenyal & Bumbu Kecap Rempah",
     description: "Mie goreng gurih nikmat dimasak dengan api besar bersama sayur segar, telur, dan bumbu rempah autentik.",
@@ -601,7 +600,7 @@ export const POPULAR_FOODS: PopularFood[] = [
   {
     id: "food-dimsum",
     name: "Dimsum Mentai",
-    price: 28000,
+    price: 23636,
     image: "/images/dimsum-mentai.jpg",
     tag: "Dimsum Kukus Lembut & Saus Mentai Torched",
     description: "Dimsum olahan ayam dan udang kenyal gurih dibalut lelehan saus mentai gurih beraroma bakar torched.",
@@ -610,7 +609,7 @@ export const POPULAR_FOODS: PopularFood[] = [
   {
     id: "food-yakitori",
     name: "Yakitori Clavicula",
-    price: 28000,
+    price: 23636,
     image: "/images/yakitori.jpg",
     tag: "Sate Ayam Fillet Empuk Saus Tare Panggang",
     description: "Sate ayam khas Jepang dengan potongan daging paha empuk berlumur saus tare gurih manis dipanggang merata.",

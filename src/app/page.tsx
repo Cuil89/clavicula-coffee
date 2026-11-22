@@ -363,12 +363,12 @@ export default function Home() {
           {/* ── EDITORIAL SIGNATURE DRINKS LAYOUT ── */}
           {(() => {
             const drinks = [
-              { name: "Manubrium", num: "No. 01", price: 33000, img: "/images/manubrium.jpg", note: "Kopi susu gula aren + layer krim lembut", tag: "Best Seller" },
-              { name: "Acromion", num: "No. 02", price: 32000, img: "/images/acromion.jpg", note: "Caramelized milk with soft regal biscuit", tag: null },
-              { name: "Costa", num: "No. 03", price: 38000, img: "/images/costa.jpg", note: "Nutella spread, iced espresso & ice cream", tag: "Chef's Pick" },
-              { name: "Sternum", num: "No. 04", price: 32000, img: "/images/sternum.jpg", note: "Golden caramel drizzle with iced espresso", tag: null },
-              { name: "Scapula", num: "No. 05", price: 32000, img: "/images/scapula.jpg", note: "Pandan klepon coconut milk + espresso", tag: null },
-              { name: "Trapezius", num: "No. 06", price: 32000, img: "/images/trapezius.jpg", note: "Strawberry swirl & silky cream fusion", tag: null },
+              { name: "Manubrium", num: "No. 01", price: 27272, img: "/images/manubrium.jpg", note: "Kopi susu gula aren + layer krim lembut", tag: "Best Seller" },
+              { name: "Acromion", num: "No. 02", price: 27272, img: "/images/acromion.jpg", note: "Caramelized milk with soft regal biscuit", tag: null },
+              { name: "Costa", num: "No. 03", price: 27272, img: "/images/costa.jpg", note: "Nutella spread, iced espresso & ice cream", tag: "Chef's Pick" },
+              { name: "Sternum", num: "No. 04", price: 27272, img: "/images/sternum.jpg", note: "Golden caramel drizzle with iced espresso", tag: null },
+              { name: "Scapula", num: "No. 05", price: 27272, img: "/images/scapula.jpg", note: "Pandan klepon coconut milk + espresso", tag: null },
+              { name: "Trapezius", num: "No. 06", price: 27272, img: "/images/trapezius.jpg", note: "Strawberry swirl & silky cream fusion", tag: null },
             ];
             const [hero, ...rest] = drinks;
             return (
@@ -433,7 +433,7 @@ export default function Home() {
                               <p className="text-[11px] sm:text-xs text-white/65 mt-1 max-w-xs">{drink.note}</p>
                             </div>
                             <div className="flex flex-col items-end gap-1.5 sm:gap-2 shrink-0">
-                              <span className="text-xs font-mono text-white/80 font-bold">Rp {(drink.price / 1000).toFixed(0)}K</span>
+                              <span className="text-xs font-mono text-white/80 font-bold">Rp {drink.price.toLocaleString("id-ID")}</span>
                               <button
                                 onClick={() => addToCart({ name: `${drink.name} (Cup)`, price: drink.price, size: "Reguler Cup", image: drink.img, category: "Signature Anatomi" })}
                                 className="flex items-center gap-1.5 bg-white/15 backdrop-blur-sm border border-white/25 text-white text-[11px] font-semibold px-3.5 sm:px-4 py-1.5 rounded-full hover:bg-white hover:text-espresso transition-colors duration-300"
@@ -467,7 +467,7 @@ export default function Home() {
                       <div className="absolute top-4 left-4 text-[10px] font-mono text-white/50 uppercase tracking-[0.2em]">{drink.num}</div>
                       {/* price top-right */}
                       <div className="absolute top-4 right-4 bg-black/30 backdrop-blur-sm border border-white/15 text-white text-[10px] font-mono px-2.5 py-1 rounded-full">
-                        {drink.price / 1000}K
+                        Rp {drink.price.toLocaleString("id-ID")}
                       </div>
 
                       {/* bottom info */}
@@ -911,11 +911,11 @@ export default function Home() {
 
               <div className="space-y-5">
                 {[
-                  { name: "Clavicula Tenderloin Steak", price: 80000, desc: "Daging tenderloin empuk premium dengan saus spesial & kentang mashed gurih (80K Nett)." },
-                  { name: "Tomyam Seporsi Berdua", price: 50000, desc: "Kuah tomyam asam pedas segar dengan aneka seafood segar porsi komplit berdua." },
-                  { name: "Chicken Steak with Sauce", price: 36000, desc: "Fillet ayam panggang krispi disiram saus gurih pilihan dan sayuran saute." },
-                  { name: "Fish and Chip", price: 32000, desc: "Fillet ikan renyah golden brown disajikan dengan kentang goreng & saus tartar." },
-                  { name: "Modern Fried Rice", price: 27000, desc: "Nasi goreng modern bumbu spesial pilihan: Tomyum, BBQ, Black Pepper, atau Rendang." },
+                  { name: "Clavicula Tenderloin Steak", price: 72727, desc: "Daging tenderloin empuk premium dengan saus spesial & kentang mashed gurih (Nett 80K inc. PPN)." },
+                  { name: "Tomyam Seporsi Berdua", price: 45454, desc: "Kuah tomyam asam pedas segar dengan aneka seafood segar porsi komplit berdua (Nett 50K inc. PPN)." },
+                  { name: "Chicken Steak with Sauce", price: 36363, desc: "Fillet ayam panggang krispi disiram saus gurih pilihan dan sayuran saute (Nett 40K inc. PPN)." },
+                  { name: "Fish and Chip", price: 31818, desc: "Fillet ikan renyah golden brown disajikan dengan kentang goreng & saus tartar (Nett 35K inc. PPN)." },
+                  { name: "Modern Fried Rice", price: 27272, desc: "Nasi goreng modern bumbu spesial pilihan: Tomyum, BBQ, Black Pepper, atau Rendang (Nett 30K inc. PPN)." },
                   { name: "Special Crab (100% Fresh Crab)", price: 100000, desc: "Kepiting segar bumbu rempah melimpah khas Clavicula (Porsi isi 2 / isi 4)." },
                 ].map((item, idx) => (
                   <div
@@ -927,7 +927,7 @@ export default function Home() {
                         {item.name}
                       </h4>
                       <span className="text-sm md:text-base font-serif italic text-chestnut font-semibold whitespace-nowrap">
-                        Rp {(item.price / 1000).toLocaleString("id-ID")}.000
+                        Rp {item.price.toLocaleString("id-ID")}
                       </span>
                     </div>
                     <p className="text-xs text-espresso/60">{item.desc}</p>
