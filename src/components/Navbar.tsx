@@ -69,13 +69,6 @@ export default function Navbar() {
                 <span className="absolute -bottom-0.5 left-0 h-[2px] w-0 bg-chestnut transition-all duration-300 group-hover:w-full"></span>
               </Link>
             ))}
-            <button
-              onClick={openMap}
-              className="flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-espresso/70 hover:text-chestnut transition-colors"
-            >
-              <MapPin size={13} className="text-chestnut" />
-              Slawi &amp; Guci
-            </button>
           </nav>
 
           {/* Right Side: Actions */}
